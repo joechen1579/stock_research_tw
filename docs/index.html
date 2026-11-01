@@ -72,6 +72,10 @@
           <span>📅 基準日期：<strong id="reference-date" class="text-white">--</strong></span>
         </div>
         <div class="flex items-center gap-4">
+          <a href="https://github.com/joechen1579/stock_research_tw/actions" target="_blank"
+             class="hover:text-white underline decoration-blue-300/50">
+            ⚡ GitHub 雲端排程 (Actions) ↗
+          </a>
           <a href="https://www.twse.com.tw/zh/announcement/auction.html" target="_blank"
              class="hover:text-white underline decoration-blue-300/50">
             🔗 臺灣證券交易所競拍原網頁 ↗
@@ -284,9 +288,13 @@
 
           <!-- Cloud GitHub Direct Sync (Optional when hosted on GitHub Pages) -->
           <div id="cloud-sync-box" class="hidden pt-3 border-t border-slate-200 space-y-2">
-            <div class="text-xs font-bold text-indigo-900">☁️ 雲端 GitHub Pages 直接同步收件人設定（選填）</div>
+            <div class="text-xs font-bold text-indigo-900 flex items-center justify-between">
+              <span>☁️ 雲端 GitHub Pages 同步收件人設定</span>
+              <a href="https://github.com/joechen1579/stock_research_tw/edit/main/config.json" target="_blank"
+                 class="text-blue-600 underline font-semibold">直接開啟 GitHub 編輯 config.json ↗</a>
+            </div>
             <p class="text-[11px] text-slate-600">
-              在雲端網頁上新增收件人後，您可以填入 GitHub Personal Access Token (勾選 <code>repo</code> 權限) 直接從網頁寫回雲端 <code>config.json</code>，或直接到 GitHub 網頁點選編輯 <code>config.json</code>。
+              在雲端網頁上新增收件人後，您可以點擊上方連結直接在 GitHub 網頁編輯 <code>config.json</code>，或填入 GitHub Personal Access Token (勾選 <code>repo</code> 權限) 直接從此網頁同步回雲端。
             </p>
             <input id="cfg-gh-token" type="password" placeholder="選填：ghp_xxxx (僅保存在您的瀏覽器 LocalStorage)"
               class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
