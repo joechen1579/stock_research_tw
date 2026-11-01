@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TWSE 台股競價拍賣追蹤、公司基本面 & 新聞摘要系統</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafc;
+    }
+    .glass-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
+    }
+    .tab-active {
+      background-color: #1e40af;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(30, 64, 175, 0.25);
+    }
+  </style>
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Top Banner / Header -->
+  <header class="glass-header text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-7">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-semibold mb-2">
+            <span>⚡ 每日自動追蹤未結束競拍</span>
+            <span>•</span>
+            <span id="env-badge">載入中...</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            📈 TWSE 台股競價拍賣、公司基本面 & 新聞摘要儀表板
+          </h1>
+          <p class="text-blue-100/85 text-sm mt-1">
+            自動篩選「尚未結束競拍」標的，整合公司行業/營收規模/利潤率與新聞摘要，每日寄送至：
+            <span class="font-semibold underline decoration-blue-300/60 cursor-pointer" onclick="openSettingsModal()" id="header-recipient">joechen1579@gmail.com</span>
+            <button onclick="openSettingsModal()" class="ml-1.5 px-2 py-0.5 text-[11px] rounded bg-white/15 hover:bg-white/25 text-white font-semibold">
+              ➕ 新增/管理收件人
+            </button>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button id="btn-refresh" onclick="triggerRefresh()"
+            class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 border border-white/25 text-white text-sm font-semibold transition shadow-sm">
+            <span id="refresh-icon">🔄</span>
+            <span id="refresh-text">立即更新爬蟲</span>
+          </button>
+
+          <button onclick="openEmailModal()"
+            class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold transition shadow-md">
+            <span>✉️</span>
+            <span>預覽 / 寄送 Email</span>
+          </button>
+
+          <button onclick="openSettingsModal()"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800/90 border border-white/15 text-slate-200 text-sm font-medium transition">
+            <span>📬 收件人與雲端設定</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Meta Status Bar -->
+      <div class="mt-5 pt-4 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-xs text-blue-100/80">
+        <div class="flex flex-wrap items-center gap-4">
+          <span>🕒 最後更新時間：<strong id="updated-at" class="text-white">--</strong></span>
+          <span>📅 基準日期：<strong id="reference-date" class="text-white">--</strong></span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="https://www.twse.com.tw/zh/announcement/auction.html" target="_blank"
+             class="hover:text-white underline decoration-blue-300/50">
+            🔗 臺灣證券交易所競拍原網頁 ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 flex-1">
+
+    <!-- Toast Notification -->
+    <div id="toast-box" class="hidden mb-5 rounded-xl p-4 border text-sm font-medium flex items-center justify-between shadow-sm">
+      <span id="toast-msg"></span>
+      <button onclick="hideToast()" class="text-slate-400 hover:text-slate-600 font-bold ml-4">✕</button>
+    </div>
+
+    <!-- Quick Recipient Bar -->
+    <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-bold text-slate-700">📬 每日自動寄送收件人清單：</span>
+        <div id="banner-recipient-chips" class="flex flex-wrap items-center gap-1.5"></div>
+      </div>
+      <div class="flex items-center gap-2">
+        <input id="quick-email-input" type="email" placeholder="輸入新 Email (如 abc@gmail.com)"
+          onkeydown="if(event.key==='Enter'){addRecipientFromQuickInput();}"
+          class="px-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-56" />
+        <button onclick="addRecipientFromQuickInput()"
+          class="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shrink-0">
+          ➕ 新增信箱
+        </button>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm">
+        <div class="text-xs font-semibold text-slate-500">尚未結束競拍總數</div>
+        <div class="mt-1 flex items-baseline gap-1.5">
+          <span id="stat-total" class="text-3xl font-extrabold text-slate-900">0</span>
+          <span class="text-xs text-slate-500">檔標的</span>
+        </div>
+        <div class="mt-1 text-xs text-slate-400">已自動排除歷史已開標案件</div>
+      </div>
+
+      <div class="bg-emerald-50/70 rounded-2xl p-4 border border-emerald-200 shadow-sm">
+        <div class="text-xs font-bold text-emerald-800">🟢 投標進行中 / 即將開始</div>
+        <div class="mt-1 flex items-baseline gap-1.5">
+          <span id="stat-bidding" class="text-3xl font-extrabold text-emerald-600">0</span>
+          <span class="text-xs text-emerald-700">檔可參與投標</span>
+        </div>
+        <div class="mt-1 text-xs text-emerald-600/80">投標結束日 ≥ 今日</div>
+      </div>
+
+      <div class="bg-amber-50/70 rounded-2xl p-4 border border-amber-200 shadow-sm">
+        <div class="text-xs font-bold text-amber-800">🟡 已截標・等待開標</div>
+        <div class="mt-1 flex items-baseline gap-1.5">
+          <span id="stat-waiting" class="text-3xl font-extrabold text-amber-600">0</span>
+          <span class="text-xs text-amber-700">檔近期開標</span>
+        </div>
+        <div class="mt-1 text-xs text-amber-700/80">開標日期 ≥ 今日</div>
+      </div>
+
+      <div class="bg-indigo-50/70 rounded-2xl p-4 border border-indigo-200 shadow-sm">
+        <div class="text-xs font-bold text-indigo-800">📌 股票 IPO vs 可轉債</div>
+        <div class="mt-1 flex items-baseline gap-2">
+          <span class="text-xl font-extrabold text-indigo-700">股票 <span id="stat-ipo">0</span></span>
+          <span class="text-slate-300">|</span>
+          <span class="text-xl font-extrabold text-slate-600">可轉債 <span id="stat-cb">0</span></span>
+        </div>
+        <div class="mt-1 text-xs text-indigo-600/80">可於下方快速切換篩選</div>
+      </div>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-sm mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+      <div class="flex flex-wrap items-center gap-1.5" id="filter-tabs">
+        <button onclick="setFilter('all')" data-filter="all"
+          class="filter-btn tab-active px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          全部未結束競拍
+        </button>
+        <button onclick="setFilter('bidding')" data-filter="bidding"
+          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          🟢 僅看投標進行中
+        </button>
+        <button onclick="setFilter('waiting_open')" data-filter="waiting_open"
+          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          🟡 已截標・待開標
+        </button>
+        <button onclick="setFilter('stock_only')" data-filter="stock_only"
+          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          🏢 僅看股票 (不含可轉債)
+        </button>
+      </div>
+
+      <div class="relative">
+        <input id="search-input" type="text" oninput="renderCards()"
+          placeholder="搜尋股票名稱、代號、行業或主辦券商..."
+          class="w-full sm:w-64 pl-9 pr-3 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+      </div>
+    </div>
+
+    <!-- Auction Cards Container -->
+    <div id="cards-container" class="space-y-6">
+      <div class="bg-white rounded-2xl p-12 text-center border border-slate-200">
+        <div class="text-slate-400 text-sm">正在載入最新競拍、公司基本面與新聞資料...</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Email Preview & Send Modal -->
+  <div id="email-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-base">✉️ Email 競拍日報預覽與多收件人寄送</h3>
+          <p class="text-xs text-slate-300 mt-0.5">收件信箱清單：<span id="modal-recipient" class="font-semibold text-emerald-300">joechen1579@gmail.com</span></p>
+        </div>
+        <button onclick="closeEmailModal()" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+      </div>
+
+      <!-- Action bar inside modal -->
+      <div class="px-6 py-3 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
+        <div class="text-xs text-slate-600">
+          以下為實際寄出之 HTML 信件排版預覽（已包含公司介紹、營收規模、利潤率與新聞摘要）：
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="openSettingsModal()"
+            class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
+            📬 新增/編輯收件人
+          </button>
+          <button onclick="copyEmailHtml()"
+            class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
+            📋 複製信件內容
+          </button>
+          <button id="btn-send-now" onclick="sendEmailNow()"
+            class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm">
+            🚀 立即寄送給所有收件人
+          </button>
+        </div>
+      </div>
+
+      <!-- Email iframe preview -->
+      <div class="flex-1 bg-slate-200 p-4 overflow-auto">
+        <iframe id="email-preview-frame" class="w-full h-[540px] bg-white rounded-xl shadow border border-slate-300"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings & Multi-Recipient Modal -->
+  <div id="settings-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+        <h3 class="font-bold text-base">📬 收件人信箱管理 ＆ 雲端自動寄信設定</h3>
+        <button onclick="closeSettingsModal()" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700">
+        <!-- Multi-Recipient Manager -->
+        <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200 space-y-3">
+          <div class="font-bold text-slate-900 flex items-center justify-between">
+            <span>📬 收件人 Email 清單（支援多位收件人同時收信）</span>
+            <span id="recipient-count-badge" class="px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs">1 位</span>
+          </div>
+
+          <div id="modal-recipient-chips" class="flex flex-wrap gap-2 py-1"></div>
+
+          <div class="flex gap-2">
+            <input id="new-recipient-input" type="email" placeholder="輸入要新增的 Email 地址，例如 friend@gmail.com"
+              onkeydown="if(event.key==='Enter'){event.preventDefault();addRecipientFromModal();}"
+              class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <button onclick="addRecipientFromModal()"
+              class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition">
+              ➕ 加入清單
+            </button>
+          </div>
+          <p class="text-[11px] text-slate-500">
+            提示：您可以加入多個信箱（亦可直接用逗號分隔多個 Email 一次貼上），按下方「儲存設定」即可生效。
+          </p>
+        </div>
+
+        <!-- Local / Cloud SMTP Config -->
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+          <div class="font-bold text-slate-900">🔐 Gmail 寄件帳號與選用設定</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1">寄件 Gmail 帳號</label>
+              <input id="cfg-sender" type="email" value="joechen1579@gmail.com"
+                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1">
+                Google 應用程式密碼 (16 碼)
+                <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-blue-600 underline ml-1">免費申請 ↗</a>
+              </label>
+              <input id="cfg-app-password" type="password" placeholder="本機寄信填此；雲端填在 GitHub Secrets"
+                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1">
+              Gemini API Key（選填，不填則自動使用內建智慧摘要）
+            </label>
+            <input id="cfg-gemini-key" type="password" placeholder="選填：AIzaSy..."
+              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+          </div>
+
+          <!-- Cloud GitHub Direct Sync (Optional when hosted on GitHub Pages) -->
+          <div id="cloud-sync-box" class="hidden pt-3 border-t border-slate-200 space-y-2">
+            <div class="text-xs font-bold text-indigo-900">☁️ 雲端 GitHub Pages 直接同步收件人設定（選填）</div>
+            <p class="text-[11px] text-slate-600">
+              在雲端網頁上新增收件人後，您可以填入 GitHub Personal Access Token (勾選 <code>repo</code> 權限) 直接從網頁寫回雲端 <code>config.json</code>，或直接到 GitHub 網頁點選編輯 <code>config.json</code>。
+            </p>
+            <input id="cfg-gh-token" type="password" placeholder="選填：ghp_xxxx (僅保存在您的瀏覽器 LocalStorage)"
+              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+          </div>
+
+          <div class="flex justify-end gap-2 pt-2">
+            <button onclick="saveConfig()"
+              class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm">
+              💾 儲存收件人與設定
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-5 text-center text-xs text-slate-400 border-t border-slate-200/80 bg-white mt-10">
+    TWSE 台股競價拍賣自動追蹤、公司基本面與新聞摘要系統 ｜ 支援多收件人自動派報
+  </footer>
+
+  <script>
+    let globalData = null;
+    let currentFilter = 'all';
+    let isLocalServer = false;
+    let recipientList = ['joechen1579@gmail.com'];
+
+    function showToast(msg, type = 'info') {
+      const box = document.getElementById('toast-box');
+      const msgEl = document.getElementById('toast-msg');
+      box.className = 'mb-5 rounded-xl p-4 border text-sm font-medium flex items-center justify-between shadow-sm ';
+      if (type === 'success') {
+        box.className += 'bg-emerald-50 border-emerald-200 text-emerald-800';
+      } else if (type === 'error') {
+        box.className += 'bg-red-50 border-red-200 text-red-800';
+      } else {
+        box.className += 'bg-blue-50 border-blue-200 text-blue-800';
+      }
+      msgEl.textContent = msg;
+      box.classList.remove('hidden');
+    }
+
+    function hideToast() {
+      document.getElementById('toast-box').classList.add('hidden');
+    }
+
+    function renderRecipientChips() {
+      const headerEl = document.getElementById('header-recipient');
+      const modalEl = document.getElementById('modal-recipient');
+      const countBadge = document.getElementById('recipient-count-badge');
+      const bannerChips = document.getElementById('banner-recipient-chips');
+      const modalChips = document.getElementById('modal-recipient-chips');
+
+      if (recipientList.length === 0) {
+        recipientList = ['joechen1579@gmail.com'];
+      }
+
+      headerEl.textContent = recipientList.join(', ');
+      modalEl.textContent = recipientList.join(', ');
+      countBadge.textContent = `${recipientList.length} 位`;
+
+      const chipHtml = recipientList.map((email, idx) => `
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+          <span>📧 ${email}</span>
+          ${recipientList.length > 1 ? `<button onclick="removeRecipient(${idx})" title="移除此信箱" class="text-blue-400 hover:text-red-600 font-bold">✕</button>` : ''}
+        </span>
+      `).join('');
+
+      bannerChips.innerHTML = chipHtml;
+      modalChips.innerHTML = chipHtml;
+    }
+
+    function addEmailsToList(rawStr) {
+      const parts = (rawStr || '').split(/[,;\s\n]+/).map(s => s.trim()).filter(Boolean);
+      let added = 0;
+      for (const em of parts) {
+        if (!em.includes('@')) {
+          showToast(`格式不正確的 Email：${em}`, 'error');
+          continue;
+        }
+        if (!recipientList.some(existing => existing.toLowerCase() === em.toLowerCase())) {
+          recipientList.push(em);
+          added++;
+        }
+      }
+      renderRecipientChips();
+      return added;
+    }
+
+    async function addRecipientFromQuickInput() {
+      const input = document.getElementById('quick-email-input');
+      const val = input.value.trim();
+      if (!val) return;
+      const added = addEmailsToList(val);
+      input.value = '';
+      if (added > 0) {
+        await saveConfig(true);
+      }
+    }
+
+    function addRecipientFromModal() {
+      const input = document.getElementById('new-recipient-input');
+      const val = input.value.trim();
+      if (!val) return;
+      addEmailsToList(val);
+      input.value = '';
+    }
+
+    async function removeRecipient(idx) {
+      if (recipientList.length <= 1) {
+        showToast('請至少保留一位收件人！', 'error');
+        return;
+      }
+      recipientList.splice(idx, 1);
+      renderRecipientChips();
+      await saveConfig(true);
+    }
+
+    async function checkEnvironmentAndLoad() {
+      const envBadge = document.getElementById('env-badge');
+      const savedToken = localStorage.getItem('gh_pat_token') || '';
+      if (savedToken) {
+        document.getElementById('cfg-gh-token').value = savedToken;
+      }
+
+      try {
+        const res = await fetch('/api/status', { cache: 'no-store' });
+        if (res.ok) {
+          const status = await res.json();
+          isLocalServer = true;
+          envBadge.textContent = '🟢 本機互動伺服器模式';
+          if (status.recipients && status.recipients.length > 0) {
+            recipientList = status.recipients;
+          }
+          if (status.sender_email) {
+            document.getElementById('cfg-sender').value = status.sender_email;
+          }
+        } else {
+          throw new Error('Static host');
+        }
+      } catch (e) {
+        isLocalServer = false;
+        envBadge.textContent = '☁️ 雲端自動化模式 (GitHub Pages)';
+        document.getElementById('cloud-sync-box').classList.remove('hidden');
+        try {
+          const cfgRes = await fetch('./config.json?t=' + Date.now(), { cache: 'no-store' });
+          if (cfgRes.ok) {
+            const cfg = await cfgRes.json();
+            if (cfg.recipients && cfg.recipients.length > 0) {
+              recipientList = cfg.recipients;
+            }
+          }
+        } catch (_) {}
+      }
+
+      renderRecipientChips();
+      await loadAuctionData();
+    }
+
+    async function loadAuctionData() {
+      try {
+        const url = isLocalServer ? '/api/data' : './data.json?t=' + Date.now();
+        const res = await fetch(url, { cache: 'no-store' });
+        if (!res.ok) throw new Error('無法讀取資料');
+        globalData = await res.json();
+        if (globalData.recipients && globalData.recipients.length > 0) {
+          recipientList = globalData.recipients;
+          renderRecipientChips();
+        }
+        updateDashboardUI();
+      } catch (err) {
+        document.getElementById('cards-container').innerHTML = `
+          <div class="bg-white rounded-2xl p-10 text-center border border-red-200 text-red-600">
+            讀取競拍資料失敗：${err.message}
+          </div>
+        `;
+      }
+    }
+
+    function updateDashboardUI() {
+      if (!globalData) return;
+      document.getElementById('updated-at').textContent = globalData.updated_at || '--';
+      document.getElementById('reference-date').textContent = globalData.reference_date || '--';
+
+      const stats = globalData.stats || {};
+      document.getElementById('stat-total').textContent = stats.total_active ?? 0;
+      document.getElementById('stat-bidding').textContent = (stats.bidding_count ?? 0) + (stats.upcoming_count ?? 0);
+      document.getElementById('stat-waiting').textContent = stats.waiting_open_count ?? 0;
+      document.getElementById('stat-ipo').textContent = stats.ipo_stock_count ?? 0;
+      document.getElementById('stat-cb').textContent = stats.cb_count ?? 0;
+
+      renderCards();
+    }
+
+    function setFilter(filterKey) {
+      currentFilter = filterKey;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-filter') === filterKey) {
+          btn.className = 'filter-btn tab-active px-3.5 py-2 rounded-xl text-xs font-bold transition';
+        } else {
+          btn.className = 'filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition';
+        }
+      });
+      renderCards();
+    }
+
+    function renderCards() {
+      const container = document.getElementById('cards-container');
+      if (!globalData || !globalData.auctions) return;
+
+      const keyword = (document.getElementById('search-input').value || '').trim().toLowerCase();
+
+      const filtered = globalData.auctions.filter(item => {
+        if (currentFilter === 'bidding' && item.status_code !== 'bidding' && item.status_code !== 'upcoming') {
+          return false;
+        }
+        if (currentFilter === 'waiting_open' && item.status_code !== 'waiting_open') {
+          return false;
+        }
+        if (currentFilter === 'stock_only' && item.is_cb) {
+          return false;
+        }
+        if (keyword) {
+          const cp = item.company_profile || {};
+          const hay = `${item.security_name} ${item.security_code} ${item.underwriter} ${item.issue_type} ${cp.industry || ''} ${cp.business_scope || ''} ${cp.revenue_mix || ''}`.toLowerCase();
+          if (!hay.includes(keyword)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-2xl p-12 text-center border border-slate-200">
+            <div class="text-lg font-bold text-slate-700 mb-1">目前篩選條件下沒有符合的競拍標的</div>
+            <p class="text-xs text-slate-500">可嘗試切換上方篩選標籤為「全部未結束競拍」。</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        let badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-200';
+        let badgeIcon = '🟢';
+        if (item.status_code === 'upcoming') {
+          badgeClass = 'bg-blue-100 text-blue-800 border-blue-200';
+          badgeIcon = '🔵';
+        } else if (item.status_code === 'waiting_open') {
+          badgeClass = 'bg-amber-100 text-amber-800 border-amber-200';
+          badgeIcon = '🟡';
+        }
+
+        const catBadge = item.is_cb
+          ? 'bg-slate-100 text-slate-700 border-slate-200'
+          : 'bg-purple-100 text-purple-800 border-purple-200';
+
+        const estMargin = Number(item.estimated_min_margin || 0).toLocaleString();
+        const cp = item.company_profile || {};
+        const cpIndustry = cp.industry || '上市櫃/興櫃企業';
+        const cpBusiness = cp.revenue_mix || cp.business_scope || '—';
+        const cpMonthRev = cp.latest_month_revenue
+          ? `${cp.latest_month_revenue} <span class="text-emerald-700 font-semibold">(年增 ${cp.latest_month_yoy || '—'})</span>`
+          : '—';
+        const cpAccRev = cp.accumulated_revenue
+          ? `${cp.accumulated_revenue} <span class="text-emerald-700 font-semibold">(年增 ${cp.accumulated_yoy || '—'})</span>`
+          : '—';
+        const cpGross = cp.gross_margin || '—';
+        const cpOp = cp.operating_margin || '—';
+        const cpPretax = cp.pretax_margin || '—';
+        const cpRoe = cp.roe || '—';
+        const cpEps = cp.latest_quarter_eps || '—';
+        const cp4qEps = cp.recent_4q_eps || '—';
+        const cpBps = cp.bps ? `${cp.bps} 元` : '—';
+
+        const newsHtml = (item.news && item.news.length > 0)
+          ? `<ul class="space-y-2 mt-2">
+              ${item.news.map(n => `
+                <li class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 text-xs bg-slate-50 hover:bg-blue-50/60 p-2.5 rounded-xl border border-slate-200/70 transition">
+                  <a href="${n.url}" target="_blank" rel="noopener" class="font-semibold text-blue-600 hover:underline flex-1">
+                    🔗 ${n.title}
+                  </a>
+                  <span class="text-[11px] text-slate-400 shrink-0">
+                    ${n.source} • ${n.published_at}
+                  </span>
+                </li>
+              `).join('')}
+            </ul>`
+          : `<div class="text-xs text-slate-400 mt-1">目前暫無相關新聞報導</div>`;
+
+        return `
+          <article class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs hover:shadow-md transition">
+            <!-- Card Top Row -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}">
+                    ${badgeIcon} ${item.status_label}
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${catBadge}">
+                    ${item.issue_type}
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    🏭 ${cpIndustry}
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-600 border border-rose-200">
+                    ⏰ ${item.countdown_text}
+                  </span>
+                </div>
+                <h2 class="text-xl font-extrabold text-slate-900 flex items-baseline gap-2">
+                  <span>${item.security_name}</span>
+                  <span class="text-base font-semibold text-slate-500">(${item.security_code})</span>
+                </h2>
+                <div class="text-xs text-slate-500 mt-1">
+                  市場別：<strong class="text-slate-700">${item.market}</strong> ｜
+                  競拍方式：<strong class="text-slate-700">${item.auction_method}</strong> ｜
+                  主辦券商：<strong class="text-slate-700">${item.underwriter}</strong>
+                </div>
+              </div>
+
+              <div class="flex sm:flex-col items-end justify-between gap-2 bg-slate-50 px-4 py-3 rounded-xl border border-slate-200/70">
+                <div class="text-right">
+                  <div class="text-[11px] text-slate-500">最低投標價格 (底價)</div>
+                  <div class="text-2xl font-extrabold text-rose-600">${item.min_price} <span class="text-xs font-semibold">元</span></div>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-semibold">
+                  <a href="${item.yahoo_url}" target="_blank" class="text-blue-600 hover:underline">Yahoo股市 ↗</a>
+                  <span class="text-slate-300">|</span>
+                  <a href="${item.moneydj_url || '#'}" target="_blank" class="text-blue-600 hover:underline">MoneyDJ基本面 ↗</a>
+                  <span class="text-slate-300">|</span>
+                  <a href="${item.goodinfo_url}" target="_blank" class="text-blue-600 hover:underline">Goodinfo ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auction Schedule & Margin Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4 text-xs">
+              <div class="bg-slate-50/80 p-3 rounded-xl border border-slate-100">
+                <div class="text-slate-400">投標期間</div>
+                <div class="font-bold text-slate-800 mt-0.5">${item.bid_start_date} ~ ${item.bid_end_date}</div>
+              </div>
+              <div class="bg-slate-50/80 p-3 rounded-xl border border-slate-100">
+                <div class="text-slate-400">開標日 / 撥券掛牌日</div>
+                <div class="font-bold text-slate-800 mt-0.5">${item.open_bid_date} / ${item.listing_date}</div>
+              </div>
+              <div class="bg-slate-50/80 p-3 rounded-xl border border-slate-100">
+                <div class="text-slate-400">競拍總張數 (單筆限額)</div>
+                <div class="font-bold text-slate-800 mt-0.5">${item.auction_quantity} 張 (${item.min_bid_quantity}~${item.max_bid_quantity}張)</div>
+              </div>
+              <div class="bg-slate-50/80 p-3 rounded-xl border border-slate-100">
+                <div class="text-slate-400">保證金成數 & 預估最低門檻</div>
+                <div class="font-bold text-slate-800 mt-0.5">${item.margin_percentage}% (約 NT$ ${estMargin} 起)</div>
+              </div>
+            </div>
+
+            <!-- Company Profile, Revenue Scale & Profitability Digest -->
+            <div class="bg-emerald-50/60 border-l-4 border-emerald-600 rounded-r-xl p-4 my-4 space-y-3">
+              <div class="text-xs font-extrabold text-emerald-950 flex items-center justify-between">
+                <span>🏢 公司介紹、業務範圍、營收規模與利潤率摘要</span>
+                <span class="text-[11px] font-medium text-emerald-700">財報期別：${cp.profit_period || cp.latest_quarter_label || '最新季度'}</span>
+              </div>
+              <p class="text-xs text-slate-800 leading-relaxed">${cp.summary_text || ''}</p>
+
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs">
+                <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70 sm:col-span-3">
+                  <span class="text-slate-400 font-medium">主要業務與營收比重：</span>
+                  <span class="font-semibold text-slate-800">${cpBusiness}</span>
+                </div>
+                <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
+                  <div class="text-[11px] text-slate-400">最新單月營收 (${cp.latest_month_label || '最新'})</div>
+                  <div class="font-bold text-slate-900 mt-0.5">${cpMonthRev}</div>
+                  <div class="text-[11px] text-slate-500 mt-1">累計營收：${cpAccRev}</div>
+                </div>
+                <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
+                  <div class="text-[11px] text-slate-400">利潤率指標 (${cp.profit_period || '最新季'})</div>
+                  <div class="font-bold text-slate-900 mt-0.5">毛利率 ${cpGross} ｜ 營益率 ${cpOp}</div>
+                  <div class="text-[11px] text-slate-500 mt-1">稅前淨利率 ${cpPretax} ｜ ROE ${cpRoe}</div>
+                </div>
+                <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
+                  <div class="text-[11px] text-slate-400">每股獲利與淨值</div>
+                  <div class="font-bold text-slate-900 mt-0.5">單季 EPS ${cpEps}</div>
+                  <div class="text-[11px] text-slate-500 mt-1">累計 ${cp4qEps} ｜ 淨值 ${cpBps}</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- News Summary Digest Box -->
+            <div class="bg-blue-50/60 border-l-4 border-blue-600 rounded-r-xl p-4 my-4 space-y-1.5">
+              <div class="text-xs font-extrabold text-blue-900 flex items-center gap-1.5">
+                <span>📌 競拍情報與新聞整理摘要</span>
+                ${item.summary_mode === 'gemini_ai' ? '<span class="px-2 py-0.5 rounded bg-blue-600 text-white text-[10px]">✨ Gemini AI 統整</span>' : ''}
+              </div>
+              <p class="text-xs text-slate-700 leading-relaxed">${item.summary_overview || ''}</p>
+              <p class="text-xs text-slate-900 font-medium leading-relaxed">${item.summary_news_digest || ''}</p>
+            </div>
+
+            <!-- News Links -->
+            <div>
+              <div class="text-xs font-bold text-slate-700">📰 最新相關新聞與連結 (${(item.news || []).length} 則)：</div>
+              ${newsHtml}
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    async function triggerRefresh() {
+      if (!isLocalServer) {
+        await loadAuctionData();
+        showToast('已重新載入雲端最新競拍資料！', 'info');
+        return;
+      }
+
+      const btn = document.getElementById('btn-refresh');
+      const text = document.getElementById('refresh-text');
+      btn.disabled = true;
+      text.textContent = '爬取 TWSE、基本面與新聞中...';
+
+      try {
+        const res = await fetch('/api/refresh', { method: 'POST' });
+        const result = await res.json();
+        if (result.ok) {
+          globalData = result.data;
+          updateDashboardUI();
+          showToast(`✅ 成功更新！目前共有 ${globalData.stats.total_active} 檔尚未結束競拍標的（含最新公司財報與新聞）。`, 'success');
+        } else {
+          showToast(`更新失敗：${result.error}`, 'error');
+        }
+      } catch (e) {
+        showToast(`連線錯誤：${e.message}`, 'error');
+      } finally {
+        btn.disabled = false;
+        text.textContent = '立即更新爬蟲';
+      }
+    }
+
+    async function openEmailModal() {
+      const modal = document.getElementById('email-modal');
+      const frame = document.getElementById('email-preview-frame');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      const previewUrl = isLocalServer ? '/api/email-preview?t=' + Date.now() : './email_preview.html?t=' + Date.now();
+      frame.src = previewUrl;
+    }
+
+    function closeEmailModal() {
+      const modal = document.getElementById('email-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    async function copyEmailHtml() {
+      try {
+        const frame = document.getElementById('email-preview-frame');
+        const doc = frame.contentDocument || frame.contentWindow.document;
+        const selection = frame.contentWindow.getSelection();
+        const range = doc.createRange();
+        range.selectNodeContents(doc.body);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        doc.execCommand('copy');
+        selection.removeAllRanges();
+        showToast('📋 已複製富文本 Email 內容！您可直接貼上至 Gmail 信件內文。', 'success');
+      } catch (e) {
+        showToast('複製失敗，請直接在預覽視窗全選複製。', 'error');
+      }
+    }
+
+    async function sendEmailNow() {
+      if (!isLocalServer) {
+        showToast('雲端網頁模式由 GitHub Actions 每天自動寄信給收件人清單，或可至 GitHub Repo -> Actions 點擊 Run workflow 立即觸發雲端寄信！', 'info');
+        return;
+      }
+
+      const btn = document.getElementById('btn-send-now');
+      btn.disabled = true;
+      btn.textContent = '寄送中...';
+
+      try {
+        const res = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            recipients: recipientList,
+            sender_email: document.getElementById('cfg-sender').value,
+            app_password: document.getElementById('cfg-app-password').value
+          })
+        });
+        const result = await res.json();
+        if (result.ok) {
+          closeEmailModal();
+          showToast(`🎉 ${result.message}`, 'success');
+        } else {
+          showToast(`⚠️ ${result.error}`, 'error');
+          openSettingsModal();
+        }
+      } catch (e) {
+        showToast(`寄送發生錯誤：${e.message}`, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🚀 立即寄送給所有收件人';
+      }
+    }
+
+    function openSettingsModal() {
+      const modal = document.getElementById('settings-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeSettingsModal() {
+      const modal = document.getElementById('settings-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    async function saveConfig(silentModal = false) {
+      const pendingInput = document.getElementById('new-recipient-input').value.trim();
+      if (pendingInput) {
+        addEmailsToList(pendingInput);
+        document.getElementById('new-recipient-input').value = '';
+      }
+
+      const sender = document.getElementById('cfg-sender').value.trim();
+      const appPass = document.getElementById('cfg-app-password').value.trim();
+      const geminiKey = document.getElementById('cfg-gemini-key').value.trim();
+      const ghToken = document.getElementById('cfg-gh-token').value.trim();
+
+      if (ghToken) {
+        localStorage.setItem('gh_pat_token', ghToken);
+      }
+
+      if (!isLocalServer) {
+        if (ghToken && location.hostname.endsWith('github.io')) {
+          await syncConfigToGitHubRepo(ghToken, sender);
+          if (!silentModal) closeSettingsModal();
+          return;
+        }
+        showToast(`目前已更新畫面收件人清單 (${recipientList.join(', ')})！若在雲端環境欲永久新增收件人，請編輯 GitHub Repo 中的 config.json 或填入 GitHub Token。`, 'info');
+        if (!silentModal) closeSettingsModal();
+        return;
+      }
+
+      try {
+        const res = await fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            recipients: recipientList,
+            sender_email: sender,
+            app_password: appPass,
+            gemini_api_key: geminiKey
+          })
+        });
+        const result = await res.json();
+        if (result.ok) {
+          recipientList = result.recipients || recipientList;
+          renderRecipientChips();
+          if (!silentModal) closeSettingsModal();
+          showToast(`✅ 收件人清單已儲存 (${recipientList.join(', ')})！`, 'success');
+        } else {
+          showToast(`儲存失敗：${result.error}`, 'error');
+        }
+      } catch (e) {
+        showToast(`儲存錯誤：${e.message}`, 'error');
+      }
+    }
+
+    async function syncConfigToGitHubRepo(token, senderEmail) {
+      try {
+        const owner = location.hostname.split('.')[0];
+        const repo = location.pathname.split('/').filter(Boolean)[0];
+        if (!owner || !repo) throw new Error('無法自動辨識 GitHub Repo 名稱');
+
+        const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/config.json`;
+        const getRes = await fetch(apiUrl, {
+          headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' }
+        });
+        const fileInfo = getRes.ok ? await getRes.json() : {};
+        const newContent = JSON.stringify({
+          recipients: recipientList,
+          sender_email: senderEmail || 'joechen1579@gmail.com',
+          only_stocks: false
+        }, null, 2) + '\n';
+
+        const putRes = await fetch(apiUrl, {
+          method: 'PUT',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/vnd.github+json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            message: `chore: 更新收件人名單 (${recipientList.join(', ')})`,
+            content: btoa(unescape(encodeURIComponent(newContent))),
+            sha: fileInfo.sha
+          })
+        });
+        if (!putRes.ok) throw new Error('GitHub API 寫入失敗，請確認 Token 權限');
+        showToast(`☁️ 已成功將收件人名單同步寫入 GitHub 雲端 config.json！`, 'success');
+      } catch (err) {
+        showToast(`雲端同步失敗：${err.message}`, 'error');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', checkEnvironmentAndLoad);
+  </script>
+</body>
+</html>

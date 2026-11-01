@@ -1,0 +1,60 @@
+name: 每日台股競拍爬蟲與自動寄信 (TWSE Daily Auction Digest)
+
+on:
+  schedule:
+    # 每天台灣時間早上 08:30 自動執行 (UTC 00:30)
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+    inputs:
+      extra_recipients:
+        description: "選填：額外新增收件人 Email (多個請用逗號分隔，留空則依 config.json 設定寄送)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  crawl-and-send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout 專案原始碼
+        uses: actions/checkout@v4
+
+      - name: 🐍 設定 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 🔍 執行 TWSE 競拍爬蟲、公司基本面、新聞摘要與更新前端資料
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DASHBOARD_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+        run: |
+          python3 main.py --run-once
+
+      - name: ✉️ 寄送競拍日報至所有設定的收件人信箱
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER || 'joechen1579@gmail.com' }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL: ${{ github.event.inputs.extra_recipients || secrets.RECIPIENT_EMAIL || '' }}
+        run: |
+          if [ -z "$GMAIL_APP_PASSWORD" ]; then
+            echo "⚠️ 尚未在 GitHub Secrets 設定 GMAIL_APP_PASSWORD，本次僅更新雲端網頁資料，略過寄信。"
+            echo "👉 請至 GitHub Repo -> Settings -> Secrets and variables -> Actions 新增 GMAIL_APP_PASSWORD。"
+          else
+            python3 -c "import json; from mailer import send_gmail_report; data = json.load(open('docs/data.json')); res = send_gmail_report(data); print(res); exit(0 if res.get('ok') else 1)"
+          fi
+
+      - name: 🌐 自動更新 GitHub Pages 前端資料 (docs/data.json & email_preview.html)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data.json docs/email_preview.html docs/config.json
+          if git diff --staged --quiet; then
+            echo "資料無異動，無須提交。"
+          else
+            git commit -m "chore: 自動更新每日競拍、公司基本面與新聞資料 ($(date +'%Y-%m-%d'))"
+            git push
+          fi
