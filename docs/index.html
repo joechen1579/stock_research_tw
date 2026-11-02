@@ -30,18 +30,14 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-semibold mb-2">
             <span>⚡ 每日自動追蹤未結束競拍</span>
-            <span>•</span>
             <span id="env-badge">載入中...</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            📈 TWSE 台股競價拍賣摘要
+            TWSE 台股競價拍賣摘要
           </h1>
           <p class="text-blue-100/85 text-sm mt-1">
             自動篩選「尚未結束競拍」標的，整合公司行業/營收規模/利潤率與新聞摘要，每日寄送至：
             <span class="font-semibold underline decoration-blue-300/60 cursor-pointer" onclick="openSettingsModal()" id="header-recipient">joechen1579@gmail.com</span>
-            <button onclick="openSettingsModal()" class="ml-1.5 px-2 py-0.5 text-[11px] rounded bg-white/15 hover:bg-white/25 text-white font-semibold">
-              ➕ 新增/管理收件人
-            </button>
           </p>
         </div>
 
@@ -55,7 +51,7 @@
           <button onclick="openEmailModal()"
             class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold transition shadow-md">
             <span>✉️</span>
-            <span>預覽 / 寄送 Email</span>
+            <span>寄送 Email</span>
           </button>
 
           <button onclick="openSettingsModal()"
@@ -119,7 +115,6 @@
           <span id="stat-total" class="text-3xl font-extrabold text-slate-900">0</span>
           <span class="text-xs text-slate-500">檔標的</span>
         </div>
-        <div class="mt-1 text-xs text-slate-400">已自動排除歷史已開標案件</div>
       </div>
 
       <div class="bg-emerald-50/70 rounded-2xl p-4 border border-emerald-200 shadow-sm">
@@ -454,7 +449,7 @@
         if (res.ok) {
           const status = await res.json();
           isLocalServer = true;
-          envBadge.textContent = '🟢 本機互動伺服器模式';
+          envBadge.textContent = '';
           if (status.recipients && status.recipients.length > 0) {
             recipientList = status.recipients;
           }
