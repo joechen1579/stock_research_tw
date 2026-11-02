@@ -30,7 +30,6 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-semibold mb-2">
             <span>⚡ 每日自動追蹤未結束競拍</span>
-            <span id="env-badge">載入中...</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
             TWSE 台股競價拍賣摘要
@@ -532,7 +531,7 @@
         }
       } catch (e) {
         isLocalServer = false;
-        envBadge.textContent = '☁️ 雲端自動化模式 (GitHub Pages)';
+        envBadge.textContent = '';
         document.getElementById('cloud-sync-box').classList.remove('hidden');
         try {
           const cfgRes = await fetch('./config.json?t=' + Date.now(), { cache: 'no-store' });
