@@ -10,6 +10,10 @@ on:
         description: "選填：額外新增收件人 Email (多個請用逗號分隔，留空則依 config.json 設定寄送)"
         required: false
         default: ""
+      force_send:
+        description: "是否強制立即寄信？(true=無論有無異動皆寄信；false=僅在有新標的或狀態變動時寄信)"
+        required: false
+        default: "true"
 
 permissions:
   contents: write
@@ -27,24 +31,25 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 🔍 執行 TWSE 競拍爬蟲、公司基本面、新聞摘要與更新前端資料
+      - name: 🔍 執行 TWSE 競拍股票爬蟲、偵測狀態變動與更新前端資料（排除可轉債）
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DASHBOARD_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-        run: |
-          python3 main.py --run-once
-
-      - name: ✉️ 寄送競拍日報至所有設定的收件人信箱
-        env:
           GMAIL_USER: ${{ secrets.GMAIL_USER || 'joechen1579@gmail.com' }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           RECIPIENT_EMAIL: ${{ github.event.inputs.extra_recipients || secrets.RECIPIENT_EMAIL || '' }}
+          EVENT_NAME: ${{ github.event_name }}
+          FORCE_SEND: ${{ github.event.inputs.force_send || 'true' }}
         run: |
           if [ -z "$GMAIL_APP_PASSWORD" ]; then
             echo "⚠️ 尚未在 GitHub Secrets 設定 GMAIL_APP_PASSWORD，本次僅更新雲端網頁資料，略過寄信。"
-            echo "👉 請至 GitHub Repo -> Settings -> Secrets and variables -> Actions 新增 GMAIL_APP_PASSWORD。"
+            python3 main.py --run-once --only-stocks
+          elif [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$FORCE_SEND" = "true" ]; then
+            echo "🚀 手動觸發 (強制寄信模式)：更新股票競拍資料並立即寄送 Email..."
+            python3 main.py --run-once --only-stocks --send-email
           else
-            python3 -c "import json; from mailer import send_gmail_report; data = json.load(open('docs/data.json')); res = send_gmail_report(data); print(res); exit(0 if res.get('ok') else 1)"
+            echo "⏰ 自動排程 / 異動偵測模式：僅在出現『新競拍股票』或『狀態變動（如轉為投標進行中）』時才寄送 Email..."
+            python3 main.py --run-once --only-stocks --send-if-changed
           fi
 
       - name: 🌐 自動更新 GitHub Pages 前端資料 (docs/data.json & email_preview.html)

@@ -380,9 +380,12 @@ def fetch_company_profile_and_financials(
     return profile
 
 
-def fetch_twse_auctions(reference_date: Optional[datetime.date] = None) -> List[Dict[str, Any]]:
+def fetch_twse_auctions(
+    reference_date: Optional[datetime.date] = None,
+    only_stocks: bool = True,
+) -> List[Dict[str, Any]]:
     """
-    從 TWSE 抓取競價拍賣公告，並只保留「尚未結束競拍」的標的。
+    從 TWSE 抓取競價拍賣公告，並只保留「尚未結束競拍」的股票標的（預設排除可轉債 CB）。
     尚未結束競拍定義：
     - 取消競價拍賣欄位為空
     - 且 (投標結束日 >= 今日 OR 開標日期 >= 今日)
@@ -490,6 +493,8 @@ def fetch_twse_auctions(reference_date: Optional[datetime.date] = None) -> List[
         )
 
         is_cb = "債" in issue_type
+        if only_stocks and is_cb:
+            continue
         security_category = "可轉債 (CB)" if is_cb else "股票 (IPO/現增)"
         base_code = sec_code[:4] if is_cb and len(sec_code) >= 5 else sec_code
 
@@ -746,7 +751,7 @@ def _call_gemini_summary(
 def collect_active_auctions_with_news(
     gemini_api_key: Optional[str] = None,
     max_news_per_stock: int = 5,
-    only_stocks: bool = False,
+    only_stocks: bool = True,
 ) -> Dict[str, Any]:
     """
     一鍵執行：抓取 TWSE 未結束競拍 + 抓取公司介紹/營收規模/利潤率 + 搜尋各檔新聞 + 產生摘要。
@@ -754,9 +759,7 @@ def collect_active_auctions_with_news(
     tw_tz = datetime.timezone(datetime.timedelta(hours=8))
     now_tw = datetime.datetime.now(tw_tz)
 
-    auctions = fetch_twse_auctions(reference_date=now_tw.date())
-    if only_stocks:
-        auctions = [a for a in auctions if not a.get("is_cb")]
+    auctions = fetch_twse_auctions(reference_date=now_tw.date(), only_stocks=only_stocks)
 
     for auction in auctions:
         # 1. 抓取公司基本面介紹（行業、業務範圍、營收規模、毛利率/營益率/淨利率/EPS）

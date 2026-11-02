@@ -76,9 +76,22 @@ def build_email_subject(report_data: Dict[str, Any]) -> str:
     ref_date = report_data.get("reference_date", "")
     bidding = stats.get("bidding_count", 0)
     total = stats.get("total_active", 0)
+    changes = report_data.get("changes", {}) or {}
+    new_cnt = len(changes.get("new_items", []))
+    status_cnt = len(changes.get("status_changed_items", []))
+
+    if new_cnt > 0 or status_cnt > 0:
+        parts = []
+        if new_cnt > 0:
+            parts.append(f"🆕 新標的 {new_cnt} 檔")
+        if status_cnt > 0:
+            parts.append(f"🔔 狀態變動 {status_cnt} 檔")
+        change_tag = "、".join(parts)
+        return f"🔔【台股競拍異動通知】{ref_date}（{change_tag}｜共 {total} 檔追蹤中）"
+
     if bidding > 0:
-        return f"📈【台股競拍日報】{ref_date} 進行中競拍共 {total} 檔（🔥 {bidding} 檔投標進行中）"
-    return f"📊【台股競拍日報】{ref_date} 尚未結束競拍共 {total} 檔"
+        return f"📈【台股競拍日報】{ref_date} 進行中股票競拍共 {total} 檔（🔥 {bidding} 檔投標進行中）"
+    return f"📊【台股競拍日報】{ref_date} 尚未結束股票競拍共 {total} 檔"
 
 
 def render_email_html(
@@ -96,8 +109,25 @@ def render_email_html(
     )
     stats = report_data.get("stats", {})
     auctions = report_data.get("auctions", [])
+    changes = report_data.get("changes", {}) or {}
     recipient_list = recipients or get_configured_recipients()
     recipients_display = html.escape(", ".join(recipient_list))
+
+    change_banner_html = ""
+    change_summary_list = changes.get("summary_list", [])
+    if change_summary_list:
+        items_li = "".join(
+            f'<li style="margin-bottom:4px;font-weight:600;color:#9a3412;">{html.escape(line)}</li>'
+            for line in change_summary_list
+        )
+        change_banner_html = f"""
+        <div style="background:#fff7ed;border:1px solid #fdba74;border-left:5px solid #ea580c;border-radius:10px;padding:14px 16px;margin-bottom:20px;">
+            <div style="font-size:14px;font-weight:800;color:#9a3412;margin-bottom:6px;">🔔 本次競拍異動重點摘要</div>
+            <ul style="margin:0;padding-left:20px;font-size:13px;line-height:1.6;">
+                {items_li}
+            </ul>
+        </div>
+        """
 
     badge_styles = {
         "bidding": ("#065f46", "#d1fae5", "🟢 投標進行中"),
@@ -141,6 +171,14 @@ def render_email_html(
             open_date = html.escape(item.get("open_bid_date", ""))
             listing_date = html.escape(item.get("listing_date", ""))
             countdown = html.escape(item.get("countdown_text", ""))
+            change_tag_raw = item.get("change_badge", "")
+            change_badge_html = ""
+            if change_tag_raw:
+                change_badge_html = f"""
+                <span style="display:inline-block;background:#ffedd5;color:#c2410c;border:1px solid #fdba74;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;margin-right:6px;">
+                    {html.escape(change_tag_raw)}
+                </span>
+                """
             overview = html.escape(item.get("summary_overview", ""))
             news_digest = html.escape(item.get("summary_news_digest", ""))
             yahoo_url = html.escape(item.get("yahoo_url", "#"))
@@ -198,6 +236,7 @@ def render_email_html(
                 f"""
                 <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:20px;margin-bottom:18px;box-shadow:0 1px 3px rgba(0,0,0,0.03);">
                     <div style="border-bottom:1px solid #f1f5f9;padding-bottom:12px;margin-bottom:14px;">
+                        {change_badge_html}
                         <span style="display:inline-block;background:{bg_color};color:{fg_color};font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;margin-right:6px;">
                             {badge_text}
                         </span>
@@ -338,6 +377,8 @@ def render_email_html(
                 </td>
             </tr>
         </table>
+
+        {change_banner_html}
 
         <!-- Cards -->
         {"".join(cards_html)}

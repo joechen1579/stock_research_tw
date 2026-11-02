@@ -141,13 +141,13 @@
       </div>
 
       <div class="bg-indigo-50/70 rounded-2xl p-4 border border-indigo-200 shadow-sm">
-        <div class="text-xs font-bold text-indigo-800">📌 股票 IPO vs 可轉債</div>
+        <div class="text-xs font-bold text-indigo-800">🔔 本次異動偵測 (新標的 / 狀態變動)</div>
         <div class="mt-1 flex items-baseline gap-2">
-          <span class="text-xl font-extrabold text-indigo-700">股票 <span id="stat-ipo">0</span></span>
+          <span class="text-xl font-extrabold text-indigo-700">新標的 <span id="stat-ipo">0</span></span>
           <span class="text-slate-300">|</span>
-          <span class="text-xl font-extrabold text-slate-600">可轉債 <span id="stat-cb">0</span></span>
+          <span class="text-xl font-extrabold text-orange-600">狀態變動 <span id="stat-cb">0</span></span>
         </div>
-        <div class="mt-1 text-xs text-indigo-600/80">可於下方快速切換篩選</div>
+        <div class="mt-1 text-xs text-indigo-600/80">有新標的或狀態改變時自動寄信</div>
       </div>
     </div>
 
@@ -156,19 +156,15 @@
       <div class="flex flex-wrap items-center gap-1.5" id="filter-tabs">
         <button onclick="setFilter('all')" data-filter="all"
           class="filter-btn tab-active px-3.5 py-2 rounded-xl text-xs font-bold transition">
-          全部未結束競拍
+          全部未結束競拍股票
         </button>
         <button onclick="setFilter('bidding')" data-filter="bidding"
           class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
-          🟢 僅看投標進行中
+          🟢 投標進行中 / 即將開始
         </button>
         <button onclick="setFilter('waiting_open')" data-filter="waiting_open"
           class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
           🟡 已截標・待開標
-        </button>
-        <button onclick="setFilter('stock_only')" data-filter="stock_only"
-          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
-          🏢 僅看股票 (不含可轉債)
         </button>
       </div>
 
@@ -516,11 +512,12 @@
       document.getElementById('reference-date').textContent = globalData.reference_date || '--';
 
       const stats = globalData.stats || {};
+      const changes = globalData.changes || {};
       document.getElementById('stat-total').textContent = stats.total_active ?? 0;
       document.getElementById('stat-bidding').textContent = (stats.bidding_count ?? 0) + (stats.upcoming_count ?? 0);
       document.getElementById('stat-waiting').textContent = stats.waiting_open_count ?? 0;
-      document.getElementById('stat-ipo').textContent = stats.ipo_stock_count ?? 0;
-      document.getElementById('stat-cb').textContent = stats.cb_count ?? 0;
+      document.getElementById('stat-ipo').textContent = (changes.new_items || []).length;
+      document.getElementById('stat-cb').textContent = (changes.status_changed_items || []).length;
 
       renderCards();
     }
@@ -625,6 +622,7 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
               <div>
                 <div class="flex flex-wrap items-center gap-2 mb-2">
+                  ${item.change_badge ? `<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold bg-orange-100 text-orange-800 border border-orange-300">${item.change_badge}</span>` : ''}
                   <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold border ${badgeClass}">
                     ${badgeIcon} ${item.status_label}
                   </span>
@@ -999,7 +997,7 @@
         const newContent = JSON.stringify({
           recipients: recipientList,
           sender_email: senderEmail || 'joechen1579@gmail.com',
-          only_stocks: false
+          only_stocks: true
         }, null, 2) + '\n';
 
         const putRes = await fetch(apiUrl, {

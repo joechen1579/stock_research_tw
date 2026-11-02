@@ -3,12 +3,12 @@
   "reference_date": "2026/11/02",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
-    "total_active": 4,
+    "total_active": 2,
     "bidding_count": 1,
     "upcoming_count": 1,
-    "waiting_open_count": 2,
+    "waiting_open_count": 0,
     "ipo_stock_count": 2,
-    "cb_count": 2
+    "cb_count": 0
   },
   "auctions": [
     {

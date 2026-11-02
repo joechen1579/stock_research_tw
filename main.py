@@ -17,12 +17,20 @@ import datetime
 import json
 import mimetypes
 import os
+import sys
 import threading
 import time
 import webbrowser
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 from typing import Any, Dict, List
+
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 from mailer import (
     CONFIG_JSON_PATH,
@@ -65,7 +73,7 @@ def load_config_json() -> Dict[str, Any]:
     default_cfg = {
         "recipients": get_configured_recipients(),
         "sender_email": os.environ.get("GMAIL_USER", DEFAULT_RECIPIENT_EMAIL),
-        "only_stocks": False,
+        "only_stocks": True,
     }
     if CONFIG_JSON_PATH.exists():
         try:
@@ -82,7 +90,7 @@ def load_config_json() -> Dict[str, Any]:
     return default_cfg
 
 
-def save_config_json(recipients: List[str], sender_email: str = "", only_stocks: bool = False) -> Dict[str, Any]:
+def save_config_json(recipients: List[str], sender_email: str = "", only_stocks: bool = True) -> Dict[str, Any]:
     clean_recipients = parse_email_list(recipients) or [DEFAULT_RECIPIENT_EMAIL]
     cfg = load_config_json()
     cfg["recipients"] = clean_recipients
@@ -116,12 +124,83 @@ def save_dotenv_values(values: Dict[str, str]) -> None:
     ENV_FILE_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def update_all_artifacts(only_stocks: bool = False) -> Dict[str, Any]:
+def _auction_unique_key(item: Dict[str, Any]) -> str:
+    return f"{item.get('security_code', '')}_{item.get('bid_start_date', '')}_{item.get('open_bid_date', '')}"
+
+
+def detect_auction_changes(
+    old_auctions: List[Dict[str, Any]], new_auctions: List[Dict[str, Any]]
+) -> Dict[str, Any]:
+    """
+    比對上次儲存的競拍清單與最新爬取的競拍清單，找出：
+    1. 新增的競拍標的 (new_items)
+    2. 狀態發生變動的競拍標的 (status_changed_items)，例如「即將開始投標 -> 投標進行中」或「投標進行中 -> 已截標・待開標」
+    """
+    old_map: Dict[str, Dict[str, Any]] = {}
+    for item in old_auctions:
+        if item.get("is_cb"):
+            continue
+        old_map[_auction_unique_key(item)] = item
+
+    new_items: List[Dict[str, Any]] = []
+    status_changed_items: List[Dict[str, Any]] = []
+    summary_list: List[str] = []
+
+    for item in new_auctions:
+        key = _auction_unique_key(item)
+        name = item.get("security_name", "")
+        code = item.get("security_code", "")
+        new_status_code = item.get("status_code", "")
+        new_status_label = item.get("status_label", "")
+
+        if key not in old_map:
+            item["change_badge"] = "🆕 新增競拍標的"
+            new_items.append({"security_code": code, "security_name": name, "status_label": new_status_label})
+            summary_list.append(f"🆕 新增競拍標的：{name} ({code}) — 目前狀態「{new_status_label}」")
+        else:
+            prev = old_map[key]
+            old_status_code = prev.get("status_code", "")
+            old_status_label = prev.get("status_label", "")
+            if old_status_code != new_status_code:
+                item["change_badge"] = f"🔔 狀態變動：{old_status_label} ➔ {new_status_label}"
+                status_changed_items.append(
+                    {
+                        "security_code": code,
+                        "security_name": name,
+                        "old_status_code": old_status_code,
+                        "old_status_label": old_status_label,
+                        "new_status_code": new_status_code,
+                        "new_status_label": new_status_label,
+                    }
+                )
+                summary_list.append(
+                    f"🔔 狀態變動：{name} ({code}) 由「{old_status_label}」轉為「{new_status_label}」"
+                )
+
+    has_changes = bool(new_items or status_changed_items)
+    return {
+        "has_changes": has_changes,
+        "new_items": new_items,
+        "status_changed_items": status_changed_items,
+        "summary_list": summary_list,
+    }
+
+
+def update_all_artifacts(only_stocks: bool = True) -> Dict[str, Any]:
     """
     執行爬蟲、抓取公司基本面與財務數據、搜尋新聞、整理摘要，並輸出至 docs/data.json 與 docs/email_preview.html
     """
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     gemini_key = os.environ.get("GEMINI_API_KEY", "").strip() or None
+
+    # 先讀取舊的 docs/data.json 以供比對「新增標的」或「狀態變動」
+    previous_auctions: List[Dict[str, Any]] = []
+    if DATA_JSON_PATH.exists():
+        try:
+            old_data = json.loads(DATA_JSON_PATH.read_text(encoding="utf-8"))
+            previous_auctions = old_data.get("auctions", []) or []
+        except Exception:
+            previous_auctions = []
 
     # 同步 config.json 至 docs/config.json 供前端讀取
     cfg = load_config_json()
@@ -129,13 +208,17 @@ def update_all_artifacts(only_stocks: bool = False) -> Dict[str, Any]:
         json.dumps(cfg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
-    print("🔍 正在從臺灣證券交易所 (TWSE) 抓取最新「尚未結束競拍」公告、公司基本面與 Google 新聞...")
+    print("🔍 正在從臺灣證券交易所 (TWSE) 抓取最新「尚未結束競拍股票（不含可轉債）」公告、公司基本面與 Google 新聞...")
     report_data = collect_active_auctions_with_news(
         gemini_api_key=gemini_key,
         max_news_per_stock=5,
         only_stocks=only_stocks,
     )
     report_data["recipients"] = cfg["recipients"]
+
+    # 比對是否有新增標的或狀態變更
+    changes = detect_auction_changes(previous_auctions, report_data.get("auctions", []))
+    report_data["changes"] = changes
 
     DATA_JSON_PATH.write_text(
         json.dumps(report_data, ensure_ascii=False, indent=2),
@@ -149,9 +232,15 @@ def update_all_artifacts(only_stocks: bool = False) -> Dict[str, Any]:
     EMAIL_PREVIEW_PATH.write_text(email_html, encoding="utf-8")
 
     print(
-        f"✅ 資料更新完成！共整理 {report_data['stats']['total_active']} 檔尚未結束競拍標的 "
+        f"✅ 資料更新完成！共整理 {report_data['stats']['total_active']} 檔尚未結束競拍股票 "
         f"(已寫入 {DATA_JSON_PATH.name} 與 {EMAIL_PREVIEW_PATH.name})"
     )
+    if changes["has_changes"]:
+        print("🔔 偵測到競拍異動：")
+        for line in changes["summary_list"]:
+            print(f"   - {line}")
+    else:
+        print("ℹ️ 本次檢查無新增競拍標的，且既有標的狀態皆無變動。")
     return report_data
 
 
@@ -303,7 +392,8 @@ class AuctionDashboardHandler(BaseHTTPRequestHandler):
 
 def start_daily_background_scheduler(daily_time_str: str = "08:30") -> None:
     """
-    本機背景定時器：若電腦開著伺服器，每天於指定台灣時間 (預設 08:30) 自動更新並寄信。
+    本機背景定時器：若電腦開著伺服器，每天於指定台灣時間 (預設 08:30) 自動更新；
+    僅在有「新增競拍標的」或「狀態變動（如：即將開始 -> 投標進行中）」時才自動寄信。
     """
     def _worker() -> None:
         last_run_date = None
@@ -313,10 +403,13 @@ def start_daily_background_scheduler(daily_time_str: str = "08:30") -> None:
             hhmm = now_tw.strftime("%H:%M")
             if hhmm == daily_time_str and last_run_date != now_tw.date():
                 last_run_date = now_tw.date()
-                print(f"⏰ [每日定時任務] {now_tw.isoformat()} 開始自動更新競拍與寄送日報...")
+                print(f"⏰ [每日定時任務] {now_tw.isoformat()} 開始自動檢查競拍股票異動...")
                 try:
-                    data = update_all_artifacts()
-                    if os.environ.get("GMAIL_APP_PASSWORD"):
+                    data = update_all_artifacts(only_stocks=True)
+                    changes = data.get("changes", {}) or {}
+                    if not changes.get("has_changes"):
+                        print("ℹ️ [每日定時任務] 今日無新標的或狀態變動，略過寄信。")
+                    elif os.environ.get("GMAIL_APP_PASSWORD"):
                         res = send_gmail_report(data)
                         print(f"✉️ [每日定時寄信結果] {res}")
                 except Exception as e:
@@ -339,12 +432,23 @@ def main() -> None:
     parser.add_argument(
         "--send-email",
         action="store_true",
-        help="執行完爬蟲後立即透過 Gmail SMTP 寄送日報至所有設定的收件人信箱",
+        help="執行完爬蟲後立即透過 Gmail SMTP 寄送日報至所有設定的收件人信箱（強制寄信）",
+    )
+    parser.add_argument(
+        "--send-if-changed",
+        action="store_true",
+        help="僅在偵測到「新增競拍標的」或「狀態變動（如變為可投標）」時才寄送 Email",
     )
     parser.add_argument(
         "--only-stocks",
         action="store_true",
-        help="僅保留股票競拍（排除轉換公司債 CB）",
+        default=True,
+        help="僅保留股票競拍（預設啟用，排除轉換公司債 CB）",
+    )
+    parser.add_argument(
+        "--include-cb",
+        action="store_true",
+        help="若指定此參數才包含轉換公司債 (預設僅抓取股票，不抓可轉債)",
     )
     parser.add_argument(
         "--port",
@@ -358,9 +462,10 @@ def main() -> None:
         help="啟動伺服器時不自動開啟瀏覽器視窗",
     )
     args = parser.parse_args()
+    only_stocks = not args.include_cb
 
     try:
-        report_data = update_all_artifacts(only_stocks=args.only_stocks)
+        report_data = update_all_artifacts(only_stocks=only_stocks)
     except Exception as e:
         if not args.run_once and DATA_JSON_PATH.exists():
             print(f"[WARN] 啟動時連線更新失敗 ({e})，先載入現有快取資料 docs/data.json")
@@ -368,8 +473,19 @@ def main() -> None:
         else:
             raise
 
+    changes = report_data.get("changes", {}) or {}
+    should_send = False
     if args.send_email:
-        result = send_gmail_report(report_data)
+        should_send = True
+    elif args.send_if_changed:
+        if changes.get("has_changes"):
+            should_send = True
+        else:
+            print("ℹ️ 本次排程檢查無新增標的或競拍狀態變動，因此不寄送 Email。")
+
+    if should_send:
+        dashboard_url = os.environ.get("DASHBOARD_URL", "").strip()
+        result = send_gmail_report(report_data, dashboard_url=dashboard_url)
         if result.get("ok"):
             print(f"🎉 {result['message']}")
         else:
