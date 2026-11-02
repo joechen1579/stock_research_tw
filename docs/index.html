@@ -523,44 +523,41 @@
       const envBadge = document.getElementById('env-badge');
       const savedToken = localStorage.getItem('gh_pat_token') || '';
       if (savedToken) {
-        document.getElementById('cfg-gh-token').value = savedToken;
+        const ghTokenInput = document.getElementById('cfg-gh-token');
+        if (ghTokenInput) ghTokenInput.value = savedToken;
       }
 
       // 預設一律為「訪客唯讀模式 (isAdmin = false)」，需點擊右上角「🔒 管理員登入」驗證後才解鎖
       isAdmin = false;
+      const isLocalHost = (location.hostname === 'localhost' || location.hostname === '127.0.0.1');
 
-      try {
-        const res = await fetch('/api/status', { cache: 'no-store' });
-        if (res.ok) {
-          const status = await res.json();
-          isLocalServer = true;
-          if (envBadge) {envBadge.textContent = '';}
-          if (status.recipients && status.recipients.length > 0) {
-            recipientList = status.recipients;
+      if (isLocalHost) {
+        try {
+          const res = await fetch('/api/status', { cache: 'no-store' });
+          if (res.ok) {
+            const status = await res.json();
+            isLocalServer = true;
+            if (envBadge) { envBadge.textContent = ''; }
+            if (status.recipients && status.recipients.length > 0) {
+              recipientList = status.recipients;
+            }
+            if (status.sender_email) {
+              document.getElementById('cfg-sender').value = status.sender_email;
+            }
+            if (status.sinotrade_id) {
+              document.getElementById('cfg-sinotrade-id').value = status.sinotrade_id;
+            }
+          } else {
+            isLocalServer = false;
           }
-          if (status.sender_email) {
-            document.getElementById('cfg-sender').value = status.sender_email;
-          }
-          if (status.sinotrade_id) {
-            document.getElementById('cfg-sinotrade-id').value = status.sinotrade_id;
-          }
-        } else {
-          throw new Error('Static host');
+        } catch (e) {
+          isLocalServer = false;
         }
-      } catch (e) {
+      } else {
         isLocalServer = false;
         if (envBadge) { envBadge.textContent = ''; }
         const cloudSyncBox = document.getElementById('cloud-sync-box');
         if (cloudSyncBox) { cloudSyncBox.classList.remove('hidden'); }
-        try {
-          const cfgRes = await fetch('./config.json?t=' + Date.now(), { cache: 'no-store' });
-          if (cfgRes.ok) {
-            const cfg = await cfgRes.json();
-            if (cfg.recipients && cfg.recipients.length > 0) {
-              recipientList = cfg.recipients;
-            }
-          }
-        } catch (_) {}
       }
 
       updateAdminUI();
