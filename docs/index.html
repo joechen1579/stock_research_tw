@@ -32,7 +32,7 @@
             TWSE 台股競價拍賣摘要
           </h1>
           <p class="text-blue-100/85 text-sm mt-1">
-            自動篩選「尚未結束競拍」股票標的，整合公司行業/營收規模/利潤率與新聞摘要
+            自動篩選「尚未結束競拍」股票標的，整合公司行業/營收規模/利潤率與新聞摘要<br>每日 8:30 自動更新，若有新增則寄送email通知
           </p>
         </div>
 
@@ -516,7 +516,7 @@
         if (res.ok) {
           const status = await res.json();
           isLocalServer = true;
-          envBadge.textContent = '';
+          if (envBadge) {envBadge.textContent = '';}
           if (status.recipients && status.recipients.length > 0) {
             recipientList = status.recipients;
           }
@@ -543,6 +543,9 @@
 
       updateAdminUI();
       await loadAuctionData();
+      if (isLocalServer) {
+        triggerRefresh();
+      }
     }
 
     async function loadAuctionData() {
