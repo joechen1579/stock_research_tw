@@ -36,8 +36,7 @@
             TWSE 台股競價拍賣摘要
           </h1>
           <p class="text-blue-100/85 text-sm mt-1">
-            自動篩選「尚未結束競拍」標的，整合公司行業/營收規模/利潤率與新聞摘要，每日寄送至：
-            <span class="font-semibold underline decoration-blue-300/60 cursor-pointer" onclick="openSettingsModal()" id="header-recipient">joechen1579@gmail.com</span>
+            自動篩選「尚未結束競拍」股票標的，整合公司行業/營收規模/利潤率與新聞摘要
           </p>
         </div>
 
@@ -48,15 +47,16 @@
             <span id="refresh-text">立即更新爬蟲</span>
           </button>
 
-          <button onclick="openEmailModal()"
-            class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold transition shadow-md">
+          <button id="btn-open-email" onclick="openEmailModal()"
+            class="hidden items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-bold transition shadow-md">
             <span>✉️</span>
-            <span>寄送 Email</span>
+            <span>預覽 / 寄送 Email</span>
           </button>
 
-          <button onclick="openSettingsModal()"
+          <button id="btn-admin-settings" onclick="openSettingsModal()"
             class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-slate-800/60 hover:bg-slate-800/90 border border-white/15 text-slate-200 text-sm font-medium transition">
-            <span>📬 收件人與雲端設定</span>
+            <span id="admin-btn-icon">🔒</span>
+            <span id="admin-btn-text">管理員登入</span>
           </button>
         </div>
       </div>
@@ -89,23 +89,6 @@
 
   <!-- Main Content -->
   <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 flex-1">
-
-    <!-- Quick Recipient Bar -->
-    <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-      <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs font-bold text-slate-700">📬 每日自動寄送收件人清單：</span>
-        <div id="banner-recipient-chips" class="flex flex-wrap items-center gap-1.5"></div>
-      </div>
-      <div class="flex items-center gap-2">
-        <input id="quick-email-input" type="email" placeholder="輸入新 Email (如 abc@gmail.com)"
-          onkeydown="if(event.key==='Enter'){addRecipientFromQuickInput();}"
-          class="px-3 py-1.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 w-56" />
-        <button onclick="addRecipientFromQuickInput()"
-          class="px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shrink-0">
-          ➕ 新增信箱
-        </button>
-      </div>
-    </div>
 
     <!-- KPI Cards -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
@@ -223,83 +206,106 @@
     </div>
   </div>
 
-  <!-- Settings & Multi-Recipient Modal -->
+  <!-- Settings & Multi-Recipient Modal (Admin Protected) -->
   <div id="settings-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
       <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
-        <h3 class="font-bold text-base">📬 收件人信箱管理 ＆ 雲端自動寄信設定</h3>
+        <h3 class="font-bold text-base flex items-center gap-2">
+          <span id="settings-modal-title">🔒 管理員驗證 ＆ 收件人信箱設定</span>
+        </h3>
         <button onclick="closeSettingsModal()" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
       </div>
 
       <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700">
-        <!-- Multi-Recipient Manager -->
-        <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200 space-y-3">
-          <div class="font-bold text-slate-900 flex items-center justify-between">
-            <span>📬 收件人 Email 清單（支援多位收件人同時收信）</span>
-            <span id="recipient-count-badge" class="px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs">1 位</span>
+        <!-- Admin Login Box (Shown when not authenticated as Admin) -->
+        <div id="admin-login-panel" class="bg-amber-50/80 p-5 rounded-xl border border-amber-200 space-y-3">
+          <div class="font-bold text-amber-950 text-base flex items-center gap-2">
+            <span>🛡️ 管理員密碼驗證</span>
           </div>
-
-          <div id="modal-recipient-chips" class="flex flex-wrap gap-2 py-1"></div>
-
-          <div class="flex gap-2">
-            <input id="new-recipient-input" type="email" placeholder="輸入要新增的 Email 地址，例如 friend@gmail.com"
-              onkeydown="if(event.key==='Enter'){event.preventDefault();addRecipientFromModal();}"
-              class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button onclick="addRecipientFromModal()"
-              class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition">
-              ➕ 加入清單
+          <p class="text-xs text-amber-900 leading-relaxed">
+            為防止一般訪客隨意新增或修改收件人信箱，請輸入<strong>管理員密碼</strong>以解鎖收件人管理與寄信功能。
+          </p>
+          <div class="flex flex-col sm:flex-row gap-2 pt-1">
+            <input id="admin-password-input" type="password" placeholder="請輸入管理員密碼..."
+              onkeydown="if(event.key==='Enter'){event.preventDefault();verifyAdminPassword();}"
+              class="flex-1 px-3 py-2 text-xs rounded-lg border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            <button id="btn-verify-admin" onclick="verifyAdminPassword()"
+              class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition shrink-0">
+              🔑 驗證並解鎖管理員
             </button>
           </div>
-          <p class="text-[11px] text-slate-500">
-            提示：您可以加入多個信箱（亦可直接用逗號分隔多個 Email 一次貼上），按下方「儲存設定」即可生效。
-          </p>
         </div>
 
-        <!-- Local / Cloud SMTP Config -->
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
-          <div class="font-bold text-slate-900">🔐 Gmail 寄件帳號與選用設定</div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1">寄件 Gmail 帳號</label>
-              <input id="cfg-sender" type="email" value="joechen1579@gmail.com"
-                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+        <!-- Admin Controls Wrapper (Hidden until isAdmin === true) -->
+        <div id="admin-controls-panel" class="hidden space-y-6">
+          <!-- Multi-Recipient Manager -->
+          <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200 space-y-3">
+            <div class="font-bold text-slate-900 flex items-center justify-between">
+              <span>📬 收件人 Email 清單（僅管理員可新增/移除）</span>
+              <span id="recipient-count-badge" class="px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs">1 位</span>
+            </div>
+
+            <div id="modal-recipient-chips" class="flex flex-wrap gap-2 py-1"></div>
+
+            <div class="flex gap-2">
+              <input id="new-recipient-input" type="email" placeholder="輸入要新增的 Email 地址，例如 friend@gmail.com"
+                onkeydown="if(event.key==='Enter'){event.preventDefault();addRecipientFromModal();}"
+                class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <button onclick="addRecipientFromModal()"
+                class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition">
+                ➕ 加入清單
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-500">
+              提示：您可以加入多個信箱（亦可直接用逗號分隔多個 Email 一次貼上），按下方「儲存設定」即可同步寫入。
+            </p>
+          </div>
+
+          <!-- Local / Cloud SMTP Config -->
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+            <div class="font-bold text-slate-900">🔐 Gmail 寄件帳號與管理員金鑰設定</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">寄件 Gmail 帳號</label>
+                <input id="cfg-sender" type="email" value="joechen1579@gmail.com"
+                  class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">
+                  Google 應用程式密碼 (16 碼)
+                  <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-blue-600 underline ml-1">免費申請 ↗</a>
+                </label>
+                <input id="cfg-app-password" type="password" placeholder="本機寄信填此；雲端填在 GitHub Secrets"
+                  class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
+              </div>
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-600 mb-1">
-                Google 應用程式密碼 (16 碼)
-                <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-blue-600 underline ml-1">免費申請 ↗</a>
+                Gemini API Key（選填，不填則自動使用內建智慧摘要）
               </label>
-              <input id="cfg-app-password" type="password" placeholder="本機寄信填此；雲端填在 GitHub Secrets"
+              <input id="cfg-gemini-key" type="password" placeholder="選填：AIzaSy..."
                 class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
             </div>
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">
-              Gemini API Key（選填，不填則自動使用內建智慧摘要）
-            </label>
-            <input id="cfg-gemini-key" type="password" placeholder="選填：AIzaSy..."
-              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
-          </div>
 
-          <!-- Cloud GitHub Direct Sync (Always visible for cloud workflow trigger & sync) -->
-          <div id="cloud-sync-box" class="pt-3 border-t border-slate-200 space-y-2">
-            <div class="text-xs font-bold text-indigo-900 flex items-center justify-between">
-              <span>☁️ 雲端 GitHub Pages 直接觸發寄信 & 同步設定</span>
-              <a href="https://github.com/settings/tokens/new?description=TWSE-Auction-Cloud-Trigger&scopes=repo,workflow" target="_blank"
-                 class="text-blue-600 underline font-semibold">點此一鍵產生 GitHub Token ↗</a>
+            <!-- Cloud GitHub Direct Sync -->
+            <div id="cloud-sync-box" class="pt-3 border-t border-slate-200 space-y-2">
+              <div class="text-xs font-bold text-indigo-900 flex items-center justify-between">
+                <span>☁️ 管理員 GitHub Token (用於雲端同步收件人 & 一鍵寄信)</span>
+              </div>
+              <input id="cfg-gh-token" type="password" placeholder="貼上 ghp_xxxx"
+                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
             </div>
-            <p class="text-[11px] text-slate-600">
-              若在雲端網頁 (`github.io`) 點擊「立即寄送」想直接觸發 GitHub 雲端寄信（使用您設定好的 GitHub Secrets），請填入您的 <strong>GitHub Personal Access Token</strong>（需勾選 <code>repo</code> 與 <code>workflow</code> 權限，僅保存在您的瀏覽器中）。
-            </p>
-            <input id="cfg-gh-token" type="password" placeholder="貼上 ghp_xxxx (填入後即可在雲端網頁一鍵直接寄信與同步收件人)"
-              class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
-          </div>
 
-          <div class="flex justify-end gap-2 pt-2">
-            <button onclick="saveConfig()"
-              class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm">
-              💾 儲存收件人與設定
-            </button>
+            <div class="flex items-center justify-between gap-2 pt-2">
+              <button onclick="logoutAdmin()"
+                class="px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold transition">
+                🔒 鎖定管理員權限 (切換回訪客視角)
+              </button>
+              <button onclick="saveConfig()"
+                class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm">
+                💾 儲存收件人與設定
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -314,7 +320,60 @@
     let globalData = null;
     let currentFilter = 'all';
     let isLocalServer = false;
+    let isAdmin = false;
     let recipientList = ['joechen1579@gmail.com'];
+
+    function updateAdminUI() {
+      const btnOpenEmail = document.getElementById('btn-open-email');
+      const adminBtnIcon = document.getElementById('admin-btn-icon');
+      const adminBtnText = document.getElementById('admin-btn-text');
+      const adminLoginPanel = document.getElementById('admin-login-panel');
+      const adminControlsPanel = document.getElementById('admin-controls-panel');
+      const settingsModalTitle = document.getElementById('settings-modal-title');
+
+      if (isAdmin) {
+        btnOpenEmail.classList.remove('hidden');
+        btnOpenEmail.classList.add('inline-flex');
+        adminBtnIcon.textContent = '👑';
+        adminBtnText.textContent = '管理員設定';
+        adminLoginPanel.classList.add('hidden');
+        adminControlsPanel.classList.remove('hidden');
+        settingsModalTitle.textContent = '👑 管理員收件人信箱管理 ＆ 雲端自動寄信設定';
+      } else {
+        btnOpenEmail.classList.add('hidden');
+        btnOpenEmail.classList.remove('inline-flex');
+        adminBtnIcon.textContent = '🔒';
+        adminBtnText.textContent = '管理員登入';
+        adminLoginPanel.classList.remove('hidden');
+        adminControlsPanel.classList.add('hidden');
+        settingsModalTitle.textContent = '🔒 管理員身分驗證';
+      }
+      renderRecipientChips();
+    }
+
+    function verifyAdminPassword() {
+      const input = document.getElementById('admin-password-input');
+      const pwd = input.value;
+      if (!pwd) {
+        showToast('請輸入管理員密碼！', 'error');
+        return;
+      }
+      if (pwd === 'lucky1959') {
+        isAdmin = true;
+        input.value = '';
+        updateAdminUI();
+        showToast('👑 管理員密碼驗證成功！已解鎖收件人管理與寄信功能。', 'success');
+      } else {
+        showToast('❌ 密碼錯誤，請重新輸入！', 'error');
+      }
+    }
+
+    function logoutAdmin() {
+      isAdmin = false;
+      updateAdminUI();
+      closeSettingsModal();
+      showToast('🔒 已鎖定管理員權限，目前已切換為一般訪客唯讀視角。', 'info');
+    }
 
     let toastTimer = null;
     function showToast(msg, type = 'info', allowHtml = false) {
@@ -366,19 +425,16 @@
     }
 
     function renderRecipientChips() {
-      const headerEl = document.getElementById('header-recipient');
       const modalEl = document.getElementById('modal-recipient');
       const countBadge = document.getElementById('recipient-count-badge');
-      const bannerChips = document.getElementById('banner-recipient-chips');
       const modalChips = document.getElementById('modal-recipient-chips');
 
       if (recipientList.length === 0) {
         recipientList = ['joechen1579@gmail.com'];
       }
 
-      headerEl.textContent = recipientList.join(', ');
-      modalEl.textContent = recipientList.join(', ');
-      countBadge.textContent = `${recipientList.length} 位`;
+      if (modalEl) modalEl.textContent = recipientList.join(', ');
+      if (countBadge) countBadge.textContent = `${recipientList.length} 位`;
 
       const chipHtml = recipientList.map((email, idx) => `
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
@@ -387,8 +443,7 @@
         </span>
       `).join('');
 
-      bannerChips.innerHTML = chipHtml;
-      modalChips.innerHTML = chipHtml;
+      if (modalChips) modalChips.innerHTML = chipHtml;
     }
 
     function addEmailsToList(rawStr) {
@@ -409,6 +464,11 @@
     }
 
     async function addRecipientFromQuickInput() {
+      if (!isAdmin) {
+        showToast('🔒 請先登入管理員權限才能新增收件人！', 'error');
+        openSettingsModal();
+        return;
+      }
       const input = document.getElementById('quick-email-input');
       const val = input.value.trim();
       if (!val) return;
@@ -420,6 +480,10 @@
     }
 
     function addRecipientFromModal() {
+      if (!isAdmin) {
+        showToast('🔒 請先登入管理員權限才能新增收件人！', 'error');
+        return;
+      }
       const input = document.getElementById('new-recipient-input');
       const val = input.value.trim();
       if (!val) return;
@@ -428,6 +492,10 @@
     }
 
     async function removeRecipient(idx) {
+      if (!isAdmin) {
+        showToast('🔒 請先登入管理員權限才能移除收件人！', 'error');
+        return;
+      }
       if (recipientList.length <= 1) {
         showToast('請至少保留一位收件人！', 'error');
         return;
@@ -443,6 +511,9 @@
       if (savedToken) {
         document.getElementById('cfg-gh-token').value = savedToken;
       }
+
+      // 預設一律為「訪客唯讀模式 (isAdmin = false)」，需點擊右上角「🔒 管理員登入」驗證後才解鎖
+      isAdmin = false;
 
       try {
         const res = await fetch('/api/status', { cache: 'no-store' });
@@ -474,7 +545,7 @@
         } catch (_) {}
       }
 
-      renderRecipientChips();
+      updateAdminUI();
       await loadAuctionData();
     }
 

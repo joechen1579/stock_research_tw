@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-02 13:39:44 (TST)",
+  "updated_at": "2026-11-02 13:55:48 (TST)",
   "reference_date": "2026/11/02",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
-    "total_active": 2,
+    "total_active": 3,
     "bidding_count": 1,
-    "upcoming_count": 1,
+    "upcoming_count": 2,
     "waiting_open_count": 0,
-    "ipo_stock_count": 2,
+    "ipo_stock_count": 3,
     "cb_count": 0
   },
   "auctions": [
@@ -91,19 +91,19 @@
           "snippet": ""
         },
         {
-          "title": "騏億鑫競拍登場 營運爆發式成長",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wRHpESE1RNmMwZUltODJzYk9wMEZYOXBLOXJOWHZqMFd4Z3VKQ0NuamJTWTF5cjljVThlR0xYSlVpYkMtaVlvTHYwWDRuMTZu0gFWQVVfeXFMTW5GRkNuTF9zdF94T2VLVkREX3MyS2NyaGR4NE1BUVpXLUpVZ3poRnA5LVlrMFd6UVF4TDBJNjVMZVVkNy1pNjVyMl9fWjJfMWk2R1pTM2c?oc=5",
-          "source": "UDN",
-          "published_at": "2026/10/29 11:41",
-          "sort_time": "2026-10-29T11:41:57+08:00",
-          "snippet": ""
-        },
-        {
           "title": "騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑",
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9WMk5mam5XYkxraWxPb18wQmw1cVAycHhOZ2pIVlVVQ0RXY0dYME0tanA4cDlENmtHTFJHYkRIbXhyejU2eUlzWTdpTjFZMjg?oc=5",
           "source": "鉅亨網",
           "published_at": "2026/10/29 10:47",
           "sort_time": "2026-10-29T10:47:23+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "騏億鑫10/30起競拍 底價210元",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1RTVRkQkR4S0ZxenNJTUtqWFFjWTdRY09OUWN1LXY3LXNjQWZISTI4VzNWRDlSaUpIUGdUV1NfcmVILTBZSDVZQ3hCcG80R1A1ZS11UWluRnF4QdIBX0FVX3lxTE15UXloRVlYWm5mSE5vTHRLQ2VJcDNxa251MW1ZajhfckJqQVdjZ0tYQmFvN2k3QlpYSDVRekxQZnNobF8zWDB3UHlxTVNnamk4Y3loRkYzMDZGYjdzOFA4?oc=5",
+          "source": "經濟日報",
+          "published_at": "2026/10/29 10:30",
+          "sort_time": "2026-10-29T10:30:29+08:00",
           "snippet": ""
         },
         {
@@ -116,7 +116,7 @@
         }
       ],
       "summary_overview": "【騏億鑫 (7848)】為櫃檯買賣之「初上櫃」競拍案，由永豐金證券主辦。本次競拍數量共 3,060 張，最低投標底價為 210 元（每標單最低預估保證金加處理費約 NT$ 105,400 元）。投標期間為 2026/10/30 至 2026/11/03，預計於 2026/11/05 開標、2026/11/16 撥券掛牌。",
-      "summary_news_digest": "綜合 自由財經、Yahoo股市、UDN 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫競拍登場 營運爆發式成長（UDN）；(4) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）。",
+      "summary_news_digest": "綜合 自由財經、Yahoo股市、鉅亨網 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）；(4) 騏億鑫10/30起競拍 底價210元（經濟日報）。",
       "summary_mode": "extractive"
     },
     {
@@ -155,31 +155,31 @@
         "base_code": "4565",
         "base_name": "宏偉",
         "industry": "櫃檯買賣企業",
-        "business_scope": "",
-        "revenue_mix": "",
+        "business_scope": "電梯57.05%、修繕及保養42.95% (2025年)",
+        "revenue_mix": "電梯57.05%、修繕及保養42.95% (2025年)",
         "capital_text": "",
-        "chairman": "",
-        "founded_date": "",
-        "website": "",
+        "chairman": "黃埮城",
+        "founded_date": "68/02/05",
+        "website": "http://www.volbin.com/",
         "profit_period": "",
-        "gross_margin": "",
-        "operating_margin": "",
-        "pretax_margin": "",
-        "roe": "",
-        "roa": "",
-        "bps": "",
-        "debt_ratio": "",
-        "latest_month_label": "",
-        "latest_month_revenue": "",
-        "latest_month_yoy": "",
-        "accumulated_revenue": "",
-        "accumulated_yoy": "",
+        "gross_margin": "N/A",
+        "operating_margin": "N/A",
+        "pretax_margin": "N/A",
+        "roe": "N/A",
+        "roa": "N/A",
+        "bps": "N/A",
+        "debt_ratio": "N/A",
+        "latest_month_label": "115/09",
+        "latest_month_revenue": "2.43 億元",
+        "latest_month_yoy": "78.74%",
+        "accumulated_revenue": "15.33 億元",
+        "accumulated_yoy": "17.71%",
         "latest_quarter_label": "",
         "latest_quarter_revenue": "",
         "latest_quarter_net_income": "",
         "latest_quarter_eps": "",
         "recent_4q_eps": "",
-        "summary_text": "【產業與業務】宏偉（4565）隸屬於「櫃檯買賣企業」，從事相關專業製造與服務業務。"
+        "summary_text": "【產業與業務】宏偉（4565）隸屬於「櫃檯買賣企業」，主要經營業務為「電梯57.05%、修繕及保養42.95% (2025年)」。 【營收規模】最新 (115/09) 單月營收約 2.43 億元（年增率 78.74%）；當年度累計營收達 15.33 億元（累計年增率 17.71%）。"
       },
       "news": [
         {
@@ -226,11 +226,121 @@
       "summary_overview": "【宏偉 (4565)】為櫃檯買賣之「初上櫃」競拍案，由中國信託證券主辦。本次競拍數量共 5,617 張，最低投標底價為 75 元（每標單最低預估保證金加處理費約 NT$ 37,900 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
       "summary_news_digest": "綜合 Yahoo股市、中時新聞網、工商時報 等共 5 則近期新聞焦點：(1) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河（Yahoo股市）；(2) 中國信託證券輔導 宏偉辦上櫃前業績發表（中時新聞網）；(3) 中國信託證券輔導宏偉辦上櫃前業績發表- 日報（工商時報）；(4) 陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉（臺南市政府全球資訊網）。",
       "summary_mode": "extractive"
+    },
+    {
+      "security_name": "耐特",
+      "security_code": "8058",
+      "base_code": "8058",
+      "market": "集中交易市場",
+      "issue_type": "初上市",
+      "security_category": "股票 (IPO/現增)",
+      "is_cb": false,
+      "auction_method": "美國標",
+      "bid_start_date": "2026/11/04",
+      "bid_end_date": "2026/11/06",
+      "open_bid_date": "2026/11/10",
+      "listing_date": "2026/11/19",
+      "auction_quantity": "4,896",
+      "min_price": "62.5",
+      "min_bid_quantity": "1",
+      "max_bid_quantity": "612",
+      "margin_percentage": "50",
+      "processing_fee": "400",
+      "underwriter": "兆豐",
+      "award_fee_rate": "5",
+      "total_award_amount": "0",
+      "status_code": "upcoming",
+      "status_label": "即將開始投標",
+      "days_left": 2,
+      "countdown_text": "距離開始投標還有 2 天",
+      "estimated_min_bid_value": 62500,
+      "estimated_min_margin": 31650,
+      "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
+      "yahoo_url": "https://tw.stock.yahoo.com/quote/8058",
+      "goodinfo_url": "https://goodinfo.tw/tw/StockBzPerformance.asp?STOCK_ID=8058",
+      "moneydj_url": "https://justdata.moneydj.com/z/zc/zca/zca_8058.djhtm",
+      "company_profile": {
+        "base_code": "8058",
+        "base_name": "耐特",
+        "industry": "集中交易市場企業",
+        "business_scope": "",
+        "revenue_mix": "",
+        "capital_text": "",
+        "chairman": "",
+        "founded_date": "",
+        "website": "",
+        "profit_period": "",
+        "gross_margin": "",
+        "operating_margin": "",
+        "pretax_margin": "",
+        "roe": "",
+        "roa": "",
+        "bps": "",
+        "debt_ratio": "",
+        "latest_month_label": "",
+        "latest_month_revenue": "",
+        "latest_month_yoy": "",
+        "accumulated_revenue": "",
+        "accumulated_yoy": "",
+        "latest_quarter_label": "",
+        "latest_quarter_revenue": "",
+        "latest_quarter_net_income": "",
+        "latest_quarter_eps": "",
+        "recent_4q_eps": "",
+        "summary_text": "【產業與業務】耐特（8058）隸屬於「集中交易市場企業」，從事相關專業製造與服務業務。"
+      },
+      "news": [
+        {
+          "title": "耐特半導體材料占比逼近兩成 IC Tray、BBU 添成長動能",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5jMFpVTUhscDM5VmtGdjJ6RDB3cGtHOElKT3N6VUFua2FhdW1OOXhkN28yTXQwTjI3ZnRpc25yWVJEQ252VW1PWl91Vmo4Njc4bERtbE15WnN1Z9IBX0FVX3lxTE1GVFk2WTJFQzZVcVJrWUFHLVAtTG45clhwekxjZC1IRnZJaGZZcmFtc2tCRlEtUFpVZ05odE96TWhnYlZ3YzRtbWkxc1lqTkk2Zi04bkdpZkxKNU1pNV9v?oc=5",
+          "source": "經濟日報",
+          "published_at": "2026/11/01 16:00",
+          "sort_time": "2026-11-01T16:00:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "耐特11月下旬上市三大高階應用點火- 日報",
+          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5KM0dvVWR1eU1kM0pMSlF4UG5kWDF2Q1JpS2EzMkd0UElyYVl1YmxtUXFMM1liUGNyMEJWbDJlRWQyQVk1bmd6M3hNR3hmT2xkQ292b1BMTkNVdHNwQzRR?oc=5",
+          "source": "工商時報",
+          "published_at": "2026/10/30 03:00",
+          "sort_time": "2026-10-30T03:00:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "耐特(8058)做什麼的？從滑雪靴支架到晶圓載具，如何打進家登？",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5zdU4tcTY3dWM1bDdxcjNTWl91YW55bzNFakpfcG0wQWs1bUxSSXlxcTh4OS1Sd1kzS1Q0bmtRal90RHhoY24wZk9mMTFHUy14NUI2Z1VVdER5eUxOYUx1Q3hMTDNJLXA5UHMwOURZcTNKbHZEbmxqVWdB?oc=5",
+          "source": "數位時代",
+          "published_at": "2026/10/29 16:59",
+          "sort_time": "2026-10-29T16:59:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "耐特預計11月中下旬掛牌上市 三大高階應用動能強明年營收估增10-15%",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9ReVczdEQ0WVVHZ3JwZlJwb1NQcXhTUkhfMEl0a0pSUnhSaUFldGU0WU9rNE5qdlNic1pTTGlfYzdHZDBieTJWSFVKZw?oc=5",
+          "source": "鉅亨網",
+          "published_at": "2026/10/29 16:10",
+          "sort_time": "2026-10-29T16:10:27+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "【耐特法說會重點內容備忘錄】未來展望趨勢 20261029",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9tdWtWTGNCR3doQ0hjeDZKVS04b0M2bE52d2pWc1BRLWpCeU92UHhIUmZaVHFQLUpiSlNvLUhPRUxLMlJ5MmpDVlI2Znkwakt5LWh2djFCWnNJZVZOZ2hiXzRiSmpGWUE?oc=5",
+          "source": "富果直送",
+          "published_at": "2026/10/29 08:07",
+          "sort_time": "2026-10-29T08:07:49+08:00",
+          "snippet": ""
+        }
+      ],
+      "summary_overview": "【耐特 (8058)】為集中交易市場之「初上市」競拍案，由兆豐證券主辦。本次競拍數量共 4,896 張，最低投標底價為 62.5 元（每標單最低預估保證金加處理費約 NT$ 31,650 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
+      "summary_news_digest": "綜合 經濟日報、工商時報、數位時代 等共 5 則近期新聞焦點：(1) 耐特半導體材料占比逼近兩成 IC Tray、BBU 添成長動能（經濟日報）；(2) 耐特11月下旬上市三大高階應用點火- 日報（工商時報）；(3) 耐特(8058)做什麼的？從滑雪靴支架到晶圓載具，如何打進家登？（數位時代）；(4) 耐特預計11月中下旬掛牌上市 三大高階應用動能強明年營收估增10-15%（鉅亨網）。",
+      "summary_mode": "extractive"
     }
   ],
   "recipients": [
     "joechen1579@gmail.com",
-    "xiian1012@gmail.com"
+    "xiian1012@gmail.com",
+    "ms0022136@gmail.com",
+    "s2933115@gmail.com"
   ],
   "changes": {
     "has_changes": false,
