@@ -549,8 +549,9 @@
         }
       } catch (e) {
         isLocalServer = false;
-        envBadge.textContent = '';
-        document.getElementById('cloud-sync-box').classList.remove('hidden');
+        if (envBadge) { envBadge.textContent = ''; }
+        const cloudSyncBox = document.getElementById('cloud-sync-box');
+        if (cloudSyncBox) { cloudSyncBox.classList.remove('hidden'); }
         try {
           const cfgRes = await fetch('./config.json?t=' + Date.now(), { cache: 'no-store' });
           if (cfgRes.ok) {
@@ -1281,12 +1282,12 @@
           showToast(`🎉 ${result.message}`, 'success');
           setTimeout(() => closeEmailModal(), 1500);
         } else {
-          // If local server has no app_password configured, but user provided a GitHub Token, fall back to Cloud Dispatch!
+          // If local server cannot send (no app_password or company firewall blocks SMTP), fall back to Cloud Dispatch if ghToken is present!
           if (ghToken) {
             const dispatchRes = await triggerCloudWorkflowDispatch(ghToken);
             if (dispatchRes.ok) {
               showToast(
-                `🚀 本機未設定應用程式密碼，已自動改由 <strong>GitHub 雲端</strong> 寄信給：${recipientList.join(', ')}！`,
+                `🚀 本機無法直連 SMTP，已自動改由 <strong>GitHub 雲端</strong> 寄信給：${recipientList.join(', ')}！`,
                 'success',
                 true
               );
