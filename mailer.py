@@ -189,7 +189,7 @@ def render_email_html(
             # 公司基本面與財務指標
             cp = item.get("company_profile", {}) or {}
             cp_industry = html.escape(cp.get("industry") or "—")
-            cp_business = html.escape(cp.get("revenue_mix") or cp.get("business_scope") or "—")
+            cp_business = html.escape(cp.get("business_scope") or cp.get("revenue_mix") or "—")
             cp_month_rev = html.escape(
                 f"{cp.get('latest_month_revenue', '—')} (年增 {cp.get('latest_month_yoy', '—')})"
                 if cp.get("latest_month_revenue")
@@ -248,6 +248,10 @@ def render_email_html(
                 if val.get("suggested_bid_low")
                 else "—"
             )
+            goodinfo_url = html.escape(
+                cp.get("goodinfo_url")
+                or f"https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID={base_code_val}"
+            )
             mops_url = html.escape(
                 (val.get("mops") or {}).get("mops_prospectus_url")
                 or f"https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id={base_code_val}&year=115&mtype=B"
@@ -266,6 +270,130 @@ def render_email_html(
                 f'<li style="margin-bottom:4px;line-height:1.5;">{html.escape(line)}</li>'
                 for line in val_method_lines
             )
+
+            # AI 競拍分析歷程與 100 萬資金拆單投標策略 (Nested Toggle <details>)
+            ai_strat = item.get("ai_strategy") or {}
+            ai_tranches = ai_strat.get("tranches") or []
+            ai_steps = ai_strat.get("reasoning_steps") or []
+            ai_strategy_html = ""
+            if ai_tranches or ai_steps:
+                ai_heat = html.escape(ai_strat.get("heat_level", "⚡ 智能量化推演"))
+                ai_lots = ai_strat.get("total_lots", 0)
+                ai_settle = f"{int(ai_strat.get('total_settlement_twd', 0)):,}"
+                ai_margin = f"{int(ai_strat.get('total_initial_margin_twd', 0)):,}"
+                ai_profit_num = int(ai_strat.get("total_est_profit_twd", 0))
+                ai_profit_str = f"{ai_profit_num:+,}"
+                ai_roi_str = f"{float(ai_strat.get('total_roi_pct', 0.0)):+.1f}%"
+                ai_profit_color = "#047857" if ai_profit_num >= 0 else "#dc2626"
+
+                tranche_rows_html = []
+                for t in ai_tranches:
+                    t_name = html.escape(t.get("tranche_name", ""))
+                    t_role = html.escape(t.get("role_desc", ""))
+                    t_bid = f"{float(t.get('bid_price', 0)):.2f}"
+                    t_cost = f"{float(t.get('all_in_cost_per_share', 0)):.2f}"
+                    t_lots = t.get("lots", 0)
+                    t_margin = f"{int(t.get('initial_margin_twd', 0)):,}"
+                    t_settle = f"{int(t.get('settlement_twd', 0)):,}"
+                    t_prof = int(t.get("est_net_profit_twd", 0))
+                    t_roi = f"{float(t.get('est_roi_pct', 0)):+.1f}%"
+                    t_pcolor = "#047857" if t_prof >= 0 else "#dc2626"
+                    tranche_rows_html.append(
+                        f"""
+                        <tr>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;">
+                                <div style="font-weight:700;color:#0f172a;">{t_name}</div>
+                                <div style="font-size:11px;color:#64748b;">{t_role}</div>
+                            </td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:right;font-weight:800;color:#4338ca;white-space:nowrap;">{t_bid} 元</td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:right;color:#334155;white-space:nowrap;">{t_cost} 元</td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:center;font-weight:800;color:#312e81;white-space:nowrap;">{t_lots} 張</td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:right;color:#475569;white-space:nowrap;">NT$ {t_margin}</td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:right;font-weight:700;color:#0f172a;white-space:nowrap;">NT$ {t_settle}</td>
+                            <td style="padding:7px 8px;border:1px solid #e0e7ff;text-align:right;font-weight:800;color:{t_pcolor};white-space:nowrap;">{t_prof:+,} 元 ({t_roi})</td>
+                        </tr>
+                        """
+                    )
+
+                step_items_html = []
+                for s in ai_steps:
+                    s_num = html.escape(s.get("step_num", ""))
+                    s_title = html.escape(s.get("title", ""))
+                    s_bullets = s.get("bullets") or [s.get("detail", "")]
+                    bullet_lis = "".join(
+                        f'<li style="margin-bottom:4px;line-height:1.55;">{html.escape(b)}</li>'
+                        for b in s_bullets
+                        if b
+                    )
+                    step_items_html.append(
+                        f"""
+                        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:9px 11px;margin-bottom:6px;">
+                            <div style="font-size:12px;font-weight:800;color:#1e293b;margin-bottom:4px;padding-bottom:3px;border-bottom:1px solid #e2e8f0;">
+                                <span style="background:#334155;color:#ffffff;font-size:10px;padding:2px 6px;border-radius:4px;margin-right:6px;">{s_num}</span>
+                                {s_title}
+                            </div>
+                            <ul style="margin:0;padding-left:18px;font-size:12px;color:#334155;">
+                                {bullet_lis}
+                            </ul>
+                        </div>
+                        """
+                    )
+
+                ai_strategy_html = f"""
+                <details style="background:#eef2ff;border:2px solid #c7d2fe;border-radius:10px;margin-bottom:12px;overflow:hidden;">
+                    <summary style="padding:12px 14px;cursor:pointer;list-style:none;outline:none;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+                            <div>
+                                <span style="background:#4f46e5;color:#ffffff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;margin-right:6px;">
+                                    🧠 AI 分析歷程 ＆ 100 萬預算拆單策略
+                                </span>
+                                <span style="background:#ffffff;color:#312e81;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid #c7d2fe;margin-right:6px;">
+                                    {ai_heat}
+                                </span>
+                                <span style="font-size:12px;font-weight:800;color:{ai_profit_color};">
+                                    預估總淨利 NT$ {ai_profit_str} ({ai_roi_str})
+                                </span>
+                                <div style="font-size:12px;color:#312e81;font-weight:600;margin-top:5px;">
+                                    🎯 100萬最適總張數：<strong>{ai_lots} 張</strong>（含4.5%手續費總交割 NT$ {ai_settle} ｜ 投標保證金 NT$ {ai_margin}）
+                                </div>
+                            </div>
+                            <span style="font-size:11px;font-weight:700;color:#334155;background:#f1f5f9;border:1px solid #cbd5e1;padding:5px 10px;border-radius:8px;white-space:nowrap;flex-shrink:0;">
+                                展開 AI 分析歷程 ▼
+                            </span>
+                        </div>
+                    </summary>
+                    <div style="padding:12px 14px;background:#ffffff;border-top:1px solid #c7d2fe;">
+                        <div style="font-size:12px;font-weight:800;color:#1e1b4b;margin-bottom:6px;">
+                            📊 100 萬元預算・三階梯拆單投標實戰配置表（最高出價鐵律上限：{ai_strat.get('hard_cap_price', '—')} 元）
+                        </div>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:11px;margin-bottom:10px;">
+                            <tr style="background:#eef2ff;color:#1e1b4b;font-weight:800;">
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;">標單分級與角色</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:right;">建議投標價</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:right;">含費成本</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:center;">張數</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:right;">投標保證金</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:right;">得標總交割</td>
+                                <td style="padding:6px 8px;border:1px solid #c7d2fe;text-align:right;">預估淨利</td>
+                            </tr>
+                            {"".join(tranche_rows_html)}
+                            <tr style="background:#f1f5f9;font-weight:800;color:#0f172a;">
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;">合計總覽</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:right;">均價 {ai_strat.get('weighted_avg_bid', '—')} 元</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:right;">含費 {ai_strat.get('weighted_all_in_cost', '—')} 元</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:center;">共 {ai_lots} 張</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:right;">NT$ {ai_margin}</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:right;">NT$ {ai_settle}</td>
+                                <td style="padding:7px 8px;border:1px solid #cbd5e1;text-align:right;color:{ai_profit_color};">NT$ {ai_profit_str} ({ai_roi_str})</td>
+                            </tr>
+                        </table>
+                        <div style="font-size:12px;font-weight:800;color:#1e1b4b;margin-bottom:6px;">
+                            🧭 AI 競拍定價與拆單思考推演歷程
+                        </div>
+                        {"".join(step_items_html)}
+                    </div>
+                </details>
+                """
 
             news_items = item.get("news", [])
             news_rows = []
@@ -316,7 +444,7 @@ def render_email_html(
                                 {sec_name} <span style="color:#475569;font-weight:600;font-size:15px;">({sec_code})</span>
                                 <span style="font-size:12px;font-weight:500;color:#64748b;margin-left:6px;">｜ {market} ・ 主辦：{underwriter}</span>
                             </div>
-                            <span style="font-size:12px;font-weight:700;color:#2563eb;background:#eff6ff;padding:4px 10px;border-radius:8px;border:1px solid #bfdbfe;white-space:nowrap;flex-shrink:0;">
+                            <span style="font-size:12px;font-weight:700;color:#334155;background:#f1f5f9;padding:4px 10px;border-radius:8px;border:1px solid #cbd5e1;white-space:nowrap;flex-shrink:0;">
                                 點擊展開 / 收合詳情 ▼
                             </span>
                         </div>
@@ -350,40 +478,37 @@ def render_email_html(
 
                     <!-- 展開後顯示的詳細資訊區塊 -->
                     <div style="padding:16px 18px;border-top:1px solid #e2e8f0;background:#f8fafc;">
-                        <div style="font-size:12px;color:#64748b;margin-bottom:10px;">
-                            快速連結：
-                            <a href="{yahoo_url}" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Yahoo股市 ↗</a> ・
-                            <a href="{moneydj_url}" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">MoneyDJ基本資料 ↗</a> ・
-                            <a href="{mops_url}" target="_blank" style="color:#d97706;text-decoration:none;font-weight:700;">MOPS公開說明書 ↗</a>
+                        <div style="font-size:12px;color:#64748b;margin-bottom:10px;line-height:1.9;">
+                            外部研究連結：
+                            <a href="{goodinfo_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">📊 Goodinfo! 個股資訊 ↗</a>
+                            <a href="{mops_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">📘 MOPS公開說明書 ↗</a>
+                            <a href="{richclub_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">🏦 永豐豐雲學堂 ↗</a>
+                            <a href="{sino_stock_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">📊 永豐理財網 ↗</a>
+                            <a href="https://www.macromicro.me/tw-industry-overview" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">🌐 財經M平方 ↗</a>
+                            <a href="{yahoo_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;margin-right:4px;">Yahoo股市 ↗</a>
+                            <a href="{moneydj_url}" target="_blank" style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;padding:2px 8px;border-radius:6px;text-decoration:none;font-weight:600;">MoneyDJ基本資料 ↗</a>
                         </div>
 
-                        <!-- 競拍規格表 -->
-                        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:14px;font-size:13px;background:#ffffff;">
+                        <!-- 競拍申購補充規格表（不重複首欄已顯示之投標日期與底價） -->
+                        <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:14px;font-size:12px;background:#ffffff;">
                             <tr>
-                                <td style="padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;width:22%;color:#64748b;">最低投標底價</td>
-                                <td style="padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;width:28%;font-weight:700;color:#dc2626;font-size:15px;">{min_price} 元</td>
-                                <td style="padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;width:22%;color:#64748b;">競拍總數量</td>
-                                <td style="padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;width:28%;font-weight:600;color:#0f172a;">{qty} 張 ({min_qty}~{max_qty}張)</td>
+                                <td style="padding:7px 10px;background:#f8fafc;border:1px solid #e2e8f0;width:20%;color:#64748b;">競拍總張數</td>
+                                <td style="padding:7px 10px;background:#ffffff;border:1px solid #e2e8f0;width:30%;font-weight:700;color:#0f172a;">{qty} 張（單筆限額 {min_qty}~{max_qty} 張）</td>
+                                <td style="padding:7px 10px;background:#f8fafc;border:1px solid #e2e8f0;width:20%;color:#64748b;">開標 / 撥券日</td>
+                                <td style="padding:7px 10px;background:#ffffff;border:1px solid #e2e8f0;width:30%;font-weight:600;color:#0f172a;">{open_date} ／ {listing_date}</td>
                             </tr>
                             <tr>
-                                <td style="padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;">投標期間</td>
-                                <td style="padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;font-weight:600;color:#0f172a;">{bid_start} ~ {bid_end}</td>
-                                <td style="padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;">開標 / 撥券日</td>
-                                <td style="padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;color:#0f172a;">{open_date} / {listing_date}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;">保證金與門檻</td>
-                                <td colspan="3" style="padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;color:#0f172a;">保證金成數 {margin_pct}%（每單最低預估約 <strong>NT$ {est_margin}</strong> 起，含處理費 {fee} 元）</td>
+                                <td style="padding:7px 10px;background:#f8fafc;border:1px solid #e2e8f0;color:#64748b;">保證金與門檻</td>
+                                <td colspan="3" style="padding:7px 10px;background:#ffffff;border:1px solid #e2e8f0;color:#0f172a;">保證金成數 {margin_pct}%（每單最低預估約 <strong>NT$ {est_margin}</strong> 起，含處理費 {fee} 元）</td>
                             </tr>
                         </table>
 
-                        <!-- 公司介紹與財務基本面摘要區塊 -->
+                        <!-- 公司介紹與財務基本面摘要區塊（精簡無重複：僅保留主要業務與財務指標表） -->
                         <div style="background:#f0fdf4;border-left:4px solid #16a34a;padding:12px 14px;border-radius:6px;margin-bottom:12px;">
-                            <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:6px;">🏢 公司介紹、業務範圍、營收規模與利潤率摘要</div>
-                            {cp_summary_html}
+                            <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:8px;">🏢 公司主要業務、營收規模與獲利能力指標</div>
                             <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;background:#ffffff;border-radius:6px;">
                                 <tr>
-                                    <td style="padding:6px 8px;border:1px solid #dcfce7;color:#475569;width:22%;"><strong>業務與產品比重</strong></td>
+                                    <td style="padding:6px 8px;border:1px solid #dcfce7;color:#475569;width:22%;"><strong>主要業務</strong></td>
                                     <td colspan="3" style="padding:6px 8px;border:1px solid #dcfce7;color:#0f172a;">{cp_business}</td>
                                 </tr>
                                 <tr>
@@ -407,41 +532,23 @@ def render_email_html(
                             </table>
                         </div>
 
-                        <!-- 市場共識價格、MOPS 公開說明書與永豐投顧研究區塊 -->
+                        <!-- 承銷定價依據與同業真實本益比估值區塊 -->
                         <div style="background:#fffbeb;border-left:4px solid #f59e0b;padding:12px 14px;border-radius:6px;margin-bottom:12px;">
                             <div style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:6px;">
-                                🎯 市場共識價格、MOPS 承銷商評估報告 ＆ 永豐投顧研究連結
+                                🎯 承銷定價依據 ＆ 證交所/櫃買同業真實本益比估值（方案 A）
                             </div>
-                            <div style="margin-bottom:8px;font-size:12px;">
-                                <a href="{mops_url}" target="_blank" style="display:inline-block;background:#d97706;color:#ffffff;padding:4px 10px;border-radius:6px;text-decoration:none;font-weight:700;margin-right:6px;">📘 MOPS 公開說明書 (承銷價計算表) ↗</a>
-                                <a href="{richclub_url}" target="_blank" style="display:inline-block;background:#e11d48;color:#ffffff;padding:4px 10px;border-radius:6px;text-decoration:none;font-weight:700;margin-right:6px;">🏦 永豐豐雲學堂報告 ↗</a>
-                                <a href="{sino_stock_url}" target="_blank" style="display:inline-block;background:#ffffff;color:#be123c;border:1px solid #fda4af;padding:3px 9px;border-radius:6px;text-decoration:none;font-weight:700;">📊 永豐理財網個股專區 ↗</a>
-                            </div>
-                            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;background:#ffffff;border-radius:6px;margin-bottom:8px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:12px;background:#ffffff;border-radius:6px;">
                                 <tr>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;width:23%;"><strong>興櫃/市場最新市價</strong></td>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#0f172a;font-weight:700;width:27%;">{html.escape(mkt_p_str)}</td>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;width:23%;"><strong>推估公開申購承銷價</strong></td>
+                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;width:23%;"><strong>公開申購暫定承銷價</strong></td>
                                     <td style="padding:6px 8px;border:1px solid #fde68a;color:#4338ca;font-weight:700;width:27%;">{html.escape(est_uw_str)}</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;"><strong>市場共識合理區間</strong></td>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#0f172a;font-weight:600;">{html.escape(cons_str)}</td>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;"><strong>建議得標觀察區間</strong></td>
-                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#047857;font-weight:700;">{html.escape(bid_range_str)}</td>
+                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#475569;width:23%;"><strong>市場共識合理區間</strong></td>
+                                    <td style="padding:6px 8px;border:1px solid #fde68a;color:#0f172a;font-weight:600;width:27%;">{html.escape(cons_str)}</td>
                                 </tr>
                             </table>
-                            <ul style="margin:0;padding-left:18px;font-size:12px;color:#334155;">
-                                {val_method_html}
-                            </ul>
                         </div>
 
-                        <!-- 競拍與新聞重點摘要 -->
-                        <div style="background:#ffffff;border-left:4px solid #3b82f6;padding:12px 14px;border-radius:6px;margin-bottom:12px;">
-                            <div style="font-size:13px;font-weight:700;color:#1e3a8a;margin-bottom:4px;">📌 競拍情報與新聞重點摘要</div>
-                            <p style="margin:0 0 6px 0;font-size:13px;color:#334155;line-height:1.6;">{overview}</p>
-                            <p style="margin:0;font-size:13px;color:#0f172a;line-height:1.6;">{news_digest}</p>
-                        </div>
+                        <!-- AI 分析歷程 & 100萬預算拆單投標策略 (Nested Toggle) -->
+                        {ai_strategy_html}
 
                         <div style="font-size:13px;background:#ffffff;padding:12px 14px;border-radius:6px;border:1px solid #e2e8f0;">
                             <div style="font-weight:700;color:#334155;margin-bottom:4px;">📰 相關新聞連結（點擊閱讀全文）：</div>
@@ -506,6 +613,35 @@ def render_email_html(
         </table>
 
         {change_banner_html}
+
+        <!-- Global AI Framework Toggle List (大框架分析歷程與檢核要素) -->
+        <details style="background:#ffffff;border:2px solid #c7d2fe;border-radius:12px;margin-bottom:16px;overflow:hidden;">
+            <summary style="padding:12px 16px;cursor:pointer;list-style:none;background:#eef2ff;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="vertical-align:middle;">
+                            <span style="display:inline-block;background:#4f46e5;color:#ffffff;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;margin-right:6px;">
+                                🧭 AI 競拍量化分析大框架 ＆ 100 萬拆單檢核通則
+                            </span>
+                            <span style="font-size:12px;color:#475569;font-weight:600;">
+                                （通用定價模型、摩擦成本、防撞尾數與出場紀律統一說明，個股內僅呈現專屬觀點）
+                            </span>
+                        </td>
+                        <td style="text-align:right;vertical-align:middle;white-space:nowrap;" width="135">
+                            <span style="display:inline-block;background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;">
+                                展開分析大框架 ▼
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </summary>
+            <div style="padding:14px 16px;background:#f8fafc;border-top:1px solid #c7d2fe;font-size:12px;color:#334155;line-height:1.6;">
+                <div style="margin-bottom:6px;"><strong style="color:#312e81;">【Check 1｜產業週期 ＆ 官方同業 PE 對標】</strong>串接證交所與櫃買中心 OpenAPI 即時抓取採樣同業真實本益比（PE）、股價淨值比（PB）與殖利率，結合近四季滾動年化 EPS 推算合理價值區間。</div>
+                <div style="margin-bottom:6px;"><strong style="color:#312e81;">【Check 2｜基本面爆發力 ＆ 籌碼稀缺度評級】</strong>檢核單月/累計營收 YoY、毛利率與營益率護城河，並對照競拍總張數（≤2,200 張屬稀缺易搶標；≥3,500 張屬供給充裕有利低接）給予熱度評級。</div>
+                <div style="margin-bottom:6px;"><strong style="color:#312e81;">【Check 3｜5% 總摩擦成本 ＆ 最高出價防線 Hard Cap】</strong>美國標得標須加計約 4.5% 得標手續費、每單 400 元處理費與約 0.44% 賣出證交稅費（總摩擦成本約 5%）。AI 嚴格設定「含費總成本 ≤ 目標參考價 × 92%」為最高出價防線。</div>
+                <div><strong style="color:#312e81;">【Check 4｜100 萬三階梯拆單、防撞尾數 ＆ 掛牌出場紀律】</strong>將 100 萬預算拆為 A單（必中核心）、B單（主戰中樞）、C單（低接狙擊），並加上 <code>.68 / .38 / .26 / .12</code> 尾數越過 <code>.00 / .50</code> 散戶整數排隊牆；IPO 掛牌首五日無漲跌幅限制，達目標價分批停利 50%~70%。</div>
+            </div>
+        </details>
 
         <!-- Cards -->
         {"".join(cards_html)}

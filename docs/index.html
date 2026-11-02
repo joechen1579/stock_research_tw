@@ -145,6 +145,78 @@
       </div>
     </div>
 
+    <!-- Global AI Framework Toggle List (大框架分析歷程與檢核要素，統一說明不於個股重複) -->
+    <section class="bg-white rounded-2xl border-2 border-indigo-200/90 shadow-xs mb-6 overflow-hidden">
+      <div onclick="toggleGlobalAiFramework()"
+           class="p-4 sm:px-5 cursor-pointer hover:bg-indigo-50/40 transition select-none flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="space-y-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-indigo-600 text-white">
+              🧭 AI 競拍量化分析大框架 ＆ 100 萬拆單檢核通則
+            </span>
+            <span class="text-xs font-semibold text-slate-500">
+              （通用定價模型、摩擦成本、防撞尾數與出場紀律統一說明，個股內僅呈現專屬觀點）
+            </span>
+          </div>
+          <div class="text-xs text-slate-600">
+            檢核 4 大核心要素：<strong class="text-slate-800">① 產業景氣與官方同業 PE 對標</strong> ・ <strong class="text-slate-800">② 營收獲利護城河與籌碼稀缺度</strong> ・ <strong class="text-slate-800">③ 5% 總摩擦成本與最高出價防線</strong> ・ <strong class="text-slate-800">④ A/B/C 三階梯拆單與防撞單尾數</strong>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 text-xs font-bold transition shrink-0 whitespace-nowrap self-start sm:self-center">
+          <span id="global-framework-toggle-text">展開分析大框架</span>
+          <span id="global-framework-chevron" class="inline-block transition-transform duration-200" style="transform: rotate(0deg);">▼</span>
+        </div>
+      </div>
+
+      <div id="global-framework-detail" class="hidden px-5 pb-5 pt-3 border-t border-indigo-100 bg-slate-50/50">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <!-- Check 1 -->
+          <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
+            <div class="font-extrabold text-indigo-950 flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[11px]">Check 1</span>
+              <span>產業景氣位階 ＆ 官方同業本益比對標（方案 A）</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              串接<strong class="text-slate-800">證交所 (`BWIBBU_ALL`) 與櫃買中心 OpenAPI</strong> 即時抓取採樣同業之真實本益比（PE）、股價淨值比（PB）與殖利率，並結合 MOPS／Goodinfo 官方產業分類與近四季滾動年化 EPS，推算基本面合理價值區間，檢核競拍底價是否具備足夠折價保護。
+            </p>
+          </div>
+
+          <!-- Check 2 -->
+          <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
+            <div class="font-extrabold text-indigo-950 flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[11px]">Check 2</span>
+              <span>個股基本面爆發力 ＆ 競拍籌碼稀缺度評級</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              同步檢核<strong class="text-slate-800">單月/累計營收 YoY 成長率、毛利率與營益率護城河</strong>，以及<strong class="text-slate-800">競拍總張數供需</strong>（≤2,200 張屬籌碼稀缺易引發法人搶標；≥3,500 張屬供給充裕有利中後段低接），綜合判定「🔥 高熱度積極搶標型」、「⚡ 中高熱度攻守兼備型」或「🛡️ 溫和價值防禦型」。
+            </p>
+          </div>
+
+          <!-- Check 3 -->
+          <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
+            <div class="font-extrabold text-indigo-950 flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[11px]">Check 3</span>
+              <span>5% 總摩擦成本核算 ＆ 最高出價防線（Hard Cap）</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              台股競拍採<strong class="text-slate-800">「美國標（價高者得）」</strong>，得標須加計約 <strong class="text-rose-600">4.5% 得標手續費</strong>、每筆標單 <strong class="text-slate-800">400 元處理費</strong>與撥券賣出約 <strong class="text-slate-800">0.44% 證交稅費</strong>（總摩擦成本約 5%）。AI 嚴格設定<strong class="text-rose-700">「含費總成本 ≤ 目標參考價 × 92%」</strong>為最高出價防線（Hard Cap），確保留有 8%~12% 安全邊際，避免贏家詛咒。
+            </p>
+          </div>
+
+          <!-- Check 4 -->
+          <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
+            <div class="font-extrabold text-indigo-950 flex items-center gap-1.5">
+              <span class="px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 text-[11px]">Check 4</span>
+              <span>100 萬三階梯拆單、防撞尾數博弈 ＆ 掛牌出場紀律</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              將 100 萬預算拆為 <strong class="text-slate-800">A單（必中核心）</strong>、<strong class="text-slate-800">B單（主戰中樞）</strong>、<strong class="text-slate-800">C單（低接狙擊）</strong>，並加上 <strong class="text-indigo-700">`.68 / .38 / .26 / .12` 小數點後兩位尾數</strong>，以每張百元級微幅成本越過 `.00 / .50` 散戶整數排隊牆。開標日未得標保證金全退；IPO 掛牌首五日無漲跌幅限制，達目標價分批停利 50%~70%，並以「含費實際成本價」作為下檔移動停利防線。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Auction Cards Container -->
     <div id="cards-container" class="space-y-6">
       <div class="bg-white rounded-2xl p-12 text-center border border-slate-200">
@@ -668,45 +740,31 @@
     function formatValuationSection(item) {
       const v = item.valuation || {};
       const minPrice = Number(item.min_price || v.min_price || 0);
-      const mktPrice = Number(v.market_price || 0);
       const estUnderwrite = v.estimated_underwriting_price || (minPrice ? (minPrice * 1.18).toFixed(1) : '—');
-      const spreadPct = v.spread_to_min_pct ?? 0;
-      const spreadColor = spreadPct > 15 ? 'text-emerald-700' : (spreadPct > 0 ? 'text-amber-700' : 'text-slate-600');
-      const consensusRange = (v.consensus_low && v.consensus_high)
-        ? `${v.consensus_low} ~ ${v.consensus_high} 元 (中位 ${v.consensus_mid} 元)`
-        : `${(minPrice * 1.15).toFixed(1)} ~ ${(minPrice * 1.35).toFixed(1)} 元`;
-      const bidRange = (v.suggested_bid_low && v.suggested_bid_high)
-        ? `${v.suggested_bid_low} ~ ${v.suggested_bid_high} 元`
-        : `${(minPrice * 1.06).toFixed(1)} ~ ${(minPrice * 1.18).toFixed(1)} 元`;
       const peFairRange = (v.pe_fair_low && v.pe_fair_high)
-        ? `${v.pe_fair_low} ~ ${v.pe_fair_high} 元 (${v.pe_range_label || '同業PE'})`
+        ? `${v.pe_fair_low} ~ ${v.pe_fair_high} 元 (中位 ${v.pe_fair_mid} 元)`
         : '依 MOPS 公開說明書同業比價表為準';
+      const epsBasis = v.annualized_eps_label || '依最新財報推算';
+      const peRangeLabel = v.pe_range_label || '同業合理PE';
 
-      const baseCode = item.base_code || item.security_code;
-      const mops = v.mops || {};
-      const mopsProspectusUrl = mops.mops_prospectus_url || `https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${baseCode}&year=115&mtype=B`;
-      const mopsCompanyUrl = mops.mops_company_url || `https://mops.twse.com.tw/mops/web/t05st03?co_id=${baseCode}`;
+      const sm = v.sector_macro || {};
+      const peerListStr = Array.isArray(sm.sampled_peers) && sm.sampled_peers.length > 0
+        ? sm.sampled_peers.slice(0, 4).join(' ｜ ')
+        : '依證交所/櫃買同業均值估算';
+      const peerAvgStats = sm.avg_pe
+        ? `同業平均 PE ${sm.avg_pe}x ・ 平均 PB ${sm.avg_pb || '—'}x ・ 平均殖利率 ${sm.avg_yield || '—'}%`
+        : '官方同業估值模型';
+
       const sino = v.sinotrade || {};
-      const richclubUrl = sino.richclub_search_url || `https://www.sinotrade.com.tw/richclub/search?keyword=${encodeURIComponent(item.security_name)}`;
-      const sinoStockUrl = sino.sinotrade_stock_url || `https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=${baseCode}`;
-      const cnyesUrl = (v.factset && v.factset.cnyes_url) || `https://www.cnyes.com/twstock/${baseCode}`;
-
-      const methodLines = Array.isArray(v.methodology_lines) && v.methodology_lines.length > 0
-        ? v.methodology_lines
-        : [
-            `【MOPS 承銷報告定價依據】請點下方「MOPS 公開說明書與承銷商評估報告」，查閱主辦券商（${item.underwriter}）依法揭露之採樣同業本益比與承銷價計算表。`,
-            `【預估投標參考區間】依競拍底價 ${item.min_price} 元推算，合理得標觀察區間約 ${bidRange}。`
-          ];
-
       const sinoArticles = (sino.articles || []);
       const sinoStatusBadge = sino.has_sinotrade_account
         ? `<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-bold">✅ 永豐帳號已連線 (${sino.sinotrade_account_masked}) ｜ 檢索 ${sinoArticles.length} 篇報告</span>`
-        : `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-300 text-[10px] font-medium">公開檢索模式 (${sinoArticles.length} 篇)</span>`;
+        : `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-300 text-[10px] font-medium">公開檢索 (${sinoArticles.length} 篇)</span>`;
 
       const sinoArticlesHtml = sinoArticles.length > 0
         ? `<div class="mt-2 pt-2 border-t border-amber-200/70">
             <div class="text-[11px] font-bold text-amber-900 mb-1 flex items-center justify-between">
-              <span>🏦 永豐金證券 / 豐雲學堂最新研究觀點（已納入共識評估）：</span>
+              <span>🏦 永豐金證券 / 豐雲學堂最新研究快訊（已納入共識評估）：</span>
               ${sinoStatusBadge}
             </div>
             <ul class="space-y-1">
@@ -718,83 +776,39 @@
               `).join('')}
             </ul>
           </div>`
-        : `<div class="mt-2 pt-2 border-t border-amber-200/70 flex items-center justify-between text-[11px] text-slate-500">
-            <span>🏦 永豐金證券 / 豐雲學堂：目前此標的暫無專欄文章，可點上方「永豐理財網個股專區」查閱即時籌碼。</span>
-            ${sinoStatusBadge}
-          </div>`;
+        : '';
 
       return `
         <div class="bg-amber-50/70 border-l-4 border-amber-500 rounded-r-xl p-4 my-4 space-y-3">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="text-xs font-extrabold text-amber-950 flex items-center gap-1.5">
-              <span>🎯 市場共識價格、MOPS 承銷評估報告 ＆ 永豐投顧研究連結</span>
+              <span>🎯 承銷定價依據 ＆ 證交所/櫃買同業真實本益比估值（方案 A）</span>
             </div>
-            <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-bold">
-              <a href="${mopsProspectusUrl}" target="_blank"
-                 class="px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-700 text-white transition shadow-2xs">
-                📘 MOPS 公開說明書 (承銷商評估報告) ↗
-              </a>
-              <a href="${richclubUrl}" target="_blank"
-                 class="px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white transition shadow-2xs">
-                🏦 永豐豐雲學堂報告 ↗
-              </a>
-              <a href="${sinoStockUrl}" target="_blank"
-                 class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-rose-700 border border-rose-300 transition">
-                📊 永豐理財網個股專區 ↗
-              </a>
-              <a href="${cnyesUrl}" target="_blank"
-                 class="px-2.5 py-1 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 transition">
-                📈 鉅亨網 FactSet 目標價 ↗
-              </a>
-            </div>
+            <span class="text-[11px] font-medium text-amber-800">主辦承銷商：${item.underwriter}</span>
           </div>
 
-          <!-- 4-Column Valuation Metrics -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+          <!-- 3-Column Non-Redundant Valuation Breakdown -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
             <div class="bg-white p-2.5 rounded-lg border border-amber-200/80">
-              <div class="text-[11px] text-slate-400">興櫃 / 二級市場最新市價</div>
-              <div class="font-extrabold text-base text-slate-900 mt-0.5">
-                ${mktPrice > 0 ? `${mktPrice} 元` : '尚未掛牌/查無市價'}
-              </div>
-              <div class="text-[11px] font-bold ${spreadColor} mt-0.5">
-                ${mktPrice > 0 ? `較底價溢價 ${spreadPct >= 0 ? '+' : ''}${spreadPct}%` : `競拍底價 ${item.min_price} 元`}
-              </div>
-            </div>
-
-            <div class="bg-white p-2.5 rounded-lg border border-amber-200/80">
-              <div class="text-[11px] text-slate-400">推估公開申購承銷價</div>
+              <div class="text-[11px] text-slate-400">公開申購暫定承銷價</div>
               <div class="font-extrabold text-base text-indigo-700 mt-0.5">${estUnderwrite} 元</div>
               <div class="text-[11px] text-slate-500 mt-0.5">
-                ${v.underwriting_price_is_exact ? '新聞/公告披露暫定承銷價' : '依競拍底價 × 1.18 倍推估'}
+                ${v.underwriting_price_is_exact ? '新聞/公告披露之暫定承銷價' : '依競拍底價 × 1.18 倍推估'}
               </div>
             </div>
 
             <div class="bg-white p-2.5 rounded-lg border border-amber-200/80">
-              <div class="text-[11px] text-slate-400">綜合市場共識合理價區間</div>
-              <div class="font-bold text-slate-900 mt-0.5">${consensusRange}</div>
-              <div class="text-[11px] text-slate-500 mt-0.5">同業PE估值：${peFairRange}</div>
+              <div class="text-[11px] text-slate-400">同業本益比合理估值區間 (${peRangeLabel})</div>
+              <div class="font-extrabold text-sm text-slate-900 mt-0.5">${peFairRange}</div>
+              <div class="text-[11px] text-slate-500 mt-0.5">計算基準：年化 EPS ${epsBasis}</div>
             </div>
 
             <div class="bg-white p-2.5 rounded-lg border border-amber-200/80">
-              <div class="text-[11px] text-slate-400">歷史統計建議得標觀察區間</div>
-              <div class="font-extrabold text-base text-emerald-700 mt-0.5">${bidRange}</div>
-              <div class="text-[11px] text-slate-500 mt-0.5">約市價 85~92 折 / 底價+6%~18%</div>
+              <div class="text-[11px] text-slate-400">官方採樣同業即時估值（方案 A）</div>
+              <div class="font-bold text-slate-900 mt-0.5">${peerAvgStats}</div>
+              <div class="text-[11px] text-slate-500 mt-0.5 truncate" title="${peerListStr}">採樣：${peerListStr}</div>
             </div>
           </div>
-
-          <!-- Methodology Lines -->
-          <ul class="space-y-1.5 text-xs text-slate-800 bg-white/85 p-3 rounded-xl border border-amber-200/70">
-            ${methodLines.map(line => {
-              const m = line.match(/^【([^】]+)】(.*)$/);
-              if (m) {
-                return `<li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 pb-1 border-b border-amber-100/70 last:border-b-0 last:pb-0">
-                  <span class="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-bold text-[11px] shrink-0">${m[1]}</span>
-                  <span class="text-slate-800">${m[2].trim()}</span>
-                </li>`;
-              }
-              return `<li>• ${line}</li>`;
-            }).join('')}
-          </ul>
 
           ${sinoArticlesHtml}
         </div>
@@ -802,6 +816,213 @@
     }
 
     const expandedCardIds = new Set();
+    const expandedAiCardIds = new Set();
+
+    function toggleGlobalAiFramework() {
+      const el = document.getElementById('global-framework-detail');
+      const chev = document.getElementById('global-framework-chevron');
+      const txt = document.getElementById('global-framework-toggle-text');
+      if (!el) return;
+      const isHidden = el.classList.contains('hidden');
+      if (isHidden) {
+        el.classList.remove('hidden');
+        if (chev) chev.style.transform = 'rotate(180deg)';
+        if (txt) txt.textContent = '收合分析大框架';
+      } else {
+        el.classList.add('hidden');
+        if (chev) chev.style.transform = 'rotate(0deg)';
+        if (txt) txt.textContent = '展開分析大框架';
+      }
+    }
+
+    function toggleAiStrategy(cardId) {
+      const el = document.getElementById(`ai-detail-${cardId}`);
+      const chev = document.getElementById(`ai-chevron-${cardId}`);
+      const txt = document.getElementById(`ai-toggle-text-${cardId}`);
+      if (!el) return;
+      const isHidden = el.classList.contains('hidden');
+      if (isHidden) {
+        el.classList.remove('hidden');
+        expandedAiCardIds.add(cardId);
+        if (chev) chev.style.transform = 'rotate(180deg)';
+        if (txt) txt.textContent = '收合 AI 分析歷程';
+      } else {
+        el.classList.add('hidden');
+        expandedAiCardIds.delete(cardId);
+        if (chev) chev.style.transform = 'rotate(0deg)';
+        if (txt) txt.textContent = '展開 AI 分析歷程';
+      }
+    }
+
+    function formatAiStrategySection(item, cardId) {
+      const ai = item.ai_strategy || {};
+      const tranches = Array.isArray(ai.tranches) ? ai.tranches : [];
+      const steps = Array.isArray(ai.reasoning_steps) ? ai.reasoning_steps : [];
+      if (tranches.length === 0 && steps.length === 0) return '';
+
+      const isAiExpanded = expandedAiCardIds.has(cardId);
+      const totalLots = ai.total_lots || 0;
+      const totalSettlement = Number(ai.total_settlement_twd || 0).toLocaleString();
+      const totalMargin = Number(ai.total_initial_margin_twd || 0).toLocaleString();
+      const totalProfit = Number(ai.total_est_profit_twd || 0);
+      const totalProfitStr = `${totalProfit >= 0 ? '+' : ''}${totalProfit.toLocaleString()}`;
+      const totalRoi = Number(ai.total_roi_pct || 0);
+      const totalRoiStr = `${totalRoi >= 0 ? '+' : ''}${totalRoi}%`;
+      const profitColor = totalProfit >= 0 ? 'text-emerald-700' : 'text-rose-600';
+      const trancheSummaryPills = tranches.map(t => {
+        const shortName = (t.tranche_name || '').split('【')[0].trim();
+        return `${shortName}: ${t.bid_price}元 × ${t.lots}張`;
+      }).join(' ｜ ');
+
+      return `
+        <!-- Nested Toggle List: AI 分析歷程 & 100萬預算拆單投標策略 -->
+        <div class="my-4 rounded-2xl border-2 border-indigo-200/90 bg-indigo-50/40 overflow-hidden shadow-2xs">
+          <!-- Nested Toggle Header -->
+          <div onclick="toggleAiStrategy('${cardId}')"
+               class="p-4 cursor-pointer hover:bg-indigo-100/50 transition select-none flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="space-y-1.5 min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-indigo-600 text-white shadow-2xs">
+                  🧠 AI 分析歷程 ＆ 100 萬預算拆單策略
+                </span>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-white text-indigo-900 border border-indigo-200">
+                  ${ai.heat_level || '⚡ 智能量化推演'}
+                </span>
+                <span class="text-xs font-bold ${profitColor} bg-white px-2.5 py-0.5 rounded-full border border-slate-200">
+                  💰 預估總淨利 NT$ ${totalProfitStr} (${totalRoiStr})
+                </span>
+              </div>
+              <div class="text-xs text-slate-700 font-semibold flex flex-wrap items-center gap-x-3 gap-y-1">
+                <span>🎯 100萬最適總張數：<strong class="text-indigo-950">${totalLots} 張</strong>（含4.5%手續費總交割 NT$ ${totalSettlement}）</span>
+                <span class="text-slate-400 hidden sm:inline">|</span>
+                <span class="text-indigo-800">🏷️ 拆單配置：${trancheSummaryPills}</span>
+              </div>
+            </div>
+
+            <!-- Nested Toggle Button (Light-gray unified style, protected from squeezing) -->
+            <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/90 text-xs font-bold transition shrink-0 whitespace-nowrap self-start sm:self-center">
+              <span id="ai-toggle-text-${cardId}">${isAiExpanded ? '收合 AI 分析歷程' : '展開 AI 分析歷程'}</span>
+              <span id="ai-chevron-${cardId}" class="inline-block transition-transform duration-200" style="transform: ${isAiExpanded ? 'rotate(180deg)' : 'rotate(0deg)'};">▼</span>
+            </div>
+          </div>
+
+          <!-- Nested Collapsible Body -->
+          <div id="ai-detail-${cardId}" class="${isAiExpanded ? '' : 'hidden'} p-4 pt-3 border-t border-indigo-200/70 bg-white space-y-4">
+            <!-- 1. 100 萬預算三階梯拆單實戰配置表 -->
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <div class="text-xs font-extrabold text-indigo-950">
+                  📊 100 萬元預算・三階梯拆單投標實戰配置表（含 4.5% 得標手續費與防撞單尾數設計）
+                </div>
+                <div class="text-[11px] font-semibold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-lg border border-rose-200">
+                  🛑 AI 最高出價鐵律上限：${ai.hard_cap_price || '—'} 元（含費成本 ${ai.hard_cap_with_fee || '—'} 元）
+                </div>
+              </div>
+
+              <div class="overflow-x-auto rounded-xl border border-indigo-200/80">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="bg-indigo-50/90 text-indigo-950 border-b border-indigo-200/80">
+                      <th class="py-2.5 px-3 font-extrabold">標單分級與策略定位</th>
+                      <th class="py-2.5 px-3 font-extrabold text-right whitespace-nowrap">建議投標價</th>
+                      <th class="py-2.5 px-3 font-extrabold text-right whitespace-nowrap">含費實際成本</th>
+                      <th class="py-2.5 px-3 font-extrabold text-center whitespace-nowrap">投標張數</th>
+                      <th class="py-2.5 px-3 font-extrabold text-right whitespace-nowrap">投標需繳保證金</th>
+                      <th class="py-2.5 px-3 font-extrabold text-right whitespace-nowrap">得標總交割金額</th>
+                      <th class="py-2.5 px-3 font-extrabold text-right whitespace-nowrap">預估淨利 (報酬率)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200/80">
+                    ${tranches.map(t => {
+                      const pProfit = Number(t.est_net_profit_twd || 0);
+                      const pColor = pProfit >= 0 ? 'text-emerald-700 font-extrabold' : 'text-rose-600 font-bold';
+                      return `
+                        <tr class="hover:bg-indigo-50/30 transition">
+                          <td class="py-2.5 px-3">
+                            <div class="font-extrabold text-slate-900">${t.tranche_name}</div>
+                            <div class="text-[11px] text-slate-500 mt-0.5">${t.role_desc}</div>
+                          </td>
+                          <td class="py-2.5 px-3 text-right font-extrabold text-indigo-700 text-sm whitespace-nowrap">
+                            ${Number(t.bid_price).toFixed(2)} 元
+                          </td>
+                          <td class="py-2.5 px-3 text-right font-semibold text-slate-700 whitespace-nowrap">
+                            ${Number(t.all_in_cost_per_share).toFixed(2)} 元
+                          </td>
+                          <td class="py-2.5 px-3 text-center">
+                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-900 font-extrabold">
+                              ${t.lots} 張
+                            </span>
+                          </td>
+                          <td class="py-2.5 px-3 text-right text-slate-600 whitespace-nowrap">
+                            NT$ ${Number(t.initial_margin_twd || 0).toLocaleString()}
+                          </td>
+                          <td class="py-2.5 px-3 text-right font-bold text-slate-900 whitespace-nowrap">
+                            NT$ ${Number(t.settlement_twd || 0).toLocaleString()}
+                          </td>
+                          <td class="py-2.5 px-3 text-right whitespace-nowrap ${pColor}">
+                            ${pProfit >= 0 ? '+' : ''}${pProfit.toLocaleString()} 元 (${t.est_roi_pct >= 0 ? '+' : ''}${t.est_roi_pct}%)
+                          </td>
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                  <tfoot>
+                    <tr class="bg-slate-100/90 font-extrabold text-slate-900 border-t-2 border-indigo-200">
+                      <td class="py-2.5 px-3">合計總覽（100萬預算組合）</td>
+                      <td class="py-2.5 px-3 text-right text-indigo-900 whitespace-nowrap">均價 ${ai.weighted_avg_bid} 元</td>
+                      <td class="py-2.5 px-3 text-right text-slate-800 whitespace-nowrap">含費 ${ai.weighted_all_in_cost} 元</td>
+                      <td class="py-2.5 px-3 text-center text-indigo-900 whitespace-nowrap">共 ${totalLots} 張</td>
+                      <td class="py-2.5 px-3 text-right text-slate-700 whitespace-nowrap">NT$ ${totalMargin}</td>
+                      <td class="py-2.5 px-3 text-right text-indigo-950 whitespace-nowrap">NT$ ${totalSettlement}</td>
+                      <td class="py-2.5 px-3 text-right whitespace-nowrap ${profitColor}">
+                        ${totalProfitStr} 元 (${totalRoiStr})
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <!-- 2. 個股專屬 3 大核心 AI 觀點（怎麼看這產業？怎麼看這個股？為什麼這樣投？） -->
+            <div>
+              <div class="text-xs font-extrabold text-indigo-950 mb-2.5 flex items-center justify-between">
+                <span>🧭 個股專屬 AI 深度觀點（通用競拍規則請見頁面頂端「分析大框架」）</span>
+              </div>
+              <div class="space-y-2.5">
+                ${steps.map(s => {
+                  const bulletList = Array.isArray(s.bullets) && s.bullets.length > 0
+                    ? s.bullets
+                    : (s.detail || '').split(/(?=【|①|②|③|④|⑤)/).map(x => x.trim()).filter(Boolean);
+                  const formattedBullets = bulletList.map(bLine => {
+                    const m = bLine.match(/^【([^】]+)】(.*)$/);
+                    if (m) {
+                      return `<li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 py-1 border-b border-slate-200/60 last:border-b-0 last:pb-0">
+                        <span class="inline-block px-2 py-0.5 rounded bg-slate-200/80 text-slate-800 font-bold text-[11px] shrink-0">${m[1]}</span>
+                        <span class="text-slate-700 leading-relaxed">${m[2].trim()}</span>
+                      </li>`;
+                    }
+                    return `<li class="py-0.5 text-slate-700 leading-relaxed">• ${bLine}</li>`;
+                  }).join('');
+                  return `
+                  <div class="p-3.5 rounded-xl bg-slate-50/90 border border-slate-200/90 space-y-2">
+                    <div class="flex items-center gap-2 pb-1 border-b border-slate-200/80">
+                      <span class="px-2 py-0.5 rounded bg-slate-700 text-white font-extrabold text-[10px] tracking-wider shrink-0">
+                        ${s.step_num}
+                      </span>
+                      <span class="text-xs font-extrabold text-slate-900">${s.title}</span>
+                    </div>
+                    <ul class="space-y-1 text-xs pl-0.5">
+                      ${formattedBullets}
+                    </ul>
+                  </div>
+                `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     function toggleCardDetail(cardId) {
       const detailEl = document.getElementById(`detail-${cardId}`);
@@ -897,13 +1118,16 @@
         const estMargin = Number(item.estimated_min_margin || 0).toLocaleString();
         const cp = item.company_profile || {};
         const cpIndustry = cp.industry || '上市櫃/興櫃企業';
-        const cpBusiness = cp.revenue_mix || cp.business_scope || '—';
+        const cpBusiness = cp.business_scope || cp.revenue_mix || '—';
         const cpMonthRev = cp.latest_month_revenue
           ? `${cp.latest_month_revenue} <span class="text-emerald-700 font-semibold">(年增 ${cp.latest_month_yoy || '—'})</span>`
           : '—';
         const cpAccRev = cp.accumulated_revenue
           ? `${cp.accumulated_revenue} <span class="text-emerald-700 font-semibold">(年增 ${cp.accumulated_yoy || '—'})</span>`
           : '—';
+        const cpQRevNet = cp.latest_quarter_revenue
+          ? `單季營收 ${cp.latest_quarter_revenue} ・ 稅後淨利 ${cp.latest_quarter_net_income || '—'}`
+          : '';
         const cpGross = cp.gross_margin || '—';
         const cpOp = cp.operating_margin || '—';
         const cpPretax = cp.pretax_margin || '—';
@@ -911,6 +1135,14 @@
         const cpEps = cp.latest_quarter_eps || '—';
         const cp4qEps = cp.recent_4q_eps || '—';
         const cpBps = cp.bps ? `${cp.bps} 元` : '—';
+
+        const baseCode = item.base_code || item.security_code;
+        const v = item.valuation || {};
+        const mopsProspectusUrl = (v.mops && v.mops.mops_prospectus_url) || `https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${baseCode}&year=115&mtype=B`;
+        const richclubUrl = (v.sinotrade && v.sinotrade.richclub_search_url) || `https://www.sinotrade.com.tw/richclub/search?keyword=${encodeURIComponent(item.security_name)}`;
+        const sinoStockUrl = (v.sinotrade && v.sinotrade.sinotrade_stock_url) || `https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=${baseCode}`;
+        const cnyesUrl = (v.factset && v.factset.cnyes_url) || `https://www.cnyes.com/twstock/${baseCode}`;
+        const goodinfoUrl = cp.goodinfo_url || `https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=${baseCode}`;
 
         const newsHtml = (item.news && item.news.length > 0)
           ? `<ul class="space-y-2 mt-2">
@@ -927,7 +1159,6 @@
             </ul>`
           : `<div class="text-xs text-slate-400 mt-1">目前暫無相關新聞報導</div>`;
 
-        const v = item.valuation || {};
         const minPriceNum = Number(item.min_price || v.min_price || 0);
         const mktPriceNum = Number(v.market_price || 0);
         const targetMidNum = Number(v.consensus_mid || (minPriceNum ? (minPriceNum * 1.25).toFixed(1) : 0));
@@ -979,7 +1210,7 @@
                 </div>
 
                 <!-- Toggle Indicator (Pinned top-right with shrink-0 & whitespace-nowrap so it is never squeezed) -->
-                <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-blue-50/90 hover:bg-blue-100 text-blue-700 border border-blue-200/80 text-xs font-bold transition shrink-0 whitespace-nowrap">
+                <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 text-xs font-bold transition shrink-0 whitespace-nowrap">
                   <span id="toggle-text-${cardId}">${isExpanded ? '收合詳細資訊' : '展開詳細資訊'}</span>
                   <span id="chevron-${cardId}" class="inline-block transition-transform duration-200" style="transform: ${isExpanded ? 'rotate(180deg)' : 'rotate(0deg)'};">▼</span>
                 </div>
@@ -1025,59 +1256,46 @@
             </div>
 
             <!-- Collapsible Detailed Content (預設收合，點擊後展開) -->
-            <div id="detail-${cardId}" class="${isExpanded ? '' : 'hidden'} px-6 pb-6 pt-2 border-t border-slate-100 bg-slate-50/30">
-              <!-- Quick External Links Bar -->
-              <div class="flex flex-wrap items-center justify-between gap-2 py-2.5 px-3.5 bg-white rounded-xl border border-slate-200/80 text-xs mb-3">
-                <div class="text-slate-500">
-                  競拍方式：<strong class="text-slate-700">${item.auction_method}</strong> ｜
-                  主辦券商：<strong class="text-slate-700">${item.underwriter}</strong>
+            <div id="detail-${cardId}" class="${isExpanded ? '' : 'hidden'} px-6 pb-6 pt-3 border-t border-slate-100 bg-slate-50/30">
+              <!-- Unified External Research Links & Non-Redundant Auction Specs Bar -->
+              <div class="bg-white rounded-xl border border-slate-200/80 p-3 text-xs mb-3 space-y-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2 text-slate-600 pb-2 border-b border-slate-100">
+                  <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <span>📦 競拍總張數：<strong class="text-slate-900">${item.auction_quantity} 張</strong>（單筆限額 ${item.min_bid_quantity}~${item.max_bid_quantity} 張）</span>
+                    <span>🛡️ 保證金門檻：<strong class="text-slate-900">${item.margin_percentage}%</strong>（每單最低約 NT$ ${estMargin} 起）</span>
+                    <span>🔔 撥券掛牌日：<strong class="text-slate-900">${item.listing_date}</strong>（${item.auction_method}）</span>
+                  </div>
                 </div>
-                <div class="flex flex-wrap items-center gap-2 font-semibold">
-                  <a href="${item.yahoo_url}" target="_blank" class="text-blue-600 hover:underline">Yahoo股市 ↗</a>
-                  <span class="text-slate-300">|</span>
-                  <a href="${item.moneydj_url || '#'}" target="_blank" class="text-blue-600 hover:underline">MoneyDJ基本面 ↗</a>
-                  <span class="text-slate-300">|</span>
-                  <a href="https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=${item.base_code || item.security_code}&year=115&mtype=B" target="_blank" class="text-amber-700 font-bold hover:underline">MOPS公開說明書 ↗</a>
-                </div>
-              </div>
-
-              <!-- Auction Schedule & Margin Grid -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-3 text-xs">
-                <div class="bg-white p-3 rounded-xl border border-slate-200/70">
-                  <div class="text-slate-400">投標期間</div>
-                  <div class="font-bold text-slate-800 mt-0.5">${item.bid_start_date} ~ ${item.bid_end_date}</div>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-slate-200/70">
-                  <div class="text-slate-400">開標日 / 撥券掛牌日</div>
-                  <div class="font-bold text-slate-800 mt-0.5">${item.open_bid_date} / ${item.listing_date}</div>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-slate-200/70">
-                  <div class="text-slate-400">競拍總張數 (單筆限額)</div>
-                  <div class="font-bold text-slate-800 mt-0.5">${item.auction_quantity} 張 (${item.min_bid_quantity}~${item.max_bid_quantity}張)</div>
-                </div>
-                <div class="bg-white p-3 rounded-xl border border-slate-200/70">
-                  <div class="text-slate-400">保證金成數 & 預估最低門檻</div>
-                  <div class="font-bold text-slate-800 mt-0.5">${item.margin_percentage}% (約 NT$ ${estMargin} 起)</div>
+                <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold">
+                  <span class="text-slate-400 mr-1">外部研究連結：</span>
+                  <a href="${goodinfoUrl}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">📊 Goodinfo! 個股資訊 ↗</a>
+                  <a href="${mopsProspectusUrl}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">📘 MOPS 公開說明書 ↗</a>
+                  <a href="${richclubUrl}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">🏦 永豐豐雲學堂 ↗</a>
+                  <a href="${sinoStockUrl}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">📊 永豐理財網 ↗</a>
+                  <a href="${cnyesUrl}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">📈 鉅亨網 FactSet ↗</a>
+                  <a href="https://www.macromicro.me/tw-industry-overview" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">🌐 財經M平方 ↗</a>
+                  <a href="${item.yahoo_url}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">Yahoo股市 ↗</a>
+                  <a href="${item.moneydj_url || '#'}" target="_blank" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 transition">MoneyDJ基本面 ↗</a>
                 </div>
               </div>
 
-              <!-- Company Profile, Revenue Scale & Profitability Digest -->
-              <div class="bg-emerald-50/60 border-l-4 border-emerald-600 rounded-r-xl p-4 my-4 space-y-3">
-                <div class="text-xs font-extrabold text-emerald-950 flex items-center justify-between">
-                  <span>🏢 公司介紹、業務範圍、營收規模與利潤率摘要</span>
+              <!-- Company Profile, Revenue Scale & Profitability Digest (精簡無重複：僅保留「主要業務」與三大財務指標卡) -->
+              <div class="bg-emerald-50/60 border-l-4 border-emerald-600 rounded-r-xl p-4 my-4 space-y-2.5">
+                <div class="text-xs font-extrabold text-emerald-950 flex flex-wrap items-center justify-between gap-2">
+                  <span>🏢 公司主要業務、營收動能與獲利能力指標</span>
                   <span class="text-[11px] font-medium text-emerald-700">財報期別：${cp.profit_period || cp.latest_quarter_label || '最新季度'}</span>
                 </div>
-                ${formatCompanySummaryLines(cp)}
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
                   <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70 sm:col-span-3">
-                    <span class="text-slate-400 font-medium">主要業務與營收比重：</span>
+                    <span class="text-slate-400 font-semibold">主要業務：</span>
                     <span class="font-semibold text-slate-800">${cpBusiness}</span>
                   </div>
                   <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
                     <div class="text-[11px] text-slate-400">最新單月營收 (${cp.latest_month_label || '最新'})</div>
                     <div class="font-bold text-slate-900 mt-0.5">${cpMonthRev}</div>
                     <div class="text-[11px] text-slate-500 mt-1">累計營收：${cpAccRev}</div>
+                    ${cpQRevNet ? `<div class="text-[11px] text-slate-500 mt-0.5">${cpQRevNet}</div>` : ''}
                   </div>
                   <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
                     <div class="text-[11px] text-slate-400">利潤率指標 (${cp.profit_period || '最新季'})</div>
@@ -1086,8 +1304,8 @@
                   </div>
                   <div class="bg-white p-2.5 rounded-lg border border-emerald-200/70">
                     <div class="text-[11px] text-slate-400">每股獲利與淨值</div>
-                    <div class="font-bold text-slate-900 mt-0.5">單季 EPS ${cpEps}</div>
-                    <div class="text-[11px] text-slate-500 mt-1">累計 ${cp4qEps} ｜ 淨值 ${cpBps}</div>
+                    <div class="font-bold text-slate-900 mt-0.5">最新單季 EPS ${cpEps}</div>
+                    <div class="text-[11px] text-slate-500 mt-1">累計 ${cp4qEps} ｜ 每股淨值 ${cpBps}</div>
                   </div>
                 </div>
               </div>
@@ -1095,16 +1313,18 @@
               <!-- Market Consensus Valuation, MOPS Prospectus & SinoTrade Section -->
               ${formatValuationSection(item)}
 
-              <!-- News Summary Digest Box -->
+              <!-- Nested Toggle List: AI Bidding Strategy & 100萬 Budget Order-Splitting Reasoning -->
+              ${formatAiStrategySection(item, cardId)}
+
+              <!-- News Links (僅於 Gemini AI 實際生成統整時顯示額外摘要框，避免與下方新聞標題重複) -->
+              ${item.summary_mode === 'gemini_ai' ? `
               <div class="bg-blue-50/60 border-l-4 border-blue-600 rounded-r-xl p-4 my-4 space-y-2">
                 <div class="text-xs font-extrabold text-blue-900 flex items-center gap-1.5">
-                  <span>📌 競拍情報與新聞整理摘要</span>
-                  ${item.summary_mode === 'gemini_ai' ? '<span class="px-2 py-0.5 rounded bg-blue-600 text-white text-[10px]">✨ Gemini AI 統整</span>' : ''}
+                  <span>📌 Gemini AI 情報統整摘要</span>
                 </div>
-                ${formatNewsDigestLines(item.summary_overview || '', item.summary_news_digest || '')}
-              </div>
+                ${formatNewsDigestLines('', item.summary_news_digest || '')}
+              </div>` : ''}
 
-              <!-- News Links -->
               <div>
                 <div class="text-xs font-bold text-slate-700">📰 最新相關新聞與連結 (${(item.news || []).length} 則)：</div>
                 ${newsHtml}
