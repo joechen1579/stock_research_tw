@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 15:05:25 (TST)",
+  "updated_at": "2026-11-02 16:03:08 (TST)",
   "reference_date": "2026/11/02",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
@@ -71,9 +71,24 @@
         "latest_quarter_net_income": "1.51 億元",
         "latest_quarter_eps": "4.53 元",
         "recent_4q_eps": "16.32 元 (近4季累計)",
-        "summary_text": "【產業與業務】騏億鑫（7848）隸屬於「半導體廠務工程 / 設備材料業」，主要經營業務為「高科技廠房廠務供應系統工程70.35%、材料銷售27.02%、其他2.63% (2025年)」。 【營收規模】最新 (115/09) 單月營收約 2.99 億元（年增率 127.27%）；當年度累計營收達 22.84 億元（累計年增率 75.28%）；最新季報 (115.2Q) 單季營收 8.49 億元、稅後淨利 1.51 億元。 【利潤率與獲利表現 (115.2Q)】營業毛利率 29.36%、營業利益率 22.65%、稅前淨利率 22.20%、ROE 10.37%、最新單季 EPS 4.53 元、近四季累計 EPS 16.32 元 (近4季累計)、每股淨值 47.21 元。"
+        "summary_text": "【所屬產業】騏億鑫（7848）隸屬於「半導體廠務工程 / 設備材料業」\n【主要業務】高科技廠房廠務供應系統工程70.35%、材料銷售27.02%、其他2.63% (2025年)\n【營收規模】最新 (115/09) 單月營收 2.99 億元（年增 127.27%） ｜ 累計營收 22.84 億元（年增 75.28%） ｜ 最新季報 (115.2Q) 單季營收 8.49 億元、稅後淨利 1.51 億元\n【利潤率指標 (115.2Q)】毛利率 29.36% ｜ 營益率 22.65% ｜ 稅前淨利率 22.20% ｜ ROE 10.37%\n【每股獲利與淨值】最新單季 EPS 4.53 元 ｜ 近四季累計 EPS 16.32 元 (近4季累計) ｜ 每股淨值 47.21 元",
+        "summary_lines": [
+          "【所屬產業】騏億鑫（7848）隸屬於「半導體廠務工程 / 設備材料業」",
+          "【主要業務】高科技廠房廠務供應系統工程70.35%、材料銷售27.02%、其他2.63% (2025年)",
+          "【營收規模】最新 (115/09) 單月營收 2.99 億元（年增 127.27%） ｜ 累計營收 22.84 億元（年增 75.28%） ｜ 最新季報 (115.2Q) 單季營收 8.49 億元、稅後淨利 1.51 億元",
+          "【利潤率指標 (115.2Q)】毛利率 29.36% ｜ 營益率 22.65% ｜ 稅前淨利率 22.20% ｜ ROE 10.37%",
+          "【每股獲利與淨值】最新單季 EPS 4.53 元 ｜ 近四季累計 EPS 16.32 元 (近4季累計) ｜ 每股淨值 47.21 元"
+        ]
       },
       "news": [
+        {
+          "title": "亞利桑那晶圓多廠區同步推進 騏億鑫揭廠務工程爆單忙翻天",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE95TzVOVzdPUVVjVlZzcXJoellua1hjX1k5T3JLdUlXdXhtM2V6c0pBSVNMSUtnbFRGVlFEdlZjTUEzT3I0OWdxMk1IQjY?oc=5",
+          "source": "聚財網",
+          "published_at": "2026/11/02 13:02",
+          "sort_time": "2026-11-02T13:02:07+08:00",
+          "snippet": ""
+        },
         {
           "title": "抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBfb2t3a0gzSjU1ZFBSdDNxUi13UllJX3RmR3VkLXpPSl9rOFl6YW5oOG1wR2FUYkYxZkVTcktwaDNLNS0xeGJmcFJnUEpGRGxMUENJYy1Rc2xHb3h5VDNB0gFkQVVfeXFMT2hBN3BRTFA0LVBSMWI3b1l0VDF3Uzd6VEVBaFB5TVZRdkVCZVlMYzZwSnFxc0pBdGFvM1U2bk9vM0ZuNmRXNTRxcWJzYzRpRTliUEFmVzBncm9rNkY1c0xvcmt4NQ?oc=5",
@@ -88,14 +103,6 @@
           "source": "Yahoo股市",
           "published_at": "2026/10/30 16:07",
           "sort_time": "2026-10-30T16:07:48+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騏億鑫競拍登場 營運爆發式成長",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wRHpESE1RNmMwZUltODJzYk9wMEZYOXBLOXJOWHZqMFd4Z3VKQ0NuamJTWTF5cjljVThlR0xYSlVpYkMtaVlvTHYwWDRuMTZu0gFWQVVfeXFMTW5GRkNuTF9zdF94T2VLVkREX3MyS2NyaGR4NE1BUVpXLUpVZ3poRnA5LVlrMFd6UVF4TDBJNjVMZVVkNy1pNjVyMl9fWjJfMWk2R1pTM2c?oc=5",
-          "source": "UDN",
-          "published_at": "2026/10/29 11:41",
-          "sort_time": "2026-10-29T11:41:57+08:00",
           "snippet": ""
         },
         {
@@ -115,8 +122,88 @@
           "snippet": ""
         }
       ],
+      "valuation": {
+        "min_price": 210.0,
+        "market_price": 320.0,
+        "market_price_source": "Yahoo股市 (7848.TWO)",
+        "spread_to_min_pct": 52.4,
+        "estimated_underwriting_price": 252.0,
+        "underwriting_price_is_exact": true,
+        "annualized_eps_label": "16.32 元（近四季累計實際 EPS）",
+        "pe_range_label": "18x ~ 26x",
+        "pe_fair_low": 293.8,
+        "pe_fair_mid": 359.0,
+        "pe_fair_high": 424.3,
+        "consensus_low": 252.0,
+        "consensus_mid": 295.8,
+        "consensus_high": 359.0,
+        "suggested_bid_low": 272.0,
+        "suggested_bid_high": 294.4,
+        "factset": {
+          "has_factset": false,
+          "target_mean": 0.0,
+          "target_median": 0.0,
+          "target_high": 0.0,
+          "target_low": 0.0,
+          "analyst_count": 0,
+          "cnyes_url": "https://www.cnyes.com/twstock/7848"
+        },
+        "mops": {
+          "mops_prospectus_url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=7848&year=115&mtype=B",
+          "mops_company_url": "https://mops.twse.com.tw/mops/web/t05st03?co_id=7848",
+          "latest_doc_title": "公開說明書"
+        },
+        "sinotrade": {
+          "has_sinotrade_account": true,
+          "sinotrade_account_masked": "H12***96",
+          "richclub_search_url": "https://www.sinotrade.com.tw/richclub/search?keyword=%E9%A8%8F%E5%84%84%E9%91%AB",
+          "sinotrade_stock_url": "https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=7848",
+          "sinotrade_ipo_url": "https://www.sinotrade.com.tw/richclub/IPO",
+          "articles": [
+            {
+              "title": "騏億鑫在手訂單逾44億元、交期至2028年初 11月中旬上櫃掛牌｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1mcU83R0g5U1o1YjJmeFQ5T015NXY1dUdhY213TUdUQzRXbVd1ZnZ6QjVNWmVzVU9PamZyUmJsT3JjNkQxYXpfZVpRZ3pMajdtWXFibG1BRVVkZ0Y5eWFLZVgwek1xclNfSnhYZXIxTU5fU2tBUWc?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 21 Oct 2026"
+            },
+            {
+              "title": "騏億鑫上櫃前現金增資 暫定以新台幣252元溢價發行｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52dXV4RkhOcVpkT3ZFSy1UTXhJRG03c1ZDYWpYWk5VRWhHWnZNTlg2Wk5kNUxycUZWckQtUmlueTdNa1BaazlfM0pzRFIzTHZORG5iQ2I1eFl1T0FRWnZuclQzU2hHekFaWVd3QVQybzQ5X2hGekE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Mon, 26 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》騏億鑫公開承銷時程出爐 競拍3060張、暫定每股252元｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1nWWFfRm1wNGNzYmNxN1FrRWhOMlIxVG02TnpuTjUzN3lFU2FQUGc3Qkd6eUFfQkRiWEFHMHBMUEpFY0RlaGR2R0cxVWttZnpJTEMtcFBvdlpISkFJb3A2UlpRdHZXNWd5QjZjWllGUGhSVU5ZVGc?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 28 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》騏億鑫訂單一路排到2030年 明年毛利率更優｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9iSXpsS01oYWdST1ZrSzZMRmJ5WXR1bUFZM0tidHpWRENwbWJIWW5DMWl5NXVBbmZuSzlwYXRXZ0VnYk9NeHY3cXJLQXU5NVNXcnZFcTNsNFhaVDUyVFlIWG1FU3puUnFPb1JOYlZEYnNzTjF4Wnc?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 21 Oct 2026"
+            },
+            {
+              "title": "2奈米與CoWoS浪潮帶動裝機需求：騏億鑫(7848)透過精準「二次配」打通全球晶圓廠的最後一哩路！｜《企業家觀點》EP23｜騏億鑫洪國庭董事長｜豐雲學堂2026 年 10 月 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMi7gVBVV95cUxPYlVyOUk4V0R4aXZxaGlSUWxkNzRFVk54Z1pEVEFNaklBamV4ZUxrNjBaRHlWM2NsV01CV0dhZzFNU3V3U0VxZnFKSHJPOXdxazJnN3FtdmZaSXI0cFRRLUxHVDh0VGNPQ08xZlB5ZVgwVUpOMUloX1kzU1ppNGZwRm5TX3lwd0p3QS1qaHVtZHdCU2NqNTctVksxemNXSlEwUy1SQnlHVDFkdjJmeDVNQ3kzRlJZNUFzdmY5RjFNQWI4ODRDby03blZKbWJfd3phYmhMekxZMnlVMzFRWE9BUDNnRWJReTZzTmdNUHJldkhpdTA0aUZXMDhSLUp1aFc4Q2VMT3JjWE5ramV4elcwcVFYRXJQYUZRU195XzIyX2lXTVdqQ2dTVVljQkdKdlJnTV8zeHdfbzJhWWdhbkc5QldwcmpSWDR3VzF5RktIM2RlRk5SRTdUZzZueUhLVlhoYl9RTUZGZ2Y2OG1DSWVnX2FXTEQwQ24xNFM2RlEtYVNabDVWQW1IQ1VMd2hHVUVGNS12aWVKU2UxNWtDckc0ZThQYjBIRE5vanhYazktVjB3cjY5dDNlbVlTbWlka3FsUzNoMXNzZUF4TTNRYlVrR1RJVXB0d0wxYm14Z2NYSGhEZ2RlNDZRY2d3Y3hiWFlQeU5mb0RLZ1hKbTBYeWpxSjR5VHg4U3JWazRTV1ZxRU82NGRYMUdESW1tc0FTU0tBSVZmNnpaS1FSUDNtSFRPbzliSkdhRFN6QTVOTWQ0MDZaNV9Wa25xUk1LQ3FDTVdvd2lyY01tSWZMYmNLTV9ZUkJKbnZnSnoxSzZfQ0xfLVFBb04tTGxEQVBRQ2U2QTVRN3JPd05MaXI2eE83NlZfZ05sdmpZaEtpMlhyTFQzREt4OFJubnNXMEt6c0U3UGtTQkd5Y2xMa05kMEE5QV9RbVRzVHRLNnRuSDFFQWVrMVNnNHNFbjhWYWwycHAxZVZvQ2pJNGdUdlZsSHhEbkE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Fri, 02 Oct 2026"
+            }
+          ],
+          "extracted_targets": [
+            252.0
+          ]
+        },
+        "methodology_lines": [
+          "【MOPS 承銷報告定價依據】主辦承銷商（永豐金）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 210.0 元，推估暫定公開申購承銷價約 252.0 元。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 320.0 元（較競拍底價 210.0 元溢價 +52.4%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 272.0 ～ 294.4 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 16.32 元（近四季累計實際 EPS） × 產業合理本益比（18x～26x）推算，基本面合理價值區間約 293.8 ～ 424.3 元（中位數 359.0 元）。",
+          "【永豐金證券 / 豐雲學堂資料庫 (H12***96)】已成功檢索 5 篇永豐研究快訊/專欄報告，並從報告中萃取出參考定價：252.0 元（已納入上方共識價格計算）。"
+        ]
+      },
       "summary_overview": "【騏億鑫 (7848)】為櫃檯買賣之「初上櫃」競拍案，由永豐金證券主辦。本次競拍數量共 3,060 張，最低投標底價為 210 元（每標單最低預估保證金加處理費約 NT$ 105,400 元）。投標期間為 2026/10/30 至 2026/11/03，預計於 2026/11/05 開標、2026/11/16 撥券掛牌。",
-      "summary_news_digest": "綜合 自由財經、Yahoo股市、UDN 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫競拍登場 營運爆發式成長（UDN）；(4) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）。",
+      "summary_news_digest": "綜合 聚財網、自由財經、Yahoo股市 等共 5 則近期新聞焦點：(1) 亞利桑那晶圓多廠區同步推進 騏億鑫揭廠務工程爆單忙翻天（聚財網）；(2) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(3) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(4) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）。",
       "summary_mode": "extractive"
     },
     {
@@ -179,7 +266,14 @@
         "latest_quarter_net_income": "1.40 億元",
         "latest_quarter_eps": "2.27 元",
         "recent_4q_eps": "9.73 元 (近4季累計)",
-        "summary_text": "【產業與業務】宏偉（4565）隸屬於「櫃檯買賣企業」，主要經營業務為「電梯57.05%、修繕及保養42.95% (2025年)」。 【營收規模】最新 (115/09) 單月營收約 2.43 億元（年增率 78.74%）；當年度累計營收達 15.33 億元（累計年增率 17.71%）；最新季報 (115.2Q) 單季營收 4.84 億元、稅後淨利 1.40 億元。 【利潤率與獲利表現 (115.2Q)】營業毛利率 42.05%、營業利益率 33.12%、稅前淨利率 36.04%、ROE 6.83%、最新單季 EPS 2.27 元、近四季累計 EPS 9.73 元 (近4季累計)、每股淨值 34.37 元。"
+        "summary_text": "【所屬產業】宏偉（4565）隸屬於「櫃檯買賣企業」\n【主要業務】電梯57.05%、修繕及保養42.95% (2025年)\n【營收規模】最新 (115/09) 單月營收 2.43 億元（年增 78.74%） ｜ 累計營收 15.33 億元（年增 17.71%） ｜ 最新季報 (115.2Q) 單季營收 4.84 億元、稅後淨利 1.40 億元\n【利潤率指標 (115.2Q)】毛利率 42.05% ｜ 營益率 33.12% ｜ 稅前淨利率 36.04% ｜ ROE 6.83%\n【每股獲利與淨值】最新單季 EPS 2.27 元 ｜ 近四季累計 EPS 9.73 元 (近4季累計) ｜ 每股淨值 34.37 元",
+        "summary_lines": [
+          "【所屬產業】宏偉（4565）隸屬於「櫃檯買賣企業」",
+          "【主要業務】電梯57.05%、修繕及保養42.95% (2025年)",
+          "【營收規模】最新 (115/09) 單月營收 2.43 億元（年增 78.74%） ｜ 累計營收 15.33 億元（年增 17.71%） ｜ 最新季報 (115.2Q) 單季營收 4.84 億元、稅後淨利 1.40 億元",
+          "【利潤率指標 (115.2Q)】毛利率 42.05% ｜ 營益率 33.12% ｜ 稅前淨利率 36.04% ｜ ROE 6.83%",
+          "【每股獲利與淨值】最新單季 EPS 2.27 元 ｜ 近四季累計 EPS 9.73 元 (近4季累計) ｜ 每股淨值 34.37 元"
+        ]
       },
       "news": [
         {
@@ -223,6 +317,86 @@
           "snippet": ""
         }
       ],
+      "valuation": {
+        "min_price": 75.0,
+        "market_price": 127.0,
+        "market_price_source": "Yahoo股市 (4565.TWO)",
+        "spread_to_min_pct": 69.3,
+        "estimated_underwriting_price": 88.5,
+        "underwriting_price_is_exact": false,
+        "annualized_eps_label": "9.73 元（近四季累計實際 EPS）",
+        "pe_range_label": "12x ~ 18x",
+        "pe_fair_low": 116.8,
+        "pe_fair_mid": 146.0,
+        "pe_fair_high": 175.1,
+        "consensus_low": 90.0,
+        "consensus_mid": 121.0,
+        "consensus_high": 146.0,
+        "suggested_bid_low": 108.0,
+        "suggested_bid_high": 116.8,
+        "factset": {
+          "has_factset": false,
+          "target_mean": 0.0,
+          "target_median": 0.0,
+          "target_high": 0.0,
+          "target_low": 0.0,
+          "analyst_count": 0,
+          "cnyes_url": "https://www.cnyes.com/twstock/4565"
+        },
+        "mops": {
+          "mops_prospectus_url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=4565&year=115&mtype=B",
+          "mops_company_url": "https://mops.twse.com.tw/mops/web/t05st03?co_id=4565",
+          "latest_doc_title": "公開說明書"
+        },
+        "sinotrade": {
+          "has_sinotrade_account": true,
+          "sinotrade_account_masked": "H12***96",
+          "richclub_search_url": "https://www.sinotrade.com.tw/richclub/search?keyword=%E5%AE%8F%E5%81%89",
+          "sinotrade_stock_url": "https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=4565",
+          "sinotrade_ipo_url": "https://www.sinotrade.com.tw/richclub/IPO",
+          "articles": [
+            {
+              "title": "《興櫃股》宏偉10月28日舉辦上櫃前業績發表會｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1YTFpYNnI5bGo1X1VrRGV5MG9XYzVIUE56NzV4dEtDUktuNTJMSkVfQm1wby16VkZMaGZJNWhmbjJaY3VMOGZMUFdLenpmY0FIbzNTRUNnTkpocUFWQkNORDJXZTdtU1dHSk1YUFc0Wkw2TEtiWGc?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 21 Oct 2026"
+            },
+            {
+              "title": "宏偉電機11月下旬轉上櫃 訂單能見度翻倍看至3年｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4tc2t3OFFXLWE5NDhVbXBuMG83RE90RUcxa2lHbmo0Y3FSTGl2Szh3bFdscmlRWUsycThvbS1NUkw1dGZnMk1MT0g4MGxkS3ZrTmsyYkFQaXVxTEV4dXduSnV1bGZNVTVsQ0xtOUFmRWRNZkZ4ZlE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Mon, 26 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》宏偉上櫃前現增 暫定每股90元溢價發行｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5RV05rblRmbXRnNjMwOXRiSDBzdHo3MVN4TGh6bEt3bkxfa2t5SjU3NExBb2Y0VWxRZGpmSnZOV1AzZHl2Z3ljUWdTSGFqVmVjekxBRlkzQVNDeXYwOWc4azFQdWx6NjRkWTI3RlRHNzRwQ0Vtb0E?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Thu, 29 Oct 2026"
+            },
+            {
+              "title": "宏偉預計11月19日掛牌上櫃｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5YZ2pDUUROVlZzd21NN2pESXc4UWlUQzhoQzdQbzVsUUZmVDgtSHVmOFVMSm9zRl9rcDQ3dWJZY1ZoWE9EVFpJejJLY0tFM0hnQTdmb213alJXbmFxbTdfb0c3aVlQQkJSVG9UQzdxZ0hSZm16S0E?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Tue, 27 Oct 2026"
+            },
+            {
+              "title": "《櫃買市場》宏偉上櫃案審議通過｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAtZ1NMTExLaUV0ZVhCZFJxclJHR3phSFVIT1RVWTNkbXB4N05XMm9tdUNfWGZyTW5pZWJUVUVYT1RTcG9hYlVtdVF3UDVyR1F1Skd1UWg2bDFodjg2T3NFdllpb25EQ0h6NEdmLWJjN1RKR2RBekE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Tue, 11 Aug 2026"
+            }
+          ],
+          "extracted_targets": [
+            90.0
+          ]
+        },
+        "methodology_lines": [
+          "【MOPS 承銷報告定價依據】主辦承銷商（中國信託）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 75.0 元，推估暫定公開申購承銷價約 88.5 元。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 127.0 元（較競拍底價 75.0 元溢價 +69.3%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 108.0 ～ 116.8 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 9.73 元（近四季累計實際 EPS） × 產業合理本益比（12x～18x）推算，基本面合理價值區間約 116.8 ～ 175.1 元（中位數 146.0 元）。",
+          "【永豐金證券 / 豐雲學堂資料庫 (H12***96)】已成功檢索 5 篇永豐研究快訊/專欄報告，並從報告中萃取出參考定價：90.0 元（已納入上方共識價格計算）。"
+        ]
+      },
       "summary_overview": "【宏偉 (4565)】為櫃檯買賣之「初上櫃」競拍案，由中國信託證券主辦。本次競拍數量共 5,617 張，最低投標底價為 75 元（每標單最低預估保證金加處理費約 NT$ 37,900 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
       "summary_news_digest": "綜合 CMoney、MoneyDJ、中時新聞網 等共 5 則近期新聞焦點：(1) 4565 宏偉 - 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 股市爆料同學會（CMoney）；(2) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞（MoneyDJ）；(3) 中國信託證券輔導 宏偉辦上櫃前業績發表（中時新聞網）；(4) 中國信託證券輔導宏偉辦上櫃前業績發表- 日報（工商時報）。",
       "summary_mode": "extractive"
@@ -287,15 +461,26 @@
         "latest_quarter_net_income": "",
         "latest_quarter_eps": "",
         "recent_4q_eps": "",
-        "summary_text": "【產業與業務】耐特（8058）隸屬於「集中交易市場企業」，從事相關專業製造與服務業務。"
+        "summary_text": "【所屬產業】耐特（8058）隸屬於「集中交易市場企業」",
+        "summary_lines": [
+          "【所屬產業】耐特（8058）隸屬於「集中交易市場企業」"
+        ]
       },
       "news": [
         {
-          "title": "耐特半導體材料占比逼近兩成 IC Tray、BBU 添成長動能",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5jMFpVTUhscDM5VmtGdjJ6RDB3cGtHOElKT3N6VUFua2FhdW1OOXhkN28yTXQwTjI3ZnRpc25yWVJEQ252VW1PWl91Vmo4Njc4bERtbE15WnN1Z9IBX0FVX3lxTE1GVFk2WTJFQzZVcVJrWUFHLVAtTG45clhwekxjZC1IRnZJaGZZcmFtc2tCRlEtUFpVZ05odE96TWhnYlZ3YzRtbWkxc1lqTkk2Zi04bkdpZkxKNU1pNV9v?oc=5",
-          "source": "經濟日報",
-          "published_at": "2026/11/01 16:00",
-          "sort_time": "2026-11-01T16:00:00+08:00",
+          "title": "準上市：半導體複合材料大廠耐特(8058)11月19日上市，暫定每股承銷價80元",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQUJhV2dVa0tVY2RrRjF3dHh1b0sydEl4SDBhbzhQeEZxVHFaQl9pdFowcE1jR1NKcm1lMmstRTZxaVNydFp3RHpXWWlZVHN3MDNPV0k3RWJJY2FUNGR0dURxMnllWEtEWVhJeTZnWF9EaENPMGR5cXRpUUhKYmx1T0JYWl95dWM2?oc=5",
+          "source": "富聯網",
+          "published_at": "2026/11/02 15:53",
+          "sort_time": "2026-11-02T15:53:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "耐特轉型有成半導體材料占比拉升 隨家登半導體在地供應商聯盟成長",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBCMTVNelZEMkZYbmdmdnBBdEllQVd3dS1COXNQY00yTmw5Uk9Nd1cxVHU4cjl1NVdzc2MyVS1Pem92Sk1vSjJCWmZaZERiZTlF0gFWQVVfeXFMTmVtNGVkR3hqLThDNnFIbENlTGdBcmFJcjhBYlFYZy04bGNRMWVIY1FFdE5GMFdTZDhxSmdwWkg1T3psb0Q3ZU1YUjlJdEFoVWZUMmE3N1E?oc=5",
+          "source": "UDN",
+          "published_at": "2026/10/30 09:49",
+          "sort_time": "2026-10-30T09:49:13+08:00",
           "snippet": ""
         },
         {
@@ -304,14 +489,6 @@
           "source": "工商時報",
           "published_at": "2026/10/30 03:00",
           "sort_time": "2026-10-30T03:00:00+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "耐特(8058)做什麼的？從滑雪靴支架到晶圓載具，如何打進家登？",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5zdU4tcTY3dWM1bDdxcjNTWl91YW55bzNFakpfcG0wQWs1bUxSSXlxcTh4OS1Sd1kzS1Q0bmtRal90RHhoY24wZk9mMTFHUy14NUI2Z1VVdER5eUxOYUx1Q3hMTDNJLXA5UHMwOURZcTNKbHZEbmxqVWdB?oc=5",
-          "source": "數位時代",
-          "published_at": "2026/10/29 16:59",
-          "sort_time": "2026-10-29T16:59:00+08:00",
           "snippet": ""
         },
         {
@@ -331,8 +508,86 @@
           "snippet": ""
         }
       ],
+      "valuation": {
+        "min_price": 62.5,
+        "market_price": 97.1,
+        "market_price_source": "Yahoo股市 (8058.TWO)",
+        "spread_to_min_pct": 55.4,
+        "estimated_underwriting_price": 73.8,
+        "underwriting_price_is_exact": false,
+        "annualized_eps_label": "尚無完整公開 EPS 數據",
+        "pe_range_label": "12x ~ 18x",
+        "pe_fair_low": 0.0,
+        "pe_fair_mid": 0.0,
+        "pe_fair_high": 0.0,
+        "consensus_low": 97.1,
+        "consensus_mid": 97.1,
+        "consensus_high": 97.1,
+        "suggested_bid_low": 82.5,
+        "suggested_bid_high": 89.3,
+        "factset": {
+          "has_factset": false,
+          "target_mean": 0.0,
+          "target_median": 0.0,
+          "target_high": 0.0,
+          "target_low": 0.0,
+          "analyst_count": 0,
+          "cnyes_url": "https://www.cnyes.com/twstock/8058"
+        },
+        "mops": {
+          "mops_prospectus_url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=8058&year=115&mtype=B",
+          "mops_company_url": "https://mops.twse.com.tw/mops/web/t05st03?co_id=8058",
+          "latest_doc_title": "公開說明書"
+        },
+        "sinotrade": {
+          "has_sinotrade_account": true,
+          "sinotrade_account_masked": "H12***96",
+          "richclub_search_url": "https://www.sinotrade.com.tw/richclub/search?keyword=%E8%80%90%E7%89%B9",
+          "sinotrade_stock_url": "https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=8058",
+          "sinotrade_ipo_url": "https://www.sinotrade.com.tw/richclub/IPO",
+          "articles": [
+            {
+              "title": "耐特預計11月中下旬掛牌上市三大高階應用動能強明年營收估增10-15%｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5XWjJYa2FZQ0g0VGxSaFliTzFaeGp0UFY1X180bW40R2c3N2V1cEp1RTlJT0ExV0Z6dzlWVHpOc3Y2MndZdkNJaU9KRzNJTS1NcGxlXzJNMUtYTmpzQW5oQW5ObDRmc080andubk03WmhLVElHc3c?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 28 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》耐特陳勳森：樂觀看待未來3到5年營運成長｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE92M1o4R3IwTlMwX2JpRVN2cGQ3NW1WUnRnaUxQcklLbHZBdDVSOEo0ekc5WDVXMHF6SWhHUTY3TWc0RHZZaGZfMXc1X1FjZjZPQzBnOS1CM0NvbW4tTG5Pc1JZbURoVHpzTThhS3JIbzhHQTFLbVE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 28 Oct 2026"
+            },
+            {
+              "title": "耐特半導體材料占比逼近兩成 IC Tray、BBU 添成長動能｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1CZDd2eUxfOFJRdXAwNDJFTDZaVncxQjVoM19mbHpCbTFodHFqbl9XZDU0M1RYZU1aNDJYV3hoVEVINjJNSVp5SDlDRU84YURfRlpSYWhLZVRjUTc0Nmp4QXV4blAyeXdVSnJUUjQ5QWZ1cmhLQkE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Wed, 28 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》耐特9月營收為2.50億元，年增45.16%｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBuMmk3M0Y5YkIwa3V2bldTQy1TLTVUTXNqOWNma2NrMUU1eGZHaG9YbENud0lFZC1ITTJsWER4bmF4c0NVWG9fMWN4VDFiVHA0VVNhNEtXcGxwTUtkUnZuc0dOSk44TEFPUFRHMHFyemExOENjdHc?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Thu, 08 Oct 2026"
+            },
+            {
+              "title": "《興櫃股》興櫃初登場超靚 耐特飆漲近7成｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE15T0wxcGFBd2VGWmtDMFpXdjJFU3VEQ25seGEwU25fSU9pckZ1b01UR3gwSEwyUmRSdG1jdUotLW5jSmJkdWtoNnpIdERnREpqNzZCWDYxa3d4eDAyc2M5Yy1SSXFSa1UtXzZXaFYwRGZTdjVpZEE?oc=5",
+              "source": "永豐金證券 / 豐雲學堂",
+              "published_at": "Mon, 14 Jul 2025"
+            }
+          ],
+          "extracted_targets": []
+        },
+        "methodology_lines": [
+          "【MOPS 承銷報告定價依據】主辦承銷商（兆豐）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 62.5 元，推估暫定公開申購承銷價約 73.8 元。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 97.1 元（較競拍底價 62.5 元溢價 +55.4%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 82.5 ～ 89.3 元）。",
+          "【同業本益比估值模型】因興櫃財報期別揭露限制，建議直接點下方 MOPS 公開說明書查閱會計師查核之最近期完整損益與同業比價表。",
+          "【永豐金證券 / 豐雲學堂資料庫 (H12***96)】已成功檢索 5 篇永豐研究快訊/專欄報告（已納入綜合評估，點擊下方文章標題可直接閱讀全文）。"
+        ]
+      },
       "summary_overview": "【耐特 (8058)】為集中交易市場之「初上市」競拍案，由兆豐證券主辦。本次競拍數量共 4,896 張，最低投標底價為 62.5 元（每標單最低預估保證金加處理費約 NT$ 31,650 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
-      "summary_news_digest": "綜合 經濟日報、工商時報、數位時代 等共 5 則近期新聞焦點：(1) 耐特半導體材料占比逼近兩成 IC Tray、BBU 添成長動能（經濟日報）；(2) 耐特11月下旬上市三大高階應用點火- 日報（工商時報）；(3) 耐特(8058)做什麼的？從滑雪靴支架到晶圓載具，如何打進家登？（數位時代）；(4) 耐特預計11月中下旬掛牌上市 三大高階應用動能強明年營收估增10-15%（鉅亨網）。",
+      "summary_news_digest": "綜合 富聯網、UDN、工商時報 等共 5 則近期新聞焦點：(1) 準上市：半導體複合材料大廠耐特(8058)11月19日上市，暫定每股承銷價80元（富聯網）；(2) 耐特轉型有成半導體材料占比拉升 隨家登半導體在地供應商聯盟成長（UDN）；(3) 耐特11月下旬上市三大高階應用點火- 日報（工商時報）；(4) 耐特預計11月中下旬掛牌上市 三大高階應用動能強明年營收估增10-15%（鉅亨網）。",
       "summary_mode": "extractive"
     }
   ],

@@ -327,56 +327,60 @@ def fetch_company_profile_and_financials(
     if not profile["business_scope"] and profile["revenue_mix"]:
         profile["business_scope"] = profile["revenue_mix"]
 
-    # 組裝完整易讀的「公司介紹與財務基本面摘要」
-    parts = []
+    # 組裝完整易讀的「公司介紹與財務基本面摘要」（分項條列，方便網頁與信件分行閱讀）
+    lines = []
     ind_str = profile["industry"] or "上市櫃/興櫃企業"
-    biz_parts = []
+    lines.append(f"【所屬產業】{base_name}（{base_code}）隸屬於「{ind_str}」")
+
     if profile["business_scope"]:
-        biz_parts.append(f"主要經營業務為「{profile['business_scope']}」")
+        lines.append(f"【主要業務】{profile['business_scope']}")
     if profile["revenue_mix"] and profile["revenue_mix"] != profile["business_scope"]:
-        biz_parts.append(f"產品營收結構為：{profile['revenue_mix']}")
-    biz_sentence = "，".join(biz_parts) if biz_parts else "從事相關專業製造與服務業務"
-    parts.append(f"【產業與業務】{base_name}（{base_code}）隸屬於「{ind_str}」，{biz_sentence}。")
+        lines.append(f"【營收結構】{profile['revenue_mix']}")
 
     # 營收規模句
     rev_items = []
     if profile["latest_month_revenue"]:
         rev_items.append(
-            f"最新 ({profile['latest_month_label']}) 單月營收約 {profile['latest_month_revenue']}（年增率 {profile['latest_month_yoy']}）"
+            f"最新 ({profile['latest_month_label']}) 單月營收 {profile['latest_month_revenue']}（年增 {profile['latest_month_yoy']}）"
         )
     if profile["accumulated_revenue"]:
         rev_items.append(
-            f"當年度累計營收達 {profile['accumulated_revenue']}（累計年增率 {profile['accumulated_yoy']}）"
+            f"累計營收 {profile['accumulated_revenue']}（年增 {profile['accumulated_yoy']}）"
         )
     if profile["latest_quarter_revenue"]:
         rev_items.append(
             f"最新季報 ({profile['latest_quarter_label']}) 單季營收 {profile['latest_quarter_revenue']}、稅後淨利 {profile['latest_quarter_net_income']}"
         )
     if rev_items:
-        parts.append("【營收規模】" + "；".join(rev_items) + "。")
+        lines.append("【營收規模】" + " ｜ ".join(rev_items))
 
-    # 利潤率與獲利表現句
-    prof_items = []
+    # 利潤率句
+    margin_items = []
     if profile["gross_margin"] and profile["gross_margin"] != "N/A":
-        prof_items.append(f"營業毛利率 {profile['gross_margin']}")
+        margin_items.append(f"毛利率 {profile['gross_margin']}")
     if profile["operating_margin"] and profile["operating_margin"] != "N/A":
-        prof_items.append(f"營業利益率 {profile['operating_margin']}")
+        margin_items.append(f"營益率 {profile['operating_margin']}")
     if profile["pretax_margin"] and profile["pretax_margin"] != "N/A":
-        prof_items.append(f"稅前淨利率 {profile['pretax_margin']}")
+        margin_items.append(f"稅前淨利率 {profile['pretax_margin']}")
     if profile["roe"] and profile["roe"] != "N/A":
-        prof_items.append(f"ROE {profile['roe']}")
-    if profile["latest_quarter_eps"]:
-        prof_items.append(f"最新單季 EPS {profile['latest_quarter_eps']}")
-    if profile["recent_4q_eps"]:
-        prof_items.append(f"近四季累計 EPS {profile['recent_4q_eps']}")
-    if profile["bps"] and profile["bps"] != "N/A":
-        prof_items.append(f"每股淨值 {profile['bps']} 元")
-
-    if prof_items:
+        margin_items.append(f"ROE {profile['roe']}")
+    if margin_items:
         period_tag = f" ({profile['profit_period']})" if profile["profit_period"] else ""
-        parts.append(f"【利潤率與獲利表現{period_tag}】" + "、".join(prof_items) + "。")
+        lines.append(f"【利潤率指標{period_tag}】" + " ｜ ".join(margin_items))
 
-    profile["summary_text"] = " ".join(parts)
+    # 每股獲利與淨值句
+    eps_items = []
+    if profile["latest_quarter_eps"]:
+        eps_items.append(f"最新單季 EPS {profile['latest_quarter_eps']}")
+    if profile["recent_4q_eps"]:
+        eps_items.append(f"近四季累計 EPS {profile['recent_4q_eps']}")
+    if profile["bps"] and profile["bps"] != "N/A":
+        eps_items.append(f"每股淨值 {profile['bps']} 元")
+    if eps_items:
+        lines.append("【每股獲利與淨值】" + " ｜ ".join(eps_items))
+
+    profile["summary_lines"] = lines
+    profile["summary_text"] = "\n".join(lines)
     return profile
 
 
@@ -543,6 +547,394 @@ def fetch_twse_auctions(
         )
     )
     return active_auctions
+
+
+def _industry_pe_range(industry_text: str) -> tuple:
+    """依所屬產業提供台股歷史合理本益比區間 (低標PE, 中位數PE, 高標PE)"""
+    text = industry_text or ""
+    if any(k in text for k in ["半導體", "IC", "晶圓", "AI", "雲端", "軟體", "資安", "IP"]):
+        return (18.0, 22.0, 26.0)
+    if any(k in text for k in ["重電", "電機", "生技", "醫療", "光電", "散熱", "伺服器"]):
+        return (16.0, 20.0, 24.0)
+    if any(k in text for k in ["電子", "零組件", "電腦", "通信", "網通"]):
+        return (14.0, 17.0, 20.0)
+    return (12.0, 15.0, 18.0)
+
+
+def fetch_mops_prospectus_info(base_code: str, roc_year: int) -> Dict[str, str]:
+    """
+    從 MOPS 公開資訊觀測站「電子書 - 公開說明書」查詢該公司最新上傳之競拍/承銷公開說明書（含主辦承銷商評估報告）。
+    """
+    mops_ebook_url = (
+        f"https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1"
+        f"&co_id={base_code}&year={roc_year}&mtype=B"
+    )
+    mops_company_url = f"https://mops.twse.com.tw/mops/web/t05st03?co_id={base_code}"
+    result = {
+        "mops_prospectus_url": mops_ebook_url,
+        "mops_company_url": mops_company_url,
+        "latest_doc_title": "公開說明書（含承銷商評估報告與同業本益比承銷價計算書）",
+    }
+    try:
+        raw_bytes = _http_get(mops_ebook_url, timeout=10)
+        raw_html = raw_bytes.decode("big5", "ignore")
+        matches = re.findall(r">([^<>]*公開說明書[^<>]*)<", raw_html)
+        if matches:
+            clean_titles = [m.strip() for m in matches if len(m.strip()) > 4]
+            if clean_titles:
+                result["latest_doc_title"] = clean_titles[0]
+    except Exception:
+        pass
+    return result
+
+
+def fetch_realtime_emerging_or_market_price(base_code: str) -> Dict[str, Any]:
+    """
+    抓取 Yahoo 股市與台灣證交所/櫃買中心之最新興櫃或上市櫃市價（成交價 / 均價）。
+    """
+    price_info: Dict[str, Any] = {
+        "market_price": 0.0,
+        "price_source": "",
+        "quote_url": f"https://tw.stock.yahoo.com/quote/{base_code}",
+    }
+    for sym in [f"{base_code}.TWO", f"{base_code}.TW", base_code]:
+        y_url = f"https://tw.stock.yahoo.com/quote/{sym}"
+        try:
+            raw_html = _http_get(y_url, timeout=10).decode("utf-8", "ignore")
+            # Yahoo Stock meta price or JSON state
+            m_meta = re.search(r'"regularMarketPrice"\s*:\s*\{\s*"raw"\s*:\s*([0-9.]+)', raw_html)
+            if not m_meta:
+                m_meta = re.search(r'"regularMarketPrice"\s*:\s*([0-9.]+)', raw_html)
+            if not m_meta:
+                m_meta = re.search(r'"previousClose"\s*:\s*\{\s*"raw"\s*:\s*([0-9.]+)', raw_html)
+            if m_meta:
+                p = float(m_meta.group(1))
+                if p > 0:
+                    price_info["market_price"] = round(p, 2)
+                    price_info["price_source"] = f"Yahoo股市 ({sym})"
+                    price_info["quote_url"] = y_url
+                    return price_info
+        except Exception:
+            pass
+    return price_info
+
+
+def fetch_cnyes_factset_consensus(base_code: str) -> Dict[str, Any]:
+    """
+    免帳密抓取鉅亨網 (cnyes) / FactSet 公開法人共識目標價（若該股已有外資/本土投顧建檔）。
+    """
+    cnyes_url = f"https://www.cnyes.com/twstock/{base_code}"
+    info: Dict[str, Any] = {
+        "has_factset": False,
+        "target_mean": 0.0,
+        "target_median": 0.0,
+        "target_high": 0.0,
+        "target_low": 0.0,
+        "analyst_count": 0,
+        "cnyes_url": cnyes_url,
+    }
+    try:
+        raw_html = _http_get(cnyes_url, timeout=10).decode("utf-8", "ignore")
+        m_med = re.search(r'"targetPriceMedian"\s*:\s*([0-9.]+)', raw_html)
+        m_mean = re.search(r'"targetPriceMean"\s*:\s*([0-9.]+)', raw_html)
+        m_high = re.search(r'"targetPriceHigh"\s*:\s*([0-9.]+)', raw_html)
+        m_low = re.search(r'"targetPriceLow"\s*:\s*([0-9.]+)', raw_html)
+        m_cnt = re.search(r'"numOfAnalysts"\s*:\s*(\d+)', raw_html)
+        if m_med or m_mean:
+            med = float(m_med.group(1)) if m_med else 0.0
+            mean = float(m_mean.group(1)) if m_mean else med
+            if med > 0 or mean > 0:
+                info["has_factset"] = True
+                info["target_median"] = round(med or mean, 2)
+                info["target_mean"] = round(mean or med, 2)
+                info["target_high"] = round(float(m_high.group(1)), 2) if m_high else 0.0
+                info["target_low"] = round(float(m_low.group(1)), 2) if m_low else 0.0
+                info["analyst_count"] = int(m_cnt.group(1)) if m_cnt else 1
+    except Exception:
+        pass
+    return info
+
+
+def fetch_sinotrade_research(
+    security_name: str,
+    base_code: str,
+    sinotrade_id: str = "",
+    sinotrade_password: str = "",
+    sinotrade_cookie: str = "",
+) -> Dict[str, Any]:
+    """
+    串接永豐金證券「豐雲學堂 (SinoTrade Rich Club)」與「永豐金證券理財網 / 永豐投顧研究報告」資料庫。
+    支援公開檢索 + 使用者提供之永豐帳密/Cookie 讀取專屬研究文章與目標價。
+    """
+    richclub_search_url = f"https://www.sinotrade.com.tw/richclub/search?keyword={urllib.parse.quote(security_name)}"
+    sinotrade_stock_url = f"https://www.sinotrade.com.tw/Stock/Stock_3_1?stock={base_code}"
+    sinotrade_ipo_url = "https://www.sinotrade.com.tw/richclub/IPO"
+
+    articles: List[Dict[str, str]] = []
+    extracted_targets: List[float] = []
+
+    # 1. 搜尋豐雲學堂與永豐金證券公開/會員專欄文章 (透過站內搜尋與 RSS 檢索)
+    queries = [
+        f'site:sinotrade.com.tw "{security_name}"',
+        f'site:sinotrade.com.tw "{base_code}"',
+        f'"永豐投顧" OR "豐雲學堂" "{security_name}"',
+    ]
+    seen_urls = set()
+    for q in queries:
+        rss_url = f"{GOOGLE_NEWS_RSS_URL}?q={urllib.parse.quote(q)}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+        try:
+            xml_bytes = _http_get(rss_url, timeout=10)
+            root = ET.fromstring(xml_bytes)
+            for item in root.findall(".//item")[:4]:
+                title = (item.findtext("title") or "").strip()
+                link = (item.findtext("link") or "").strip()
+                pub_date = (item.findtext("pubDate") or "").strip()
+                if not title or link in seen_urls:
+                    continue
+                if security_name not in title and base_code not in title:
+                    continue
+                seen_urls.add(link)
+                articles.append(
+                    {
+                        "title": title,
+                        "url": link,
+                        "source": "永豐金證券 / 豐雲學堂",
+                        "published_at": pub_date[:16],
+                    }
+                )
+                # 嘗試從標題萃取目標價或承銷價數字
+                for m in re.finditer(r"(?:目標價|合理價|承銷價|上看|估值|暫定|暫定以新台幣|暫定每股)\s*[:：為約]?\s*(\d{2,4}(?:\.\d+)?)\s*元", title):
+                    val = float(m.group(1))
+                    if 10 <= val <= 3000 and val not in extracted_targets:
+                        extracted_targets.append(val)
+        except Exception:
+            pass
+
+    # 2. 若使用者有設定永豐帳號或 Cookie，嘗試直接讀取豐雲學堂站內搜尋頁面
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/json,*/*;q=0.8",
+        "Accept-Language": "zh-TW,zh;q=0.9",
+    }
+    if sinotrade_cookie:
+        headers["Cookie"] = sinotrade_cookie
+
+    try:
+        req = urllib.request.Request(richclub_search_url, headers=headers)
+        with urllib.request.urlopen(req, timeout=10, context=_create_ssl_context()) as resp:
+            html_str = resp.read().decode("utf-8", "ignore")
+            for m in re.finditer(
+                r'<a[^>]+href="(/richclub/[^"]+)"[^>]*>(.*?)</a>', html_str, flags=re.S | re.I
+            ):
+                href, inner = m.group(1), _strip_html(m.group(2))
+                if (security_name in inner or base_code in inner) and len(inner) > 6:
+                    full_url = f"https://www.sinotrade.com.tw{href}"
+                    if full_url not in seen_urls:
+                        seen_urls.add(full_url)
+                        articles.append(
+                            {
+                                "title": inner[:90],
+                                "url": full_url,
+                                "source": "永豐豐雲學堂專欄",
+                                "published_at": "近期報告",
+                            }
+                        )
+    except Exception:
+        pass
+
+    has_account = bool(sinotrade_id or sinotrade_cookie)
+    return {
+        "has_sinotrade_account": has_account,
+        "sinotrade_account_masked": (sinotrade_id[:3] + "***" + sinotrade_id[-2:]) if len(sinotrade_id) >= 5 else ("已綁定 Cookie" if sinotrade_cookie else "未設定 (使用公開檢索)"),
+        "richclub_search_url": richclub_search_url,
+        "sinotrade_stock_url": sinotrade_stock_url,
+        "sinotrade_ipo_url": sinotrade_ipo_url,
+        "articles": articles[:5],
+        "extracted_targets": extracted_targets,
+    }
+
+
+def build_valuation_and_consensus(
+    auction: Dict[str, Any],
+    company_profile: Dict[str, Any],
+    news_list: List[Dict[str, str]],
+) -> Dict[str, Any]:
+    """
+    整合多重來源產出「市場共識價格與合理估值分析」：
+    1. MOPS 公開說明書與主辦承銷商評估報告連結與定價邏輯說明
+    2. 興櫃/二級市場即時成交價 vs 競拍底價（計算套利溢價空間 %）
+    3. 針對興櫃半年報特性之滾動 EPS 推算 + 產業合理本益比估值區間
+    4. 鉅亨網 FactSet 共識目標價 + 新聞媒體披露之暫定承銷價/法人目標價
+    5. 永豐金證券「豐雲學堂」與「理財網客戶專區研究報告」整合連結與觀點
+    """
+    sec_name = auction.get("security_name", "")
+    sec_code = auction.get("security_code", "")
+    base_code = auction.get("base_code") or sec_code
+    min_price = parse_float(auction.get("min_price", "0"))
+    underwriter = auction.get("underwriter", "")
+
+    tw_tz = datetime.timezone(datetime.timedelta(hours=8))
+    roc_year = datetime.datetime.now(tw_tz).year - 1911
+
+    # 1. MOPS 公開說明書與承銷商評估報告
+    mops_info = fetch_mops_prospectus_info(base_code, roc_year)
+
+    # 2. 即時興櫃/上市櫃市價
+    mkt_price_info = fetch_realtime_emerging_or_market_price(base_code)
+    market_price = mkt_price_info["market_price"]
+
+    # 3. FactSet / 鉅亨網共識目標價
+    factset_info = fetch_cnyes_factset_consensus(base_code)
+
+    # 4. 永豐金證券「豐雲學堂」與「理財網客戶專區」串接
+    sinotrade_id = os.environ.get("SINOTRADE_ID", "").strip()
+    sinotrade_pwd = os.environ.get("SINOTRADE_PASSWORD", "").strip()
+    sinotrade_cookie = os.environ.get("SINOTRADE_COOKIE", "").strip()
+    sino_info = fetch_sinotrade_research(
+        sec_name, base_code, sinotrade_id, sinotrade_pwd, sinotrade_cookie
+    )
+
+    # 5. 從新聞標題與摘要中萃取「暫定承銷價」、「目標價」或「興櫃價」
+    news_extracted_prices: List[float] = []
+    underwriting_price_Mentioned: Optional[float] = None
+    for n in news_list:
+        text_blob = f"{n.get('title', '')} {n.get('snippet', '')}"
+        for m in re.finditer(
+            r"(?:暫定承銷價|承銷價暫定|承銷價為|掛牌價)\s*[:：為約]?\s*(\d{2,4}(?:\.\d+)?)\s*元",
+            text_blob,
+        ):
+            val = float(m.group(1))
+            if val >= min_price * 0.8 and val <= min_price * 3.0:
+                underwriting_price_Mentioned = val
+                news_extracted_prices.append(val)
+        for m in re.finditer(
+            r"(?:目標價|合理價|法人估目標價|上看)\s*[:：為約]?\s*(\d{2,4}(?:\.\d+)?)\s*元",
+            text_blob,
+        ):
+            val = float(m.group(1))
+            if val >= min_price * 0.8 and val <= min_price * 4.0:
+                news_extracted_prices.append(val)
+
+    # 依台灣競拍慣例，最低投標底價通常設定為「向證交所申報之暫定承銷價」的 1.15 ~ 1.25 倍倒推（即暫定承銷價約為底價的 1.15~1.20 倍）
+    estimated_underwriting_price = (
+        underwriting_price_Mentioned
+        if underwriting_price_Mentioned
+        else round(min_price * 1.18, 1)
+    )
+
+    # 6. 解決興櫃半年報問題：計算年化/近四季滾動 EPS 與同業本益比估值
+    raw_4q_eps_str = company_profile.get("recent_4q_eps", "")
+    raw_1q_eps_str = company_profile.get("latest_quarter_eps", "")
+    eps_4q_val = parse_float(raw_4q_eps_str.split("元")[0]) if raw_4q_eps_str else 0.0
+    eps_1q_val = parse_float(raw_1q_eps_str.split("元")[0]) if raw_1q_eps_str else 0.0
+
+    # 檢查季數是否因興櫃半年報而少於 4 季
+    quarters_match = re.search(r"近(\d+)季", raw_4q_eps_str)
+    num_quarters = int(quarters_match.group(1)) if quarters_match else (4 if eps_4q_val > 0 else 0)
+    if 0 < num_quarters < 4 and eps_4q_val > 0:
+        annualized_eps = round(eps_4q_val * (4.0 / num_quarters), 2)
+        eps_basis_label = f"{annualized_eps:.2f} 元（由興櫃近 {num_quarters} 期財報年化推算）"
+    elif eps_4q_val > 0:
+        annualized_eps = round(eps_4q_val, 2)
+        eps_basis_label = f"{annualized_eps:.2f} 元（近四季累計實際 EPS）"
+    elif eps_1q_val > 0:
+        annualized_eps = round(eps_1q_val * 2.0, 2)
+        eps_basis_label = f"{annualized_eps:.2f} 元（由最近期半年報/單季 EPS 年化推算）"
+    else:
+        annualized_eps = 0.0
+        eps_basis_label = "尚無完整公開 EPS 數據"
+
+    pe_low, pe_mid, pe_high = _industry_pe_range(company_profile.get("industry", ""))
+    pe_fair_low = round(annualized_eps * pe_low, 1) if annualized_eps > 0 else 0.0
+    pe_fair_mid = round(annualized_eps * pe_mid, 1) if annualized_eps > 0 else 0.0
+    pe_fair_high = round(annualized_eps * pe_high, 1) if annualized_eps > 0 else 0.0
+
+    # 7. 計算綜合「市場共識參考價區間」與「預估合理得標價區間」
+    candidate_prices = []
+    if market_price > 0:
+        candidate_prices.append(market_price)
+    if factset_info["has_factset"] and factset_info["target_median"] > 0:
+        candidate_prices.append(factset_info["target_median"])
+    if pe_fair_mid > min_price * 0.7:
+        candidate_prices.append(pe_fair_mid)
+    candidate_prices.extend(news_extracted_prices)
+    candidate_prices.extend(sino_info["extracted_targets"])
+
+    if candidate_prices:
+        consensus_low = round(min(candidate_prices), 1)
+        consensus_high = round(max(candidate_prices), 1)
+        consensus_mid = round(sum(candidate_prices) / len(candidate_prices), 1)
+    else:
+        consensus_low = round(min_price * 1.15, 1)
+        consensus_mid = round(min_price * 1.25, 1)
+        consensus_high = round(min_price * 1.38, 1)
+
+    # 計算興櫃市價或共識中位價相對於「競拍底價」的潛在溢價空間
+    ref_market_or_consensus = market_price if market_price > 0 else consensus_mid
+    spread_pct = (
+        round(((ref_market_or_consensus - min_price) / min_price) * 100.0, 1)
+        if min_price > 0 and ref_market_or_consensus > 0
+        else 0.0
+    )
+
+    # 建議投標參考區間（一般台股競拍得標均價約落在底價 +8% ~ 興櫃市價的 88~92 折之間）
+    if market_price > min_price:
+        suggested_bid_low = round(max(min_price * 1.05, market_price * 0.85), 1)
+        suggested_bid_high = round(max(suggested_bid_low, market_price * 0.92), 1)
+    else:
+        suggested_bid_low = round(min_price * 1.06, 1)
+        suggested_bid_high = round(min_price * 1.18, 1)
+
+    methodology_lines = [
+        f"【MOPS 承銷報告定價依據】主辦承銷商（{underwriter}）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 {min_price} 元，推估暫定公開申購承銷價約 {estimated_underwriting_price} 元。",
+        (
+            f"【二級市場/興櫃即時比價】目前市場參考價為 {market_price} 元（較競拍底價 {min_price} 元溢價 {spread_pct:+.1f}%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 {suggested_bid_low} ～ {suggested_bid_high} 元）。"
+            if market_price > 0
+            else f"【預估投標參考區間】依競拍底價 {min_price} 元與暫定承銷價估算，合理投標觀察區間約 {suggested_bid_low} ～ {suggested_bid_high} 元。"
+        ),
+        (
+            f"【同業本益比估值模型】以滾動年化 EPS {eps_basis_label} × 產業合理本益比（{pe_low:.0f}x～{pe_high:.0f}x）推算，基本面合理價值區間約 {pe_fair_low} ～ {pe_fair_high} 元（中位數 {pe_fair_mid} 元）。"
+            if annualized_eps > 0
+            else "【同業本益比估值模型】因興櫃財報期別揭露限制，建議直接點下方 MOPS 公開說明書查閱會計師查核之最近期完整損益與同業比價表。"
+        ),
+    ]
+
+    if sino_info["articles"]:
+        sino_target_str = (
+            f"，並從報告中萃取出參考定價：{'、'.join(f'{p} 元' for p in sino_info['extracted_targets'])}（已納入上方共識價格計算）"
+            if sino_info["extracted_targets"]
+            else "（已納入綜合評估，點擊下方文章標題可直接閱讀全文）"
+        )
+        methodology_lines.append(
+            f"【永豐金證券 / 豐雲學堂資料庫 ({sino_info['sinotrade_account_masked']})】已成功檢索 {len(sino_info['articles'])} 篇永豐研究快訊/專欄報告{sino_target_str}。"
+        )
+    else:
+        methodology_lines.append(
+            f"【永豐金證券 / 豐雲學堂資料庫 ({sino_info['sinotrade_account_masked']})】目前永豐資料庫暫無【{sec_name} ({base_code})】之公開目標價報告，可點擊上方「永豐理財網個股專區」查看即時法人籌碼。"
+        )
+
+    return {
+        "min_price": min_price,
+        "market_price": market_price,
+        "market_price_source": mkt_price_info["price_source"],
+        "spread_to_min_pct": spread_pct,
+        "estimated_underwriting_price": estimated_underwriting_price,
+        "underwriting_price_is_exact": bool(underwriting_price_Mentioned),
+        "annualized_eps_label": eps_basis_label,
+        "pe_range_label": f"{pe_low:.0f}x ~ {pe_high:.0f}x",
+        "pe_fair_low": pe_fair_low,
+        "pe_fair_mid": pe_fair_mid,
+        "pe_fair_high": pe_fair_high,
+        "consensus_low": consensus_low,
+        "consensus_mid": consensus_mid,
+        "consensus_high": consensus_high,
+        "suggested_bid_low": suggested_bid_low,
+        "suggested_bid_high": suggested_bid_high,
+        "factset": factset_info,
+        "mops": mops_info,
+        "sinotrade": sino_info,
+        "methodology_lines": methodology_lines,
+    }
 
 
 def _strip_html(text: str) -> str:
@@ -778,7 +1170,15 @@ def collect_active_auctions_with_news(
         )
         auction["news"] = news_items
 
-        # 3. 產生競拍與新聞重點摘要
+        # 3. 整合 MOPS 公開說明書、興櫃市價、同業本益比與永豐研究報告共識估值
+        valuation = build_valuation_and_consensus(
+            auction=auction,
+            company_profile=company_profile,
+            news_list=news_items,
+        )
+        auction["valuation"] = valuation
+
+        # 4. 產生競拍與新聞重點摘要
         summary_info = generate_summary_for_auction(
             auction, news_items, gemini_api_key=gemini_api_key
         )

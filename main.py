@@ -290,6 +290,8 @@ class AuctionDashboardHandler(BaseHTTPRequestHandler):
                     "sender_email": os.environ.get("GMAIL_USER", DEFAULT_RECIPIENT_EMAIL),
                     "has_app_password": bool(os.environ.get("GMAIL_APP_PASSWORD")),
                     "has_gemini_key": bool(os.environ.get("GEMINI_API_KEY")),
+                    "sinotrade_id": os.environ.get("SINOTRADE_ID", ""),
+                    "has_sinotrade_password": bool(os.environ.get("SINOTRADE_PASSWORD")),
                 }
             )
             return
@@ -356,6 +358,9 @@ class AuctionDashboardHandler(BaseHTTPRequestHandler):
                         "GMAIL_USER": sender_email,
                         "GMAIL_APP_PASSWORD": body.get("app_password", ""),
                         "GEMINI_API_KEY": body.get("gemini_api_key", ""),
+                        "SINOTRADE_ID": body.get("sinotrade_id", ""),
+                        "SINOTRADE_PASSWORD": body.get("sinotrade_password", ""),
+                        "SINOTRADE_COOKIE": body.get("sinotrade_cookie", ""),
                     }
                 )
                 # 同步重新產生 email_preview.html
