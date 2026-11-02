@@ -34,7 +34,7 @@
             <span id="env-badge">載入中...</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            📈 TWSE 台股競價拍賣、公司基本面 & 新聞摘要儀表板
+            📈 TWSE 台股競價拍賣摘要
           </h1>
           <p class="text-blue-100/85 text-sm mt-1">
             自動篩選「尚未結束競拍」標的，整合公司行業/營收規模/利潤率與新聞摘要，每日寄送至：
@@ -128,7 +128,6 @@
           <span id="stat-bidding" class="text-3xl font-extrabold text-emerald-600">0</span>
           <span class="text-xs text-emerald-700">檔可參與投標</span>
         </div>
-        <div class="mt-1 text-xs text-emerald-600/80">投標結束日 ≥ 今日</div>
       </div>
 
       <div class="bg-amber-50/70 rounded-2xl p-4 border border-amber-200 shadow-sm">
@@ -137,17 +136,15 @@
           <span id="stat-waiting" class="text-3xl font-extrabold text-amber-600">0</span>
           <span class="text-xs text-amber-700">檔近期開標</span>
         </div>
-        <div class="mt-1 text-xs text-amber-700/80">開標日期 ≥ 今日</div>
       </div>
 
       <div class="bg-indigo-50/70 rounded-2xl p-4 border border-indigo-200 shadow-sm">
-        <div class="text-xs font-bold text-indigo-800">🔔 本次異動偵測 (新標的 / 狀態變動)</div>
+        <div class="text-xs font-bold text-indigo-800">🔔 本次異動偵測</div>
         <div class="mt-1 flex items-baseline gap-2">
           <span class="text-xl font-extrabold text-indigo-700">新標的 <span id="stat-ipo">0</span></span>
           <span class="text-slate-300">|</span>
           <span class="text-xl font-extrabold text-orange-600">狀態變動 <span id="stat-cb">0</span></span>
         </div>
-        <div class="mt-1 text-xs text-indigo-600/80">有新標的或狀態改變時自動寄信</div>
       </div>
     </div>
 
