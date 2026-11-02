@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02 11:20:44 (TST)",
+  "updated_at": "2026-11-02 11:52:41 (TST)",
   "reference_date": "2026/11/02",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
@@ -91,19 +91,19 @@
           "snippet": ""
         },
         {
-          "title": "騏億鑫競拍登場 營運爆發式成長",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wRHpESE1RNmMwZUltODJzYk9wMEZYOXBLOXJOWHZqMFd4Z3VKQ0NuamJTWTF5cjljVThlR0xYSlVpYkMtaVlvTHYwWDRuMTZu0gFWQVVfeXFMTW5GRkNuTF9zdF94T2VLVkREX3MyS2NyaGR4NE1BUVpXLUpVZ3poRnA5LVlrMFd6UVF4TDBJNjVMZVVkNy1pNjVyMl9fWjJfMWk2R1pTM2c?oc=5",
-          "source": "UDN",
-          "published_at": "2026/10/29 11:41",
-          "sort_time": "2026-10-29T11:41:57+08:00",
-          "snippet": ""
-        },
-        {
           "title": "騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑",
           "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9WMk5mam5XYkxraWxPb18wQmw1cVAycHhOZ2pIVlVVQ0RXY0dYME0tanA4cDlENmtHTFJHYkRIbXhyejU2eUlzWTdpTjFZMjg?oc=5",
           "source": "鉅亨網",
           "published_at": "2026/10/29 10:47",
           "sort_time": "2026-10-29T10:47:23+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "騏億鑫10/30起競拍 底價210元",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1RTVRkQkR4S0ZxenNJTUtqWFFjWTdRY09OUWN1LXY3LXNjQWZISTI4VzNWRDlSaUpIUGdUV1NfcmVILTBZSDVZQ3hCcG80R1A1ZS11UWluRnF4QdIBX0FVX3lxTE15UXloRVlYWm5mSE5vTHRLQ2VJcDNxa251MW1ZajhfckJqQVdjZ0tYQmFvN2k3QlpYSDVRekxQZnNobF8zWDB3UHlxTVNnamk4Y3loRkYzMDZGYjdzOFA4?oc=5",
+          "source": "經濟日報",
+          "published_at": "2026/10/29 10:30",
+          "sort_time": "2026-10-29T10:30:29+08:00",
           "snippet": ""
         },
         {
@@ -116,7 +116,7 @@
         }
       ],
       "summary_overview": "【騏億鑫 (7848)】為櫃檯買賣之「初上櫃」競拍案，由永豐金證券主辦。本次競拍數量共 3,060 張，最低投標底價為 210 元（每標單最低預估保證金加處理費約 NT$ 105,400 元）。投標期間為 2026/10/30 至 2026/11/03，預計於 2026/11/05 開標、2026/11/16 撥券掛牌。",
-      "summary_news_digest": "綜合 自由財經、Yahoo股市、UDN 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫競拍登場 營運爆發式成長（UDN）；(4) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）。",
+      "summary_news_digest": "綜合 自由財經、Yahoo股市、鉅亨網 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）；(4) 騏億鑫10/30起競拍 底價210元（經濟日報）。",
       "summary_mode": "extractive"
     },
     {
@@ -184,7 +184,7 @@
       "news": [
         {
           "title": "中國信託證券輔導宏偉電機上櫃 預計11月底掛牌 | 財富管理 | 商情",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBlMUdMZnZGOFByZGhTNTFNUEdxMVItRzVnTVZjaW5PZnQ4X2s5b3FiWTFlUHp0VUwzVXdLX3VTQW9sNjJQaTZkVHNzSGhEX3pQYUFITUV3OW9HZw?oc=5",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQc01FX2ZSQVZBR0NicWFXaFVZTmYxS181Y0xWc2VBZ2llcmRMdlN4NTNzbktVaDY3ejlwRzlIU2FvejJCT3Jvd25kbHg0Y3d3ZEJxZHFSN0QzblAyN1E5OGR0UHpQNmFtbEcycERYcnFDN0pfRmdVeXZ1ampHZFlpcXd3?oc=5",
           "source": "經濟日報",
           "published_at": "2026/11/02 07:48",
           "sort_time": "2026-11-02T07:48:52+08:00",
