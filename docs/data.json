@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-11-02 00:03:59 (TST)",
+  "updated_at": "2026-11-02 11:20:44 (TST)",
   "reference_date": "2026/11/02",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
-    "total_active": 3,
+    "total_active": 4,
     "bidding_count": 1,
-    "upcoming_count": 0,
+    "upcoming_count": 1,
     "waiting_open_count": 2,
-    "ipo_stock_count": 1,
+    "ipo_stock_count": 2,
     "cb_count": 2
   },
   "auctions": [
@@ -83,14 +83,6 @@
           "snippet": ""
         },
         {
-          "title": "台股下週抽「騏億鑫」紅包 有望賺逾8萬元 | NOWNEWS今日新聞",
-          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOUUJkV2NCTER1d0x6MlpHRmh6UldRQWtCOG5wRF9RNENxcDVHbTJCZkdYN2Z6VzQ0OGMtVnNiZlp5U09PNkNnMTd4dG9YQk1xNDExUlM1dV9HNzBFSG5tVFZzYlFGTnNGNi1INUdpSVFqUnFZLS13OThZU3ZMVjkzUEMyQQ?oc=5",
-          "source": "LINE TODAY",
-          "published_at": "2026/11/01 12:56",
-          "sort_time": "2026-11-01T12:56:25+08:00",
-          "snippet": ""
-        },
-        {
           "title": "新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元",
           "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxOVjc0eVdTc254Z2VpZmhnS1NWZVJWc0ZIdFVSRFZEUHdoNHJnUHo4TFlTUDhKZGVBbFlZb0N4WncyMHBVYXByNkdkeTJzZ19OYWl6YzAyRVUzQW9fR0FfWlhhUkVkclE3TVVld0I1REotMHFHWi1jNWdxNGhnSjNrUjZ3VXpGanVjdFk4ZDhlcnJFbWtEN29pUWdCMnlHRHNYTGNNYTZJTm9ZWnFGNVV6bW9xbHJIOTg2bmlCYkFIZExtZVVPeWpWQURUNld5R1BmbHk1dUtJU3RPbWl0S2RMQmlkZ19mUlV2LUNhM1ljLUxUcFpZT3VXUmlQeS1XZXVaQm5ILWxNZ0p0ZHZ5ZjJEN0dRUVFZNlFQZWlTMkk1RTc2MzJWSVZlZ0xDMEtSTG1ycE9pZDVmeWowVTdjWklIOVRQazA0N0pyRjd6VkNUMW5GaGtwd1Z6TW5R?oc=5",
           "source": "Yahoo股市",
@@ -99,11 +91,19 @@
           "snippet": ""
         },
         {
-          "title": "騏億鑫10/30起競拍 底價210元",
-          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1RTVRkQkR4S0ZxenNJTUtqWFFjWTdRY09OUWN1LXY3LXNjQWZISTI4VzNWRDlSaUpIUGdUV1NfcmVILTBZSDVZQ3hCcG80R1A1ZS11UWluRnF4QdIBX0FVX3lxTE15UXloRVlYWm5mSE5vTHRLQ2VJcDNxa251MW1ZajhfckJqQVdjZ0tYQmFvN2k3QlpYSDVRekxQZnNobF8zWDB3UHlxTVNnamk4Y3loRkYzMDZGYjdzOFA4?oc=5",
-          "source": "經濟日報",
-          "published_at": "2026/10/29 10:30",
-          "sort_time": "2026-10-29T10:30:29+08:00",
+          "title": "騏億鑫競拍登場 營運爆發式成長",
+          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0wRHpESE1RNmMwZUltODJzYk9wMEZYOXBLOXJOWHZqMFd4Z3VKQ0NuamJTWTF5cjljVThlR0xYSlVpYkMtaVlvTHYwWDRuMTZu0gFWQVVfeXFMTW5GRkNuTF9zdF94T2VLVkREX3MyS2NyaGR4NE1BUVpXLUpVZ3poRnA5LVlrMFd6UVF4TDBJNjVMZVVkNy1pNjVyMl9fWjJfMWk2R1pTM2c?oc=5",
+          "source": "UDN",
+          "published_at": "2026/10/29 11:41",
+          "sort_time": "2026-10-29T11:41:57+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑",
+          "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9WMk5mam5XYkxraWxPb18wQmw1cVAycHhOZ2pIVlVVQ0RXY0dYME0tanA4cDlENmtHTFJHYkRIbXhyejU2eUlzWTdpTjFZMjg?oc=5",
+          "source": "鉅亨網",
+          "published_at": "2026/10/29 10:47",
+          "sort_time": "2026-10-29T10:47:23+08:00",
           "snippet": ""
         },
         {
@@ -116,7 +116,115 @@
         }
       ],
       "summary_overview": "【騏億鑫 (7848)】為櫃檯買賣之「初上櫃」競拍案，由永豐金證券主辦。本次競拍數量共 3,060 張，最低投標底價為 210 元（每標單最低預估保證金加處理費約 NT$ 105,400 元）。投標期間為 2026/10/30 至 2026/11/03，預計於 2026/11/05 開標、2026/11/16 撥券掛牌。",
-      "summary_news_digest": "綜合 自由財經、LINE TODAY、Yahoo股市 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 台股下週抽「騏億鑫」紅包 有望賺逾8萬元 | NOWNEWS今日新聞（LINE TODAY）；(3) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(4) 騏億鑫10/30起競拍 底價210元（經濟日報）。",
+      "summary_news_digest": "綜合 自由財經、Yahoo股市、UDN 等共 5 則近期新聞焦點：(1) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(2) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）；(3) 騏億鑫競拍登場 營運爆發式成長（UDN）；(4) 騏億鑫上櫃前現增承銷價暫定252元 競拍10/30起跑（鉅亨網）。",
+      "summary_mode": "extractive"
+    },
+    {
+      "security_name": "宏偉",
+      "security_code": "4565",
+      "base_code": "4565",
+      "market": "櫃檯買賣",
+      "issue_type": "初上櫃",
+      "security_category": "股票 (IPO/現增)",
+      "is_cb": false,
+      "auction_method": "美國標",
+      "bid_start_date": "2026/11/04",
+      "bid_end_date": "2026/11/06",
+      "open_bid_date": "2026/11/10",
+      "listing_date": "2026/11/19",
+      "auction_quantity": "5,617",
+      "min_price": "75",
+      "min_bid_quantity": "1",
+      "max_bid_quantity": "706",
+      "margin_percentage": "50",
+      "processing_fee": "400",
+      "underwriter": "中國信託",
+      "award_fee_rate": "5",
+      "total_award_amount": "0",
+      "status_code": "upcoming",
+      "status_label": "即將開始投標",
+      "days_left": 2,
+      "countdown_text": "距離開始投標還有 2 天",
+      "estimated_min_bid_value": 75000,
+      "estimated_min_margin": 37900,
+      "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
+      "yahoo_url": "https://tw.stock.yahoo.com/quote/4565",
+      "goodinfo_url": "https://goodinfo.tw/tw/StockBzPerformance.asp?STOCK_ID=4565",
+      "moneydj_url": "https://justdata.moneydj.com/z/zc/zca/zca_4565.djhtm",
+      "company_profile": {
+        "base_code": "4565",
+        "base_name": "宏偉",
+        "industry": "櫃檯買賣企業",
+        "business_scope": "",
+        "revenue_mix": "",
+        "capital_text": "",
+        "chairman": "",
+        "founded_date": "",
+        "website": "",
+        "profit_period": "",
+        "gross_margin": "",
+        "operating_margin": "",
+        "pretax_margin": "",
+        "roe": "",
+        "roa": "",
+        "bps": "",
+        "debt_ratio": "",
+        "latest_month_label": "",
+        "latest_month_revenue": "",
+        "latest_month_yoy": "",
+        "accumulated_revenue": "",
+        "accumulated_yoy": "",
+        "latest_quarter_label": "",
+        "latest_quarter_revenue": "",
+        "latest_quarter_net_income": "",
+        "latest_quarter_eps": "",
+        "recent_4q_eps": "",
+        "summary_text": "【產業與業務】宏偉（4565）隸屬於「櫃檯買賣企業」，從事相關專業製造與服務業務。"
+      },
+      "news": [
+        {
+          "title": "中國信託證券輔導宏偉電機上櫃 預計11月底掛牌 | 財富管理 | 商情",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBlMUdMZnZGOFByZGhTNTFNUEdxMVItRzVnTVZjaW5PZnQ4X2s5b3FiWTFlUHp0VUwzVXdLX3VTQW9sNjJQaTZkVHNzSGhEX3pQYUFITUV3OW9HZw?oc=5",
+          "source": "經濟日報",
+          "published_at": "2026/11/02 07:48",
+          "sort_time": "2026-11-02T07:48:52+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "中國信託證券輔導 宏偉辦上櫃前業績發表",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5hMkdoMDItM3VJVU1zTVpuOUswbkI0ZjNOMHlsdEZ5dnA1dTF1cFNRSXJwZkViTXZvOXpRNmFwWkRQRzA4VGliNVJLeTJKcjV1VDBxdkdCbG1GSXlZd3ZWZnU1OHRGSVY3UkRZ?oc=5",
+          "source": "中時新聞網",
+          "published_at": "2026/11/02 04:10",
+          "sort_time": "2026-11-02T04:10:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9UZTRqcE9NMlFHazZpcHgwRUdLWEZPMm5WN01XSkpTNHlJanF1Nno4bU1oeEh6ZWhBdHdYcEMxV1pENEo4YVpCcFJFaUY2NENGWUxoWWhnZUtrMlA5YkFMUlRGbl9yRHVyNkdhbk9R?oc=5",
+          "source": "臺南市政府全球資訊網",
+          "published_at": "2026/11/01 11:17",
+          "sort_time": "2026-11-01T11:17:07+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "《宏偉專訪》擁三大動能，樂觀看貨梯市場前景- 新聞",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRWhITXEyR3FwS2hEUU94Ql9LczBLSzJHSHJHUVV0a0VFc0J0RUJTODJpdlZ1ekVCTGJLMWVSWHU1cEdrNHAtdkRUUzRRWXlla3lCQ1Y4U0UtY1dDQW5uX0llSWd3UGF6Y0I4clpid3lGb0NaVkZOVVRLSDlCeVRLcm5RVGhlaDlrTG1jWVFyeXBTUQ?oc=5",
+          "source": "MoneyDJ理財網",
+          "published_at": "2026/10/30 11:26",
+          "sort_time": "2026-10-30T11:26:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "成立超過40年的電梯大廠！ 宏偉電機最快11月下旬上櫃",
+          "url": "https://news.google.com/rss/articles/CBMi6gJBVV95cUxPRkpwTXpZTFc2UVQxTlZybWxpakJWRDNkbVRkcVlUUlBveVJDeldSbzlSMTk5OGFuRURJaU9NZnpMcWgwOHNWWDBnQXlIZU5KZjh2ZlprT3I2aTN6aDJYV3dqMTVSSGpZTEZlNWVNTEJGejJHQTB4VjNzS3FKZ0FfaDJYdmxZdHNMNUhlV2gxOURKOVpjNEN3OWRQU0NDWDZMVVJ4OWtiOHVTVUNucS1ONk8zMlJsZGNlY29KRExidlpURk9KaEF6XzF2WFVfTHJhcXZ2dU1DUkZ5RFZJZzhhMnB1WnBQZFByZ0FRNzR1RHo3ZWsxNGV4bWM3NWpaN0VielZlbjhkaG5wOWZCRWFsYmJaZTQ0ODV5YUoyS3Q3TUtDNHF3WUZaUDNYU1d5MkU4aEoySWZWYlBXV3ZDX1VBMk5Ma3BHOTdXWG1VNDZteEdraVFNMlRBaGd3aXcwYTFmLTEtTm5hXzFGQQ?oc=5",
+          "source": "Yahoo股市",
+          "published_at": "2026/10/27 15:30",
+          "sort_time": "2026-10-27T15:30:16+08:00",
+          "snippet": ""
+        }
+      ],
+      "summary_overview": "【宏偉 (4565)】為櫃檯買賣之「初上櫃」競拍案，由中國信託證券主辦。本次競拍數量共 5,617 張，最低投標底價為 75 元（每標單最低預估保證金加處理費約 NT$ 37,900 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
+      "summary_news_digest": "綜合 經濟日報、中時新聞網、臺南市政府全球資訊網 等共 5 則近期新聞焦點：(1) 中國信託證券輔導宏偉電機上櫃 預計11月底掛牌 | 財富管理 | 商情（經濟日報）；(2) 中國信託證券輔導 宏偉辦上櫃前業績發表（中時新聞網）；(3) 陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉（臺南市政府全球資訊網）；(4) 《宏偉專訪》擁三大動能，樂觀看貨梯市場前景- 新聞（MoneyDJ理財網）。",
       "summary_mode": "extractive"
     },
     {
@@ -140,7 +248,7 @@
       "processing_fee": "400",
       "underwriter": "富邦",
       "award_fee_rate": "0.5",
-      "total_award_amount": "0",
+      "total_award_amount": "445,256,810",
       "status_code": "waiting_open",
       "status_label": "已截標・待開標",
       "days_left": 0,
@@ -208,8 +316,8 @@
         },
         {
           "title": "光譜訂單看到2027年下半年",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0zM2pKMjZ5ZkhOMTNPZVZnX3lRdWdqVm9sTFdvM3hIQjRBdGoxaFdqSVg2LW9MV3BNU1NoX2p3WEZKZnJOYXVteDBITTJPMDBf0gFWQVVfeXFMTWQ3YXVmUmNERVN0dHUzcGxaWFZGY1JVNEk1aXpKcVllV3laNVVUU2V5QlBoOTdIOXM5dHZaYnk2MG5qTWQwY2R0UlBwQlAzdTNwd2lGSHc?oc=5",
-          "source": "UDN",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1XdlpyQlNHdkdYZFZDTlhWRElXNEtHSXZuel9hT3dNdUhYY09qYjhQMW1GMW5DVUNmUHFaeGNJQk1FMm9KOVZOWXVtcnBOcnVsRGtoSC1LX0hxRWfSAWBBVV95cUxQcTBBZ2hFOXFRc1Jfano0ajgtWk5aVFNxMUNTMW1mWTR5R1Foajl6WXBIN3IzTFZtRms4SEgzUUVxZzU1Z3JwN21CR3BCSEdxZzV6TmJRckZMeTJla1MxcFc?oc=5",
+          "source": "經濟日報",
           "published_at": "2026/03/26 15:00",
           "sort_time": "2026-03-26T15:00:00+08:00",
           "snippet": ""
@@ -224,7 +332,7 @@
         }
       ],
       "summary_overview": "【光譜四 (53814)】為櫃檯買賣之「有擔保轉換公司債」競拍案，由富邦證券主辦。本次競拍數量共 4,250 張，最低投標底價為 101 元（每標單最低預估保證金加處理費約 NT$ 50,900 元）。投標期間為 2026/10/27 至 2026/10/29，預計於 2026/11/02 開標、2026/11/11 撥券掛牌。",
-      "summary_news_digest": "綜合 CMoney、富聯網、鉅亨網 等共 5 則近期新聞焦點：(1) 5381 光譜 - 【12:47 即時新聞】光譜(5381)小幅走堅，市場聚焦重電訂單能見度- 股市爆料同學會（CMoney）；(2) 董事會：光譜(5381)決議發行國內第三次有擔保轉換公司債，總額上限5億元（富聯網）；(3) 光譜電工觀音二廠今落成啟用 海內外接單雙軌並進（鉅亨網）；(4) 光譜訂單看到2027年下半年（UDN）。",
+      "summary_news_digest": "綜合 CMoney、富聯網、鉅亨網 等共 5 則近期新聞焦點：(1) 5381 光譜 - 【12:47 即時新聞】光譜(5381)小幅走堅，市場聚焦重電訂單能見度- 股市爆料同學會（CMoney）；(2) 董事會：光譜(5381)決議發行國內第三次有擔保轉換公司債，總額上限5億元（富聯網）；(3) 光譜電工觀音二廠今落成啟用 海內外接單雙軌並進（鉅亨網）；(4) 光譜訂單看到2027年下半年（經濟日報）。",
       "summary_mode": "extractive"
     },
     {
@@ -291,6 +399,14 @@
       },
       "news": [
         {
+          "title": "泰谷(3339) 個股概覽 | 個股 - 股市",
+          "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5KaFZ0ekV4b1JYeFg0a2NPVmRnMElPNkp3N0c4ZGFfMUFiUUJSS3YtNlZmLXE4Q3RpYzlVTzN4Si1KaGRCWExUWV9n?oc=5",
+          "source": "CMoney",
+          "published_at": "2026/10/30 11:11",
+          "sort_time": "2026-10-30T11:11:13+08:00",
+          "snippet": ""
+        },
+        {
           "title": "【11:08 即時新聞】泰谷(3339)股價走強，市場聚焦雷射晶粒進度",
           "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQNWxUMzFqNVN0NG9QVVFGWVVPTnBUbGhhTG54VzJoSF92dWpBVHN6WHhaOU5MNm1fT3FlY29ydkVqUzRQT0dSWFA3S25jTjNsQ1BUNGlXb0RWOHdTandrUHFtSUYzWVE5elFWckR6eVl5eTVkbUEyTmV5QWpXblRzdndmdy0zSmxrQURKRDJn?oc=5",
           "source": "CMoney投資網誌",
@@ -315,14 +431,6 @@
           "snippet": ""
         },
         {
-          "title": "3339 泰谷：矽光子核心股浮出水面，關鍵卡位AI光通訊！",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9tMWVGZDRkdE5CYWJGa180cmlHUjNDTm1laERzWlRmSGI2NHFNX1UzdnRVVjVkUEdIM3dkWVcyMXg4eHp6aHVpZXJfc25VZG1KdFBnY1g1RjM?oc=5",
-          "source": "CMoney",
-          "published_at": "2026/04/08 15:00",
-          "sort_time": "2026-04-08T15:00:00+08:00",
-          "snippet": ""
-        },
-        {
           "title": "3339 泰谷 - 泰谷轉型矽光子 題材熱 《經濟日報》，記者 籃珮禎 20... - 股市爆料同學會",
           "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1xMVBFRDI2ZHZkY3lWcHAyRzA2b29SczBmdU5nQUhibVQwSDZaanpVUHIzS2lmOU5yemZFRHZQMy1aazdEb0dtYmhzYkxLcU80cktlbUdPNUY?oc=5",
           "source": "CMoney",
@@ -332,7 +440,7 @@
         }
       ],
       "summary_overview": "【泰谷五 (33395)】為櫃檯買賣之「有擔保轉換公司債」競拍案，由永豐金證券主辦。本次競拍數量共 4,500 張，最低投標底價為 101 元（每標單最低預估保證金加處理費約 NT$ 50,900 元）。投標期間為 2026/10/28 至 2026/10/30，預計於 2026/11/03 開標、2026/11/12 撥券掛牌。",
-      "summary_news_digest": "綜合 CMoney投資網誌、經濟日報、CMoney 等共 5 則近期新聞焦點：(1) 【11:08 即時新聞】泰谷(3339)股價走強，市場聚焦雷射晶粒進度（CMoney投資網誌）；(2) 【09:11 即時新聞】泰谷(3339)攻上漲停47.3元，CW LD雷射與磷化鎵轉型題材發酵＋主力近月高檔換手後再度回補（CMoney投資網誌）；(3) 泰谷財報／第2季認列庫藏股費用每股虧1.84元 本業虧損縮小（經濟日報）；(4) 3339 泰谷：矽光子核心股浮出水面，關鍵卡位AI光通訊！（CMoney）。",
+      "summary_news_digest": "綜合 CMoney、CMoney投資網誌、經濟日報 等共 5 則近期新聞焦點：(1) 泰谷(3339) 個股概覽 | 個股 - 股市（CMoney）；(2) 【11:08 即時新聞】泰谷(3339)股價走強，市場聚焦雷射晶粒進度（CMoney投資網誌）；(3) 【09:11 即時新聞】泰谷(3339)攻上漲停47.3元，CW LD雷射與磷化鎵轉型題材發酵＋主力近月高檔換手後再度回補（CMoney投資網誌）；(4) 泰谷財報／第2季認列庫藏股費用每股虧1.84元 本業虧損縮小（經濟日報）。",
       "summary_mode": "extractive"
     }
   ],

@@ -85,14 +85,14 @@
     </div>
   </header>
 
+  <!-- Floating Global Toast Notification (z-[100] so it appears above all modals) -->
+  <div id="toast-box" class="hidden fixed top-5 right-5 z-[100] max-w-md w-full rounded-2xl p-4 border text-sm font-medium flex items-start justify-between shadow-2xl transition-all">
+    <span id="toast-msg" class="leading-relaxed"></span>
+    <button onclick="hideToast()" class="text-slate-400 hover:text-slate-600 font-bold ml-4 shrink-0">✕</button>
+  </div>
+
   <!-- Main Content -->
   <main class="max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 flex-1">
-
-    <!-- Toast Notification -->
-    <div id="toast-box" class="hidden mb-5 rounded-xl p-4 border text-sm font-medium flex items-center justify-between shadow-sm">
-      <span id="toast-msg"></span>
-      <button onclick="hideToast()" class="text-slate-400 hover:text-slate-600 font-bold ml-4">✕</button>
-    </div>
 
     <!-- Quick Recipient Bar -->
     <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -201,23 +201,30 @@
       </div>
 
       <!-- Action bar inside modal -->
-      <div class="px-6 py-3 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
-        <div class="text-xs text-slate-600">
-          以下為實際寄出之 HTML 信件排版預覽（已包含公司介紹、營收規模、利潤率與新聞摘要）：
+      <div class="px-6 py-3 bg-slate-50 border-b border-slate-200 flex flex-col gap-2">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="text-xs text-slate-600">
+            以下為實際寄出之 HTML 信件排版預覽（已包含公司介紹、營收規模、利潤率與新聞摘要）：
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="openSettingsModal()"
+              class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
+              📬 新增/編輯收件人
+            </button>
+            <button onclick="copyEmailHtml()"
+              class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
+              📋 複製信件內容
+            </button>
+            <button id="btn-send-now" onclick="sendEmailNow()"
+              class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm">
+              🚀 立即寄送給所有收件人
+            </button>
+          </div>
         </div>
-        <div class="flex flex-wrap items-center gap-2">
-          <button onclick="openSettingsModal()"
-            class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
-            📬 新增/編輯收件人
-          </button>
-          <button onclick="copyEmailHtml()"
-            class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
-            📋 複製信件內容
-          </button>
-          <button id="btn-send-now" onclick="sendEmailNow()"
-            class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm">
-            🚀 立即寄送給所有收件人
-          </button>
+        <!-- Inline feedback banner inside Email Modal -->
+        <div id="email-modal-feedback" class="hidden rounded-xl px-4 py-2.5 text-xs font-medium border flex items-center justify-between gap-2">
+          <span id="email-modal-feedback-msg"></span>
+          <button onclick="document.getElementById('email-modal-feedback').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 font-bold">✕</button>
         </div>
       </div>
 
@@ -286,17 +293,17 @@
               class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
           </div>
 
-          <!-- Cloud GitHub Direct Sync (Optional when hosted on GitHub Pages) -->
-          <div id="cloud-sync-box" class="hidden pt-3 border-t border-slate-200 space-y-2">
+          <!-- Cloud GitHub Direct Sync (Always visible for cloud workflow trigger & sync) -->
+          <div id="cloud-sync-box" class="pt-3 border-t border-slate-200 space-y-2">
             <div class="text-xs font-bold text-indigo-900 flex items-center justify-between">
-              <span>☁️ 雲端 GitHub Pages 同步收件人設定</span>
-              <a href="https://github.com/joechen1579/stock_research_tw/edit/main/config.json" target="_blank"
-                 class="text-blue-600 underline font-semibold">直接開啟 GitHub 編輯 config.json ↗</a>
+              <span>☁️ 雲端 GitHub Pages 直接觸發寄信 & 同步設定</span>
+              <a href="https://github.com/settings/tokens/new?description=TWSE-Auction-Cloud-Trigger&scopes=repo,workflow" target="_blank"
+                 class="text-blue-600 underline font-semibold">點此一鍵產生 GitHub Token ↗</a>
             </div>
             <p class="text-[11px] text-slate-600">
-              在雲端網頁上新增收件人後，您可以點擊上方連結直接在 GitHub 網頁編輯 <code>config.json</code>，或填入 GitHub Personal Access Token (勾選 <code>repo</code> 權限) 直接從此網頁同步回雲端。
+              若在雲端網頁 (`github.io`) 點擊「立即寄送」想直接觸發 GitHub 雲端寄信（使用您設定好的 GitHub Secrets），請填入您的 <strong>GitHub Personal Access Token</strong>（需勾選 <code>repo</code> 與 <code>workflow</code> 權限，僅保存在您的瀏覽器中）。
             </p>
-            <input id="cfg-gh-token" type="password" placeholder="選填：ghp_xxxx (僅保存在您的瀏覽器 LocalStorage)"
+            <input id="cfg-gh-token" type="password" placeholder="貼上 ghp_xxxx (填入後即可在雲端網頁一鍵直接寄信與同步收件人)"
               class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
           </div>
 
@@ -321,19 +328,49 @@
     let isLocalServer = false;
     let recipientList = ['joechen1579@gmail.com'];
 
-    function showToast(msg, type = 'info') {
+    let toastTimer = null;
+    function showToast(msg, type = 'info', allowHtml = false) {
       const box = document.getElementById('toast-box');
       const msgEl = document.getElementById('toast-msg');
-      box.className = 'mb-5 rounded-xl p-4 border text-sm font-medium flex items-center justify-between shadow-sm ';
+      box.className = 'fixed top-5 right-5 z-[100] max-w-md w-full rounded-2xl p-4 border text-sm font-medium flex items-start justify-between shadow-2xl transition-all ';
       if (type === 'success') {
-        box.className += 'bg-emerald-50 border-emerald-200 text-emerald-800';
+        box.className += 'bg-emerald-50 border-emerald-300 text-emerald-900';
       } else if (type === 'error') {
-        box.className += 'bg-red-50 border-red-200 text-red-800';
+        box.className += 'bg-red-50 border-red-300 text-red-900';
       } else {
-        box.className += 'bg-blue-50 border-blue-200 text-blue-800';
+        box.className += 'bg-blue-50 border-blue-300 text-blue-900';
       }
-      msgEl.textContent = msg;
+      if (allowHtml) {
+        msgEl.innerHTML = msg;
+      } else {
+        msgEl.textContent = msg;
+      }
       box.classList.remove('hidden');
+
+      // Also update inline feedback inside email modal if open
+      const modalFb = document.getElementById('email-modal-feedback');
+      const modalFbMsg = document.getElementById('email-modal-feedback-msg');
+      if (modalFb && modalFbMsg && !document.getElementById('email-modal').classList.contains('hidden')) {
+        modalFb.className = 'rounded-xl px-4 py-2.5 text-xs font-medium border flex items-center justify-between gap-2 ';
+        if (type === 'success') {
+          modalFb.className += 'bg-emerald-50 border-emerald-300 text-emerald-900';
+        } else if (type === 'error') {
+          modalFb.className += 'bg-red-50 border-red-300 text-red-900';
+        } else {
+          modalFb.className += 'bg-blue-50 border-blue-300 text-blue-900';
+        }
+        if (allowHtml) {
+          modalFbMsg.innerHTML = msg;
+        } else {
+          modalFbMsg.textContent = msg;
+        }
+        modalFb.classList.remove('hidden');
+      }
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        box.classList.add('hidden');
+      }, 8000);
     }
 
     function hideToast() {
@@ -761,13 +798,89 @@
       }
     }
 
+    function getGitHubRepoCoords() {
+      let owner = 'joechen1579';
+      let repo = 'stock_research_tw';
+      if (location.hostname.endsWith('github.io')) {
+        owner = location.hostname.split('.')[0] || owner;
+        repo = location.pathname.split('/').filter(Boolean)[0] || repo;
+      }
+      return { owner, repo };
+    }
+
+    async function triggerCloudWorkflowDispatch(token) {
+      const { owner, repo } = getGitHubRepoCoords();
+      const dispatchUrl = `https://api.github.com/repos/${owner}/${repo}/actions/workflows/daily_auction.yml/dispatches`;
+      const res = await fetch(dispatchUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ref: 'main',
+          inputs: {
+            extra_recipients: recipientList.join(',')
+          }
+        })
+      });
+      if (res.status === 204 || res.ok) {
+        return { ok: true, owner, repo };
+      }
+      let errText = `HTTP ${res.status}`;
+      try {
+        const errJson = await res.json();
+        if (errJson.message) errText = errJson.message;
+      } catch (_) {}
+      return { ok: false, error: errText, owner, repo };
+    }
+
     async function sendEmailNow() {
+      const btn = document.getElementById('btn-send-now');
+      const ghToken = (document.getElementById('cfg-gh-token').value || localStorage.getItem('gh_pat_token') || '').trim();
+
       if (!isLocalServer) {
-        showToast('雲端網頁模式由 GitHub Actions 每天自動寄信給收件人清單，或可至 GitHub Repo -> Actions 點擊 Run workflow 立即觸發雲端寄信！', 'info');
+        if (ghToken) {
+          btn.disabled = true;
+          btn.textContent = '☁️ 觸發雲端寄信中...';
+          try {
+            const dispatchRes = await triggerCloudWorkflowDispatch(ghToken);
+            if (dispatchRes.ok) {
+              showToast(
+                `🚀 已成功觸發 GitHub 雲端寄信任務！預計 30~60 秒內寄達：<strong>${recipientList.join(', ')}</strong>。<a href="https://github.com/${dispatchRes.owner}/${dispatchRes.repo}/actions" target="_blank" class="underline font-bold ml-1">查看執行進度 ↗</a>`,
+                'success',
+                true
+              );
+            } else {
+              showToast(
+                `⚠️ 雲端觸發失敗 (${dispatchRes.error})。請確認 GitHub Token 已勾選 <code>repo</code> 與 <code>workflow</code> 權限。`,
+                'error',
+                true
+              );
+              openSettingsModal();
+            }
+          } catch (err) {
+            showToast(`⚠️ 網路連線錯誤：${err.message}`, 'error');
+          } finally {
+            btn.disabled = false;
+            btn.textContent = '🚀 立即寄送給所有收件人';
+          }
+          return;
+        }
+
+        // Without token on static page: prompt user to either input token or jump to GitHub Actions
+        const { owner, repo } = getGitHubRepoCoords();
+        const actionsUrl = `https://github.com/${owner}/${repo}/actions/workflows/daily_auction.yml`;
+        showToast(
+          `💡 您目前在雲端靜態網頁模式：請在設定視窗填入 <strong>GitHub Token</strong> 即可一鍵直接寄信，或 <a href="${actionsUrl}" target="_blank" class="underline font-bold text-blue-700">點此前往 GitHub Actions 按 Run workflow 立即寄信 ↗</a>`,
+          'info',
+          true
+        );
+        openSettingsModal();
         return;
       }
 
-      const btn = document.getElementById('btn-send-now');
       btn.disabled = true;
       btn.textContent = '寄送中...';
 
@@ -783,9 +896,21 @@
         });
         const result = await res.json();
         if (result.ok) {
-          closeEmailModal();
           showToast(`🎉 ${result.message}`, 'success');
+          setTimeout(() => closeEmailModal(), 1500);
         } else {
+          // If local server has no app_password configured, but user provided a GitHub Token, fall back to Cloud Dispatch!
+          if (ghToken) {
+            const dispatchRes = await triggerCloudWorkflowDispatch(ghToken);
+            if (dispatchRes.ok) {
+              showToast(
+                `🚀 本機未設定應用程式密碼，已自動改由 <strong>GitHub 雲端</strong> 寄信給：${recipientList.join(', ')}！`,
+                'success',
+                true
+              );
+              return;
+            }
+          }
           showToast(`⚠️ ${result.error}`, 'error');
           openSettingsModal();
         }
@@ -826,12 +951,12 @@
       }
 
       if (!isLocalServer) {
-        if (ghToken && location.hostname.endsWith('github.io')) {
+        if (ghToken) {
           await syncConfigToGitHubRepo(ghToken, sender);
           if (!silentModal) closeSettingsModal();
           return;
         }
-        showToast(`目前已更新畫面收件人清單 (${recipientList.join(', ')})！若在雲端環境欲永久新增收件人，請編輯 GitHub Repo 中的 config.json 或填入 GitHub Token。`, 'info');
+        showToast(`目前已更新畫面收件人清單 (${recipientList.join(', ')})！若在雲端環境欲永久新增收件人或一鍵寄信，請填入 GitHub Token。`, 'info');
         if (!silentModal) closeSettingsModal();
         return;
       }
@@ -863,8 +988,7 @@
 
     async function syncConfigToGitHubRepo(token, senderEmail) {
       try {
-        const owner = location.hostname.split('.')[0];
-        const repo = location.pathname.split('/').filter(Boolean)[0];
+        const { owner, repo } = getGitHubRepoCoords();
         if (!owner || !repo) throw new Error('無法自動辨識 GitHub Repo 名稱');
 
         const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/config.json`;
