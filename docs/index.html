@@ -20,7 +20,7 @@
       line-height: 1.6;
     }
     .glass-header {
-      background: #0f172a;
+      background: #404040;
     }
     .tab-active {
       background-color: #4338ca;
@@ -95,30 +95,30 @@
         <div class="text-sm font-semibold text-slate-500">尚未結束競拍總數</div>
         <div class="mt-1 flex items-baseline gap-1.5">
           <span id="stat-total" class="text-3xl font-extrabold text-slate-900">0</span>
-          <span class="text-sm text-slate-500">檔標的</span>
+          <span class="text-xs text-slate-500">檔標的</span>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
-        <div class="text-sm font-semibold text-slate-500">投標進行中 / 即將開始</div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs">
+        <div class="text-xs font-semibold text-slate-500">🟢 投標進行中 / 即將開始</div>
         <div class="mt-1 flex items-baseline gap-1.5">
           <span id="stat-bidding" class="text-3xl font-extrabold text-slate-900">0</span>
-          <span class="text-sm text-slate-500">檔可參與投標</span>
+          <span class="text-xs text-slate-500">檔可參與投標</span>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
-        <div class="text-sm font-semibold text-slate-500">已截標・等待開標</div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs">
+        <div class="text-xs font-semibold text-slate-500">🟡 已截標・等待開標</div>
         <div class="mt-1 flex items-baseline gap-1.5">
           <span id="stat-waiting" class="text-3xl font-extrabold text-slate-900">0</span>
-          <span class="text-sm text-slate-500">檔近期開標</span>
+          <span class="text-xs text-slate-500">檔近期開標</span>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
-        <div class="text-sm font-semibold text-slate-500">本次異動偵測</div>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-xs">
+        <div class="text-xs font-semibold text-slate-500">🔔 本次異動偵測</div>
         <div class="mt-1 flex items-baseline gap-2">
-          <span class="text-xl font-extrabold text-indigo-700">新標的 <span id="stat-ipo">0</span></span>
+          <span class="text-xl font-extrabold text-slate-900">新標的 <span id="stat-ipo">0</span></span>
           <span class="text-slate-300">|</span>
           <span class="text-xl font-extrabold text-slate-700">狀態變動 <span id="stat-cb">0</span></span>
         </div>
@@ -129,58 +129,58 @@
     <div class="bg-white rounded-2xl p-3.5 border border-slate-200/80 shadow-sm mb-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
       <div class="flex flex-wrap items-center gap-1.5" id="filter-tabs">
         <button onclick="setFilter('all')" data-filter="all"
-          class="filter-btn tab-active px-3.5 py-2 rounded-xl text-sm font-bold transition">
+          class="filter-btn tab-active px-3.5 py-2 rounded-xl text-xs font-bold transition">
           全部未結束競拍股票
         </button>
         <button onclick="setFilter('bidding')" data-filter="bidding"
-          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-sm font-bold transition">
-          投標進行中 / 即將開始
+          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          🟢 投標進行中 / 即將開始
         </button>
         <button onclick="setFilter('waiting_open')" data-filter="waiting_open"
-          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-sm font-bold transition">
-          已截標・待開標
+          class="filter-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl text-xs font-bold transition">
+          🟡 已截標・待開標
         </button>
       </div>
 
       <div class="flex flex-wrap items-center gap-2">
-        <button onclick="toggleAllCards(true)" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition">
+        <button onclick="toggleAllCards(true)" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
           ➕ 全部展開
         </button>
-        <button onclick="toggleAllCards(false)" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition">
+        <button onclick="toggleAllCards(false)" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold transition">
           ➖ 全部收合
         </button>
       </div>
     </div>
 
     <!-- Global AI Framework Toggle List (大框架分析歷程與檢核要素，統一說明不於個股重複) -->
-    <section class="bg-white rounded-2xl border-2 border-slate-200 shadow-xs mb-6 overflow-hidden">
+    <section class="bg-white rounded-2xl border border-slate-200/90 shadow-xs mb-6 overflow-hidden">
       <div onclick="toggleGlobalAiFramework()"
            class="p-4 sm:px-5 cursor-pointer hover:bg-slate-50 transition select-none flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div class="space-y-1 min-w-0">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-sm font-extrabold bg-indigo-600 text-white">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md text-xs font-extrabold bg-slate-800 text-white">
               🧭 AI 競拍量化分析大框架 ＆ 100 萬拆單檢核通則
             </span>
-            <span class="text-sm font-semibold text-slate-500">
+            <span class="text-xs font-medium text-slate-500">
               （通用定價模型、摩擦成本、防撞尾數與出場紀律統一說明，個股內僅呈現專屬觀點）
             </span>
           </div>
-          <div class="text-sm text-slate-600">
+          <div class="text-xs text-slate-600">
             檢核 4 大核心要素：<strong class="text-slate-800">① 產業景氣與官方同業 PE 對標</strong> ・ <strong class="text-slate-800">② 營收獲利護城河與籌碼稀缺度</strong> ・ <strong class="text-slate-800">③ 5% 總摩擦成本與最高出價防線</strong> ・ <strong class="text-slate-800">④ A/B/C 三階梯拆單與防撞單尾數</strong>
           </div>
         </div>
-        <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 text-sm font-bold transition shrink-0 whitespace-nowrap self-start sm:self-center">
+        <div class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300/80 text-xs font-bold transition shrink-0 whitespace-nowrap self-start sm:self-center">
           <span id="global-framework-toggle-text">展開分析大框架</span>
           <span id="global-framework-chevron" class="inline-block transition-transform duration-200" style="transform: rotate(0deg);">▼</span>
         </div>
       </div>
 
-      <div id="global-framework-detail" class="hidden px-5 pb-5 pt-3 border-t border-slate-200 bg-slate-50/50">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+      <div id="global-framework-detail" class="hidden px-5 pb-5 pt-3 border-t border-slate-200/80 bg-slate-50/60">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
           <!-- Check 1 -->
           <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
             <div class="font-extrabold text-slate-900 flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-indigo-800 text-xs">Check 1</span>
+              <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 text-[11px]">Check 1</span>
               <span>產業景氣位階 ＆ 官方同業本益比對標（方案 A）</span>
             </div>
             <p class="text-slate-600 leading-relaxed">
@@ -191,7 +191,7 @@
           <!-- Check 2 -->
           <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
             <div class="font-extrabold text-slate-900 flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-indigo-800 text-xs">Check 2</span>
+              <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 text-[11px]">Check 2</span>
               <span>個股基本面爆發力 ＆ 競拍籌碼稀缺度評級</span>
             </div>
             <p class="text-slate-600 leading-relaxed">
@@ -202,7 +202,7 @@
           <!-- Check 3 -->
           <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
             <div class="font-extrabold text-slate-900 flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-indigo-800 text-xs">Check 3</span>
+              <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 text-[11px]">Check 3</span>
               <span>5% 總摩擦成本核算 ＆ 最高出價防線（Hard Cap）</span>
             </div>
             <p class="text-slate-600 leading-relaxed">
@@ -213,11 +213,11 @@
           <!-- Check 4 -->
           <div class="bg-white p-3.5 rounded-xl border border-slate-200/90 space-y-1.5">
             <div class="font-extrabold text-slate-900 flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-indigo-800 text-xs">Check 4</span>
+              <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 text-[11px]">Check 4</span>
               <span>100 萬三階梯拆單、防撞尾數博弈 ＆ 掛牌出場紀律</span>
             </div>
             <p class="text-slate-600 leading-relaxed">
-              將 100 萬預算拆為 <strong class="text-slate-800">A單（必中核心）</strong>、<strong class="text-slate-800">B單（主戰中樞）</strong>、<strong class="text-slate-800">C單（低接狙擊）</strong>，並加上 <strong class="text-indigo-700">`.68 / .38 / .26 / .12` 小數點後兩位尾數</strong>，以每張百元級微幅成本越過 `.00 / .50` 散戶整數排隊牆。開標日未得標保證金全退；IPO 掛牌首五日無漲跌幅限制，達目標價分批停利 50%~70%，並以「含費實際成本價」作為下檔移動停利防線。
+              將 100 萬預算拆為 <strong class="text-slate-800">A單（必中核心）</strong>、<strong class="text-slate-800">B單（主戰中樞）</strong>、<strong class="text-slate-800">C單（低接狙擊）</strong>，並加上 <strong class="text-slate-900">`.68 / .38 / .26 / .12` 小數點後兩位尾數</strong>，以每張百元級微幅成本越過 `.00 / .50` 散戶整數排隊牆。開標日未得標保證金全退；IPO 掛牌首五日無漲跌幅限制，達目標價分批停利 50%~70%，並以「含費實際成本價」作為下檔移動停利防線。
             </p>
           </div>
         </div>
@@ -239,7 +239,7 @@
       <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
         <div>
           <h3 class="font-bold text-base">✉️ Email 競拍日報預覽與多收件人寄送</h3>
-          <p class="text-sm text-slate-300 mt-0.5">收件信箱清單：<span id="modal-recipient" class="font-semibold text-slate-200">joechen1579@gmail.com</span></p>
+          <p class="text-xs text-slate-300 mt-0.5">收件信箱清單：<span id="modal-recipient" class="font-semibold text-emerald-300">joechen1579@gmail.com</span></p>
         </div>
         <button onclick="closeEmailModal()" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
       </div>
@@ -247,26 +247,26 @@
       <!-- Action bar inside modal -->
       <div class="px-6 py-3 bg-slate-50 border-b border-slate-200 flex flex-col gap-2">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <div class="text-sm text-slate-600">
+          <div class="text-xs text-slate-600">
             以下為實際寄出之 HTML 信件排版預覽（已包含公司介紹、營收規模、利潤率與新聞摘要）：
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <button onclick="openSettingsModal()"
-              class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-semibold transition">
+              class="px-3 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
               📬 新增/編輯收件人
             </button>
             <button onclick="copyEmailHtml()"
-              class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-sm font-semibold transition">
+              class="px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-semibold transition">
               📋 複製信件內容
             </button>
             <button id="btn-send-now" onclick="sendEmailNow()"
-              class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition shadow-sm">
+              class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm">
               🚀 立即寄送給所有收件人
             </button>
           </div>
         </div>
         <!-- Inline feedback banner inside Email Modal -->
-        <div id="email-modal-feedback" class="hidden rounded-xl px-4 py-2.5 text-sm font-medium border flex items-center justify-between gap-2">
+        <div id="email-modal-feedback" class="hidden rounded-xl px-4 py-2.5 text-xs font-medium border flex items-center justify-between gap-2">
           <span id="email-modal-feedback-msg"></span>
           <button onclick="document.getElementById('email-modal-feedback').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 font-bold">✕</button>
         </div>
@@ -291,19 +291,19 @@
 
       <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-700">
         <!-- Admin Login Box (Shown when not authenticated as Admin) -->
-        <div id="admin-login-panel" class="bg-slate-50/80 p-5 rounded-xl border border-slate-200 space-y-3">
-          <div class="font-bold text-slate-950 text-base flex items-center gap-2">
+        <div id="admin-login-panel" class="bg-amber-50/80 p-5 rounded-xl border border-amber-200 space-y-3">
+          <div class="font-bold text-amber-950 text-base flex items-center gap-2">
             <span>🛡️ 管理員密碼驗證</span>
           </div>
-          <p class="text-sm text-slate-900 leading-relaxed">
+          <p class="text-xs text-amber-900 leading-relaxed">
             為防止一般訪客隨意新增或修改收件人信箱，請輸入<strong>管理員密碼</strong>以解鎖收件人管理與寄信功能。
           </p>
           <div class="flex flex-col sm:flex-row gap-2 pt-1">
             <input id="admin-password-input" type="password" placeholder="請輸入管理員密碼..."
               onkeydown="if(event.key==='Enter'){event.preventDefault();verifyAdminPassword();}"
-              class="flex-1 px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-slate-500" />
+              class="flex-1 px-3 py-2 text-xs rounded-lg border border-amber-300 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500" />
             <button id="btn-verify-admin" onclick="verifyAdminPassword()"
-              class="px-4 py-2 rounded-lg bg-slate-600 hover:bg-slate-700 text-white text-sm font-bold transition shrink-0">
+              class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition shrink-0">
               🔑 驗證並解鎖管理員
             </button>
           </div>
@@ -312,10 +312,10 @@
         <!-- Admin Controls Wrapper (Hidden until isAdmin === true) -->
         <div id="admin-controls-panel" class="hidden space-y-6">
           <!-- Multi-Recipient Manager -->
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+          <div class="bg-blue-50/70 p-4 rounded-xl border border-blue-200 space-y-3">
             <div class="font-bold text-slate-900 flex items-center justify-between">
               <span>📬 收件人 Email 清單（僅管理員可新增/移除）</span>
-              <span id="recipient-count-badge" class="px-2 py-0.5 rounded-full bg-indigo-600 text-white text-sm">1 位</span>
+              <span id="recipient-count-badge" class="px-2 py-0.5 rounded-full bg-blue-600 text-white text-xs">1 位</span>
             </div>
 
             <div id="modal-recipient-chips" class="flex flex-wrap gap-2 py-1"></div>
@@ -323,13 +323,13 @@
             <div class="flex gap-2">
               <input id="new-recipient-input" type="email" placeholder="輸入要新增的 Email 地址，例如 friend@gmail.com"
                 onkeydown="if(event.key==='Enter'){event.preventDefault();addRecipientFromModal();}"
-                class="flex-1 px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
               <button onclick="addRecipientFromModal()"
-                class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition">
+                class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition">
                 ➕ 加入清單
               </button>
             </div>
-            <p class="text-xs text-slate-500">
+            <p class="text-[11px] text-slate-500">
               提示：您可以加入多個信箱（亦可直接用逗號分隔多個 Email 一次貼上），按下方「儲存設定」即可同步寫入。
             </p>
           </div>
@@ -339,63 +339,63 @@
             <div class="font-bold text-slate-900">🔐 Gmail 寄件帳號與管理員金鑰設定</div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-sm font-semibold text-slate-600 mb-1">寄件 Gmail 帳號</label>
+                <label class="block text-xs font-semibold text-slate-600 mb-1">寄件 Gmail 帳號</label>
                 <input id="cfg-sender" type="email" value="joechen1579@gmail.com"
-                  class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                  class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
               </div>
               <div>
-                <label class="block text-sm font-semibold text-slate-600 mb-1">
+                <label class="block text-xs font-semibold text-slate-600 mb-1">
                   Google 應用程式密碼 (16 碼)
-                  <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-indigo-600 underline ml-1">免費申請 ↗</a>
+                  <a href="https://myaccount.google.com/apppasswords" target="_blank" class="text-blue-600 underline ml-1">免費申請 ↗</a>
                 </label>
                 <input id="cfg-app-password" type="password" placeholder="本機寄信填此；雲端填在 GitHub Secrets"
-                  class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                  class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-semibold text-slate-600 mb-1">
+              <label class="block text-xs font-semibold text-slate-600 mb-1">
                 Gemini API Key（選填，不填則自動使用內建智慧摘要）
               </label>
               <input id="cfg-gemini-key" type="password" placeholder="選填：AIzaSy..."
-                class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
             </div>
 
             <!-- SinoTrade RichClub & Client Portal Integration -->
             <div class="pt-3 border-t border-slate-200 space-y-2">
-              <div class="text-sm font-bold text-slate-800 flex items-center justify-between">
+              <div class="text-xs font-bold text-rose-900 flex items-center justify-between">
                 <span>🏦 永豐金證券「豐雲學堂 & 理財網研究報告」帳號串接（本機 .env 加密保存）</span>
-                <a href="https://www.sinotrade.com.tw/richclub/" target="_blank" class="text-indigo-600 underline font-semibold">開啟豐雲學堂 ↗</a>
+                <a href="https://www.sinotrade.com.tw/richclub/" target="_blank" class="text-blue-600 underline font-semibold">開啟豐雲學堂 ↗</a>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label class="block text-xs font-semibold text-slate-600 mb-1">永豐金證券帳號 (身分證字號)</label>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">永豐金證券帳號 (身分證字號)</label>
                   <input id="cfg-sinotrade-id" type="text" placeholder="選填：供本機爬蟲登入永豐研究資料庫"
-                    class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                    class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
                 </div>
                 <div>
-                  <label class="block text-xs font-semibold text-slate-600 mb-1">永豐金證券密碼</label>
+                  <label class="block text-[11px] font-semibold text-slate-600 mb-1">永豐金證券密碼</label>
                   <input id="cfg-sinotrade-pwd" type="password" placeholder="選填：僅存於本機 .env 絕不上傳雲端"
-                    class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                    class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
                 </div>
               </div>
             </div>
 
             <!-- Cloud GitHub Direct Sync -->
             <div id="cloud-sync-box" class="pt-3 border-t border-slate-200 space-y-2">
-              <div class="text-sm font-bold text-slate-800 flex items-center justify-between">
+              <div class="text-xs font-bold text-indigo-900 flex items-center justify-between">
                 <span>☁️ 管理員 GitHub Token (用於雲端同步收件人 & 一鍵寄信)</span>
               </div>
               <input id="cfg-gh-token" type="password" placeholder="貼上 ghp_xxxx"
-                class="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 bg-white" />
+                class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white" />
             </div>
 
             <div class="flex items-center justify-between gap-2 pt-2">
               <button onclick="logoutAdmin()"
-                class="px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-sm font-semibold transition">
+                class="px-3.5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-semibold transition">
                 🔒 鎖定管理員權限 (切換回訪客視角)
               </button>
               <button onclick="saveConfig()"
-                class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition shadow-sm">
+                class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition shadow-sm">
                 💾 儲存收件人與設定
               </button>
             </div>
@@ -405,7 +405,7 @@
     </div>
   </div>
 
-  <footer class="py-5 text-center text-sm text-slate-400 border-t border-slate-200/80 bg-white mt-10">
+  <footer class="py-5 text-center text-xs text-slate-400 border-t border-slate-200/80 bg-white mt-10">
     TWSE 台股競價拍賣自動追蹤、公司基本面與新聞摘要系統 ｜ 支援多收件人自動派報
   </footer>
 
@@ -476,9 +476,9 @@
       if (type === 'success') {
         box.className += 'bg-emerald-50 border-emerald-300 text-emerald-900';
       } else if (type === 'error') {
-        box.className += 'bg-rose-50 border-rose-300 text-rose-900';
+        box.className += 'bg-red-50 border-red-300 text-red-900';
       } else {
-        box.className += 'bg-slate-50 border-slate-200 text-slate-800';
+        box.className += 'bg-blue-50 border-blue-300 text-blue-900';
       }
       if (allowHtml) {
         msgEl.innerHTML = msg;
@@ -491,13 +491,13 @@
       const modalFb = document.getElementById('email-modal-feedback');
       const modalFbMsg = document.getElementById('email-modal-feedback-msg');
       if (modalFb && modalFbMsg && !document.getElementById('email-modal').classList.contains('hidden')) {
-        modalFb.className = 'rounded-xl px-4 py-2.5 text-sm font-medium border flex items-center justify-between gap-2 ';
+        modalFb.className = 'rounded-xl px-4 py-2.5 text-xs font-medium border flex items-center justify-between gap-2 ';
         if (type === 'success') {
           modalFb.className += 'bg-emerald-50 border-emerald-300 text-emerald-900';
         } else if (type === 'error') {
-          modalFb.className += 'bg-rose-50 border-rose-300 text-rose-900';
+          modalFb.className += 'bg-red-50 border-red-300 text-red-900';
         } else {
-          modalFb.className += 'bg-slate-50 border-slate-200 text-slate-800';
+          modalFb.className += 'bg-blue-50 border-blue-300 text-blue-900';
         }
         if (allowHtml) {
           modalFbMsg.innerHTML = msg;
@@ -530,9 +530,9 @@
       if (countBadge) countBadge.textContent = `${recipientList.length} 位`;
 
       const chipHtml = recipientList.map((email, idx) => `
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-semibold bg-slate-50 text-indigo-800 border border-slate-200">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
           <span>📧 ${email}</span>
-          ${recipientList.length > 1 ? `<button onclick="removeRecipient(${idx})" title="移除此信箱" class="text-indigo-400 hover:text-rose-600 font-bold">✕</button>` : ''}
+          ${recipientList.length > 1 ? `<button onclick="removeRecipient(${idx})" title="移除此信箱" class="text-blue-400 hover:text-red-600 font-bold">✕</button>` : ''}
         </span>
       `).join('');
 
@@ -659,7 +659,7 @@
         updateDashboardUI();
       } catch (err) {
         document.getElementById('cards-container').innerHTML = `
-          <div class="bg-white rounded-2xl p-10 text-center border border-rose-200 text-rose-600">
+          <div class="bg-white rounded-2xl p-10 text-center border border-red-200 text-red-600">
             讀取競拍資料失敗：${err.message}
           </div>
         `;
@@ -668,20 +668,16 @@
 
     function updateDashboardUI() {
       if (!globalData) return;
-      const setText = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
-      };
-      setText('updated-at', globalData.updated_at || '--');
-      setText('reference-date', globalData.reference_date || '--');
+      document.getElementById('updated-at').textContent = globalData.updated_at || '--';
+      document.getElementById('reference-date').textContent = globalData.reference_date || '--';
 
       const stats = globalData.stats || {};
       const changes = globalData.changes || {};
-      setText('stat-total', stats.total_active ?? 0);
-      setText('stat-bidding', (stats.bidding_count ?? 0) + (stats.upcoming_count ?? 0));
-      setText('stat-waiting', stats.waiting_open_count ?? 0);
-      setText('stat-ipo', (changes.new_items || []).length);
-      setText('stat-cb', (changes.status_changed_items || []).length);
+      document.getElementById('stat-total').textContent = stats.total_active ?? 0;
+      document.getElementById('stat-bidding').textContent = (stats.bidding_count ?? 0) + (stats.upcoming_count ?? 0);
+      document.getElementById('stat-waiting').textContent = stats.waiting_open_count ?? 0;
+      document.getElementById('stat-ipo').textContent = (changes.new_items || []).length;
+      document.getElementById('stat-cb').textContent = (changes.status_changed_items || []).length;
 
       renderCards();
     }
@@ -708,12 +704,12 @@
 
       if (lines.length === 0) return '';
 
-      return `<ul class="space-y-1.5 text-sm text-slate-800 leading-relaxed bg-white/80 p-3 rounded-xl border border-slate-200/70">
+      return `<ul class="space-y-1.5 text-sm text-slate-800 leading-relaxed bg-white/80 p-3 rounded-xl border border-slate-200">
         ${lines.map(line => {
           const m = line.match(/^【([^】]+)】(.*)$/);
           if (m) {
-            return `<li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 pb-1 border-b border-slate-100/70 last:border-b-0 last:pb-0">
-              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-900 font-bold text-xs shrink-0">${m[1]}</span>
+            return `<li class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 pb-1 border-b border-slate-100 last:border-b-0 last:pb-0">
+              <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-bold text-xs shrink-0">${m[1]}</span>
               <span class="text-slate-800 font-medium">${m[2].trim()}</span>
             </li>`;
           }
@@ -1192,6 +1188,12 @@
         const estBidRange = (v.suggested_bid_low && v.suggested_bid_high)
           ? `${v.suggested_bid_low} ~ ${v.suggested_bid_high}`
           : (minPriceNum ? `${(minPriceNum * 1.06).toFixed(1)} ~ ${(minPriceNum * 1.18).toFixed(1)}` : '—');
+        const startStr = String(item.bid_start_date || '');
+        const endStr = String(item.bid_end_date || '');
+        const slashIdx = startStr.indexOf(String.fromCharCode(47));
+        const compactBidEnd = (slashIdx > 0 && endStr.startsWith(startStr.slice(0, slashIdx + 1)))
+          ? endStr.slice(slashIdx + 1)
+          : endStr;
 
         return `
           <article data-card-id="${cardId}" class="bg-white rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-md transition overflow-hidden">
@@ -1233,31 +1235,31 @@
               <!-- Bottom Row: 6 Key Metrics Full-Width Grid (競拍日期、競拍底價、公開申購價格、推估得標價、目標/參考市價、潛在價差比) -->
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 pt-3 border-t border-slate-100">
                 <!-- 1. 競拍日期 -->
-                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200/80">
+                <div class="bg-slate-50 px-3 py-2.5 rounded-xl border border-slate-200/80 min-w-0 overflow-hidden">
                   <div class="text-sm text-slate-500 font-semibold">競拍投標日期</div>
-                  <div class="text-sm sm:text-base font-extrabold text-slate-800 mt-1 whitespace-nowrap">${item.bid_start_date} ~ ${item.bid_end_date}</div>
-                  <div class="text-sm text-slate-500 mt-1">開標日期：${item.open_bid_date}</div>
+                  <div class="text-sm font-extrabold text-slate-800 leading-snug mt-1 break-words">${startStr} ~ ${compactBidEnd}</div>
+                  <div class="text-xs text-slate-500 mt-1 break-words">開標日：${item.open_bid_date}</div>
                 </div>
 
                 <!-- 2. 競拍底價 -->
-                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200">
+                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 min-w-0 overflow-hidden">
                   <div class="text-sm text-slate-500 font-semibold">競拍底價</div>
                   <div class="text-xl font-extrabold text-indigo-700 leading-tight mt-1">${item.min_price} <span class="text-sm font-semibold">元</span></div>
                   <div class="text-sm text-slate-500 mt-1">保證金 ${item.margin_percentage}%</div>
                 </div>
 
                 <!-- 3. 公開申購價格 (放在競拍底價旁邊) -->
-                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200">
+                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200 min-w-0 overflow-hidden">
                   <div class="text-sm text-slate-500 font-semibold">公開申購價格</div>
                   <div class="text-xl font-extrabold text-indigo-700 leading-tight mt-1">${v.estimated_underwriting_price || (minPriceNum ? (minPriceNum * 1.18).toFixed(1) : '—')} <span class="text-sm font-semibold">元</span></div>
                   <div class="text-sm text-slate-500 mt-1">${v.underwriting_price_is_exact ? '公告暫定承銷價' : '依底價×1.18倍推估'}</div>
                 </div>
 
                 <!-- 4. 推估得標價 -->
-                <div class="bg-slate-50 px-3.5 py-2.5 rounded-xl border border-slate-200">
+                <div class="bg-slate-50 px-3 py-2.5 rounded-xl border border-slate-200 min-w-0 overflow-hidden">
                   <div class="text-sm text-slate-500 font-semibold">推估得標價區間</div>
-                  <div class="text-lg sm:text-xl font-extrabold text-slate-800 leading-tight mt-1 whitespace-nowrap">${estBidRange} <span class="text-sm font-semibold">元</span></div>
-                  <div class="text-sm text-slate-500 mt-1 break-words">約市價85~92折/底價+6~18%</div>
+                  <div class="text-base sm:text-lg font-extrabold text-slate-800 leading-tight mt-1 break-words">${estBidRange} <span class="text-xs font-semibold">元</span></div>
+                  <div class="text-xs text-slate-500 mt-1 break-words">約市價85~92折/底價+6~18%</div>
                 </div>
 
                 <!-- 5. 目標價 / 參考市價 -->
@@ -1494,7 +1496,7 @@
         const { owner, repo } = getGitHubRepoCoords();
         const actionsUrl = `https://github.com/${owner}/${repo}/actions/workflows/daily_auction.yml`;
         showToast(
-          `💡 您目前在雲端靜態網頁模式：請在設定視窗填入 <strong>GitHub Token</strong> 即可一鍵直接寄信，或 <a href="${actionsUrl}" target="_blank" class="underline font-bold text-indigo-700">點此前往 GitHub Actions 按 Run workflow 立即寄信 ↗</a>`,
+          `💡 您目前在雲端靜態網頁模式：請在設定視窗填入 <strong>GitHub Token</strong> 即可一鍵直接寄信，或 <a href="${actionsUrl}" target="_blank" class="underline font-bold text-blue-700">點此前往 GitHub Actions 按 Run workflow 立即寄信 ↗</a>`,
           'info',
           true
         );
@@ -1520,12 +1522,12 @@
           showToast(`🎉 ${result.message}`, 'success');
           setTimeout(() => closeEmailModal(), 1500);
         } else {
-          // If local server cannot send (no app_password or company firewall blocks SMTP), fall back to Cloud Dispatch if ghToken is present!
+          // If local server has no app_password configured, but user provided a GitHub Token, fall back to Cloud Dispatch!
           if (ghToken) {
             const dispatchRes = await triggerCloudWorkflowDispatch(ghToken);
             if (dispatchRes.ok) {
               showToast(
-                `🚀 本機無法直連 SMTP，已自動改由 <strong>GitHub 雲端</strong> 寄信給：${recipientList.join(', ')}！`,
+                `🚀 本機未設定應用程式密碼，已自動改由 <strong>GitHub 雲端</strong> 寄信給：${recipientList.join(', ')}！`,
                 'success',
                 true
               );
@@ -1650,4 +1652,3 @@
     window.addEventListener('DOMContentLoaded', checkEnvironmentAndLoad);
   </script>
 </body>
-</html>

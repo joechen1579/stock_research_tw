@@ -582,7 +582,7 @@ def render_email_html(
 <body style="margin:0;padding:0;background-color:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
     <div style="max-width:720px;margin:0 auto;padding:24px 14px;">
         <!-- Header -->
-        <div style="background:#0f172a;color:#ffffff;border-radius:14px;padding:24px;margin-bottom:20px;">
+        <div style="background:#404040;color:#ffffff;border-radius:14px;padding:24px;margin-bottom:20px;">
             <div style="font-size:13px;opacity:0.85;letter-spacing:0.5px;margin-bottom:4px;">TWSE COMPETITIVE AUCTION DAILY DIGEST</div>
             <h1 style="margin:0 0 8px 0;font-size:24px;font-weight:800;">📈 台股最新競價拍賣公告、公司介紹 & 新聞摘要</h1>
             <p style="margin:0 0 16px 0;font-size:14px;opacity:0.9;">
