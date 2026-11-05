@@ -4,317 +4,13 @@
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
     "total_active": 3,
-    "bidding_count": 1,
-    "upcoming_count": 2,
-    "waiting_open_count": 0,
+    "bidding_count": 2,
+    "upcoming_count": 0,
+    "waiting_open_count": 1,
     "ipo_stock_count": 3,
     "cb_count": 0
   },
   "auctions": [
-    {
-      "security_name": "騏億鑫",
-      "security_code": "7848",
-      "base_code": "7848",
-      "market": "櫃檯買賣",
-      "issue_type": "初上櫃",
-      "security_category": "股票 (IPO/現增)",
-      "is_cb": false,
-      "auction_method": "美國標",
-      "bid_start_date": "2026/10/30",
-      "bid_end_date": "2026/11/03",
-      "open_bid_date": "2026/11/05",
-      "listing_date": "2026/11/16",
-      "auction_quantity": "3,060",
-      "min_price": "210",
-      "min_bid_quantity": "1",
-      "max_bid_quantity": "392",
-      "margin_percentage": "50",
-      "processing_fee": "400",
-      "underwriter": "永豐金",
-      "award_fee_rate": "5",
-      "total_award_amount": "0",
-      "status_code": "bidding",
-      "status_label": "投標進行中",
-      "days_left": 0,
-      "countdown_text": "今日截止投標！",
-      "estimated_min_bid_value": 210000,
-      "estimated_min_margin": 105400,
-      "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
-      "yahoo_url": "https://tw.stock.yahoo.com/quote/7848",
-      "goodinfo_url": "https://goodinfo.tw/tw/StockBzPerformance.asp?STOCK_ID=7848",
-      "moneydj_url": "https://justdata.moneydj.com/z/zc/zca/zca_7848.djhtm",
-      "company_profile": {
-        "base_code": "7848",
-        "base_name": "騏億鑫",
-        "official_industry": "其他電子業",
-        "industry": "其他電子業（半導體廠務工程）",
-        "business_scope": "高科技廠房廠務系統相關配管設計及工程管理、廠務設備所需之材料、零配件等製造、組裝及銷售業務",
-        "revenue_mix": "高科技廠房廠務供應系統工程70.35%、材料銷售27.02%、其他2.63% (2025年)",
-        "capital_text": "3.34 億元",
-        "chairman": "洪國庭",
-        "founded_date": "103/06/11",
-        "website": "https://www.chiyihsin.com/",
-        "goodinfo_url": "https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=7848",
-        "profit_period": "115.2Q",
-        "gross_margin": "29.36%",
-        "operating_margin": "22.65%",
-        "pretax_margin": "22.20%",
-        "roe": "10.37%",
-        "roa": "4.59%",
-        "bps": "47.21",
-        "debt_ratio": "61.22%",
-        "latest_month_label": "115/09",
-        "latest_month_revenue": "2.99 億元",
-        "latest_month_yoy": "127.27%",
-        "accumulated_revenue": "22.84 億元",
-        "accumulated_yoy": "75.28%",
-        "latest_quarter_label": "115.2Q",
-        "latest_quarter_revenue": "8.49 億元",
-        "latest_quarter_net_income": "1.51 億元",
-        "latest_quarter_eps": "4.53 元",
-        "recent_4q_eps": "16.32 元 (近4季累計)",
-        "summary_text": "【所屬產業】騏億鑫（7848）隸屬於「其他電子業（半導體廠務工程）」\n【主要業務】高科技廠房廠務系統相關配管設計及工程管理、廠務設備所需之材料、零配件等製造、組裝及銷售業務\n【營收規模】最新 (115/09) 單月營收 2.99 億元（年增 127.27%） ｜ 累計營收 22.84 億元（年增 75.28%） ｜ 最新季報 (115.2Q) 單季營收 8.49 億元、稅後淨利 1.51 億元\n【利潤率指標 (115.2Q)】毛利率 29.36% ｜ 營益率 22.65% ｜ 稅前淨利率 22.20% ｜ ROE 10.37%\n【每股獲利與淨值】最新單季 EPS 4.53 元 ｜ 近四季累計 EPS 16.32 元 (近4季累計) ｜ 每股淨值 47.21 元",
-        "summary_lines": [
-          "【所屬產業】騏億鑫（7848）隸屬於「其他電子業（半導體廠務工程）」",
-          "【主要業務】高科技廠房廠務系統相關配管設計及工程管理、廠務設備所需之材料、零配件等製造、組裝及銷售業務",
-          "【營收規模】最新 (115/09) 單月營收 2.99 億元（年增 127.27%） ｜ 累計營收 22.84 億元（年增 75.28%） ｜ 最新季報 (115.2Q) 單季營收 8.49 億元、稅後淨利 1.51 億元",
-          "【利潤率指標 (115.2Q)】毛利率 29.36% ｜ 營益率 22.65% ｜ 稅前淨利率 22.20% ｜ ROE 10.37%",
-          "【每股獲利與淨值】最新單季 EPS 4.53 元 ｜ 近四季累計 EPS 16.32 元 (近4季累計) ｜ 每股淨值 47.21 元"
-        ]
-      },
-      "news": [
-        {
-          "title": "抽紅包機會來了！騏億鑫4日開放申購 價差、時程一次看",
-          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9aaG9jMWxhMVY3QWNZS1duTmNFVGxBclNoY0dNdVVTcXdySDZXbW1xUE02VkdUQXZZdlpTc1pzbk5mTGFVbUlGeUR4VQ?oc=5",
-          "source": "三立新聞",
-          "published_at": "2026/11/02 21:28",
-          "sort_time": "2026-11-02T21:28:50+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "抽紅包機會來了！騏億鑫4日開放申購",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5nX1JvLWc2WTdYSG43dTdRTmhmTTBSd2tVNmgzUXdxUWJsRVB6SE5IYk82TEhnVVV1RUlrNWtiMXJTek9yWEotUTRPb1ZfZnhyTEhmQkxnNjd3R1RNcENNVEN30gFiQVVfeXFMTmdfUm8tZzZZN1hIbjd1N1FOaGZNMFJ3a1U2aDNRd3FRYmxFUHpITkhiTzZMSGdVVXVFSWs1a2IxclN6T3JYSi1RNE9vVl9meHJMSGZCTGc2N3dHVE1wQ01UQ3c?oc=5",
-          "source": "鏡週刊Mirror Media",
-          "published_at": "2026/11/02 21:27",
-          "sort_time": "2026-11-02T21:27:00+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBfb2t3a0gzSjU1ZFBSdDNxUi13UllJX3RmR3VkLXpPSl9rOFl6YW5oOG1wR2FUYkYxZkVTcktwaDNLNS0xeGJmcFJnUEpGRGxMUENJYy1Rc2xHb3h5VDNB0gFkQVVfeXFMT2hBN3BRTFA0LVBSMWI3b1l0VDF3Uzd6VEVBaFB5TVZRdkVCZVlMYzZwSnFxc0pBdGFvM1U2bk9vM0ZuNmRXNTRxcWJzYzRpRTliUEFmVzBncm9rNkY1c0xvcmt4NQ?oc=5",
-          "source": "自由財經",
-          "published_at": "2026/11/01 13:44",
-          "sort_time": "2026-11-01T13:44:27+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元",
-          "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxOVjc0eVdTc254Z2VpZmhnS1NWZVJWc0ZIdFVSRFZEUHdoNHJnUHo4TFlTUDhKZGVBbFlZb0N4WncyMHBVYXByNkdkeTJzZ19OYWl6YzAyRVUzQW9fR0FfWlhhUkVkclE3TVVld0I1REotMHFHWi1jNWdxNGhnSjNrUjZ3VXpGanVjdFk4ZDhlcnJFbWtEN29pUWdCMnlHRHNYTGNNYTZJTm9ZWnFGNVV6bW9xbHJIOTg2bmlCYkFIZExtZVVPeWpWQURUNld5R1BmbHk1dUtJU3RPbWl0S2RMQmlkZ19mUlV2LUNhM1ljLUxUcFpZT3VXUmlQeS1XZXVaQm5ILWxNZ0p0ZHZ5ZjJEN0dRUVFZNlFQZWlTMkk1RTc2MzJWSVZlZ0xDMEtSTG1ycE9pZDVmeWowVTdjWklIOVRQazA0N0pyRjd6VkNUMW5GaGtwd1Z6TW5R?oc=5",
-          "source": "Yahoo股市",
-          "published_at": "2026/10/30 09:18",
-          "sort_time": "2026-10-30T09:18:15+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騏億鑫科技股份有限公司",
-          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbk9TZjU2aGw5LXE3TUM2cDBkX3dTSkp5aWxma3Z2VDlybG53b0NqTlF1M1h2MEhTYWpEZmVObTVTcmZGSExvUFRTcWdkU3NWdHo3b3hYVjJxV1lfT3pzOW9wSXdLVlVXSzNVcmlaYnBRNjVmYUUwWjZuYURVc0t2ZnhseGllRDh6NllmSjJ3T2IzeEs2X0FB?oc=5",
-          "source": "MoneyDJ",
-          "published_at": "2026/10/28 15:00",
-          "sort_time": "2026-10-28T15:00:00+08:00",
-          "snippet": ""
-        }
-      ],
-      "valuation": {
-        "min_price": 210.0,
-        "market_price": 320.0,
-        "market_price_source": "Yahoo股市 (7848.TWO)",
-        "spread_to_min_pct": 52.4,
-        "estimated_underwriting_price": 247.8,
-        "underwriting_price_is_exact": false,
-        "annualized_eps_label": "16.32 元（近四季累計實際 EPS）",
-        "pe_range_label": "12.8x ~ 24.3x",
-        "pe_fair_low": 208.9,
-        "pe_fair_mid": 284.0,
-        "pe_fair_high": 396.6,
-        "consensus_low": 252.0,
-        "consensus_mid": 285.3,
-        "consensus_high": 320.0,
-        "suggested_bid_low": 272.0,
-        "suggested_bid_high": 294.4,
-        "factset": {
-          "has_factset": false,
-          "target_mean": 0.0,
-          "target_median": 0.0,
-          "target_high": 0.0,
-          "target_low": 0.0,
-          "analyst_count": 0,
-          "cnyes_url": "https://www.cnyes.com/twstock/7848"
-        },
-        "mops": {
-          "mops_prospectus_url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=7848&year=115&mtype=B",
-          "mops_company_url": "https://mops.twse.com.tw/mops/web/t05st03?co_id=7848",
-          "latest_doc_title": "公開說明書"
-        },
-        "sinotrade": {
-          "has_sinotrade_account": false,
-          "sinotrade_account_masked": "未設定 (使用公開檢索)",
-          "richclub_search_url": "https://www.sinotrade.com.tw/richclub/search?keyword=%E9%A8%8F%E5%84%84%E9%91%AB",
-          "sinotrade_stock_url": "https://www.sinotrade.com.tw/Stock/Stock_3_1?stock=7848",
-          "sinotrade_ipo_url": "https://www.sinotrade.com.tw/richclub/IPO",
-          "articles": [
-            {
-              "title": "騏億鑫在手訂單逾44億元、交期至2028年初 11月中旬上櫃掛牌｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1mcU83R0g5U1o1YjJmeFQ5T015NXY1dUdhY213TUdUQzRXbVd1ZnZ6QjVNWmVzVU9PamZyUmJsT3JjNkQxYXpfZVpRZ3pMajdtWXFibG1BRVVkZ0Y5eWFLZVgwek1xclNfSnhYZXIxTU5fU2tBUWc?oc=5",
-              "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Wed, 21 Oct 2026"
-            },
-            {
-              "title": "騏億鑫上櫃前現金增資 暫定以新台幣252元溢價發行｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE52dXV4RkhOcVpkT3ZFSy1UTXhJRG03c1ZDYWpYWk5VRWhHWnZNTlg2Wk5kNUxycUZWckQtUmlueTdNa1BaazlfM0pzRFIzTHZORG5iQ2I1eFl1T0FRWnZuclQzU2hHekFaWVd3QVQybzQ5X2hGekE?oc=5",
-              "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Mon, 26 Oct 2026"
-            },
-            {
-              "title": "《興櫃股》騏億鑫公開承銷時程出爐 競拍3060張、暫定每股252元｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1nWWFfRm1wNGNzYmNxN1FrRWhOMlIxVG02TnpuTjUzN3lFU2FQUGc3Qkd6eUFfQkRiWEFHMHBMUEpFY0RlaGR2R0cxVWttZnpJTEMtcFBvdlpISkFJb3A2UlpRdHZXNWd5QjZjWllGUGhSVU5ZVGc?oc=5",
-              "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Wed, 28 Oct 2026"
-            },
-            {
-              "title": "《興櫃股》騏億鑫訂單一路排到2030年 明年毛利率更優｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9iSXpsS01oYWdST1ZrSzZMRmJ5WXR1bUFZM0tidHpWRENwbWJIWW5DMWl5NXVBbmZuSzlwYXRXZ0VnYk9NeHY3cXJLQXU5NVNXcnZFcTNsNFhaVDUyVFlIWG1FU3puUnFPb1JOYlZEYnNzTjF4Wnc?oc=5",
-              "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Wed, 21 Oct 2026"
-            },
-            {
-              "title": "2奈米與CoWoS浪潮帶動裝機需求：騏億鑫(7848)透過精準「二次配」打通全球晶圓廠的最後一哩路！｜《企業家觀點》EP23｜騏億鑫洪國庭董事長｜豐雲學堂2026 年 10 月 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMi7gVBVV95cUxPYlVyOUk4V0R4aXZxaGlSUWxkNzRFVk54Z1pEVEFNaklBamV4ZUxrNjBaRHlWM2NsV01CV0dhZzFNU3V3U0VxZnFKSHJPOXdxazJnN3FtdmZaSXI0cFRRLUxHVDh0VGNPQ08xZlB5ZVgwVUpOMUloX1kzU1ppNGZwRm5TX3lwd0p3QS1qaHVtZHdCU2NqNTctVksxemNXSlEwUy1SQnlHVDFkdjJmeDVNQ3kzRlJZNUFzdmY5RjFNQWI4ODRDby03blZKbWJfd3phYmhMekxZMnlVMzFRWE9BUDNnRWJReTZzTmdNUHJldkhpdTA0aUZXMDhSLUp1aFc4Q2VMT3JjWE5ramV4elcwcVFYRXJQYUZRU195XzIyX2lXTVdqQ2dTVVljQkdKdlJnTV8zeHdfbzJhWWdhbkc5QldwcmpSWDR3VzF5RktIM2RlRk5SRTdUZzZueUhLVlhoYl9RTUZGZ2Y2OG1DSWVnX2FXTEQwQ24xNFM2RlEtYVNabDVWQW1IQ1VMd2hHVUVGNS12aWVKU2UxNWtDckc0ZThQYjBIRE5vanhYazktVjB3cjY5dDNlbVlTbWlka3FsUzNoMXNzZUF4TTNRYlVrR1RJVXB0d0wxYm14Z2NYSGhEZ2RlNDZRY2d3Y3hiWFlQeU5mb0RLZ1hKbTBYeWpxSjR5VHg4U3JWazRTV1ZxRU82NGRYMUdESW1tc0FTU0tBSVZmNnpaS1FSUDNtSFRPbzliSkdhRFN6QTVOTWQ0MDZaNV9Wa25xUk1LQ3FDTVdvd2lyY01tSWZMYmNLTV9ZUkJKbnZnSnoxSzZfQ0xfLVFBb04tTGxEQVBRQ2U2QTVRN3JPd05MaXI2eE83NlZfZ05sdmpZaEtpMlhyTFQzREt4OFJubnNXMEt6c0U3UGtTQkd5Y2xMa05kMEE5QV9RbVRzVHRLNnRuSDFFQWVrMVNnNHNFbjhWYWwycHAxZVZvQ2pJNGdUdlZsSHhEbkE?oc=5",
-              "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Fri, 02 Oct 2026"
-            }
-          ],
-          "extracted_targets": [
-            252.0
-          ]
-        },
-        "sector_macro": {
-          "sector_name": "其他電子業（半導體廠務工程）",
-          "data_date": "1151030",
-          "pe_low": 12.8,
-          "pe_mid": 17.4,
-          "pe_high": 24.3,
-          "avg_pe": 17.4,
-          "avg_pb": 6.77,
-          "avg_yield": 3.05,
-          "sampled_peers": [
-            "漢唐(2404) PE 16.2x / PB 11.33x",
-            "帆宣(6196) PE 24.3x / PB 6.61x",
-            "亞翔(6139) PE 12.8x / PB 7.24x",
-            "聖暉*(5536) PE 19.2x / PB 5.75x",
-            "朋億*(6613) PE 14.3x / PB 2.93x"
-          ],
-          "cycle_note": "受惠晶圓代工龍頭擴充先進封裝 (CoWoS) 與海外建廠資本支出擴張，廠務工程在手訂單維持高檔，屬景氣擴張順風期。"
-        },
-        "methodology_lines": [
-          "【MOPS 承銷報告定價依據】主辦承銷商（永豐金）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 210.0 元，推估暫定公開申購承銷價約 247.8 元。",
-          "【二級市場/興櫃即時比價】目前市場參考價為 320.0 元（較競拍底價 210.0 元溢價 +52.4%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 272.0 ～ 294.4 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 16.32 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（12.8x～24.3x，中位 17.4x）推算，基本面合理價值區間約 208.9 ～ 396.6 元（中位數 284.0 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：漢唐(2404) PE 16.2x / PB 11.33x、帆宣(6196) PE 24.3x / PB 6.61x、亞翔(6139) PE 12.8x / PB 7.24x、聖暉*(5536) PE 19.2x / PB 5.75x（同業平均 PE 17.4x、平均 PB 6.77x、平均殖利率 3.05%）。受惠晶圓代工龍頭擴充先進封裝 (CoWoS) 與海外建廠資本支出擴張，廠務工程在手訂單維持高檔，屬景氣擴張順風期。",
-          "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告，並從報告中萃取出參考定價：252.0 元（已納入上方共識價格計算）。"
-        ]
-      },
-      "ai_strategy": {
-        "budget_twd": 1000000,
-        "heat_level": "🔥 高熱度積極搶標型",
-        "heat_score": 78,
-        "target_ref_price": 320.0,
-        "target_ref_label": "興櫃/二級市場最新市價 320.0 元",
-        "hard_cap_price": 294.4,
-        "hard_cap_with_fee": 307.65,
-        "total_lots": 3,
-        "weighted_avg_bid": 283.35,
-        "weighted_all_in_cost": 296.5,
-        "total_initial_margin_twd": 426230,
-        "total_settlement_twd": 889513,
-        "total_est_profit_twd": 66263,
-        "total_roi_pct": 7.4,
-        "tranches": [
-          {
-            "tranche_name": "A 單【必中核心單】",
-            "role_desc": "鎖定中上緣價位＋.68/.38 尾數，確保高機率優先得標建立基本倉",
-            "bid_price": 294.68,
-            "all_in_cost_per_share": 308.34,
-            "lots": 1,
-            "bid_principal_twd": 294680,
-            "win_fee_twd": 13661,
-            "initial_margin_twd": 147740,
-            "settlement_twd": 308341,
-            "est_net_profit_twd": 10251,
-            "est_roi_pct": 3.3
-          },
-          {
-            "tranche_name": "B 單【主戰中樞單】",
-            "role_desc": "配置最多張數於得標中位數＋.26 尾數，越過整數散戶牆、賺取最佳風報比",
-            "bid_price": 283.26,
-            "all_in_cost_per_share": 296.41,
-            "lots": 1,
-            "bid_principal_twd": 283260,
-            "win_fee_twd": 13147,
-            "initial_margin_twd": 142030,
-            "settlement_twd": 296407,
-            "est_net_profit_twd": 22185,
-            "est_roi_pct": 7.5
-          },
-          {
-            "tranche_name": "C 單【低接狙擊單】",
-            "role_desc": "埋伏於區間下緣＋.12 尾數，若競拍尾盤投標冷清可撿取高折價籌碼",
-            "bid_price": 272.12,
-            "all_in_cost_per_share": 284.76,
-            "lots": 1,
-            "bid_principal_twd": 272120,
-            "win_fee_twd": 12645,
-            "initial_margin_twd": 136460,
-            "settlement_twd": 284765,
-            "est_net_profit_twd": 33827,
-            "est_roi_pct": 11.9
-          }
-        ],
-        "reasoning_steps": [
-          {
-            "step_num": "觀點 1",
-            "title": "怎麼看這產業？（其他電子業（半導體廠務工程） 景氣位階 ＆ 同業估值對標）",
-            "bullets": [
-              "【產業分類與景氣位階】隸屬於「其他電子業（半導體廠務工程）」。受惠晶圓代工龍頭擴充先進封裝 (CoWoS) 與海外建廠資本支出擴張，廠務工程在手訂單維持高檔，屬景氣擴張順風期。",
-              "【官方採樣同業估值】對標同業：漢唐(2404) PE 16.2x / PB 11.33x、帆宣(6196) PE 24.3x / PB 6.61x、亞翔(6139) PE 12.8x / PB 7.24x、聖暉*(5536) PE 19.2x / PB 5.75x（同業平均本益比 17.4x、平均股價淨值比 6.77x）。"
-            ],
-            "detail": "【產業分類與景氣位階】隸屬於「其他電子業（半導體廠務工程）」。受惠晶圓代工龍頭擴充先進封裝 (CoWoS) 與海外建廠資本支出擴張，廠務工程在手訂單維持高檔，屬景氣擴張順風期。 【官方採樣同業估值】對標同業：漢唐(2404) PE 16.2x / PB 11.33x、帆宣(6196) PE 24.3x / PB 6.61x、亞翔(6139) PE 12.8x / PB 7.24x、聖暉*(5536) PE 19.2x / PB 5.75x（同業平均本益比 17.4x、平均股價淨值比 6.77x）。"
-          },
-          {
-            "step_num": "觀點 2",
-            "title": "怎麼看這個股？（騏億鑫 核心業務、成長動能 ＆ 獲利護城河）",
-            "bullets": [
-              "【主要業務定位】高科技廠房廠務系統相關配管設計及工程管理、廠務設備所需之材料、零配件等製造、組裝及銷售業務。",
-              "【營收與獲利體質】營收爆發力強勁（單月年增 127.27%、累計年增 75.28%）；利潤率結構穩健（毛利率 29.36%）；競拍釋出總張數為 3,060 張（籌碼供給適中）。最新毛利率 29.36%、營益率 22.65%、近期累計 EPS 16.32 元 (近4季累計)。",
-              "【近期營運催化劑】抽紅包機會來了！騏億鑫4日開放申購 價差、時程一次看；抽紅包機會來了！騏億鑫4日開放申購。"
-            ],
-            "detail": "【主要業務定位】高科技廠房廠務系統相關配管設計及工程管理、廠務設備所需之材料、零配件等製造、組裝及銷售業務。 【營收與獲利體質】營收爆發力強勁（單月年增 127.27%、累計年增 75.28%）；利潤率結構穩健（毛利率 29.36%）；競拍釋出總張數為 3,060 張（籌碼供給適中）。最新毛利率 29.36%、營益率 22.65%、近期累計 EPS 16.32 元 (近4季累計)。 【近期營運催化劑】抽紅包機會來了！騏億鑫4日開放申購 價差、時程一次看；抽紅包機會來了！騏億鑫4日開放申購。"
-          },
-          {
-            "step_num": "觀點 3",
-            "title": "為什麼這樣投？（定價安全邊際 ＆ 3 張百萬資金配置理由）",
-            "bullets": [
-              "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。",
-              "【個股定價錨點與安全邊際】競拍底價 210.0 元 ｜ 暫定承銷價 247.8 元 ｜ 同業 PE 合理估值中位數 284.0 元 ｜ 對比興櫃/二級市場最新市價 320.0 元（較底價溢價 +52.4%），本檔最高出價防線（Hard Cap）設於 294.4 元（含費成本 307.65 元/股）。",
-              "【100 萬預算配置結論】最適投標總張數【3 張】（A單 294.68 元 ／ B單 283.26 元 ／ C單 272.12 元），加權含費總成本 296.5 元/股，預估潛在總淨利 NT$ +66,263 元（淨報酬率 +7.4%）。"
-            ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。 【個股定價錨點與安全邊際】競拍底價 210.0 元 ｜ 暫定承銷價 247.8 元 ｜ 同業 PE 合理估值中位數 284.0 元 ｜ 對比興櫃/二級市場最新市價 320.0 元（較底價溢價 +52.4%），本檔最高出價防線（Hard Cap）設於 294.4 元（含費成本 307.65 元/股）。 【100 萬預算配置結論】最適投標總張數【3 張】（A單 294.68 元 ／ B單 283.26 元 ／ C單 272.12 元），加權含費總成本 296.5 元/股，預估潛在總淨利 NT$ +66,263 元（淨報酬率 +7.4%）。"
-          }
-        ]
-      },
-      "summary_overview": "【騏億鑫 (7848)】為櫃檯買賣之「初上櫃」競拍案，由永豐金證券主辦。本次競拍數量共 3,060 張，最低投標底價為 210 元（每標單最低預估保證金加處理費約 NT$ 105,400 元）。投標期間為 2026/10/30 至 2026/11/03，預計於 2026/11/05 開標、2026/11/16 撥券掛牌。",
-      "summary_news_digest": "綜合 三立新聞、鏡週刊Mirror Media、自由財經 等共 5 則近期新聞焦點：(1) 抽紅包機會來了！騏億鑫4日開放申購 價差、時程一次看（三立新聞）；(2) 抽紅包機會來了！騏億鑫4日開放申購（鏡週刊Mirror Media）；(3) 抽籤紅包來了！騏億鑫申購本週三起跑 中籤潛在獲利8.5萬元（自由財經）；(4) 新股抽籤又有大紅包！抽中騏億鑫有望賺近10萬元（Yahoo股市）。",
-      "summary_mode": "extractive"
-    },
     {
       "security_name": "宏偉",
       "security_code": "4565",
@@ -337,10 +33,10 @@
       "underwriter": "中國信託",
       "award_fee_rate": "5",
       "total_award_amount": "0",
-      "status_code": "upcoming",
-      "status_label": "即將開始投標",
-      "days_left": 1,
-      "countdown_text": "距離開始投標還有 1 天",
+      "status_code": "bidding",
+      "status_label": "投標進行中",
+      "days_left": 2,
+      "countdown_text": "距離截標還有 2 天",
       "estimated_min_bid_value": 75000,
       "estimated_min_margin": 37900,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -388,11 +84,11 @@
       },
       "news": [
         {
-          "title": "4565 宏偉 - 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 股市爆料同學會",
-          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFB2bk9XamNBRmNVS3FLai04eFNVdWlLMnB2MkFFSHFQR2gtczN0VGVSOUJiWkdmR3E4blZ4Y1R2TXFjV3V2RWloUzNxdV91QzE5WWhsZXVXSG4?oc=5",
-          "source": "CMoney",
-          "published_at": "2026/11/02 12:51",
-          "sort_time": "2026-11-02T12:51:50+08:00",
+          "title": "中國信託證券主辦宏偉現增案",
+          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE00VThoTndtbEY0OHJ5ZWFWeTNNMXFWTjVYTnR4c3hoVm15LUI1ZU5XWFMxZHB4enJiVUxZaFhOSE1hLS1FWDRyUHFIeV9yMllYUEpPamZWbl9ZbzgxaHBreWk5YjZSMHVZMzBn?oc=5",
+          "source": "中時新聞網",
+          "published_at": "2026/11/04 04:10",
+          "sort_time": "2026-11-04T04:10:00+08:00",
           "snippet": ""
         },
         {
@@ -401,14 +97,6 @@
           "source": "MoneyDJ",
           "published_at": "2026/11/02 12:27",
           "sort_time": "2026-11-02T12:27:00+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "中國信託證券輔導 宏偉辦上櫃前業績發表",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5hMkdoMDItM3VJVU1zTVpuOUswbkI0ZjNOMHlsdEZ5dnA1dTF1cFNRSXJwZkViTXZvOXpRNmFwWkRQRzA4VGliNVJLeTJKcjV1VDBxdkdCbG1GSXlZd3ZWZnU1OHRGSVY3UkRZ?oc=5",
-          "source": "中時新聞網",
-          "published_at": "2026/11/02 04:10",
-          "sort_time": "2026-11-02T04:10:00+08:00",
           "snippet": ""
         },
         {
@@ -426,25 +114,33 @@
           "published_at": "2026/11/01 11:17",
           "sort_time": "2026-11-01T11:17:07+08:00",
           "snippet": ""
+        },
+        {
+          "title": "頭家開講／黑手「升」等巨無霸　宏偉電機董事長黃埮城",
+          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9RZkhmUF92UXRSQ3dZekxhZWlHcDBOMFB0RElKVjNwTVBFR3NTcW9XU1I1ZFZLZGtQZ3lWUVpHbng2TWpCZVFxdWE2SUpGejB0c0xDZUhhLWlHNVnSAWBBVV95cUxPZGxLc0VpMGJranVCZ3hMeENZY2tnMFJOTHBHdXJFREVYNm04TXNNRUJJY1psWDdoZDBycG5ubTIteHViQ2lrZ2R0VlQ2NVluNVZCM1VId01xM0xOYTFjSWQ?oc=5",
+          "source": "鏡週刊Mirror Media",
+          "published_at": "2026/10/24 15:00",
+          "sort_time": "2026-10-24T15:00:00+08:00",
+          "snippet": "頭家開講／黑手「升」等巨無霸 宏偉電機董事長黃埮城"
         }
       ],
       "valuation": {
         "min_price": 75.0,
-        "market_price": 127.0,
+        "market_price": 127.5,
         "market_price_source": "Yahoo股市 (4565.TWO)",
-        "spread_to_min_pct": 69.3,
+        "spread_to_min_pct": 70.0,
         "estimated_underwriting_price": 88.5,
         "underwriting_price_is_exact": false,
         "annualized_eps_label": "9.73 元（近四季累計實際 EPS）",
-        "pe_range_label": "15.1x ~ 25.5x",
+        "pe_range_label": "15.1x ~ 24.2x",
         "pe_fair_low": 146.9,
-        "pe_fair_mid": 195.6,
-        "pe_fair_high": 248.1,
+        "pe_fair_mid": 188.8,
+        "pe_fair_high": 235.5,
         "consensus_low": 90.0,
-        "consensus_mid": 137.5,
-        "consensus_high": 195.6,
-        "suggested_bid_low": 108.0,
-        "suggested_bid_high": 116.8,
+        "consensus_mid": 135.4,
+        "consensus_high": 188.8,
+        "suggested_bid_low": 108.4,
+        "suggested_bid_high": 117.3,
         "factset": {
           "has_factset": false,
           "target_mean": 0.0,
@@ -503,27 +199,27 @@
         },
         "sector_macro": {
           "sector_name": "電機機械（電梯與機電設備）",
-          "data_date": "1151102",
+          "data_date": "1151103",
           "pe_low": 15.1,
-          "pe_mid": 20.1,
-          "pe_high": 25.5,
-          "avg_pe": 20.1,
-          "avg_pb": 3.09,
-          "avg_yield": 3.41,
+          "pe_mid": 19.4,
+          "pe_high": 24.2,
+          "avg_pe": 19.4,
+          "avg_pb": 3.0,
+          "avg_yield": 3.51,
           "sampled_peers": [
             "崇友(4506) PE 15.1x / PB 3.62x",
-            "亞力(1514) PE 25.5x / PB 4.01x",
-            "中興電(1513) PE 17.2x / PB 3.63x",
-            "東元(1504) PE 25.0x / PB 1.68x",
-            "鈞興-KY(4571) PE 17.6x / PB 2.52x"
+            "亞力(1514) PE 24.2x / PB 3.80x",
+            "中興電(1513) PE 16.6x / PB 3.51x",
+            "東元(1504) PE 24.0x / PB 1.61x",
+            "鈞興-KY(4571) PE 17.1x / PB 2.44x"
           ],
           "cycle_note": "受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。"
         },
         "methodology_lines": [
           "【MOPS 承銷報告定價依據】主辦承銷商（中國信託）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 75.0 元，推估暫定公開申購承銷價約 88.5 元。",
-          "【二級市場/興櫃即時比價】目前市場參考價為 127.0 元（較競拍底價 75.0 元溢價 +69.3%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 108.0 ～ 116.8 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 9.73 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（15.1x～25.5x，中位 20.1x）推算，基本面合理價值區間約 146.9 ～ 248.1 元（中位數 195.6 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 25.5x / PB 4.01x、中興電(1513) PE 17.2x / PB 3.63x、東元(1504) PE 25.0x / PB 1.68x（同業平均 PE 20.1x、平均 PB 3.09x、平均殖利率 3.41%）。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 127.5 元（較競拍底價 75.0 元溢價 +70.0%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 108.4 ～ 117.3 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 9.73 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（15.1x～24.2x，中位 19.4x）推算，基本面合理價值區間約 146.9 ～ 235.5 元（中位數 188.8 元）。",
+          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 24.2x / PB 3.80x、中興電(1513) PE 16.6x / PB 3.51x、東元(1504) PE 24.0x / PB 1.61x（同業平均 PE 19.4x、平均 PB 3.00x、平均殖利率 3.51%）。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
           "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告，並從報告中萃取出參考定價：90.0 元（已納入上方共識價格計算）。"
         ]
       },
@@ -531,16 +227,16 @@
         "budget_twd": 1000000,
         "heat_level": "🔥 高熱度積極搶標型",
         "heat_score": 79,
-        "target_ref_price": 127.0,
-        "target_ref_label": "興櫃/二級市場最新市價 127.0 元",
-        "hard_cap_price": 116.8,
-        "hard_cap_with_fee": 122.06,
-        "total_lots": 9,
-        "weighted_avg_bid": 113.05,
-        "weighted_all_in_cost": 118.27,
-        "total_initial_margin_twd": 509910,
-        "total_settlement_twd": 1064404,
-        "total_est_profit_twd": 73567,
+        "target_ref_price": 127.5,
+        "target_ref_label": "興櫃/二級市場最新市價 127.5 元",
+        "hard_cap_price": 117.3,
+        "hard_cap_with_fee": 122.58,
+        "total_lots": 8,
+        "weighted_avg_bid": 113.52,
+        "weighted_all_in_cost": 118.78,
+        "total_initial_margin_twd": 455280,
+        "total_settlement_twd": 950227,
+        "total_est_profit_twd": 65285,
         "total_roi_pct": 6.9,
         "tranches": [
           {
@@ -553,21 +249,21 @@
             "win_fee_twd": 16246,
             "initial_margin_twd": 176470,
             "settlement_twd": 368386,
-            "est_net_profit_twd": 10938,
-            "est_roi_pct": 3.0
+            "est_net_profit_twd": 12431,
+            "est_roi_pct": 3.4
           },
           {
             "tranche_name": "B 單【主戰中樞單】",
             "role_desc": "配置最多張數於得標中位數＋.26 尾數，越過整數散戶牆、賺取最佳風報比",
-            "bid_price": 112.26,
-            "all_in_cost_per_share": 117.41,
-            "lots": 4,
-            "bid_principal_twd": 449040,
-            "win_fee_twd": 20607,
-            "initial_margin_twd": 224920,
-            "settlement_twd": 469647,
-            "est_net_profit_twd": 36118,
-            "est_roi_pct": 7.7
+            "bid_price": 113.26,
+            "all_in_cost_per_share": 118.49,
+            "lots": 3,
+            "bid_principal_twd": 339780,
+            "win_fee_twd": 15690,
+            "initial_margin_twd": 170290,
+            "settlement_twd": 355470,
+            "est_net_profit_twd": 25347,
+            "est_roi_pct": 7.1
           },
           {
             "tranche_name": "C 單【低接狙擊單】",
@@ -579,8 +275,8 @@
             "win_fee_twd": 10131,
             "initial_margin_twd": 108520,
             "settlement_twd": 226371,
-            "est_net_profit_twd": 26511,
-            "est_roi_pct": 11.7
+            "est_net_profit_twd": 27507,
+            "est_roi_pct": 12.2
           }
         ],
         "reasoning_steps": [
@@ -589,9 +285,9 @@
             "title": "怎麼看這產業？（電機機械（電梯製造與機電維保） 景氣位階 ＆ 同業估值對標）",
             "bullets": [
               "【產業分類與景氣位階】隸屬於「電機機械（電梯製造與機電維保）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
-              "【官方採樣同業估值】對標同業：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 25.5x / PB 4.01x、中興電(1513) PE 17.2x / PB 3.63x、東元(1504) PE 25.0x / PB 1.68x（同業平均本益比 20.1x、平均股價淨值比 3.09x）。"
+              "【官方採樣同業估值】對標同業：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 24.2x / PB 3.80x、中興電(1513) PE 16.6x / PB 3.51x、東元(1504) PE 24.0x / PB 1.61x（同業平均本益比 19.4x、平均股價淨值比 3.00x）。"
             ],
-            "detail": "【產業分類與景氣位階】隸屬於「電機機械（電梯製造與機電維保）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。 【官方採樣同業估值】對標同業：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 25.5x / PB 4.01x、中興電(1513) PE 17.2x / PB 3.63x、東元(1504) PE 25.0x / PB 1.68x（同業平均本益比 20.1x、平均股價淨值比 3.09x）。"
+            "detail": "【產業分類與景氣位階】隸屬於「電機機械（電梯製造與機電維保）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。 【官方採樣同業估值】對標同業：崇友(4506) PE 15.1x / PB 3.62x、亞力(1514) PE 24.2x / PB 3.80x、中興電(1513) PE 16.6x / PB 3.51x、東元(1504) PE 24.0x / PB 1.61x（同業平均本益比 19.4x、平均股價淨值比 3.00x）。"
           },
           {
             "step_num": "觀點 2",
@@ -599,25 +295,26 @@
             "bullets": [
               "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。",
               "【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。",
-              "【近期營運催化劑】4565 宏偉 - 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 股市爆料同學會；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞。"
+              "【近期營運催化劑】中國信託證券主辦宏偉現增案；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞。"
             ],
-            "detail": "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。 【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。 【近期營運催化劑】4565 宏偉 - 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 股市爆料同學會；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞。"
+            "detail": "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。 【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。 【近期營運催化劑】中國信託證券主辦宏偉現增案；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞。"
           },
           {
             "step_num": "觀點 3",
-            "title": "為什麼這樣投？（定價安全邊際 ＆ 9 張百萬資金配置理由）",
+            "title": "為什麼這樣投？（定價安全邊際 ＆ 8 張百萬資金配置理由）",
             "bullets": [
               "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。",
-              "【個股定價錨點與安全邊際】競拍底價 75.0 元 ｜ 暫定承銷價 88.5 元 ｜ 同業 PE 合理估值中位數 195.6 元 ｜ 對比興櫃/二級市場最新市價 127.0 元（較底價溢價 +69.3%），本檔最高出價防線（Hard Cap）設於 116.8 元（含費成本 122.06 元/股）。",
-              "【100 萬預算配置結論】最適投標總張數【9 張】（A單 117.38 元 ／ B單 112.26 元 ／ C單 108.12 元），加權含費總成本 118.27 元/股，預估潛在總淨利 NT$ +73,567 元（淨報酬率 +6.9%）。"
+              "【個股定價錨點與安全邊際】競拍底價 75.0 元 ｜ 暫定承銷價 88.5 元 ｜ 同業 PE 合理估值中位數 188.8 元 ｜ 對比興櫃/二級市場最新市價 127.5 元（較底價溢價 +70.0%），本檔最高出價防線（Hard Cap）設於 117.3 元（含費成本 122.58 元/股）。",
+              "【100 萬預算配置結論】最適投標總張數【8 張】（A單 117.38 元 ／ B單 113.26 元 ／ C單 108.12 元），加權含費總成本 118.78 元/股，預估潛在總淨利 NT$ +65,285 元（淨報酬率 +6.9%）。"
             ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。 【個股定價錨點與安全邊際】競拍底價 75.0 元 ｜ 暫定承銷價 88.5 元 ｜ 同業 PE 合理估值中位數 195.6 元 ｜ 對比興櫃/二級市場最新市價 127.0 元（較底價溢價 +69.3%），本檔最高出價防線（Hard Cap）設於 116.8 元（含費成本 122.06 元/股）。 【100 萬預算配置結論】最適投標總張數【9 張】（A單 117.38 元 ／ B單 112.26 元 ／ C單 108.12 元），加權含費總成本 118.27 元/股，預估潛在總淨利 NT$ +73,567 元（淨報酬率 +6.9%）。"
+            "detail": "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。 【個股定價錨點與安全邊際】競拍底價 75.0 元 ｜ 暫定承銷價 88.5 元 ｜ 同業 PE 合理估值中位數 188.8 元 ｜ 對比興櫃/二級市場最新市價 127.5 元（較底價溢價 +70.0%），本檔最高出價防線（Hard Cap）設於 117.3 元（含費成本 122.58 元/股）。 【100 萬預算配置結論】最適投標總張數【8 張】（A單 117.38 元 ／ B單 113.26 元 ／ C單 108.12 元），加權含費總成本 118.78 元/股，預估潛在總淨利 NT$ +65,285 元（淨報酬率 +6.9%）。"
           }
         ]
       },
       "summary_overview": "【宏偉 (4565)】為櫃檯買賣之「初上櫃」競拍案，由中國信託證券主辦。本次競拍數量共 5,617 張，最低投標底價為 75 元（每標單最低預估保證金加處理費約 NT$ 37,900 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
-      "summary_news_digest": "綜合 CMoney、MoneyDJ、中時新聞網 等共 5 則近期新聞焦點：(1) 4565 宏偉 - 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 股市爆料同學會（CMoney）；(2) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞（MoneyDJ）；(3) 中國信託證券輔導 宏偉辦上櫃前業績發表（中時新聞網）；(4) 中國信託證券輔導宏偉辦上櫃前業績發表- 日報（工商時報）。",
-      "summary_mode": "extractive"
+      "summary_news_digest": "綜合 中時新聞網、MoneyDJ、工商時報 等共 5 則近期新聞焦點：(1) 中國信託證券主辦宏偉現增案（中時新聞網）；(2) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞（MoneyDJ）；(3) 中國信託證券輔導宏偉辦上櫃前業績發表- 日報（工商時報）；(4) 陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉（臺南市政府全球資訊網）。",
+      "summary_mode": "extractive",
+      "change_badge": "🔔 狀態變動：即將開始投標 ➔ 投標進行中"
     },
     {
       "security_name": "耐特",
@@ -641,10 +338,10 @@
       "underwriter": "兆豐",
       "award_fee_rate": "5",
       "total_award_amount": "0",
-      "status_code": "upcoming",
-      "status_label": "即將開始投標",
-      "days_left": 1,
-      "countdown_text": "距離開始投標還有 1 天",
+      "status_code": "bidding",
+      "status_label": "投標進行中",
+      "days_left": 2,
+      "countdown_text": "距離截標還有 2 天",
       "estimated_min_bid_value": 62500,
       "estimated_min_margin": 31650,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -655,22 +352,22 @@
         "base_code": "8058",
         "base_name": "耐特",
         "official_industry": "其他電子業",
-        "industry": "其他電子業（高性能複合材料）",
+        "industry": "其他電子業（半導體設備與材料）",
         "business_scope": "依客戶之產品設計及功能需求，提供高性能複合材料解決方案",
-        "revenue_mix": "",
+        "revenue_mix": "電子電機產業用料37.08%、運動及醫療產業用料19.14%、半導體產業用料15.58%、汽機車產業用料15.12%、其他13.08% (2025年)",
         "capital_text": "6.88 億元",
         "chairman": "陳勲森",
         "founded_date": "77/05/03",
-        "website": "",
+        "website": "https://www.nytex.com.tw",
         "goodinfo_url": "https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=8058",
         "profit_period": "115.2Q",
         "gross_margin": "29.82%",
         "operating_margin": "11.94%",
         "pretax_margin": "11.53%",
-        "roe": "",
-        "roa": "",
-        "bps": "",
-        "debt_ratio": "",
+        "roe": "4.41%",
+        "roa": "2.43%",
+        "bps": "24.10",
+        "debt_ratio": "48.54%",
         "latest_month_label": "115/09",
         "latest_month_revenue": "2.50 億元",
         "latest_month_yoy": "45.16%",
@@ -680,14 +377,14 @@
         "latest_quarter_revenue": "7.28 億元",
         "latest_quarter_net_income": "71 百萬元",
         "latest_quarter_eps": "1.04 元",
-        "recent_4q_eps": "1.85 元 (近2季累計)",
-        "summary_text": "【所屬產業】耐特（8058）隸屬於「其他電子業（高性能複合材料）」\n【主要業務】依客戶之產品設計及功能需求，提供高性能複合材料解決方案\n【營收規模】最新 (115/09) 單月營收 2.50 億元（年增 45.16%） ｜ 累計營收 21.37 億元（年增 17.70%） ｜ 最新季報 (115.2Q) 單季營收 7.28 億元、稅後淨利 71 百萬元\n【利潤率指標 (115.2Q)】毛利率 29.82% ｜ 營益率 11.94% ｜ 稅前淨利率 11.53%\n【每股獲利與淨值】最新單季 EPS 1.04 元 ｜ 近四季累計 EPS 1.85 元 (近2季累計)",
+        "recent_4q_eps": "3.30 元 (近4季累計)",
+        "summary_text": "【所屬產業】耐特（8058）隸屬於「其他電子業（半導體設備與材料）」\n【主要業務】依客戶之產品設計及功能需求，提供高性能複合材料解決方案\n【營收規模】最新 (115/09) 單月營收 2.50 億元（年增 45.16%） ｜ 累計營收 21.37 億元（年增 17.70%） ｜ 最新季報 (115.2Q) 單季營收 7.28 億元、稅後淨利 71 百萬元\n【利潤率指標 (115.2Q)】毛利率 29.82% ｜ 營益率 11.94% ｜ 稅前淨利率 11.53% ｜ ROE 4.41%\n【每股獲利與淨值】最新單季 EPS 1.04 元 ｜ 近四季累計 EPS 3.30 元 (近4季累計) ｜ 每股淨值 24.10 元",
         "summary_lines": [
-          "【所屬產業】耐特（8058）隸屬於「其他電子業（高性能複合材料）」",
+          "【所屬產業】耐特（8058）隸屬於「其他電子業（半導體設備與材料）」",
           "【主要業務】依客戶之產品設計及功能需求，提供高性能複合材料解決方案",
           "【營收規模】最新 (115/09) 單月營收 2.50 億元（年增 45.16%） ｜ 累計營收 21.37 億元（年增 17.70%） ｜ 最新季報 (115.2Q) 單季營收 7.28 億元、稅後淨利 71 百萬元",
-          "【利潤率指標 (115.2Q)】毛利率 29.82% ｜ 營益率 11.94% ｜ 稅前淨利率 11.53%",
-          "【每股獲利與淨值】最新單季 EPS 1.04 元 ｜ 近四季累計 EPS 1.85 元 (近2季累計)"
+          "【利潤率指標 (115.2Q)】毛利率 29.82% ｜ 營益率 11.94% ｜ 稅前淨利率 11.53% ｜ ROE 4.41%",
+          "【每股獲利與淨值】最新單季 EPS 1.04 元 ｜ 近四季累計 EPS 3.30 元 (近4季累計) ｜ 每股淨值 24.10 元"
         ]
       },
       "news": [
@@ -734,21 +431,21 @@
       ],
       "valuation": {
         "min_price": 62.5,
-        "market_price": 97.1,
+        "market_price": 89.0,
         "market_price_source": "Yahoo股市 (8058.TWO)",
-        "spread_to_min_pct": 55.4,
+        "spread_to_min_pct": 42.4,
         "estimated_underwriting_price": 73.8,
         "underwriting_price_is_exact": false,
-        "annualized_eps_label": "3.70 元（由興櫃近 2 期財報年化推算）",
-        "pe_range_label": "10.7x ~ 34.5x",
-        "pe_fair_low": 39.6,
-        "pe_fair_mid": 66.2,
-        "pe_fair_high": 127.7,
-        "consensus_low": 66.2,
-        "consensus_mid": 81.7,
-        "consensus_high": 97.1,
-        "suggested_bid_low": 82.5,
-        "suggested_bid_high": 89.3,
+        "annualized_eps_label": "3.30 元（近四季累計實際 EPS）",
+        "pe_range_label": "10.4x ~ 32.8x",
+        "pe_fair_low": 34.3,
+        "pe_fair_mid": 57.8,
+        "pe_fair_high": 108.2,
+        "consensus_low": 57.8,
+        "consensus_mid": 73.4,
+        "consensus_high": 89.0,
+        "suggested_bid_low": 75.6,
+        "suggested_bid_high": 81.9,
         "factset": {
           "has_factset": false,
           "target_mean": 0.0,
@@ -795,37 +492,37 @@
               "published_at": "Wed, 28 Oct 2026"
             },
             {
-              "title": "《興櫃股》興櫃初登場超靚 耐特飆漲近7成｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE15T0wxcGFBd2VGWmtDMFpXdjJFU3VEQ25seGEwU25fSU9pckZ1b01UR3gwSEwyUmRSdG1jdUotLW5jSmJkdWtoNnpIdERnREpqNzZCWDYxa3d4eDAyc2M5Yy1SSXFSa1UtXzZXaFYwRGZTdjVpZEE?oc=5",
+              "title": "《興櫃股》耐特第一季每股盈餘0.81元｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mRXlLYW54UWVlcGFQbHFLZFFlY3JVQkczSER4ODNhckJlVHZWRDB0d1pEOVU5dkpJY1lYQmFnTTVaUEFtZWZCaHFRbWJqX0thTnVwZVpHWjQ3SlNKOTI1RGg3N2Jqd1QxRTdueXZwa0k0Zk94NEE?oc=5",
               "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Mon, 14 Jul 2025"
+              "published_at": "Fri, 08 May 2026"
             }
           ],
           "extracted_targets": []
         },
         "sector_macro": {
           "sector_name": "其他電子業 / 高性能複合材料",
-          "data_date": "1151030",
-          "pe_low": 10.7,
-          "pe_mid": 17.9,
-          "pe_high": 34.5,
-          "avg_pe": 17.9,
-          "avg_pb": 2.03,
-          "avg_yield": 4.83,
+          "data_date": "1151103",
+          "pe_low": 10.4,
+          "pe_mid": 17.5,
+          "pe_high": 32.8,
+          "avg_pe": 17.5,
+          "avg_pb": 1.98,
+          "avg_yield": 4.91,
           "sampled_peers": [
-            "南寶(4766) PE 15.0x / PB 2.99x",
-            "長興(1717) PE 34.5x / PB 2.47x",
-            "永裕(1323) PE 16.7x / PB 0.73x",
-            "東陽(1319) PE 12.6x / PB 1.70x",
-            "材料*-KY(4763) PE 10.7x / PB 2.26x"
+            "南寶(4766) PE 14.8x / PB 2.95x",
+            "長興(1717) PE 32.8x / PB 2.35x",
+            "永裕(1323) PE 16.8x / PB 0.74x",
+            "東陽(1319) PE 12.6x / PB 1.69x",
+            "材料*-KY(4763) PE 10.4x / PB 2.19x"
           ],
           "cycle_note": "隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。"
         },
         "methodology_lines": [
           "【MOPS 承銷報告定價依據】主辦承銷商（兆豐）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 62.5 元，推估暫定公開申購承銷價約 73.8 元。",
-          "【二級市場/興櫃即時比價】目前市場參考價為 97.1 元（較競拍底價 62.5 元溢價 +55.4%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 82.5 ～ 89.3 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 3.70 元（由興櫃近 2 期財報年化推算） × 官方採樣同業合理本益比（10.7x～34.5x，中位 17.9x）推算，基本面合理價值區間約 39.6 ～ 127.7 元（中位數 66.2 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：南寶(4766) PE 15.0x / PB 2.99x、長興(1717) PE 34.5x / PB 2.47x、永裕(1323) PE 16.7x / PB 0.73x、東陽(1319) PE 12.6x / PB 1.70x（同業平均 PE 17.9x、平均 PB 2.03x、平均殖利率 4.83%）。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 89.0 元（較競拍底價 62.5 元溢價 +42.4%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 75.6 ～ 81.9 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 3.30 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（10.4x～32.8x，中位 17.5x）推算，基本面合理價值區間約 34.3 ～ 108.2 元（中位數 57.8 元）。",
+          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：南寶(4766) PE 14.8x / PB 2.95x、長興(1717) PE 32.8x / PB 2.35x、永裕(1323) PE 16.8x / PB 0.74x、東陽(1319) PE 12.6x / PB 1.69x（同業平均 PE 17.5x、平均 PB 1.98x、平均殖利率 4.91%）。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。",
           "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告（已納入綜合評估，點擊下方文章標題可直接閱讀全文）。"
         ]
       },
@@ -833,67 +530,67 @@
         "budget_twd": 1000000,
         "heat_level": "⚡ 中高熱度攻守兼備型",
         "heat_score": 63,
-        "target_ref_price": 97.1,
-        "target_ref_label": "興櫃/二級市場最新市價 97.1 元",
-        "hard_cap_price": 89.3,
-        "hard_cap_with_fee": 93.32,
-        "total_lots": 11,
-        "weighted_avg_bid": 85.98,
-        "weighted_all_in_cost": 89.96,
-        "total_initial_margin_twd": 474100,
-        "total_settlement_twd": 989560,
-        "total_est_profit_twd": 73840,
-        "total_roi_pct": 7.5,
+        "target_ref_price": 89.0,
+        "target_ref_label": "興櫃/二級市場最新市價 89.0 元",
+        "hard_cap_price": 81.9,
+        "hard_cap_with_fee": 85.59,
+        "total_lots": 12,
+        "weighted_avg_bid": 79.25,
+        "weighted_all_in_cost": 82.92,
+        "total_initial_margin_twd": 476730,
+        "total_settlement_twd": 995057,
+        "total_est_profit_twd": 68243,
+        "total_roi_pct": 6.9,
         "tranches": [
           {
             "tranche_name": "A 單【必中核心單】",
             "role_desc": "鎖定中上緣價位＋.68/.38 尾數，確保高機率優先得標建立基本倉",
-            "bid_price": 89.38,
-            "all_in_cost_per_share": 93.54,
+            "bid_price": 82.38,
+            "all_in_cost_per_share": 86.22,
             "lots": 3,
-            "bid_principal_twd": 268140,
-            "win_fee_twd": 12466,
-            "initial_margin_twd": 134470,
-            "settlement_twd": 280606,
-            "est_net_profit_twd": 9412,
-            "est_roi_pct": 3.4
+            "bid_principal_twd": 247140,
+            "win_fee_twd": 11521,
+            "initial_margin_twd": 123970,
+            "settlement_twd": 258661,
+            "est_net_profit_twd": 7164,
+            "est_roi_pct": 2.8
           },
           {
             "tranche_name": "B 單【主戰中樞單】",
             "role_desc": "配置最多張數於得標中位數＋.26 尾數，越過整數散戶牆、賺取最佳風報比",
-            "bid_price": 86.26,
-            "all_in_cost_per_share": 90.22,
-            "lots": 5,
-            "bid_principal_twd": 431300,
-            "win_fee_twd": 19808,
-            "initial_margin_twd": 216050,
-            "settlement_twd": 451108,
-            "est_net_profit_twd": 32256,
-            "est_roi_pct": 7.2
+            "bid_price": 79.26,
+            "all_in_cost_per_share": 82.89,
+            "lots": 6,
+            "bid_principal_twd": 475560,
+            "win_fee_twd": 21800,
+            "initial_margin_twd": 238180,
+            "settlement_twd": 497360,
+            "est_net_profit_twd": 34290,
+            "est_roi_pct": 6.9
           },
           {
             "tranche_name": "C 單【低接狙擊單】",
             "role_desc": "埋伏於區間下緣＋.12 尾數，若競拍尾盤投標冷清可撿取高折價籌碼",
-            "bid_price": 82.12,
-            "all_in_cost_per_share": 85.95,
+            "bid_price": 76.12,
+            "all_in_cost_per_share": 79.68,
             "lots": 3,
-            "bid_principal_twd": 246360,
-            "win_fee_twd": 11486,
-            "initial_margin_twd": 123580,
-            "settlement_twd": 257846,
-            "est_net_profit_twd": 32172,
-            "est_roi_pct": 12.5
+            "bid_principal_twd": 228360,
+            "win_fee_twd": 10676,
+            "initial_margin_twd": 114580,
+            "settlement_twd": 239036,
+            "est_net_profit_twd": 26789,
+            "est_roi_pct": 11.2
           }
         ],
         "reasoning_steps": [
           {
             "step_num": "觀點 1",
-            "title": "怎麼看這產業？（其他電子業（高性能複合材料） 景氣位階 ＆ 同業估值對標）",
+            "title": "怎麼看這產業？（其他電子業（半導體設備與材料） 景氣位階 ＆ 同業估值對標）",
             "bullets": [
-              "【產業分類與景氣位階】隸屬於「其他電子業（高性能複合材料）」。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。",
-              "【官方採樣同業估值】對標同業：南寶(4766) PE 15.0x / PB 2.99x、長興(1717) PE 34.5x / PB 2.47x、永裕(1323) PE 16.7x / PB 0.73x、東陽(1319) PE 12.6x / PB 1.70x（同業平均本益比 17.9x、平均股價淨值比 2.03x）。"
+              "【產業分類與景氣位階】隸屬於「其他電子業（半導體設備與材料）」。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。",
+              "【官方採樣同業估值】對標同業：南寶(4766) PE 14.8x / PB 2.95x、長興(1717) PE 32.8x / PB 2.35x、永裕(1323) PE 16.8x / PB 0.74x、東陽(1319) PE 12.6x / PB 1.69x（同業平均本益比 17.5x、平均股價淨值比 1.98x）。"
             ],
-            "detail": "【產業分類與景氣位階】隸屬於「其他電子業（高性能複合材料）」。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。 【官方採樣同業估值】對標同業：南寶(4766) PE 15.0x / PB 2.99x、長興(1717) PE 34.5x / PB 2.47x、永裕(1323) PE 16.7x / PB 0.73x、東陽(1319) PE 12.6x / PB 1.70x（同業平均本益比 17.9x、平均股價淨值比 2.03x）。"
+            "detail": "【產業分類與景氣位階】隸屬於「其他電子業（半導體設備與材料）」。隨 AI 伺服器輕量化機構件、車用電子與半導體載具對高機能工程塑膠需求回溫，高毛利客製化複合材料優於傳統泛用塑化。 【官方採樣同業估值】對標同業：南寶(4766) PE 14.8x / PB 2.95x、長興(1717) PE 32.8x / PB 2.35x、永裕(1323) PE 16.8x / PB 0.74x、東陽(1319) PE 12.6x / PB 1.69x（同業平均本益比 17.5x、平均股價淨值比 1.98x）。"
           },
           {
             "step_num": "觀點 2",
@@ -907,13 +604,13 @@
           },
           {
             "step_num": "觀點 3",
-            "title": "為什麼這樣投？（定價安全邊際 ＆ 11 張百萬資金配置理由）",
+            "title": "為什麼這樣投？（定價安全邊際 ＆ 12 張百萬資金配置理由）",
             "bullets": [
               "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。",
-              "【個股定價錨點與安全邊際】競拍底價 62.5 元 ｜ 暫定承銷價 73.8 元 ｜ 同業 PE 合理估值中位數 66.2 元 ｜ 對比興櫃/二級市場最新市價 97.1 元（較底價溢價 +55.4%），本檔最高出價防線（Hard Cap）設於 89.3 元（含費成本 93.32 元/股）。",
-              "【100 萬預算配置結論】最適投標總張數【11 張】（A單 89.38 元 ／ B單 86.26 元 ／ C單 82.12 元），加權含費總成本 89.96 元/股，預估潛在總淨利 NT$ +73,840 元（淨報酬率 +7.5%）。"
+              "【個股定價錨點與安全邊際】競拍底價 62.5 元 ｜ 暫定承銷價 73.8 元 ｜ 同業 PE 合理估值中位數 57.8 元 ｜ 對比興櫃/二級市場最新市價 89.0 元（較底價溢價 +42.4%），本檔最高出價防線（Hard Cap）設於 81.9 元（含費成本 85.59 元/股）。",
+              "【100 萬預算配置結論】最適投標總張數【12 張】（A單 82.38 元 ／ B單 79.26 元 ／ C單 76.12 元），加權含費總成本 82.92 元/股，預估潛在總淨利 NT$ +68,243 元（淨報酬率 +6.9%）。"
             ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 62.5 元 ｜ 暫定承銷價 73.8 元 ｜ 同業 PE 合理估值中位數 66.2 元 ｜ 對比興櫃/二級市場最新市價 97.1 元（較底價溢價 +55.4%），本檔最高出價防線（Hard Cap）設於 89.3 元（含費成本 93.32 元/股）。 【100 萬預算配置結論】最適投標總張數【11 張】（A單 89.38 元 ／ B單 86.26 元 ／ C單 82.12 元），加權含費總成本 89.96 元/股，預估潛在總淨利 NT$ +73,840 元（淨報酬率 +7.5%）。"
+            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 62.5 元 ｜ 暫定承銷價 73.8 元 ｜ 同業 PE 合理估值中位數 57.8 元 ｜ 對比興櫃/二級市場最新市價 89.0 元（較底價溢價 +42.4%），本檔最高出價防線（Hard Cap）設於 81.9 元（含費成本 85.59 元/股）。 【100 萬預算配置結論】最適投標總張數【12 張】（A單 82.38 元 ／ B單 79.26 元 ／ C單 76.12 元），加權含費總成本 82.92 元/股，預估潛在總淨利 NT$ +68,243 元（淨報酬率 +6.9%）。"
           }
         ]
       },
@@ -929,9 +626,38 @@
     "s2933115@gmail.com"
   ],
   "changes": {
-    "has_changes": false,
+    "has_changes": true,
     "new_items": [],
-    "status_changed_items": [],
-    "summary_list": []
+    "status_changed_items": [
+      {
+        "security_code": "4565",
+        "security_name": "宏偉",
+        "old_status_code": "upcoming",
+        "old_status_label": "即將開始投標",
+        "new_status_code": "bidding",
+        "new_status_label": "投標進行中"
+      },
+      {
+        "security_code": "8058",
+        "security_name": "耐特",
+        "old_status_code": "upcoming",
+        "old_status_label": "即將開始投標",
+        "new_status_code": "bidding",
+        "new_status_label": "投標進行中"
+      },
+      {
+        "security_code": "7848",
+        "security_name": "騏億鑫",
+        "old_status_code": "bidding",
+        "old_status_label": "投標進行中",
+        "new_status_code": "waiting_open",
+        "new_status_label": "已截標・待開標"
+      }
+    ],
+    "summary_list": [
+      "🔔 狀態變動：宏偉 (4565) 由「即將開始投標」轉為「投標進行中」",
+      "🔔 狀態變動：耐特 (8058) 由「即將開始投標」轉為「投標進行中」",
+      "🔔 狀態變動：騏億鑫 (7848) 由「投標進行中」轉為「已截標・待開標」"
+    ]
   }
 }
