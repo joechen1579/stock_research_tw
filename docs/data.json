@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-07 14:21:09 (TST)",
-  "reference_date": "2026/11/07",
+  "updated_at": "2026-11-08 14:28:52 (TST)",
+  "reference_date": "2026/11/08",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
     "total_active": 2,
@@ -35,8 +35,8 @@
       "total_award_amount": "0",
       "status_code": "waiting_open",
       "status_label": "已截標・待開標",
-      "days_left": 3,
-      "countdown_text": "距離開標還有 3 天",
+      "days_left": 2,
+      "countdown_text": "距離開標還有 2 天",
       "estimated_min_bid_value": 75000,
       "estimated_min_margin": 37900,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -92,27 +92,27 @@
           "snippet": ""
         },
         {
-          "title": "中國信託證券主辦宏偉現增案",
-          "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE00VThoTndtbEY0OHJ5ZWFWeTNNMXFWTjVYTnR4c3hoVm15LUI1ZU5XWFMxZHB4enJiVUxZaFhOSE1hLS1FWDRyUHFIeV9yMllYUEpPamZWbl9ZbzgxaHBreWk5YjZSMHVZMzBn?oc=5",
-          "source": "中時新聞網",
-          "published_at": "2026/11/04 04:10",
-          "sort_time": "2026-11-04T04:10:00+08:00",
+          "title": "《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河",
+          "url": "https://news.google.com/rss/articles/CBMi2gJBVV95cUxPT0dvWmIxZDNrTF92R2tlTVViNklBR3I3VXVJY2ZHci1zdmNkbHR6ZHEtS3U1YnhTN3p0QjJTb2prMFJWRVRGTTA3THlqYTFvY0ZtQnhERjRPNHpPSkJ5TnluTTF4Rnp2VThZcExLOTlqY0J0aG9HYmZQV0dab3V3NVdwWUxLUTA1Zlc0VlM0VVJxcnlERW84blF1QXpZYk9JZWM0THp1RWY0YmtHRXZhdnhNUzVqQ3N3c0hQLW5iT1Q5bjhabTNPU0FyT0lSR2tzN1AyYXBNdWxyS2lKcVFjZUphaFhJYzY2QXRDR2h4MVdsXzZna1hLQnB1eDRJcDRHTGhvMEtYakNrLTBmNWFEdEdOcjc2UjdsWjlpY1JhRWxvVzJ1ZFk0cmxQT1MxSWZ2VW1lQlNtOGd5NmZUaVJmRzR5UG8weHR2SXUtbUVVTjZnSnNFTFpnQnJB?oc=5",
+          "source": "Yahoo股市",
+          "published_at": "2026/11/02 13:34",
+          "sort_time": "2026-11-02T13:34:47+08:00",
           "snippet": ""
         },
         {
-          "title": "《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPbDY0Y3llMDRuNGlwZzJTWEpNaW9TNE9pM3E5cWw3blBKX0w0UkdKa3ZoRU5HeGJPTzNqQmxVaHBEOE1iVG8yR0cwUkVtdUtfOUN3SGwtUXJaeWNZRV9hV0tuV0E3Q1hVYVJPVTlITmNtQVNLUjBBZEdqWUlsaTlZU0l5b3A5cDMxZmpybFZnRHVQUQ?oc=5",
+          "title": "《宏偉專訪》擁三大動能，樂觀看貨梯市場前景- 新聞",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRWhITXEyR3FwS2hEUU94Ql9LczBLSzJHSHJHUVV0a0VFc0J0RUJTODJpdlZ1ekVCTGJLMWVSWHU1cEdrNHAtdkRUUzRRWXlla3lCQ1Y4U0UtY1dDQW5uX0llSWd3UGF6Y0I4clpid3lGb0NaVkZOVVRLSDlCeVRLcm5RVGhlaDlrTG1jWVFyeXBTUQ?oc=5",
           "source": "MoneyDJ",
-          "published_at": "2026/11/02 12:27",
-          "sort_time": "2026-11-02T12:27:00+08:00",
+          "published_at": "2026/10/30 11:26",
+          "sort_time": "2026-10-30T11:26:00+08:00",
           "snippet": ""
         },
         {
           "title": "宏偉預計11月19日掛牌上櫃",
           "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9vSGZBQXZrSHZKa21OTUFBZGtycU5SYmJncTFkQjd5eml5dHJmNkhqRG9LTUVteUFCVUI1LUpLbVM2d1BFdmtubjlPdlBrLWdfTnpjZjQwR1g4SGfSAWBBVV95cUxQRGJ2YzE0c01Xalo4VjdJZ0I1ZE5GU3NXejhyOFA5NWUzb3Q0a25pcmN0dmp1bFJhR0xRV3lweVNfdXdSczJuZUdSTjJ1dDYwaEl4SDB5NTY2bVI3eHVwM1g?oc=5",
           "source": "經濟日報",
-          "published_at": "2026/10/28 00:06",
-          "sort_time": "2026-10-28T00:06:32+08:00",
+          "published_at": "2026/10/27 15:00",
+          "sort_time": "2026-10-27T15:00:00+08:00",
           "snippet": ""
         },
         {
@@ -178,7 +178,7 @@
               "title": "《興櫃股》宏偉上櫃前現增 暫定每股90元溢價發行｜新聞快訊｜豐雲學堂 - 永豐金證券",
               "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5RV05rblRmbXRnNjMwOXRiSDBzdHo3MVN4TGh6bEt3bkxfa2t5SjU3NExBb2Y0VWxRZGpmSnZOV1AzZHl2Z3ljUWdTSGFqVmVjekxBRlkzQVNDeXYwOWc4azFQdWx6NjRkWTI3RlRHNzRwQ0Vtb0E?oc=5",
               "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Thu, 29 Oct 2026"
+              "published_at": "Fri, 30 Oct 2026"
             },
             {
               "title": "宏偉預計11月19日掛牌上櫃｜新聞快訊｜豐雲學堂 - 永豐金證券",
@@ -295,9 +295,9 @@
             "bullets": [
               "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。",
               "【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。",
-              "【近期營運催化劑】陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉；中國信託證券主辦宏偉現增案。"
+              "【近期營運催化劑】陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河。"
             ],
-            "detail": "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。 【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。 【近期營運催化劑】陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉；中國信託證券主辦宏偉現增案。"
+            "detail": "【主要業務定位】客、貨用電梯之製造加工及買賣業務、客、貨用電梯之修繕及保養業務、高低壓配電盤、各種自動門、輸送機械等之設計製造加工及買賣業務。 【營收與獲利體質】營收爆發力強勁（單月年增 78.74%、累計年增 17.71%）；高毛利護城河（毛利率 42.05%、營益率 33.12%）；競拍釋出總張數達 5,617 張（籌碼供給充裕，有利於中後段低接標單成交）。最新毛利率 42.05%、營益率 33.12%、近期累計 EPS 9.73 元 (近4季累計)。 【近期營運催化劑】陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉；《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河。"
           },
           {
             "step_num": "觀點 3",
@@ -312,9 +312,8 @@
         ]
       },
       "summary_overview": "【宏偉 (4565)】為櫃檯買賣之「初上櫃」競拍案，由中國信託證券主辦。本次競拍數量共 5,617 張，最低投標底價為 75 元（每標單最低預估保證金加處理費約 NT$ 37,900 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
-      "summary_news_digest": "綜合 臺南市政府全球資訊網、中時新聞網、MoneyDJ 等共 5 則近期新聞焦點：(1) 陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉（臺南市政府全球資訊網）；(2) 中國信託證券主辦宏偉現增案（中時新聞網）；(3) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河- 新聞（MoneyDJ）；(4) 宏偉預計11月19日掛牌上櫃（經濟日報）。",
-      "summary_mode": "extractive",
-      "change_badge": "🔔 狀態變動：投標進行中 ➔ 已截標・待開標"
+      "summary_news_digest": "綜合 臺南市政府全球資訊網、Yahoo股市、MoneyDJ 等共 5 則近期新聞焦點：(1) 陪伴特教學生學習！宏偉展翼計畫捐535萬聘用特教助理員 市長黃偉哲肯定善心義舉（臺南市政府全球資訊網）；(2) 《宏偉專訪》深耕貨梯避紅海市場，一條龍服務築護城河（Yahoo股市）；(3) 《宏偉專訪》擁三大動能，樂觀看貨梯市場前景- 新聞（MoneyDJ）；(4) 宏偉預計11月19日掛牌上櫃（經濟日報）。",
+      "summary_mode": "extractive"
     },
     {
       "security_name": "耐特",
@@ -340,8 +339,8 @@
       "total_award_amount": "0",
       "status_code": "waiting_open",
       "status_label": "已截標・待開標",
-      "days_left": 3,
-      "countdown_text": "距離開標還有 3 天",
+      "days_left": 2,
+      "countdown_text": "距離開標還有 2 天",
       "estimated_min_bid_value": 62500,
       "estimated_min_margin": 31650,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -405,12 +404,12 @@
           "snippet": ""
         },
         {
-          "title": "半導體、BBU雙引擎助攻耐特營運看俏- 新聞",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOb29STUFvRjRCRE9BaVE3U2VreVEzSGIzX0tuelNQMDhLbkR6a3k2R2xrM016Vm11bDFfZjNPcGxNa1NWb0F4VkRLU2dreDBmalFieHl3LS02SktHRDMwb0pkYUdfeTVUSkxZRU9GN3IyTzR5YnE0aGVzWEFVMENQZTI3QUNBTGRVN0tQV0lINnFxdw?oc=5",
-          "source": "MoneyDJ",
-          "published_at": "2026/11/03 09:09",
-          "sort_time": "2026-11-03T09:09:00+08:00",
-          "snippet": ""
+          "title": "高階材料商機爆發　耐特科技11月19日掛牌",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1BNjVXMnY1dlV4QTM5NU9ISDZlOWlBQmd3WkotSGRXQXJCZGlqOTJpZUNCSzhvWGlhdF9wV2F5RHk4YVpEYWFIYmo2ZVZEYnYxc1RidjBjZWZCMmNH0gFiQVVfeXFMT09selo3U3RIRUcyRWlHenBRU2ppYU9qSUZwQlUxX2RsbkY0ZnhYbVgxZmFhclNOazkxWlNHSU92WmxzR1VUS2RyMVVzcmZTMDBuUGxDSEY4UWlLTXBrdTVzNXc?oc=5",
+          "source": "鏡週刊Mirror Media",
+          "published_at": "2026/11/03 10:09",
+          "sort_time": "2026-11-03T10:09:00+08:00",
+          "snippet": "高階材料商機爆發 耐特科技11月19日掛牌"
         },
         {
           "title": "耐特19日掛牌",
@@ -421,11 +420,11 @@
           "snippet": ""
         },
         {
-          "title": "耐特11月掛牌！進軍半導體卡關2年，一場高爾夫如何敲開家登大門？",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5zdU4tcTY3dWM1bDdxcjNTWl91YW55bzNFakpfcG0wQWs1bUxSSXlxcTh4OS1Sd1kzS1Q0bmtRal90RHhoY24wZk9mMTFHUy14NUI2Z1VVdER5eUxOYUx1Q3hMTDNJLXA5UHMwOURZcTNKbHZEbmxqVWdB?oc=5",
-          "source": "數位時代",
-          "published_at": "2026/10/29 16:59",
-          "sort_time": "2026-10-29T16:59:00+08:00",
+          "title": "高階產品新專案挹注，耐特Q3營收拚新高 - 新聞",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNNExhWUlaMWxteHBIVVllQVh3TXdROFpTd0xBX1VVeElsZ2lDU2hxNjJFZWNfcHBKbXBfOTd5RVljUUFRNi1XOXE1MUYwaUtSU2NYWnBvRGVraEtiNzNUQmI2RmFoRGtEWUk3SE5sT2NEcnJoTW9xOF9MS1NyN2RJRTN3TXUzM3dxcDU2WVpCZFhOZw?oc=5",
+          "source": "MoneyDJ",
+          "published_at": "2026/09/29 15:00",
+          "sort_time": "2026-09-29T15:00:00+08:00",
           "snippet": ""
         }
       ],
@@ -615,9 +614,8 @@
         ]
       },
       "summary_overview": "【耐特 (8058)】為集中交易市場之「初上市」競拍案，由兆豐證券主辦。本次競拍數量共 4,896 張，最低投標底價為 62.5 元（每標單最低預估保證金加處理費約 NT$ 31,650 元）。投標期間為 2026/11/04 至 2026/11/06，預計於 2026/11/10 開標、2026/11/19 撥券掛牌。",
-      "summary_news_digest": "綜合 Yahoo新聞、壹蘋新聞網、MoneyDJ 等共 5 則近期新聞焦點：(1) 耐特11月19日掛牌，38歲老牌材料廠如何切入BBU風潮？（Yahoo新聞）；(2) 耐特11/19掛牌上市！暫定承銷價80元 半導體、BBU營收比重衝25%（壹蘋新聞網）；(3) 半導體、BBU雙引擎助攻耐特營運看俏- 新聞（MoneyDJ）；(4) 耐特19日掛牌（UDN）。",
-      "summary_mode": "extractive",
-      "change_badge": "🔔 狀態變動：投標進行中 ➔ 已截標・待開標"
+      "summary_news_digest": "綜合 Yahoo新聞、壹蘋新聞網、鏡週刊Mirror Media 等共 5 則近期新聞焦點：(1) 耐特11月19日掛牌，38歲老牌材料廠如何切入BBU風潮？（Yahoo新聞）；(2) 耐特11/19掛牌上市！暫定承銷價80元 半導體、BBU營收比重衝25%（壹蘋新聞網）；(3) 高階材料商機爆發　耐特科技11月19日掛牌（鏡週刊Mirror Media）；(4) 耐特19日掛牌（UDN）。",
+      "summary_mode": "extractive"
     }
   ],
   "recipients": [
@@ -627,29 +625,9 @@
     "s2933115@gmail.com"
   ],
   "changes": {
-    "has_changes": true,
+    "has_changes": false,
     "new_items": [],
-    "status_changed_items": [
-      {
-        "security_code": "4565",
-        "security_name": "宏偉",
-        "old_status_code": "bidding",
-        "old_status_label": "投標進行中",
-        "new_status_code": "waiting_open",
-        "new_status_label": "已截標・待開標"
-      },
-      {
-        "security_code": "8058",
-        "security_name": "耐特",
-        "old_status_code": "bidding",
-        "old_status_label": "投標進行中",
-        "new_status_code": "waiting_open",
-        "new_status_label": "已截標・待開標"
-      }
-    ],
-    "summary_list": [
-      "🔔 狀態變動：宏偉 (4565) 由「投標進行中」轉為「已截標・待開標」",
-      "🔔 狀態變動：耐特 (8058) 由「投標進行中」轉為「已截標・待開標」"
-    ]
+    "status_changed_items": [],
+    "summary_list": []
   }
 }
