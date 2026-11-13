@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-12 15:29:59 (TST)",
-  "reference_date": "2026/11/12",
+  "updated_at": "2026-11-13 15:02:11 (TST)",
+  "reference_date": "2026/11/13",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
     "total_active": 2,
@@ -35,8 +35,8 @@
       "total_award_amount": "0",
       "status_code": "bidding",
       "status_label": "投標進行中",
-      "days_left": 1,
-      "countdown_text": "距離截標還有 1 天",
+      "days_left": 0,
+      "countdown_text": "今日截止投標！",
       "estimated_min_bid_value": 180870,
       "estimated_min_margin": 90835,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -84,6 +84,22 @@
       },
       "news": [
         {
+          "title": "下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購",
+          "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQQ2pVRVlSYk5ub2FiRWFNSHltMjNUNlhCaU1vS3d0NTVNS21NQmJ6TV85cEU2TUNjdUNkZGlXcVRZRTRQNnNQcVhtTUNwU2M2aDdkTFlYd25TSnFieG0yOGlBNVk1MXNSSE5GWks4UHdQU2Zza0x4aEZGTXNhaEhMR2lDcjdiekRQeEJQbExJemFzVEljWm9UWU56bjJ2a1g2aUxwOTJSWmt5eENzckZvT18tQzVYdU9qOVZQcE4xWFZwb1pSbnhBZkFPRmticlBxWVMyVzM1QnM1d0xXX21aTFZKSE5BYV9EaEMzdzFUZF9Db2NfUzdFX2VMSXNQY3VyVW45TUxSN2NmYnpmRGQyUFJ4a1RoX2c2b1phWnlqRzh0cExJSlcxb2Nwc3RSZENhbHF5cE9xbHVEcm5ybGhtMlJ4SE1qYS1RN0Jod2lMREtETVVBa3dmWW1XT1FHMlFXc2V6ZHZ0LVZxQkV0dnI1QVVGM3dkbkN6cTB0YXhBSjVXZi1uTW1Md1BNY0x0TzFMbXp3OUR1RGtxbXJGaElJY0tpUU41Nl9jUUhlQkx6QQ?oc=5",
+          "source": "Yahoo股市",
+          "published_at": "2026/11/13 11:26",
+          "sort_time": "2026-11-13T11:26:49+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光",
+          "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1DSFYyakZfa29ZYTdLdmFJb0hsUi1xblFNdER3S2pLcUdPSl9rT21KaFZzcDhhQWdGeUdhVFB5WWloaFV5UFh2UTJOMA?oc=5",
+          "source": "三立新聞網SETN.com",
+          "published_at": "2026/11/13 01:23",
+          "sort_time": "2026-11-13T01:23:36+08:00",
+          "snippet": ""
+        },
+        {
           "title": "宏于電機搶攻AI基建 智慧配電布局全球前景看好",
           "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ESFVKS09jc0thRXlYRzRxa3RFUzhBeFQ2OVA3MTVHT3lTNmdRS2NUVndiaW11ZDdwZ0JzRnBOTEloUjR0MGM3bWQweGFBXzZNc1VRTEVzZGI4Zw?oc=5",
           "source": "東森電視",
@@ -100,27 +116,11 @@
           "snippet": ""
         },
         {
-          "title": "重電隱形冠軍拚上櫃 宏于電機強攻AI用電、訂單看至2029年",
-          "url": "https://news.google.com/rss/articles/CBMi5gJBVV95cUxQdDNxTU1nUHE4ZDdUZlhJeFQ2MDJXakhkMFdPQ29CVF9heGZXYUZBT20zekZ4ZHpVaEYwbDZZRFFSMkxNUjgwQ3JBQUJUQkZZLUZXaHBKVm9PbVVJLUd5Z095SzVHWlF6cm5tTFRPcUZDeTJGaDM5QnBlbUUzUkF0WVdWR3hhV0dHUEVSMXdXR3UyTnIwbS1waFh1M0NONklqZ2RuYXBUNkF2VkRkeUhFbkQ3RHlXeTRVcmtTdHFUbFJyLVpNb0ttaG54V3lEYUpEand2MWIzUkN5b2xSazA5ekRNOTRjaVFrSmQxYlctb0VPWjI5OGgyN25SV2J4aDN5bVFNMzRzWWcxaEVhamhTdWRLamlQSUVzanYxV2tOcUlIdFBxNkNzY3cycngzY2gwZktXV2RCZHROdjZndzdVTW42bF9NNVZDUXRNQTZab1JBR1ZzYVFqSkNfUlJWMnJPUVhLQWZ3?oc=5",
-          "source": "Yahoo新聞",
-          "published_at": "2026/11/02 17:48",
-          "sort_time": "2026-11-02T17:48:00+08:00",
-          "snippet": ""
-        },
-        {
           "title": "宏于電機三大事業攻智慧能源- 日報",
           "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DZjFTYmxaNEVza0RTc1Exd2FXcmUwN1RuX1hXU0I3SDdrSVdrUWlpOWl0WF9OZi1BTWRCTmN2LWtBcHA2b1RreWN2QzZVQjh6cTA2M1ZWVnF4X3IxUzhB?oc=5",
           "source": "工商時報",
           "published_at": "2026/10/19 15:00",
           "sort_time": "2026-10-19T15:00:00+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "宏于電機赴美佈局UL認證，雙軌模式切AI資料中心- 新聞",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOSGJSVWtBR0ExSnh0MUdxVzBJQUFzOWJWLTgwbC02YlYtLTJuY0tqaThlT2czendpRzJ4TlVQSWNhazI3dVVIS3h0ZzlPTjU3bURHSkFHdHdWdzlRSDZzVEtqcElsbnpBSGZiLTBPSlFUcGdhOW1nZjFMZGU5SkF2QTg2TVY5cXEzQkZnVW9pM2tBdw?oc=5",
-          "source": "MoneyDJ",
-          "published_at": "2026/10/13 15:00",
-          "sort_time": "2026-10-13T15:00:00+08:00",
           "snippet": ""
         }
       ],
@@ -134,11 +134,11 @@
         "annualized_eps_label": "16.20 元（近四季累計實際 EPS）",
         "pe_range_label": "14.7x ~ 23.8x",
         "pe_fair_low": 238.1,
-        "pe_fair_mid": 311.0,
+        "pe_fair_mid": 302.9,
         "pe_fair_high": 385.6,
         "consensus_low": 208.0,
-        "consensus_mid": 270.7,
-        "consensus_high": 311.0,
+        "consensus_mid": 268.0,
+        "consensus_high": 302.9,
         "suggested_bid_low": 249.0,
         "suggested_bid_high": 269.6,
         "factset": {
@@ -187,37 +187,37 @@
               "published_at": "Wed, 11 Nov 2026"
             },
             {
-              "title": "《櫃買市場》宏于電機申請股票上櫃｜新聞快訊｜豐雲學堂 - 永豐金證券",
-              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9CLU1MTmN5NTB1ZGRTN21OTzJEdzJLZTM2RVp0WVBLQUdWam1qd1RfTXV2aDk4U3lsV1RYUGtMSnJ5REFWVllTbkh5bW1CTVd3YVY3YUNLY3R3eWswWDFLS3JJVjk3c3ljZG5PVkp5VkViLUVkYnc?oc=5",
+              "title": "《興櫃股》宏于電機115年前3季每股盈餘10.97元｜新聞快訊｜豐雲學堂 - 永豐金證券",
+              "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5LSTFqVXl4ZEhHdWRSeWJZVUpkV01oZm9QWFJSRGx5Y0JtdDJwaF84R3V4blRNQ1hhVV9lcndsck5LcF9GZmNxTGE1bUNqeHRDV0VnUFdQc0pvakNpYlVEZVdkMlRRTEcyaGNwcTdqRXZpY2Z5LWc?oc=5",
               "source": "永豐金證券 / 豐雲學堂",
-              "published_at": "Thu, 25 Jun 2026"
+              "published_at": "Thu, 12 Nov 2026"
             }
           ],
           "extracted_targets": []
         },
         "sector_macro": {
           "sector_name": "電機機械（電梯與機電設備）",
-          "data_date": "1151111",
+          "data_date": "1151112",
           "pe_low": 14.7,
-          "pe_mid": 19.2,
+          "pe_mid": 18.7,
           "pe_high": 23.8,
-          "avg_pe": 19.2,
-          "avg_pb": 2.94,
-          "avg_yield": 3.54,
+          "avg_pe": 18.7,
+          "avg_pb": 2.83,
+          "avg_yield": 3.61,
           "sampled_peers": [
-            "崇友(4506) PE 14.7x / PB 3.37x",
-            "亞力(1514) PE 23.8x / PB 3.74x",
-            "中興電(1513) PE 17.0x / PB 3.60x",
-            "東元(1504) PE 23.6x / PB 1.59x",
-            "鈞興-KY(4571) PE 16.7x / PB 2.39x"
+            "崇友(4506) PE 14.7x / PB 3.36x",
+            "亞力(1514) PE 23.8x / PB 3.58x",
+            "中興電(1513) PE 15.8x / PB 3.29x",
+            "東元(1504) PE 22.3x / PB 1.53x",
+            "鈞興-KY(4571) PE 16.9x / PB 2.41x"
           ],
           "cycle_note": "受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。"
         },
         "methodology_lines": [
           "【MOPS 承銷報告定價依據】主辦承銷商（元大）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 180.87 元，推估暫定公開申購承銷價約 208.0 元。",
           "【二級市場/興櫃即時比價】目前市場參考價為 293.0 元（較競拍底價 180.87 元溢價 +62.0%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 249.0 ～ 269.6 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 16.20 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（14.7x～23.8x，中位 19.2x）推算，基本面合理價值區間約 238.1 ～ 385.6 元（中位數 311.0 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：崇友(4506) PE 14.7x / PB 3.37x、亞力(1514) PE 23.8x / PB 3.74x、中興電(1513) PE 17.0x / PB 3.60x、東元(1504) PE 23.6x / PB 1.59x（同業平均 PE 19.2x、平均 PB 2.94x、平均殖利率 3.54%）。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
+          "【同業本益比估值模型】以滾動年化 EPS 16.20 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（14.7x～23.8x，中位 18.7x）推算，基本面合理價值區間約 238.1 ～ 385.6 元（中位數 302.9 元）。",
+          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：崇友(4506) PE 14.7x / PB 3.36x、亞力(1514) PE 23.8x / PB 3.58x、中興電(1513) PE 15.8x / PB 3.29x、東元(1504) PE 22.3x / PB 1.53x（同業平均 PE 18.7x、平均 PB 2.83x、平均殖利率 3.61%）。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
           "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告（已納入綜合評估，點擊下方文章標題可直接閱讀全文）。"
         ]
       },
@@ -283,9 +283,9 @@
             "title": "怎麼看這產業？（電機機械（重電與電力設備） 景氣位階 ＆ 同業估值對標）",
             "bullets": [
               "【產業分類與景氣位階】隸屬於「電機機械（重電與電力設備）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。",
-              "【官方採樣同業估值】對標同業：崇友(4506) PE 14.7x / PB 3.37x、亞力(1514) PE 23.8x / PB 3.74x、中興電(1513) PE 17.0x / PB 3.60x、東元(1504) PE 23.6x / PB 1.59x（同業平均本益比 19.2x、平均股價淨值比 2.94x）。"
+              "【官方採樣同業估值】對標同業：崇友(4506) PE 14.7x / PB 3.36x、亞力(1514) PE 23.8x / PB 3.58x、中興電(1513) PE 15.8x / PB 3.29x、東元(1504) PE 22.3x / PB 1.53x（同業平均本益比 18.7x、平均股價淨值比 2.83x）。"
             ],
-            "detail": "【產業分類與景氣位階】隸屬於「電機機械（重電與電力設備）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。 【官方採樣同業估值】對標同業：崇友(4506) PE 14.7x / PB 3.37x、亞力(1514) PE 23.8x / PB 3.74x、中興電(1513) PE 17.0x / PB 3.60x、東元(1504) PE 23.6x / PB 1.59x（同業平均本益比 19.2x、平均股價淨值比 2.94x）。"
+            "detail": "【產業分類與景氣位階】隸屬於「電機機械（重電與電力設備）」。受惠台灣老舊大樓電梯汰舊換新法規、廠辦建案交屋潮與長期維保剛性需求，現金流與毛利率具備高度防禦性。 【官方採樣同業估值】對標同業：崇友(4506) PE 14.7x / PB 3.36x、亞力(1514) PE 23.8x / PB 3.58x、中興電(1513) PE 15.8x / PB 3.29x、東元(1504) PE 22.3x / PB 1.53x（同業平均本益比 18.7x、平均股價淨值比 2.83x）。"
           },
           {
             "step_num": "觀點 2",
@@ -293,24 +293,24 @@
             "bullets": [
               "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。",
               "【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；利潤率結構穩健（毛利率 22.00%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 22.00%、營益率 14.51%、近期累計 EPS 16.20 元 (近4季累計)。",
-              "【近期營運催化劑】宏于電機搶攻AI基建 智慧配電布局全球前景看好；重電新兵來了！宏于電機暫定承銷價208元 明年搶進北美 AI 電力市場。"
+              "【近期營運催化劑】下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購；抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光。"
             ],
-            "detail": "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。 【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；利潤率結構穩健（毛利率 22.00%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 22.00%、營益率 14.51%、近期累計 EPS 16.20 元 (近4季累計)。 【近期營運催化劑】宏于電機搶攻AI基建 智慧配電布局全球前景看好；重電新兵來了！宏于電機暫定承銷價208元 明年搶進北美 AI 電力市場。"
+            "detail": "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。 【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；利潤率結構穩健（毛利率 22.00%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 22.00%、營益率 14.51%、近期累計 EPS 16.20 元 (近4季累計)。 【近期營運催化劑】下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購；抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光。"
           },
           {
             "step_num": "觀點 3",
             "title": "為什麼這樣投？（定價安全邊際 ＆ 4 張百萬資金配置理由）",
             "bullets": [
               "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。",
-              "【個股定價錨點與安全邊際】競拍底價 180.87 元 ｜ 暫定承銷價 208.0 元 ｜ 同業 PE 合理估值中位數 311.0 元 ｜ 對比興櫃/二級市場最新市價 293.0 元（較底價溢價 +62.0%），本檔最高出價防線（Hard Cap）設於 269.6 元（含費成本 281.73 元/股）。",
+              "【個股定價錨點與安全邊際】競拍底價 180.87 元 ｜ 暫定承銷價 208.0 元 ｜ 同業 PE 合理估值中位數 302.9 元 ｜ 對比興櫃/二級市場最新市價 293.0 元（較底價溢價 +62.0%），本檔最高出價防線（Hard Cap）設於 269.6 元（含費成本 281.73 元/股）。",
               "【100 萬預算配置結論】最適投標總張數【4 張】（A單 270.68 元 ／ B單 259.26 元 ／ C單 249.12 元），加權含費總成本 271.56 元/股，預估潛在總淨利 NT$ +80,600 元（淨報酬率 +7.4%）。"
             ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。 【個股定價錨點與安全邊際】競拍底價 180.87 元 ｜ 暫定承銷價 208.0 元 ｜ 同業 PE 合理估值中位數 311.0 元 ｜ 對比興櫃/二級市場最新市價 293.0 元（較底價溢價 +62.0%），本檔最高出價防線（Hard Cap）設於 269.6 元（含費成本 281.73 元/股）。 【100 萬預算配置結論】最適投標總張數【4 張】（A單 270.68 元 ／ B單 259.26 元 ／ C單 249.12 元），加權含費總成本 271.56 元/股，預估潛在總淨利 NT$ +80,600 元（淨報酬率 +7.4%）。"
+            "detail": "【為何參與 ＆ 策略定調】評級為「🔥 高熱度積極搶標型」—— 基本面成長強勁且題材吸睛，市場搶標意願高，建議將主力資金配置於區間中上緣，確保核心部位順利得標。 【個股定價錨點與安全邊際】競拍底價 180.87 元 ｜ 暫定承銷價 208.0 元 ｜ 同業 PE 合理估值中位數 302.9 元 ｜ 對比興櫃/二級市場最新市價 293.0 元（較底價溢價 +62.0%），本檔最高出價防線（Hard Cap）設於 269.6 元（含費成本 281.73 元/股）。 【100 萬預算配置結論】最適投標總張數【4 張】（A單 270.68 元 ／ B單 259.26 元 ／ C單 249.12 元），加權含費總成本 271.56 元/股，預估潛在總淨利 NT$ +80,600 元（淨報酬率 +7.4%）。"
           }
         ]
       },
       "summary_overview": "【宏于電機 (7869)】為櫃檯買賣之「初上櫃」競拍案，由元大證券主辦。本次競拍數量共 1,844 張，最低投標底價為 180.87 元（每標單最低預估保證金加處理費約 NT$ 90,835 元）。投標期間為 2026/11/11 至 2026/11/13，預計於 2026/11/17 開標、2026/11/26 撥券掛牌。",
-      "summary_news_digest": "綜合 東森電視、經濟日報、Yahoo新聞 等共 5 則近期新聞焦點：(1) 宏于電機搶攻AI基建 智慧配電布局全球前景看好（東森電視）；(2) 重電新兵來了！宏于電機暫定承銷價208元 明年搶進北美 AI 電力市場（經濟日報）；(3) 重電隱形冠軍拚上櫃 宏于電機強攻AI用電、訂單看至2029年（Yahoo新聞）；(4) 宏于電機三大事業攻智慧能源- 日報（工商時報）。",
+      "summary_news_digest": "綜合 Yahoo股市、三立新聞網SETN.com、東森電視 等共 5 則近期新聞焦點：(1) 下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購（Yahoo股市）；(2) 抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光（三立新聞網SETN.com）；(3) 宏于電機搶攻AI基建 智慧配電布局全球前景看好（東森電視）；(4) 重電新兵來了！宏于電機暫定承銷價208元 明年搶進北美 AI 電力市場（經濟日報）。",
       "summary_mode": "extractive"
     },
     {
@@ -337,8 +337,8 @@
       "total_award_amount": "0",
       "status_code": "upcoming",
       "status_label": "即將開始投標",
-      "days_left": 4,
-      "countdown_text": "距離開始投標還有 4 天",
+      "days_left": 3,
+      "countdown_text": "距離開始投標還有 3 天",
       "estimated_min_bid_value": 43860,
       "estimated_min_margin": 22330,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -386,19 +386,35 @@
       },
       "news": [
         {
+          "title": "騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE11akN3ekowTWQtUXZiLVZrNWVfcDJ0XzBNVW5TQVJsY0g3WnhkTU10bk12bVlRQUxkcnJYN1lVVWN2QTVOMHZvRzV1Z09rU3M2aDdzRkhfcU9xbExWV1pmSHZXUU04dWI4b3ZpNHNjelNNQdIBVkFVX3lxTFBzTm03c2xDd2d2S3lKV1pHeE80bTFjX2pEdVJBMFRWVnZ4Snp1R3V4dzVUMTZzWWVacF9nRUZZMVdBaEtOZkhLbmxjbDhwRVVyY095UDJ3?oc=5",
+          "source": "UDN",
+          "published_at": "2026/11/13 13:00",
+          "sort_time": "2026-11-13T13:00:22+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "生醫保健品牌騰勢12/1掛牌上櫃！16日起啟動競拍、底價43.86元",
+          "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFBrd3hfQVBtZm9nR3NjVW5LMDJUbnBIU1pLc2EyYTJKOFUtd3BvcnFLa3lwT2k5RjJxRDJWVk5NWWhycE5ZRDRkX3J1UzTSAVJBVV95cUxQUHhhclhXdnJxNDNFX2I2QWJkUGsyMUgwX3UzdjloM1RfOUFfTU8yZEVEV1psXzRFRDRJcVFFbkN4TmtuZ2FHRFRnV1k4YnZsMl9R?oc=5",
+          "source": "NOWnews今日新聞",
+          "published_at": "2026/11/13 09:52",
+          "sort_time": "2026-11-13T09:52:52+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "興櫃：騰勢(7889)11月16日啟動競拍，競拍底價43.86元，前三季EPS 3.35元",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQUdFM19DVEFKU2d6bk9QY0RLSUVkcW8ycVhPeUVTWGtqekw4a3ZDaWlsRFJxeHFFNnRIME9BWWVGbUtxbTI0Zk5fYUp4bmhCYkJEeXBOMm4yTS1wQkJvUEpyNldOenBNWDQwOWNyQTNkcjBQYjFZUEFQeW1jeGUwTXJicEEyXzBk?oc=5",
+          "source": "富聯網",
+          "published_at": "2026/11/13 09:25",
+          "sort_time": "2026-11-13T09:25:00+08:00",
+          "snippet": ""
+        },
+        {
           "title": "騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE81Sy02dDNjd2lNc1Vvbm1rYWkyRGNSWE1BR0ZmYVNxdjk5OEJTSm1qWXFWWEdJN3ptYTdkS2tkVzdiSnZMRDRicTM3MV9mLXptRmFSbU91bTJ0SnRGemdnM2NyWndoVFNuVDNkcWtMQU4wdw?oc=5",
           "source": "環球生技月刊",
           "published_at": "2026/11/11 18:53",
           "sort_time": "2026-11-11T18:53:24+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騰勢保健、寵物事業並進 深化海外布局推升營運",
-          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxORzNTMVJJOWNNeTBDUFE4X2RZMWpqbEZPNFVPeV9XcFRMM0t0RW5WSWNBczQ2WFhFaUlhWkdDOVgwSThwR21TbVZweTVuWnB4UDJlM29JbzUxeTVRcVE2c1ROamtCdUQ0bHVVWVlmWTdfajFrc1JPTEU2Uzk2VkFmOW83WEY1Si1lbVRRVy11NkJJN2tVc0pBSkRyVXhUQlBXRWtLZGF6bVQ1bmVaYzZmVV9aZEtrZVlNaERmazd4ZnFGQUVCZFVfTFlxSHpnYnNnNGR6WTJtekx6QTZ2MnYxTVJBbHdRdC1lb29PbDlfWVR1SXN2ZkFWNnRiQkJNSV9BVlNQMEhVaVZjN3ZpSVJqX19aQUVaNkI1bFgyUzRVdkNILUxsOFdHTk05NzcwNGs3UmNDcnhwVmpVa0h1dkxXY01OQ2hJemxNZzBuTzdKNA?oc=5",
-          "source": "台灣好新聞",
-          "published_at": "2026/11/11 15:31",
-          "sort_time": "2026-11-11T15:31:45+08:00",
           "snippet": ""
         },
         {
@@ -408,40 +424,24 @@
           "published_at": "2026/11/07 05:35",
           "sort_time": "2026-11-07T05:35:42+08:00",
           "snippet": ""
-        },
-        {
-          "title": "騰勢12月初掛牌上櫃 生醫保健與寵物經濟雙軌拚成長",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9rRVJ0YnlqeFpxa2tDcUdacjdVM0NmSUJmM1hKMGM4ODlxRGp3V2NFeGFoX1p3eXJ3cDdyTVhNZVFuWXNvLUxIbE5SSW1USUl2MVI1c3JsUnpmSmxGak130gFkQVVfeXFMT1BlZ19YakVOVjFtWjFNaG5WYjM1bFdfWGY1ZXpoRDk3aFljTkVSUzJlX2h2aUNjNmhtQTBzMDhWTE1icFdkMjdZaGlyLVZpYXVDdDZJN0RLZE90bGpSeU9nQkdtcg?oc=5",
-          "source": "自由財經",
-          "published_at": "2026/11/02 18:20",
-          "sort_time": "2026-11-02T18:20:06+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騰勢12月上櫃；實體渠道成今年最強勁成長引擎- 新聞",
-          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxORkxZb2s1MTJuWmJxYkkzbmF5ZlluTk5fZUtOelloR1c2cWEzTllCSTRaNUZhTVYzR0lmd3MzNDBZUHctVHUzV1ZOWGc5dXMwMERPLTVPY05MU0pfay1ONEx2NExhdmZWelhfUDQzM18yMEpOeFhCbDlzdmhJdHZHNUJGZXpxUkR3V1pnMDRDOEhudw?oc=5",
-          "source": "MoneyDJ",
-          "published_at": "2026/11/02 11:55",
-          "sort_time": "2026-11-02T11:55:00+08:00",
-          "snippet": ""
         }
       ],
       "valuation": {
         "min_price": 43.86,
-        "market_price": 61.8,
+        "market_price": 61.9,
         "market_price_source": "Yahoo股市 (7889.TWO)",
-        "spread_to_min_pct": 40.9,
+        "spread_to_min_pct": 41.1,
         "estimated_underwriting_price": 51.8,
         "underwriting_price_is_exact": false,
         "annualized_eps_label": "6.70 元（由興櫃近 2 期財報年化推算）",
         "pe_range_label": "11.0x ~ 40.0x",
         "pe_fair_low": 73.7,
-        "pe_fair_mid": 152.1,
+        "pe_fair_mid": 166.2,
         "pe_fair_high": 268.0,
-        "consensus_low": 61.8,
-        "consensus_mid": 106.9,
-        "consensus_high": 152.1,
-        "suggested_bid_low": 52.5,
+        "consensus_low": 61.9,
+        "consensus_mid": 114.0,
+        "consensus_high": 166.2,
+        "suggested_bid_low": 52.6,
         "suggested_bid_high": 56.9,
         "factset": {
           "has_factset": false,
@@ -499,27 +499,27 @@
         },
         "sector_macro": {
           "sector_name": "生技醫療業",
-          "data_date": "1151111",
+          "data_date": "1151112",
           "pe_low": 11.0,
-          "pe_mid": 22.7,
+          "pe_mid": 24.8,
           "pe_high": 40.0,
-          "avg_pe": 22.7,
-          "avg_pb": 4.07,
-          "avg_yield": 2.8,
+          "avg_pe": 24.8,
+          "avg_pb": 4.14,
+          "avg_yield": 2.77,
           "sampled_peers": [
             "美時(1795) PE 11.0x / PB 1.71x",
-            "東洋(4105) PE 12.3x / PB 2.73x",
-            "智擎(4162) PE 14.2x / PB 1.54x",
-            "藥華藥(6446) PE 60.9x / PB 13.52x",
-            "中天(4128) PE 15.1x / PB 0.83x"
+            "東洋(4105) PE 12.6x / PB 2.79x",
+            "智擎(4162) PE 14.0x / PB 1.51x",
+            "藥華藥(6446) PE 62.3x / PB 13.82x",
+            "中天(4128) PE 24.1x / PB 0.85x"
           ],
           "cycle_note": "醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。"
         },
         "methodology_lines": [
           "【MOPS 承銷報告定價依據】主辦承銷商（凱基）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 43.86 元，推估暫定公開申購承銷價約 51.8 元。",
-          "【二級市場/興櫃即時比價】目前市場參考價為 61.8 元（較競拍底價 43.86 元溢價 +40.9%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 52.5 ～ 56.9 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 6.70 元（由興櫃近 2 期財報年化推算） × 官方採樣同業合理本益比（11.0x～40.0x，中位 22.7x）推算，基本面合理價值區間約 73.7 ～ 268.0 元（中位數 152.1 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.3x / PB 2.73x、智擎(4162) PE 14.2x / PB 1.54x、藥華藥(6446) PE 60.9x / PB 13.52x（同業平均 PE 22.7x、平均 PB 4.07x、平均殖利率 2.80%）。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 61.9 元（較競拍底價 43.86 元溢價 +41.1%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 52.6 ～ 56.9 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 6.70 元（由興櫃近 2 期財報年化推算） × 官方採樣同業合理本益比（11.0x～40.0x，中位 24.8x）推算，基本面合理價值區間約 73.7 ～ 268.0 元（中位數 166.2 元）。",
+          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.6x / PB 2.79x、智擎(4162) PE 14.0x / PB 1.51x、藥華藥(6446) PE 62.3x / PB 13.82x（同業平均 PE 24.8x、平均 PB 4.14x、平均殖利率 2.77%）。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
           "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告（已納入綜合評估，點擊下方文章標題可直接閱讀全文）。"
         ]
       },
@@ -527,17 +527,17 @@
         "budget_twd": 1000000,
         "heat_level": "⚡ 中高熱度攻守兼備型",
         "heat_score": 72,
-        "target_ref_price": 61.8,
-        "target_ref_label": "興櫃/二級市場最新市價 61.8 元",
+        "target_ref_price": 61.9,
+        "target_ref_label": "興櫃/二級市場最新市價 61.9 元",
         "hard_cap_price": 56.9,
         "hard_cap_with_fee": 59.46,
         "total_lots": 17,
-        "weighted_avg_bid": 54.96,
-        "weighted_all_in_cost": 57.5,
-        "total_initial_margin_twd": 468360,
-        "total_settlement_twd": 977564,
-        "total_est_profit_twd": 68413,
-        "total_roi_pct": 7.0,
+        "weighted_avg_bid": 55.25,
+        "weighted_all_in_cost": 57.81,
+        "total_initial_margin_twd": 470860,
+        "total_settlement_twd": 982789,
+        "total_est_profit_twd": 64880,
+        "total_roi_pct": 6.6,
         "tranches": [
           {
             "tranche_name": "A 單【必中核心單】",
@@ -549,8 +549,8 @@
             "win_fee_twd": 13310,
             "initial_margin_twd": 143850,
             "settlement_twd": 300210,
-            "est_net_profit_twd": 7430,
-            "est_roi_pct": 2.5
+            "est_net_profit_twd": 7928,
+            "est_roi_pct": 2.6
           },
           {
             "tranche_name": "B 單【主戰中樞單】",
@@ -562,21 +562,21 @@
             "win_fee_twd": 17807,
             "initial_margin_twd": 193810,
             "settlement_twd": 404627,
-            "est_net_profit_twd": 26070,
-            "est_roi_pct": 6.4
+            "est_net_profit_twd": 26766,
+            "est_roi_pct": 6.6
           },
           {
             "tranche_name": "C 單【低接狙擊單】",
             "role_desc": "埋伏於區間下緣＋.12 尾數，若競拍尾盤投標冷清可撿取高折價籌碼",
-            "bid_price": 52.12,
-            "all_in_cost_per_share": 54.55,
+            "bid_price": 53.12,
+            "all_in_cost_per_share": 55.59,
             "lots": 5,
-            "bid_principal_twd": 260600,
-            "win_fee_twd": 12127,
-            "initial_margin_twd": 130700,
-            "settlement_twd": 272727,
-            "est_net_profit_twd": 34913,
-            "est_roi_pct": 12.8
+            "bid_principal_twd": 265600,
+            "win_fee_twd": 12352,
+            "initial_margin_twd": 133200,
+            "settlement_twd": 277952,
+            "est_net_profit_twd": 30186,
+            "est_roi_pct": 10.9
           }
         ],
         "reasoning_steps": [
@@ -585,9 +585,9 @@
             "title": "怎麼看這產業？（食品工業（生技醫療與醫材） 景氣位階 ＆ 同業估值對標）",
             "bullets": [
               "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
-              "【官方採樣同業估值】對標同業：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.3x / PB 2.73x、智擎(4162) PE 14.2x / PB 1.54x、藥華藥(6446) PE 60.9x / PB 13.52x（同業平均本益比 22.7x、平均股價淨值比 4.07x）。"
+              "【官方採樣同業估值】對標同業：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.6x / PB 2.79x、智擎(4162) PE 14.0x / PB 1.51x、藥華藥(6446) PE 62.3x / PB 13.82x（同業平均本益比 24.8x、平均股價淨值比 4.14x）。"
             ],
-            "detail": "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。 【官方採樣同業估值】對標同業：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.3x / PB 2.73x、智擎(4162) PE 14.2x / PB 1.54x、藥華藥(6446) PE 60.9x / PB 13.52x（同業平均本益比 22.7x、平均股價淨值比 4.07x）。"
+            "detail": "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。 【官方採樣同業估值】對標同業：美時(1795) PE 11.0x / PB 1.71x、東洋(4105) PE 12.6x / PB 2.79x、智擎(4162) PE 14.0x / PB 1.51x、藥華藥(6446) PE 62.3x / PB 13.82x（同業平均本益比 24.8x、平均股價淨值比 4.14x）。"
           },
           {
             "step_num": "觀點 2",
@@ -595,26 +595,25 @@
             "bullets": [
               "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。",
               "【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。",
-              "【近期營運催化劑】騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27；騰勢保健、寵物事業並進 深化海外布局推升營運。"
+              "【近期營運催化劑】騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元；生醫保健品牌騰勢12/1掛牌上櫃！16日起啟動競拍、底價43.86元。"
             ],
-            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。 【近期營運催化劑】騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27；騰勢保健、寵物事業並進 深化海外布局推升營運。"
+            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。 【近期營運催化劑】騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元；生醫保健品牌騰勢12/1掛牌上櫃！16日起啟動競拍、底價43.86元。"
           },
           {
             "step_num": "觀點 3",
             "title": "為什麼這樣投？（定價安全邊際 ＆ 17 張百萬資金配置理由）",
             "bullets": [
               "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。",
-              "【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 152.1 元 ｜ 對比興櫃/二級市場最新市價 61.8 元（較底價溢價 +40.9%），本檔最高出價防線（Hard Cap）設於 56.9 元（含費成本 59.46 元/股）。",
-              "【100 萬預算配置結論】最適投標總張數【17 張】（A單 57.38 元 ／ B單 55.26 元 ／ C單 52.12 元），加權含費總成本 57.5 元/股，預估潛在總淨利 NT$ +68,413 元（淨報酬率 +7.0%）。"
+              "【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 166.2 元 ｜ 對比興櫃/二級市場最新市價 61.9 元（較底價溢價 +41.1%），本檔最高出價防線（Hard Cap）設於 56.9 元（含費成本 59.46 元/股）。",
+              "【100 萬預算配置結論】最適投標總張數【17 張】（A單 57.38 元 ／ B單 55.26 元 ／ C單 53.12 元），加權含費總成本 57.81 元/股，預估潛在總淨利 NT$ +64,880 元（淨報酬率 +6.6%）。"
             ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 152.1 元 ｜ 對比興櫃/二級市場最新市價 61.8 元（較底價溢價 +40.9%），本檔最高出價防線（Hard Cap）設於 56.9 元（含費成本 59.46 元/股）。 【100 萬預算配置結論】最適投標總張數【17 張】（A單 57.38 元 ／ B單 55.26 元 ／ C單 52.12 元），加權含費總成本 57.5 元/股，預估潛在總淨利 NT$ +68,413 元（淨報酬率 +7.0%）。"
+            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 166.2 元 ｜ 對比興櫃/二級市場最新市價 61.9 元（較底價溢價 +41.1%），本檔最高出價防線（Hard Cap）設於 56.9 元（含費成本 59.46 元/股）。 【100 萬預算配置結論】最適投標總張數【17 張】（A單 57.38 元 ／ B單 55.26 元 ／ C單 53.12 元），加權含費總成本 57.81 元/股，預估潛在總淨利 NT$ +64,880 元（淨報酬率 +6.6%）。"
           }
         ]
       },
       "summary_overview": "【騰勢 (7889)】為櫃檯買賣之「初上櫃」競拍案，由凱基證券主辦。本次競拍數量共 1,404 張，最低投標底價為 43.86 元（每標單最低預估保證金加處理費約 NT$ 22,330 元）。投標期間為 2026/11/16 至 2026/11/18，預計於 2026/11/20 開標、2026/12/01 撥券掛牌。",
-      "summary_news_digest": "綜合 環球生技月刊、台灣好新聞、iThome 等共 5 則近期新聞焦點：(1) 騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27（環球生技月刊）；(2) 騰勢保健、寵物事業並進 深化海外布局推升營運（台灣好新聞）；(3) 騰勢委外線上服務系統遭異常存取，已啟動資安應變並調查影響範圍（iThome）；(4) 騰勢12月初掛牌上櫃 生醫保健與寵物經濟雙軌拚成長（自由財經）。",
-      "summary_mode": "extractive",
-      "change_badge": "🆕 新增競拍標的"
+      "summary_news_digest": "綜合 UDN、NOWnews今日新聞、富聯網 等共 5 則近期新聞焦點：(1) 騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元（UDN）；(2) 生醫保健品牌騰勢12/1掛牌上櫃！16日起啟動競拍、底價43.86元（NOWnews今日新聞）；(3) 興櫃：騰勢(7889)11月16日啟動競拍，競拍底價43.86元，前三季EPS 3.35元（富聯網）；(4) 騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27（環球生技月刊）。",
+      "summary_mode": "extractive"
     }
   ],
   "recipients": [
@@ -624,17 +623,9 @@
     "s2933115@gmail.com"
   ],
   "changes": {
-    "has_changes": true,
-    "new_items": [
-      {
-        "security_code": "7889",
-        "security_name": "騰勢",
-        "status_label": "即將開始投標"
-      }
-    ],
+    "has_changes": false,
+    "new_items": [],
     "status_changed_items": [],
-    "summary_list": [
-      "🆕 新增競拍標的：騰勢 (7889) — 目前狀態「即將開始投標」"
-    ]
+    "summary_list": []
   }
 }
