@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-14 14:51:35 (TST)",
-  "reference_date": "2026/11/14",
+  "updated_at": "2026-11-15 14:56:29 (TST)",
+  "reference_date": "2026/11/15",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
     "total_active": 2,
@@ -35,8 +35,8 @@
       "total_award_amount": "0",
       "status_code": "upcoming",
       "status_label": "即將開始投標",
-      "days_left": 2,
-      "countdown_text": "距離開始投標還有 2 天",
+      "days_left": 1,
+      "countdown_text": "距離開始投標還有 1 天",
       "estimated_min_bid_value": 43860,
       "estimated_min_margin": 22330,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -84,11 +84,27 @@
       },
       "news": [
         {
-          "title": "國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85ZWkzS2I2alh5SzFBdGVSS2hrVExZVk94S3pQaXNRMFNfN0s2TXpzVUhEd0hKN19qbEFweEVFVTNkSDFPTUF3R25ib21Ra3dEazNZVmZ4bGh2cnJXaE1WWS1HZm41a0k2S1lvZTdYMjE?oc=5",
+          "title": "騰勢N8擬進軍香港研發右舵版本- 經濟",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5nSHRuazJiQnNueERHeTFOSy0xaVFSVmNCY1JvUGpGVXJ3bW1QR2w0eTZqdzk1aVdUM0lsZTgyQXUyRzhLWWRzNFh1THF1TzNiVmdnd1ZmejVhN3FwazI0LVBDUmdNVnA5V3NZeGlDcklsUHJK?oc=5",
           "source": "大公文匯網",
-          "published_at": "2026/11/13 18:05",
-          "sort_time": "2026-11-13T18:05:03+08:00",
+          "published_at": "2026/11/15 04:21",
+          "sort_time": "2026-11-15T04:21:16+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBZdkswNzd4UV9VWnI1QzA1TUN6TlR5SS1iY2RsOXRteGdNam9va0ZMYjJvc25NSG5BNTdjYS1CQWFMRzl4WFFhMnBNSzZpQQ?oc=5",
+          "source": "遠見雜誌",
+          "published_at": "2026/11/14 00:45",
+          "sort_time": "2026-11-14T00:45:00+08:00",
+          "snippet": ""
+        },
+        {
+          "title": "騰勢12月1日轉上櫃 11月16日競拍底價43.86元、前三季EPS 3.35元",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE42SFlYY1ZlY3ZERHAxRmhiTVhIcmNOOWJIdE1qZERMdnNQdmtDY0hFb0lCV1lfZHc5Zk1mWHNPM3Z4U3JfSzdnZjNNZHdveUVQUWlDaUI4TWdqRDVDWlJiQ1FINENkMmlVSWJreTJOWXhnMXktUkJYTnN3?oc=5",
+          "source": "BigGo 財經",
+          "published_at": "2026/11/13 13:35",
+          "sort_time": "2026-11-13T13:35:45+08:00",
           "snippet": ""
         },
         {
@@ -105,22 +121,6 @@
           "source": "環球生技月刊",
           "published_at": "2026/11/11 18:53",
           "sort_time": "2026-11-11T18:53:24+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騰勢保健、寵物事業並進 深化海外布局推升營運",
-          "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxORzNTMVJJOWNNeTBDUFE4X2RZMWpqbEZPNFVPeV9XcFRMM0t0RW5WSWNBczQ2WFhFaUlhWkdDOVgwSThwR21TbVZweTVuWnB4UDJlM29JbzUxeTVRcVE2c1ROamtCdUQ0bHVVWVlmWTdfajFrc1JPTEU2Uzk2VkFmOW83WEY1Si1lbVRRVy11NkJJN2tVc0pBSkRyVXhUQlBXRWtLZGF6bVQ1bmVaYzZmVV9aZEtrZVlNaERmazd4ZnFGQUVCZFVfTFlxSHpnYnNnNGR6WTJtekx6QTZ2MnYxTVJBbHdRdC1lb29PbDlfWVR1SXN2ZkFWNnRiQkJNSV9BVlNQMEhVaVZjN3ZpSVJqX19aQUVaNkI1bFgyUzRVdkNILUxsOFdHTk05NzcwNGs3UmNDcnhwVmpVa0h1dkxXY01OQ2hJemxNZzBuTzdKNA?oc=5",
-          "source": "台灣好新聞",
-          "published_at": "2026/11/11 15:31",
-          "sort_time": "2026-11-11T15:31:45+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騰勢委外線上服務系統遭異常存取，已啟動資安應變並調查影響範圍",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1XWXpqMWJQQXpkZ2lNVk1MT0dHVnJRRlg2clJQMXI5TUU3Wl8xdUEwTC1fa29iUDlUV2oxNGgwLTFubExHem5rY2Y4aDh3UQ?oc=5",
-          "source": "iThome",
-          "published_at": "2026/11/07 05:35",
-          "sort_time": "2026-11-07T05:35:42+08:00",
           "snippet": ""
         }
       ],
@@ -293,9 +293,9 @@
             "bullets": [
               "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。",
               "【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。",
-              "【近期營運催化劑】國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻；騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元。"
+              "【近期營運催化劑】騰勢N8擬進軍香港研發右舵版本- 經濟；差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」。"
             ],
-            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。 【近期營運催化劑】國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻；騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元。"
+            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。 【近期營運催化劑】騰勢N8擬進軍香港研發右舵版本- 經濟；差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」。"
           },
           {
             "step_num": "觀點 3",
@@ -310,7 +310,7 @@
         ]
       },
       "summary_overview": "【騰勢 (7889)】為櫃檯買賣之「初上櫃」競拍案，由凱基證券主辦。本次競拍數量共 1,404 張，最低投標底價為 43.86 元（每標單最低預估保證金加處理費約 NT$ 22,330 元）。投標期間為 2026/11/16 至 2026/11/18，預計於 2026/11/20 開標、2026/12/01 撥券掛牌。",
-      "summary_news_digest": "綜合 大公文匯網、UDN、環球生技月刊 等共 5 則近期新聞焦點：(1) 國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻（大公文匯網）；(2) 騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元（UDN）；(3) 騰勢(7889)初上櫃現增195萬股、每股暫定50.88元、基準日11/27（環球生技月刊）；(4) 騰勢保健、寵物事業並進 深化海外布局推升營運（台灣好新聞）。",
+      "summary_news_digest": "綜合 大公文匯網、遠見雜誌、BigGo 財經 等共 5 則近期新聞焦點：(1) 騰勢N8擬進軍香港研發右舵版本- 經濟（大公文匯網）；(2) 差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」（遠見雜誌）；(3) 騰勢12月1日轉上櫃 11月16日競拍底價43.86元、前三季EPS 3.35元（BigGo 財經）；(4) 騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元（UDN）。",
       "summary_mode": "extractive"
     },
     {
@@ -337,8 +337,8 @@
       "total_award_amount": "0",
       "status_code": "waiting_open",
       "status_label": "已截標・待開標",
-      "days_left": 3,
-      "countdown_text": "距離開標還有 3 天",
+      "days_left": 2,
+      "countdown_text": "距離開標還有 2 天",
       "estimated_min_bid_value": 180870,
       "estimated_min_margin": 90835,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -386,11 +386,19 @@
       },
       "news": [
         {
+          "title": "抽中現賺8.5萬？宏于電機(7869)公開申購，股票抽籤該注意什麼？",
+          "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBfSUIwc05sVGRvV0hpSDdacGxkNy1FMDVRMm9SMkFLMGxDNmJLUGxTbWE4MFhycjRMS0phYWk4UHNLbGxDSUZOMmhIai1WR09BLU1JUC13?oc=5",
+          "source": "鏈新聞 ABMedia",
+          "published_at": "2026/11/15 08:46",
+          "sort_time": "2026-11-15T08:46:03+08:00",
+          "snippet": ""
+        },
+        {
           "title": "下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購",
           "url": "https://news.google.com/rss/articles/CBMirwNBVV95cUxQQ2pVRVlSYk5ub2FiRWFNSHltMjNUNlhCaU1vS3d0NTVNS21NQmJ6TV85cEU2TUNjdUNkZGlXcVRZRTRQNnNQcVhtTUNwU2M2aDdkTFlYd25TSnFieG0yOGlBNVk1MXNSSE5GWks4UHdQU2Zza0x4aEZGTXNhaEhMR2lDcjdiekRQeEJQbExJemFzVEljWm9UWU56bjJ2a1g2aUxwOTJSWmt5eENzckZvT18tQzVYdU9qOVZQcE4xWFZwb1pSbnhBZkFPRmticlBxWVMyVzM1QnM1d0xXX21aTFZKSE5BYV9EaEMzdzFUZF9Db2NfUzdFX2VMSXNQY3VyVW45TUxSN2NmYnpmRGQyUFJ4a1RoX2c2b1phWnlqRzh0cExJSlcxb2Nwc3RSZENhbHF5cE9xbHVEcm5ybGhtMlJ4SE1qYS1RN0Jod2lMREtETVVBa3dmWW1XT1FHMlFXc2V6ZHZ0LVZxQkV0dnI1QVVGM3dkbkN6cTB0YXhBSjVXZi1uTW1Md1BNY0x0TzFMbXp3OUR1RGtxbXJGaElJY0tpUU41Nl9jUUhlQkx6QQ?oc=5",
           "source": "Yahoo股市",
-          "published_at": "2026/11/13 11:24",
-          "sort_time": "2026-11-13T11:24:46+08:00",
+          "published_at": "2026/11/13 11:26",
+          "sort_time": "2026-11-13T11:26:49+08:00",
           "snippet": ""
         },
         {
@@ -415,14 +423,6 @@
           "source": "經濟日報",
           "published_at": "2026/11/09 15:52",
           "sort_time": "2026-11-09T15:52:50+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "宏于電機三大事業攻智慧能源- 日報",
-          "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DZjFTYmxaNEVza0RTc1Exd2FXcmUwN1RuX1hXU0I3SDdrSVdrUWlpOWl0WF9OZi1BTWRCTmN2LWtBcHA2b1RreWN2QzZVQjh6cTA2M1ZWVnF4X3IxUzhB?oc=5",
-          "source": "工商時報",
-          "published_at": "2026/10/19 15:00",
-          "sort_time": "2026-10-19T15:00:00+08:00",
           "snippet": ""
         }
       ],
@@ -595,9 +595,9 @@
             "bullets": [
               "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。",
               "【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 19.85%、營益率 11.90%、近期累計 EPS 13.53 元 (近4季累計)。",
-              "【近期營運催化劑】下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購；抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光。"
+              "【近期營運催化劑】抽中現賺8.5萬？宏于電機(7869)公開申購，股票抽籤該注意什麼？；下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購。"
             ],
-            "detail": "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。 【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 19.85%、營益率 11.90%、近期累計 EPS 13.53 元 (近4季累計)。 【近期營運催化劑】下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購；抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光。"
+            "detail": "【主要業務定位】高低壓智能配電盤、新能源電力導體設計加工製造、能源系統工程、智慧電網管理。 【營收與獲利體質】營收維持穩健雙位數成長（單月年增 17.23%、累計年增 9.22%）；競拍釋出籌碼僅 1,844 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 19.85%、營益率 11.90%、近期累計 EPS 13.53 元 (近4季累計)。 【近期營運催化劑】抽中現賺8.5萬？宏于電機(7869)公開申購，股票抽籤該注意什麼？；下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購。"
           },
           {
             "step_num": "觀點 3",
@@ -612,9 +612,8 @@
         ]
       },
       "summary_overview": "【宏于電機 (7869)】為櫃檯買賣之「初上櫃」競拍案，由元大證券主辦。本次競拍數量共 1,844 張，最低投標底價為 180.87 元（每標單最低預估保證金加處理費約 NT$ 90,835 元）。投標期間為 2026/11/11 至 2026/11/13，預計於 2026/11/17 開標、2026/11/26 撥券掛牌。",
-      "summary_news_digest": "綜合 Yahoo股市、三立新聞網SETN.com、東森電視 等共 5 則近期新聞焦點：(1) 下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購（Yahoo股市）；(2) 抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光（三立新聞網SETN.com）；(3) 宏于電機搶攻AI基建 智慧配電布局全球前景看好（東森電視）；(4) 重電新兵來了！宏于電機暫定承銷價208元 明年搶進北美 AI 電力市場（經濟日報）。",
-      "summary_mode": "extractive",
-      "change_badge": "🔔 狀態變動：投標進行中 ➔ 已截標・待開標"
+      "summary_news_digest": "綜合 鏈新聞 ABMedia、Yahoo股市、三立新聞網SETN.com 等共 5 則近期新聞焦點：(1) 抽中現賺8.5萬？宏于電機(7869)公開申購，股票抽籤該注意什麼？（鏈新聞 ABMedia）；(2) 下周新股抽籤又來了！抽中宏于電機有望賺逾7萬元 2檔今截止申購（Yahoo股市）；(3) 抽中一張賺近9萬元！宏于電機6年營收暴增近1.8倍 申購日期全曝光（三立新聞網SETN.com）；(4) 宏于電機搶攻AI基建 智慧配電布局全球前景看好（東森電視）。",
+      "summary_mode": "extractive"
     }
   ],
   "recipients": [
@@ -624,20 +623,9 @@
     "s2933115@gmail.com"
   ],
   "changes": {
-    "has_changes": true,
+    "has_changes": false,
     "new_items": [],
-    "status_changed_items": [
-      {
-        "security_code": "7869",
-        "security_name": "宏于電機",
-        "old_status_code": "bidding",
-        "old_status_label": "投標進行中",
-        "new_status_code": "waiting_open",
-        "new_status_label": "已截標・待開標"
-      }
-    ],
-    "summary_list": [
-      "🔔 狀態變動：宏于電機 (7869) 由「投標進行中」轉為「已截標・待開標」"
-    ]
+    "status_changed_items": [],
+    "summary_list": []
   }
 }
