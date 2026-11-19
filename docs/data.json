@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-18 15:49:40 (TST)",
-  "reference_date": "2026/11/18",
+  "updated_at": "2026-11-19 15:45:15 (TST)",
+  "reference_date": "2026/11/19",
   "source_url": "https://www.twse.com.tw/zh/announcement/auction.html",
   "stats": {
     "total_active": 1,
-    "bidding_count": 1,
+    "bidding_count": 0,
     "upcoming_count": 0,
-    "waiting_open_count": 0,
+    "waiting_open_count": 1,
     "ipo_stock_count": 1,
     "cb_count": 0
   },
@@ -33,10 +33,10 @@
       "underwriter": "凱基",
       "award_fee_rate": "5",
       "total_award_amount": "0",
-      "status_code": "bidding",
-      "status_label": "投標進行中",
-      "days_left": 0,
-      "countdown_text": "今日截止投標！",
+      "status_code": "waiting_open",
+      "status_label": "已截標・待開標",
+      "days_left": 1,
+      "countdown_text": "距離開標還有 1 天",
       "estimated_min_bid_value": 43860,
       "estimated_min_margin": 22330,
       "twse_url": "https://www.twse.com.tw/zh/announcement/auction.html",
@@ -49,20 +49,20 @@
         "official_industry": "食品工業",
         "industry": "食品工業（生技醫療與醫材）",
         "business_scope": "主要係從事保健食品研發、銷售及品牌經營",
-        "revenue_mix": "",
+        "revenue_mix": "保健食品67.63%、寵物食品及用品29.37%、其他3.00% (2025年)",
         "capital_text": "2.08 億元",
         "chairman": "張智翔",
         "founded_date": "102/07/16",
-        "website": "",
+        "website": "https://tsagroup.com.tw/",
         "goodinfo_url": "https://goodinfo.tw/tw/StockDetail.asp?STOCK_ID=7889",
         "profit_period": "115.3Q",
         "gross_margin": "68.81%",
         "operating_margin": "13.43%",
         "pretax_margin": "13.49%",
-        "roe": "",
-        "roa": "",
-        "bps": "",
-        "debt_ratio": "",
+        "roe": "4.38%",
+        "roa": "2.51%",
+        "bps": "25.50",
+        "debt_ratio": "42.47%",
         "latest_month_label": "115/10",
         "latest_month_revenue": "7,273 萬元",
         "latest_month_yoy": "2.50%",
@@ -72,23 +72,23 @@
         "latest_quarter_revenue": "2.14 億元",
         "latest_quarter_net_income": "23 百萬元",
         "latest_quarter_eps": "1.11 元",
-        "recent_4q_eps": "3.35 元 (近2季累計)",
-        "summary_text": "【所屬產業】騰勢（7889）隸屬於「食品工業（生技醫療與醫材）」\n【主要業務】主要係從事保健食品研發、銷售及品牌經營\n【營收規模】最新 (115/10) 單月營收 7,273 萬元（年增 2.50%） ｜ 累計營收 7.45 億元（年增 9.68%） ｜ 最新季報 (115.3Q) 單季營收 2.14 億元、稅後淨利 23 百萬元\n【利潤率指標 (115.3Q)】毛利率 68.81% ｜ 營益率 13.43% ｜ 稅前淨利率 13.49%\n【每股獲利與淨值】最新單季 EPS 1.11 元 ｜ 近四季累計 EPS 3.35 元 (近2季累計)",
+        "recent_4q_eps": "5.93 元 (近4季累計)",
+        "summary_text": "【所屬產業】騰勢（7889）隸屬於「食品工業（生技醫療與醫材）」\n【主要業務】主要係從事保健食品研發、銷售及品牌經營\n【營收規模】最新 (115/10) 單月營收 7,273 萬元（年增 2.50%） ｜ 累計營收 7.45 億元（年增 9.68%） ｜ 最新季報 (115.3Q) 單季營收 2.14 億元、稅後淨利 23 百萬元\n【利潤率指標 (115.3Q)】毛利率 68.81% ｜ 營益率 13.43% ｜ 稅前淨利率 13.49% ｜ ROE 4.38%\n【每股獲利與淨值】最新單季 EPS 1.11 元 ｜ 近四季累計 EPS 5.93 元 (近4季累計) ｜ 每股淨值 25.50 元",
         "summary_lines": [
           "【所屬產業】騰勢（7889）隸屬於「食品工業（生技醫療與醫材）」",
           "【主要業務】主要係從事保健食品研發、銷售及品牌經營",
           "【營收規模】最新 (115/10) 單月營收 7,273 萬元（年增 2.50%） ｜ 累計營收 7.45 億元（年增 9.68%） ｜ 最新季報 (115.3Q) 單季營收 2.14 億元、稅後淨利 23 百萬元",
-          "【利潤率指標 (115.3Q)】毛利率 68.81% ｜ 營益率 13.43% ｜ 稅前淨利率 13.49%",
-          "【每股獲利與淨值】最新單季 EPS 1.11 元 ｜ 近四季累計 EPS 3.35 元 (近2季累計)"
+          "【利潤率指標 (115.3Q)】毛利率 68.81% ｜ 營益率 13.43% ｜ 稅前淨利率 13.49% ｜ ROE 4.38%",
+          "【每股獲利與淨值】最新單季 EPS 1.11 元 ｜ 近四季累計 EPS 5.93 元 (近4季累計) ｜ 每股淨值 25.50 元"
         ]
       },
       "news": [
         {
-          "title": "深圳APEC》接待車隊國產化 紅旗、比亞迪騰勢挑大梁",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1YNTVQYmgtWUl2eG8zNWRuZzN5dVJZN25JQ1g5eDl1dTBQdnNFZ2c4ZmNPaVNJX1p3N3o1U2ZVNkhKdHdwUGhwT0JMZW9JQjJFVDlRMXluREs1c2Mzdl9VS3RPcUVKMHBfSk5WbjN3?oc=5",
-          "source": "中時新聞網",
-          "published_at": "2026/11/17 13:44",
-          "sort_time": "2026-11-17T13:44:40+08:00",
+          "title": "差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBZdkswNzd4UV9VWnI1QzA1TUN6TlR5SS1iY2RsOXRteGdNam9va0ZMYjJvc25NSG5BNTdjYS1CQWFMRzl4WFFhMnBNSzZpQQ?oc=5",
+          "source": "遠見雜誌",
+          "published_at": "2026/11/17 11:05",
+          "sort_time": "2026-11-17T11:05:03+08:00",
           "snippet": ""
         },
         {
@@ -100,19 +100,11 @@
           "snippet": ""
         },
         {
-          "title": "BYD比亞迪騰勢N8登場 主打大五座空間 續航破千公里兼9分鐘閃充",
-          "url": "https://news.google.com/rss/articles/CBMirANBVV95cUxOemdhTjkxQkVycXppUTdlbnAzaGdEWFUyRnNvWEQteDdhSzdLZkV4SWNHTEpsc3llTGZ5c2RiSFdPSXBSZk5qZmJrNkVGdVZ0aWllX091alE4UlhIdDNsdVlzSmhoaDNEWmRVRjdwbGtiVk5QLWNJM0M3cEJ6aFNmNmVxM0w0ck9vb0NGQ0k4YzdYTE04dkUzN3poVzZYWjAwTFB5ZWVDOTJ4RmVDcTNUWGtCdW5HaEowWW03cWVoX1ZQVk9nakpJcklEakEzM08wLWRETFZoc0NXaGFmNFF5R19VdFZ6VlN5U3k4cTFCWVppbGRldW1VLTBOc19mZ21uLTRZZzZnX0Nxc2pFZDJOZVM0THZGNHVCYzVZanVUWXEzY2NfcHhwLUtHa3F0YklYdWVyY3pNWXdBS1E4UGV3MDViYVpyNkpqZzNBLUd1NV9DRTN1Z3RoWjFHX3B4NjBFM3gxb0tqTDE4UElnMkV1VzhPUVlpZF9rOGxvbURMckhsekM0WUxTNGxmdHFmNHk3Q01jclBtdHFtQ2NmRE1xOWczLU1tSHdvSjd0Ug?oc=5",
-          "source": "香港01",
-          "published_at": "2026/11/16 07:00",
-          "sort_time": "2026-11-16T07:00:34+08:00",
-          "snippet": ""
-        },
-        {
-          "title": "騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元",
-          "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBxODE1V2FQLXliQmNXRlBYN1BHbUpqd2pqUXU3N2RzQnY3NFFZWS1UZjJsOXdRSDBpX05WUkhjZGFReVpSZnp3eEF6ZFNza3d30gFWQVVfeXFMUHNObTdzbEN3Z3ZLeUpXWkd4TzRtMWNfakR1UkEwVFZWdnhKenVHdXh3NVQxNnNZZVpwX2dFRlkxV0FoS05mSEtubGNsOHBFVXJjT3lQMnc?oc=5",
-          "source": "UDN",
-          "published_at": "2026/11/13 13:00",
-          "sort_time": "2026-11-13T13:00:22+08:00",
+          "title": "國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE85ZWkzS2I2alh5SzFBdGVSS2hrVExZVk94S3pQaXNRMFNfN0s2TXpzVUhEd0hKN19qbEFweEVFVTNkSDFPTUF3R25ib21Ra3dEazNZVmZ4bGh2cnJXaE1WWS1HZm41a0k2S1lvZTdYMjE?oc=5",
+          "source": "大公文匯網",
+          "published_at": "2026/11/13 18:05",
+          "sort_time": "2026-11-13T18:05:03+08:00",
           "snippet": ""
         },
         {
@@ -122,25 +114,33 @@
           "published_at": "2026/11/06 16:00",
           "sort_time": "2026-11-06T16:00:00+08:00",
           "snippet": ""
+        },
+        {
+          "title": "騰勢公司不怕競爭，就怕市場太小",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE50d2Q2M3JldjlJS09XeEc3dG5oREZhM3pVQnluOGFkZjVMRFkyV25QS2toVC05VU16YzlqUHRDX05nbVRNZjNEelBDNDcwY29HNnUwb1lmc1ZhMHFJeS0zaWZB?oc=5",
+          "source": "EMBA雜誌",
+          "published_at": "2026/06/30 15:00",
+          "sort_time": "2026-06-30T15:00:00+08:00",
+          "snippet": ""
         }
       ],
       "valuation": {
         "min_price": 43.86,
-        "market_price": 56.1,
+        "market_price": 56.0,
         "market_price_source": "Yahoo股市 (7889.TWO)",
-        "spread_to_min_pct": 27.9,
+        "spread_to_min_pct": 27.7,
         "estimated_underwriting_price": 51.8,
         "underwriting_price_is_exact": false,
-        "annualized_eps_label": "6.70 元（由興櫃近 2 期財報年化推算）",
-        "pe_range_label": "12.4x ~ 40.0x",
-        "pe_fair_low": 83.1,
-        "pe_fair_mid": 165.5,
-        "pe_fair_high": 268.0,
-        "consensus_low": 56.1,
-        "consensus_mid": 110.8,
-        "consensus_high": 165.5,
-        "suggested_bid_low": 47.7,
-        "suggested_bid_high": 51.6,
+        "annualized_eps_label": "5.93 元（近四季累計實際 EPS）",
+        "pe_range_label": "12.3x ~ 40.0x",
+        "pe_fair_low": 72.9,
+        "pe_fair_mid": 143.5,
+        "pe_fair_high": 237.2,
+        "consensus_low": 56.0,
+        "consensus_mid": 99.8,
+        "consensus_high": 143.5,
+        "suggested_bid_low": 47.6,
+        "suggested_bid_high": 51.5,
         "factset": {
           "has_factset": false,
           "target_mean": 0.0,
@@ -197,27 +197,27 @@
         },
         "sector_macro": {
           "sector_name": "生技醫療業",
-          "data_date": "1151117",
-          "pe_low": 12.4,
-          "pe_mid": 24.7,
+          "data_date": "1151118",
+          "pe_low": 12.3,
+          "pe_mid": 24.2,
           "pe_high": 40.0,
-          "avg_pe": 24.7,
-          "avg_pb": 3.87,
-          "avg_yield": 2.91,
+          "avg_pe": 24.2,
+          "avg_pb": 3.79,
+          "avg_yield": 2.93,
           "sampled_peers": [
-            "美時(1795) PE 15.1x / PB 1.35x",
-            "東洋(4105) PE 12.4x / PB 2.76x",
-            "智擎(4162) PE 13.6x / PB 1.46x",
-            "藥華藥(6446) PE 58.4x / PB 12.96x",
-            "中天(4128) PE 23.9x / PB 0.84x"
+            "美時(1795) PE 14.6x / PB 1.30x",
+            "東洋(4105) PE 12.3x / PB 2.74x",
+            "智擎(4162) PE 13.8x / PB 1.49x",
+            "藥華藥(6446) PE 56.8x / PB 12.61x",
+            "中天(4128) PE 23.4x / PB 0.82x"
           ],
           "cycle_note": "醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。"
         },
         "methodology_lines": [
           "【MOPS 承銷報告定價依據】主辦承銷商（凱基）於 MOPS 公開說明書中，依法採用「採樣同業本益比法 / 股價淨值比法」訂定競拍底價 43.86 元，推估暫定公開申購承銷價約 51.8 元。",
-          "【二級市場/興櫃即時比價】目前市場參考價為 56.1 元（較競拍底價 43.86 元溢價 +27.9%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 47.7 ～ 51.6 元）。",
-          "【同業本益比估值模型】以滾動年化 EPS 6.70 元（由興櫃近 2 期財報年化推算） × 官方採樣同業合理本益比（12.4x～40.0x，中位 24.7x）推算，基本面合理價值區間約 83.1 ～ 268.0 元（中位數 165.5 元）。",
-          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：美時(1795) PE 15.1x / PB 1.35x、東洋(4105) PE 12.4x / PB 2.76x、智擎(4162) PE 13.6x / PB 1.46x、藥華藥(6446) PE 58.4x / PB 12.96x（同業平均 PE 24.7x、平均 PB 3.87x、平均殖利率 2.91%）。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
+          "【二級市場/興櫃即時比價】目前市場參考價為 56.0 元（較競拍底價 43.86 元溢價 +27.7%），歷史統計競拍得標均價常落於興櫃市價之 85～92 折區間（約 47.6 ～ 51.5 元）。",
+          "【同業本益比估值模型】以滾動年化 EPS 5.93 元（近四季累計實際 EPS） × 官方採樣同業合理本益比（12.3x～40.0x，中位 24.2x）推算，基本面合理價值區間約 72.9 ～ 237.2 元（中位數 143.5 元）。",
+          "【證交所/櫃買同業真實本益比 ＆ 產業景氣（方案 A）】採樣代表同業即時估值：美時(1795) PE 14.6x / PB 1.30x、東洋(4105) PE 12.3x / PB 2.74x、智擎(4162) PE 13.8x / PB 1.49x、藥華藥(6446) PE 56.8x / PB 12.61x（同業平均 PE 24.2x、平均 PB 3.79x、平均殖利率 2.93%）。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
           "【永豐金證券 / 豐雲學堂資料庫 (未設定 (使用公開檢索))】已成功檢索 5 篇永豐研究快訊/專欄報告（已納入綜合評估，點擊下方文章標題可直接閱讀全文）。"
         ]
       },
@@ -225,17 +225,17 @@
         "budget_twd": 1000000,
         "heat_level": "⚡ 中高熱度攻守兼備型",
         "heat_score": 72,
-        "target_ref_price": 56.1,
-        "target_ref_label": "興櫃/二級市場最新市價 56.1 元",
-        "hard_cap_price": 51.6,
-        "hard_cap_with_fee": 53.92,
+        "target_ref_price": 56.0,
+        "target_ref_label": "興櫃/二級市場最新市價 56.0 元",
+        "hard_cap_price": 51.5,
+        "hard_cap_with_fee": 53.82,
         "total_lots": 19,
         "weighted_avg_bid": 50.25,
         "weighted_all_in_cost": 52.58,
         "total_initial_margin_twd": 478620,
         "total_settlement_twd": 999008,
-        "total_est_profit_twd": 62202,
-        "total_roi_pct": 6.2,
+        "total_est_profit_twd": 60310,
+        "total_roi_pct": 6.0,
         "tranches": [
           {
             "tranche_name": "A 單【必中核心單】",
@@ -247,8 +247,8 @@
             "win_fee_twd": 12186,
             "initial_margin_twd": 131350,
             "settlement_twd": 274086,
-            "est_net_profit_twd": 5180,
-            "est_roi_pct": 1.9
+            "est_net_profit_twd": 4682,
+            "est_roi_pct": 1.7
           },
           {
             "tranche_name": "B 單【主戰中樞單】",
@@ -260,8 +260,8 @@
             "win_fee_twd": 20755,
             "initial_margin_twd": 226570,
             "settlement_twd": 473095,
-            "est_net_profit_twd": 29583,
-            "est_roi_pct": 6.3
+            "est_net_profit_twd": 28687,
+            "est_roi_pct": 6.1
           },
           {
             "tranche_name": "C 單【低接狙擊單】",
@@ -273,8 +273,8 @@
             "win_fee_twd": 11227,
             "initial_margin_twd": 120700,
             "settlement_twd": 251827,
-            "est_net_profit_twd": 27439,
-            "est_roi_pct": 10.9
+            "est_net_profit_twd": 26941,
+            "est_roi_pct": 10.7
           }
         ],
         "reasoning_steps": [
@@ -283,35 +283,36 @@
             "title": "怎麼看這產業？（食品工業（生技醫療與醫材） 景氣位階 ＆ 同業估值對標）",
             "bullets": [
               "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。",
-              "【官方採樣同業估值】對標同業：美時(1795) PE 15.1x / PB 1.35x、東洋(4105) PE 12.4x / PB 2.76x、智擎(4162) PE 13.6x / PB 1.46x、藥華藥(6446) PE 58.4x / PB 12.96x（同業平均本益比 24.7x、平均股價淨值比 3.87x）。"
+              "【官方採樣同業估值】對標同業：美時(1795) PE 14.6x / PB 1.30x、東洋(4105) PE 12.3x / PB 2.74x、智擎(4162) PE 13.8x / PB 1.49x、藥華藥(6446) PE 56.8x / PB 12.61x（同業平均本益比 24.2x、平均股價淨值比 3.79x）。"
             ],
-            "detail": "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。 【官方採樣同業估值】對標同業：美時(1795) PE 15.1x / PB 1.35x、東洋(4105) PE 12.4x / PB 2.76x、智擎(4162) PE 13.6x / PB 1.46x、藥華藥(6446) PE 58.4x / PB 12.96x（同業平均本益比 24.7x、平均股價淨值比 3.87x）。"
+            "detail": "【產業分類與景氣位階】隸屬於「食品工業（生技醫療與醫材）」。醫材與高毛利保健/特用醫藥受景氣波動影響低，估值主要錨定營收成長率與國際取證進度。 【官方採樣同業估值】對標同業：美時(1795) PE 14.6x / PB 1.30x、東洋(4105) PE 12.3x / PB 2.74x、智擎(4162) PE 13.8x / PB 1.49x、藥華藥(6446) PE 56.8x / PB 12.61x（同業平均本益比 24.2x、平均股價淨值比 3.79x）。"
           },
           {
             "step_num": "觀點 2",
             "title": "怎麼看這個股？（騰勢 核心業務、成長動能 ＆ 獲利護城河）",
             "bullets": [
               "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。",
-              "【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。",
-              "【近期營運催化劑】深圳APEC》接待車隊國產化 紅旗、比亞迪騰勢挑大梁；比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場。"
+              "【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 5.93 元 (近4季累計)。",
+              "【近期營運催化劑】差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」；比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場。"
             ],
-            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 3.35 元 (近2季累計)。 【近期營運催化劑】深圳APEC》接待車隊國產化 紅旗、比亞迪騰勢挑大梁；比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場。"
+            "detail": "【主要業務定位】主要係從事保健食品研發、銷售及品牌經營。 【營收與獲利體質】近期營收動能較溫和（單月年增 2.50%），出價宜嚴守安全邊際；高毛利護城河（毛利率 68.81%、營益率 13.43%）；競拍釋出籌碼僅 1,404 張（供給偏少，法人與大戶搶標易推升得標均價）。最新毛利率 68.81%、營益率 13.43%、近期累計 EPS 5.93 元 (近4季累計)。 【近期營運催化劑】差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」；比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場。"
           },
           {
             "step_num": "觀點 3",
             "title": "為什麼這樣投？（定價安全邊際 ＆ 19 張百萬資金配置理由）",
             "bullets": [
               "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。",
-              "【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 165.5 元 ｜ 對比興櫃/二級市場最新市價 56.1 元（較底價溢價 +27.9%），本檔最高出價防線（Hard Cap）設於 51.6 元（含費成本 53.92 元/股）。",
-              "【100 萬預算配置結論】最適投標總張數【19 張】（A單 52.38 元 ／ B單 50.26 元 ／ C單 48.12 元），加權含費總成本 52.58 元/股，預估潛在總淨利 NT$ +62,202 元（淨報酬率 +6.2%）。"
+              "【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 143.5 元 ｜ 對比興櫃/二級市場最新市價 56.0 元（較底價溢價 +27.7%），本檔最高出價防線（Hard Cap）設於 51.5 元（含費成本 53.82 元/股）。",
+              "【100 萬預算配置結論】最適投標總張數【19 張】（A單 52.38 元 ／ B單 50.26 元 ／ C單 48.12 元），加權含費總成本 52.58 元/股，預估潛在總淨利 NT$ +60,310 元（淨報酬率 +6.0%）。"
             ],
-            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 165.5 元 ｜ 對比興櫃/二級市場最新市價 56.1 元（較底價溢價 +27.9%），本檔最高出價防線（Hard Cap）設於 51.6 元（含費成本 53.92 元/股）。 【100 萬預算配置結論】最適投標總張數【19 張】（A單 52.38 元 ／ B單 50.26 元 ／ C單 48.12 元），加權含費總成本 52.58 元/股，預估潛在總淨利 NT$ +62,202 元（淨報酬率 +6.2%）。"
+            "detail": "【為何參與 ＆ 策略定調】評級為「⚡ 中高熱度攻守兼備型」—— 基本面穩健且籌碼供給適中，建議採取「中樞主力＋低接狙擊」雙軌配置，兼顧得標率與超額價差。 【個股定價錨點與安全邊際】競拍底價 43.86 元 ｜ 暫定承銷價 51.8 元 ｜ 同業 PE 合理估值中位數 143.5 元 ｜ 對比興櫃/二級市場最新市價 56.0 元（較底價溢價 +27.7%），本檔最高出價防線（Hard Cap）設於 51.5 元（含費成本 53.82 元/股）。 【100 萬預算配置結論】最適投標總張數【19 張】（A單 52.38 元 ／ B單 50.26 元 ／ C單 48.12 元），加權含費總成本 52.58 元/股，預估潛在總淨利 NT$ +60,310 元（淨報酬率 +6.0%）。"
           }
         ]
       },
       "summary_overview": "【騰勢 (7889)】為櫃檯買賣之「初上櫃」競拍案，由凱基證券主辦。本次競拍數量共 1,404 張，最低投標底價為 43.86 元（每標單最低預估保證金加處理費約 NT$ 22,330 元）。投標期間為 2026/11/16 至 2026/11/18，預計於 2026/11/20 開標、2026/12/01 撥券掛牌。",
-      "summary_news_digest": "綜合 中時新聞網、TradingView、香港01 等共 5 則近期新聞焦點：(1) 深圳APEC》接待車隊國產化 紅旗、比亞迪騰勢挑大梁（中時新聞網）；(2) 比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場（TradingView）；(3) BYD比亞迪騰勢N8登場 主打大五座空間 續航破千公里兼9分鐘閃充（香港01）；(4) 騰勢上櫃倒數！11月16日開放競拍 前三季 EPS 3.35元（UDN）。",
-      "summary_mode": "extractive"
+      "summary_news_digest": "綜合 遠見雜誌、TradingView、大公文匯網 等共 5 則近期新聞焦點：(1) 差點去台積電上班！38歲農家子弟靠30萬創業，帶保健品牌騰勢上櫃「打造亞洲P&G」（遠見雜誌）；(2) 比亞迪在印度推出豪華品牌騰勢，瞄準當地高端汽車市場（TradingView）；(3) 國產車擔綱APEC官方用車騰勢借APEC接待東風加速亞太布局- 視頻（大公文匯網）；(4) 騰勢委外線上服務系統遭異常存取，已啟動資安應變並調查影響範圍（iThome）。",
+      "summary_mode": "extractive",
+      "change_badge": "🔔 狀態變動：投標進行中 ➔ 已截標・待開標"
     }
   ],
   "recipients": [
@@ -321,9 +322,20 @@
     "s2933115@gmail.com"
   ],
   "changes": {
-    "has_changes": false,
+    "has_changes": true,
     "new_items": [],
-    "status_changed_items": [],
-    "summary_list": []
+    "status_changed_items": [
+      {
+        "security_code": "7889",
+        "security_name": "騰勢",
+        "old_status_code": "bidding",
+        "old_status_label": "投標進行中",
+        "new_status_code": "waiting_open",
+        "new_status_label": "已截標・待開標"
+      }
+    ],
+    "summary_list": [
+      "🔔 狀態變動：騰勢 (7889) 由「投標進行中」轉為「已截標・待開標」"
+    ]
   }
 }
